@@ -19,6 +19,7 @@
 - [[metodi-euristici]] — nessuna garanzia; algoritmi contro euristiche (alta)
 
 **Correttezza** (L03)
+- [[correttezza-parziale-e-totale]] — «se termina è giusto» contro «termina ed è giusto»; invariante/induzione + variante/misura (alta)
 - [[ricerca-di-controesempi]] — incorrettezza, testing, 5 tips (alta)
 - [[invariante-di-ciclo]] — inizializzazione, conservazione, conclusione, variante (alta)
 - [[correttezza-per-induzione]] — misura, casi base, passo induttivo (alta)
@@ -96,6 +97,7 @@ _nessun materiale ancora — lancia `prepara esame`_
 Figure in `raw/assets/` (nome `<file>-pN-descrizione.png`, 110 dpi con PyMuPDF): 2 da 00, 10 da 01, 6 da 02, 5 da 03, 6 da 04, 14 da 05.
 Grafici di funzione generati (🧩) in `output/grafici/` — script [[genera_grafici_as.py]] (SVG, solo libreria standard): $3n^2-100n+6$ contro $3n^2$ e $0.01n^3$; $f(n)/n^2$ e soglia $\Theta$; crescita delle funzioni in scala log; razzo contro vela; copie dell'array dinamico; test del while di insertion sort (migliore/peggiore).
 Script dei grafici: [[genera_grafici_as.py]].
+Animazioni degli algoritmi (🧩) in `output/animazioni/`: 13 SVG `animazione-<algoritmo>.svg`, una per ogni pagina entità di categoria algoritmo, incorporate in «Esempio di esecuzione».
 Codice di verifica in `output/codice/`:
 - [[tempi_crescita.py]] — tempi e crescita delle funzioni (L01 pp. 11–12, 33, 59; L02 p. 36)
 - [[controesempi_euristiche.py]] — euristiche TSP e scheduling, ricerca esaustiva (L01)

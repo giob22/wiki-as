@@ -24,6 +24,10 @@ ShortestJobFirst(I)
 
 ## Esempio di esecuzione
 
+![[animazione-shortest-job-first.svg]]
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, sui 9 film di p. 37: a ogni passo il job più corto e gli intervalli eliminati perché lo intersecano, con lo stesso esito delle slide (pp. 48–54). Ogni fotogramma riporta in basso il numero del passo e cosa succede.
+
+
 Traccia sull'istanza di [[01-Introduzione.pdf#page=37]] ([[01-Introduzione.pdf#page=48]]–[[01-Introduzione.pdf#page=54]]):
 
 | Pagina | Evento |
@@ -61,3 +65,4 @@ Commento della fonte: «This idea makes sense at first. At least until we realiz
 - [[01-Introduzione.pdf#page=47]]–[[01-Introduzione.pdf#page=55]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
+_Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

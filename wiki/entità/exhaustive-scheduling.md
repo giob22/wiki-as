@@ -29,6 +29,11 @@ La versione di p. 56 scrive «For each subsets Si of intervals S» con parametro
 ![[01-introduzione-p58-exhaustive-scheduling-2n.png]]
 *La correzione «e mezzo»: si enumerano sottoinsiemi, non permutazioni. ([[01-Introduzione.pdf#page=58]])*
 
+## Esempio di esecuzione
+
+![[animazione-exhaustive-scheduling.svg]]
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, istanza di esempio mia con 4 intervalli ($2^9 = 512$ sottoinsiemi dei 9 film sarebbero troppi fotogrammi): tutti i $2^4 = 16$ sottoinsiemi, in verde quelli senza sovrapposizioni e in rosso gli altri, con $j$ e $S_{max}$ aggiornati come nello pseudocodice di p. 58. Ogni fotogramma riporta in basso il numero del passo e cosa succede.
+
 ## Correttezza
 
 > 🧩 Derivazione mia: esamina **ogni** sottoinsieme e conserva il più grande tra quelli ammissibili (invariante: $S_{max}$ è il più grande sottoinsieme ammissibile tra quelli già esaminati e $j = |S_{max}|$). Terminati i $2^n$ sottoinsiemi, $S_{max}$ è ottimo. È corretto per costruzione, come [[optimal-tsp]].
@@ -52,3 +57,4 @@ Commento della fonte: «The slowness of this approach make it prohibitive like t
 - [[01-Introduzione.pdf#page=56]]–[[01-Introduzione.pdf#page=59]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
+_Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

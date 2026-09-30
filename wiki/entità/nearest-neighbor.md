@@ -46,6 +46,10 @@ NEAREST-NEIGHBOR(P)            ▷ P[1..n] punti
 
 ## Esempio di esecuzione
 
+![[animazione-nearest-neighbor.svg]]
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, sui punti della retta di p. 22, partendo da 0: a ogni passo i due candidati equidistanti (in verde) e la scelta fatta come nella figura di p. 24, fino al giro di lunghezza 84 contro l'ottimo 64. Ogni fotogramma riporta in basso il numero del passo e cosa succede.
+
+
 **Caso buono** — punti su una circonferenza ([[01-Introduzione.pdf#page=16]], [[01-Introduzione.pdf#page=17]]): il giro 0→1→2→…→8→0 è quello ottimo.
 
 **Punti casuali** ([[01-Introduzione.pdf#page=20]], [[01-Introduzione.pdf#page=21]]): il giro prodotto ha incroci, segno che non è minimo.
@@ -108,3 +112,4 @@ Ipotesi: calcolo della distanza in tempo costante ([[modello-ram]]), nessuna str
 - [[01-Introduzione.pdf#page=16]]–[[01-Introduzione.pdf#page=24]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
+_Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

@@ -73,13 +73,14 @@ Le slide alternano argomenti: modello RAM (p. 2) → tempo (p. 3) → modello RA
 3. [[iterazione-e-ricorsione]] — pp. 7–11 · confronto dei due stili
 4. [[somma-iterativa]] — p. 11 (poi pp. 17, 23–29) · pseudocodice, invariante, costo $2n+4$
 5. [[somma-ricorsiva]] — p. 11 (poi pp. 19, 30–34) · pseudocodice, induzione, ricorrenza
-6. [[invariante-di-ciclo]] — pp. 16–17
-7. [[correttezza-per-induzione]] — pp. 18–19
-8. [[dimostrazioni-di-correttezza]] — esercizio su invariante e induzione
-9. [[analisi-del-costo-riga-per-riga]] — esercizio sulle pp. 23–29 (e su Base/Base2 della lezione 02)
-10. [[equazioni-di-ricorrenza]] — pp. 30–34
-11. [[risoluzione-ricorrenze]] — esercizio sulle pp. 30–33
-12. [[lezione-03-analisi-di-algoritmi]] — riepilogo, refusi (p. 17 «i = 0»; p. 5), domande d'esame
+6. [[correttezza-parziale-e-totale]] — p. 16 (con la definizione di 01 p. 9) · parziale = «se termina, è giusto»; totale = parziale + terminazione; quale strumento dimostra cosa
+7. [[invariante-di-ciclo]] — pp. 16–17
+8. [[correttezza-per-induzione]] — pp. 18–19
+9. [[dimostrazioni-di-correttezza]] — esercizio su invariante e induzione
+10. [[analisi-del-costo-riga-per-riga]] — esercizio sulle pp. 23–29 (e su Base/Base2 della lezione 02)
+11. [[equazioni-di-ricorrenza]] — pp. 30–34
+12. [[risoluzione-ricorrenze]] — esercizio sulle pp. 30–33
+13. [[lezione-03-analisi-di-algoritmi]] — riepilogo, refusi (p. 17 «i = 0»; p. 5), domande d'esame
 
 Già lette: *ricerca-combinatoria* (p. 5), *metodi-euristici* (p. 6), *ricerca-di-controesempi* (pp. 12–15) nella lezione 01; *modello-ram* e *tempo-di-esecuzione* (pp. 20–22, identiche alle pp. 2–3 della lezione 02) nella lezione 02.
 
@@ -87,7 +88,7 @@ Già lette: *ricerca-combinatoria* (p. 5), *metodi-euristici* (p. 6), *ricerca-d
 Qui le slide non sono lineari rispetto alle pagine: la somma $1..n$ compare a p. 11, ma la sua correttezza (pp. 17–19) e la sua complessità (pp. 23–34) arrivano molto dopo, e le pagine delle due somme contengono già tutto. Conviene prima la **teoria** e poi gli **esempi**:
 
 1. *paradigmi-di-progettazione* → *divide-et-impera* → *iterazione-e-ricorsione*
-2. *invariante-di-ciclo* → *correttezza-per-induzione* (correttezza)
+2. *correttezza-parziale-e-totale* (il quadro) → *invariante-di-ciclo* → *correttezza-per-induzione* (gli strumenti)
 3. *equazioni-di-ricorrenza* (complessità ricorsiva; la parte iterativa è in *tempo-di-esecuzione*, già letta)
 4. *somma-iterativa* → *somma-ricorsiva* (gli esempi completi, come sintesi)
 5. esercizi: *dimostrazioni-di-correttezza* → *analisi-del-costo-riga-per-riga* → *risoluzione-ricorrenze*

@@ -32,6 +32,10 @@ ClosestPair(P)
 
 ## Esempio di esecuzione
 
+![[animazione-closest-pair.svg]]
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, sui sei punti di p. 28 (coordinate lette dal grafico): gli archi vengono aggiunti tra le catene nell'ordine AD, BE, CF, AB, EF, poi la chiusura diagonale DC; nell'ultimo fotogramma il giro ottimo tratteggiato in verde (7.29 contro 6.24). Ogni fotogramma riporta in basso il numero del passo e cosa succede.
+
+
 Commento della fonte: «Più complessa, ma "sembra" risolvere il problema» ([[01-Introduzione.pdf#page=27]]). Sui punti della retta di [[nearest-neighbor]] funziona: trova il giro di lunghezza 64, cioè l'ottimo (🧩 verificato con lo script [[controesempi_euristiche.py]]).
 
 **Controesempio** ([[01-Introduzione.pdf#page=28]]): sei punti su due file, A, B, C in alto e D, E, F in basso.
@@ -80,3 +84,4 @@ Non corretto (controesempio sopra). La lezione lo usa per la *Take-Home Lesson #
 - [[01-Introduzione.pdf#page=25]] («Soluzione?»), [[01-Introduzione.pdf#page=26]], [[01-Introduzione.pdf#page=27]], [[01-Introduzione.pdf#page=28]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
+_Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

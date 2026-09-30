@@ -83,3 +83,13 @@ Filtra ultimi 10: `grep "^## " wiki/log.md | tail -10`
 ## [2026-09-30] query | contraddizione apparente in strutture-contigue-e-collegate (p. 21, punto 2)
 - nessuna contraddizione: la slide dice che nelle liste collegate inserimenti e cancellazioni sono più semplici che negli array; la traduzione era ambigua e l'ho riscritta
 - aggiunta la sezione «"Più semplice" dipende dall'operazione» con i costi per push front, push_back, insert in posizione i, cancellazione e push/pop, per array (statico/dinamico) e lista (semplice/doppia, con/senza puntatore alla coda)
+
+## [2026-10-01] animazioni | un'animazione per ogni algoritmo
+- nuova regola (richiesta dell'utente): ogni algoritmo ha un'animazione che lo mostra in funzione; scritta in CLAUDE.md (struttura, passo 7 dell'ingest, formato entità, sezione «Animazioni degli algoritmi», lint) e in memoria
+- generatore output/animazioni/genera_animazioni.py: 13 SVG a fotogrammi (SMIL), ogni fotogramma prodotto eseguendo l'algoritmo, con riga di pseudocodice evidenziata e didascalia per passo
+- istanze delle slide: insertion/selection sort su ⟨5, 2, 4, 6, 1, 3⟩, findmatch su abba/aababba, 2^13 con power, somme con n = 4 e n = 3, NearestNeighbor sulla retta, ClosestPair sui 6 punti, EarliestJobFirst/ShortestJobFirst/OptimalScheduling sui 9 film di p. 37 (estremi misurati sui pixel della figura: le scelte coincidono con le slide pp. 39–45 e 48–54); istanze mie dichiarate per OptimalTSP (4 punti) ed ExhaustiveScheduling (4 intervalli)
+- animazioni incorporate in cima a «Esempio di esecuzione» delle 13 pagine di algoritmi (creata la sezione in optimal-tsp ed exhaustive-scheduling); verificato che l'SVG si anima in Chromium
+
+## [2026-10-01] query → pagina | correttezza-parziale-e-totale
+- nuova pagina concetto [[correttezza-parziale-e-totale]] dalla spiegazione in chat: definizioni (01 p. 9, 03 p. 16), formalizzazione con pre/post-condizione (🧩), tabella «quale strumento dimostra cosa», esempio parzialmente ma non totalmente corretto (🧩), esempi somma_iterativa e somma_ricorsiva
+- collegata da lezioni.md (lezione 03, voce 6, e ordine consigliato), index.md, algoritmo-e-problema, invariante-di-ciclo, correttezza-per-induzione

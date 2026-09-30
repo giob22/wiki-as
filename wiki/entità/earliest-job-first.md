@@ -25,6 +25,10 @@ EarliestJobFirst(I)
 
 ## Esempio di esecuzione
 
+![[animazione-earliest-job-first.svg]]
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, sui 9 film di p. 37 (intervalli misurati sulla figura della slide): a ogni passo il job che inizia prima, i job esclusi perché si sovrappongono (✘) e gli accettati (cerchio blu), con lo stesso esito delle slide (pp. 39–45). Ogni fotogramma riporta in basso il numero del passo e cosa succede.
+
+
 Traccia sull'istanza di [[01-Introduzione.pdf#page=37]], una slide per passo ([[01-Introduzione.pdf#page=39]]–[[01-Introduzione.pdf#page=45]]); ✔ = accettato, ✘ = escluso perché si sovrappone a un accettato:
 
 | Pagina | Evento |
@@ -63,3 +67,4 @@ Commento della fonte: «This idea makes sense, at least until we realize that ac
 - [[01-Introduzione.pdf#page=38]]–[[01-Introduzione.pdf#page=46]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
+_Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

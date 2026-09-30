@@ -49,6 +49,10 @@ La condizione `i>0 and A[i]>key` sfrutta il **corto circuito** di `and` ([[a1-in
 
 ## Esempio di esecuzione
 
+![[animazione-insertion-sort.svg]]
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, sull'array ⟨5, 2, 4, 6, 1, 3⟩ delle slide (pp. 5–15), un fotogramma per ogni riga eseguita: `key`, i puntatori `i` e `j`, il confronto del `while` (rosso = sposto, azzurro = mi fermo), la parte già ordinata $A[1..j-1]$ in verde (l'invariante di p. 16) e la riga di pseudocodice corrente evidenziata. Ogni fotogramma riporta in basso il numero del passo e cosa succede.
+
+
 > 📄 Fonte: [[05-Insertion sort.pdf#page=5]]–[[05-Insertion sort.pdf#page=15]] (una slide per passo; in rosso l'elemento $key$ e la sua posizione)
 
 Array iniziale: $A = \langle 5, 2, 4, 6, 1, 3 \rangle$.
@@ -228,3 +232,4 @@ void InsertionSort (vector<T> A)
 - [[05-Insertion sort.pdf#page=4]]–[[05-Insertion sort.pdf#page=23]]
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
+_Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

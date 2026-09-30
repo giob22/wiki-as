@@ -27,6 +27,11 @@ OptimalTSP(P)
 4  Return Pmin
 ```
 
+## Esempio di esecuzione
+
+![[animazione-optimal-tsp.svg]]
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, istanza di esempio mia con 4 punti (le slide non ne danno una abbastanza piccola da enumerare): tutte le $4! = 24$ permutazioni una dopo l'altra, in blu la corrente e in verde la migliore trovata finora ($d$, $P_{min}$). Con il test `≤` della riga 3, i giri di costo uguale già trovati (stesso giro percorso da un altro punto o al contrario) sostituiscono $P_{min}$. Ogni fotogramma riporta in basso il numero del passo e cosa succede.
+
 ## Correttezza
 
 «Corretto?» ([[01-Introduzione.pdf#page=30]]) → «Sì» ([[01-Introduzione.pdf#page=31]]). Motivazione della fonte (Skiena): poiché si considerano tutti i possibili ordinamenti, si è garantiti di trovare il giro più breve; l'algoritmo è corretto perché sceglie il migliore tra tutte le possibilità ([[01-Introduzione.pdf#page=34]]).
@@ -58,3 +63,4 @@ $$
 - [[01-Introduzione.pdf#page=29]]–[[01-Introduzione.pdf#page=34]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
+_Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

@@ -74,6 +74,7 @@ L'invariante va scelto in modo che la **conclusione** dia esattamente la post-co
 
 ## Connessioni
 
+- [[correttezza-parziale-e-totale]] — l'invariante dà la correttezza **parziale**, la funzione variante la terminazione: insieme la **totale**
 - [[insertion-sort]] — l'invariante di [[05-Insertion sort.pdf#page=16]] («$A[1..j-1]$ contiene gli elementi originali di $A[1..j-1]$, ordinati») è l'esempio canonico del metodo
 - [[selection-sort]] — invariante con due cicli annidati (esercizio 2.2.2, [[05-Insertion sort.pdf#page=26]])
 
@@ -89,3 +90,4 @@ L'invariante va scelto in modo che la **conclusione** dia esattamente la post-co
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
+_Aggiornato: 2026-10-01 — collegamento a correttezza-parziale-e-totale_

@@ -31,6 +31,10 @@ Nelle [[pseudocodice|convenzioni del corso]] la riga 2 si scrive `for i ← 1 to
 
 ## Esempio di esecuzione
 
+![[animazione-somma-iterativa.svg]]
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, `somma_iterativa(4)`: i valori di `i` e `s` a ogni riga, l'invariante $s = \sum_{k=1}^{i-1} k$ verificato a ogni iterazione e il conteggio dei passi che arriva a $2n + 4 = 12$ (slide 03 p. 28). Ogni fotogramma riporta in basso il numero del passo e cosa succede.
+
+
 > 🧩 Traccia mia con $n = 4$:
 
 | inizio iterazione | $i$ | $s$ prima | $s$ dopo | invariante $s = \sum_{k=1}^{i-1} k$ |
@@ -82,3 +86,4 @@ $$ T(n) = 1 + 1 + (n+1) + n + 1 = 2n + 4 \ \Rightarrow\ O(n) $$
 - [[03-Analisi di algoritmi.pdf#page=10]], [[03-Analisi di algoritmi.pdf#page=11]], [[03-Analisi di algoritmi.pdf#page=17]], [[03-Analisi di algoritmi.pdf#page=23]]–[[03-Analisi di algoritmi.pdf#page=29]]
 
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
+_Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

@@ -43,6 +43,10 @@ La slide afferma che la soluzione è corretta ed efficiente ma **non** riporta l
 
 ## Esempio di esecuzione
 
+![[animazione-optimal-scheduling.svg]]
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, la regola di p. 60 applicata ai 9 film di p. 37 (le slide non mostrano questa esecuzione): a ogni passo il job che finisce prima; il risultato, 4 film, coincide con l'ottimo trovato per ricerca esaustiva in [[controesempi_euristiche.py]]. Ogni fotogramma riporta in basso il numero del passo e cosa succede.
+
+
 > 🧩 Sui controesempi delle euristiche: $\{[0,10), [1,2), [3,4), [5,6)\}$ → sceglie $[1,2), [3,4), [5,6)$ (3, ottimo); $\{[0,5), [4,7), [6,11)\}$ → sceglie $[0,5), [6,11)$ (2, ottimo). Vedi [[controesempi-per-euristiche]].
 
 ## Complessità
@@ -61,3 +65,4 @@ La slide afferma che la soluzione è corretta ed efficiente ma **non** riporta l
 - [[01-Introduzione.pdf#page=60]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
+_Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

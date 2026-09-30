@@ -50,6 +50,7 @@ Tutto il corso ruota intorno ad **analisi** (correttezza, complessità) e **prog
 
 ## Connessioni
 
+- [[correttezza-parziale-e-totale]] — la definizione di algoritmo corretto di p. 9 è la correttezza **totale**: uscita giusta **e** terminazione
 - [[efficienza-degli-algoritmi]] — dopo la correttezza, la seconda proprietà richiesta ([[01-Introduzione.pdf#page=11]])
 - [[metodi-euristici]] — procedure che non garantiscono l'uscita corretta su ogni istanza: per definizione non sono algoritmi corretti per il problema
 - [[ricerca-di-controesempi]] — come si dimostra l'incorrettezza
@@ -61,3 +62,4 @@ Tutto il corso ruota intorno ad **analisi** (correttezza, complessità) e **prog
 - [[01-Introduzione.pdf#page=7]], [[01-Introduzione.pdf#page=8]], [[01-Introduzione.pdf#page=9]], [[01-Introduzione.pdf#page=10]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
+_Aggiornato: 2026-10-01 — collegamento a correttezza-parziale-e-totale_

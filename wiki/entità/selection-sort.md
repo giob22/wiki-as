@@ -58,6 +58,10 @@ SELECTION-SORT(A)
 
 ## Esempio di esecuzione
 
+![[animazione-selection-sort.svg]]
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, sull'array ⟨5, 2, 4, 6, 1, 3⟩: i puntatori `i`, `j`, `min`, ogni confronto `A[j] < A[min]`, lo scambio a fine iterazione, il prefisso già sistemato in verde e il contatore dei confronti che arriva a $n(n-1)/2 = 15$. Ogni fotogramma riporta in basso il numero del passo e cosa succede.
+
+
 > 🧩 Traccia mia sull'array della lezione, ⟨5, 2, 4, 6, 1, 3⟩ (indici da 1):
 
 | $i$ | minimo di $A[i..6]$ | scambio | $A$ dopo |
@@ -132,3 +136,4 @@ $$
 - [[05-Insertion sort.pdf#page=24]]–[[05-Insertion sort.pdf#page=29]]
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
+_Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

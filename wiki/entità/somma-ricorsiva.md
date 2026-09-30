@@ -29,6 +29,10 @@ funzione somma_ricorsiva(n)
 
 ## Esempio di esecuzione
 
+![[animazione-somma-ricorsiva.svg]]
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, `somma_ricorsiva(3)`: i record di attivazione si impilano fino al caso base $n = 0$ e poi si chiudono restituendo 0, 1, 3, 6; si vede perché lo spazio è $\Theta(n)$. Ogni fotogramma riporta in basso il numero del passo e cosa succede.
+
+
 > 🧩 Traccia mia con $n = 3$ (le chiamate scendono, i valori risalgono):
 
 ```
@@ -72,3 +76,4 @@ Srotolamento completo e verifica della forma generale → [[equazioni-di-ricorre
 - [[03-Analisi di algoritmi.pdf#page=11]], [[03-Analisi di algoritmi.pdf#page=19]], [[03-Analisi di algoritmi.pdf#page=30]]–[[03-Analisi di algoritmi.pdf#page=34]]
 
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
+_Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

@@ -28,7 +28,8 @@ wiki-as/
 │   └── esame/             ← materiale preparazione esame
 └── output/                ← export: tabelle comparative, slide Marp, grafici, codice
     ├── grafici/           ← script e grafici di funzione generati (🧩)
-    └── codice/            ← implementazioni eseguibili (Python) usate per verificare tracce ed esempi
+    ├── codice/            ← implementazioni eseguibili (Python) usate per verificare tracce ed esempi
+    └── animazioni/        ← animazioni SVG degli algoritmi (🧩), generate da genera_animazioni.py
 ```
 
 ---
@@ -74,7 +75,7 @@ LM Ingegneria Informatica, UNINA, a.a. 26/27. Corso integrato **ASD + ML**: doce
 4. **Espandi ogni analisi e dimostrazione** della fonte secondo le regole in *Espansione dei calcoli* — un costo, una ricorrenza, un limite o una proprietà enunciati nel PDF senza passaggi vanno ricostruiti passo-passo, non copiati
 5. Aggiorna le pagine in `wiki/concetti/` rilevanti (o creane di nuove)
 6. Aggiorna le pagine in `wiki/entità/` rilevanti (o creane di nuove) — ogni algoritmo e ogni struttura dati ha la sua pagina entità
-7. Riporta lo pseudocodice **fedelmente** secondo le *Convenzioni per lo pseudocodice*; se utile, aggiungi l'implementazione in `output/codice/` e usala per verificare tracce ed esempi numerici
+7. Riporta lo pseudocodice **fedelmente** secondo le *Convenzioni per lo pseudocodice*; se utile, aggiungi l'implementazione in `output/codice/` e usala per verificare tracce ed esempi numerici. **Per ogni algoritmo genera sempre un'animazione** che lo mostri in funzione (vedi *Animazioni degli algoritmi*) e incorporala nella sua pagina entità
 8. Se la fonte contiene esercizi, aggiorna/crea le pagine in `wiki/esercizi/`
 9. **Ancora ogni affermazione alla fonte** con il link a pagina/slide (vedi *Tracciabilità*)
 10. Aggiorna `wiki/overview.md`
@@ -134,6 +135,7 @@ Scorri tutto il wiki e riporta:
 - Formule senza definizione dei simboli
 - **Risultati senza derivazione** (costo, ricorrenza o proprietà senza catena di passaggi)
 - **Algoritmi senza pseudocodice, invariante o analisi di complessità**
+- **Algoritmi senza animazione** (`![[animazione-<nome>.svg]]` nella sezione «Esempio di esecuzione»)
 - Pseudocodice che non rispetta le convenzioni del corso
 - **Pagine o sezioni senza link alla fonte** `raw/` (pagina/slide mancante)
 - Link `[[*.pdf#page=N]]` che puntano a file inesistenti in `raw/`
@@ -206,7 +208,7 @@ Sezioni per un **algoritmo**:
 - **Problema risolto** — input, output (link all'entità problema se esiste)
 - **Idea** — descrizione discorsiva
 - **Pseudocodice** — fedele alla fonte, con righe numerate
-- **Esempio di esecuzione** — traccia su un input concreto (tabella stato-per-passo)
+- **Esempio di esecuzione** — **animazione** dell'algoritmo in funzione (obbligatoria, in cima alla sezione) + traccia su un input concreto (tabella stato-per-passo)
 - **Correttezza** — invariante di ciclo (inizializzazione, conservazione, conclusione) o dimostrazione induttiva
 - **Complessità** — caso migliore, peggiore, medio; spazio; ogni risultato derivato
 - **Proprietà** — in-place, stabile, online, adattivo… (solo quelle trattate o derivabili dalla fonte)
@@ -378,6 +380,17 @@ Una pagina senza nemmeno un riferimento a `raw/` è sospetta: LINT la segnala.
 | `TODO: da espandere`              | Placeholder per pagina incompleta            |
 | `_Aggiornato: [data] — [motivo]_` | In fondo a ogni pagina modificata            |
 | `![[grafico-*.svg]]` + didascalia `🧩` | Grafico di funzione generato da me dalle formule della fonte (script in `output/grafici/`) |
+| `![[animazione-*.svg]]` + didascalia `🧩` | Animazione di un algoritmo in funzione (script `output/animazioni/genera_animazioni.py`) |
+
+### Animazioni degli algoritmi
+
+Ogni pagina entità di categoria `algoritmo` contiene, in cima a «Esempio di esecuzione», un'animazione che mostra l'algoritmo in funzione.
+- **Come si fa:** aggiungi una funzione a `output/animazioni/genera_animazioni.py`, che **esegue davvero** l'algoritmo e produce un fotogramma per ogni passo significativo; il file risultante è `animazione-<nome-pagina>.svg` (SVG con animazione SMIL, riprodotto da Obsidian; senza animazione resta visibile l'ultimo fotogramma).
+- **Contenuto di ogni fotogramma:** stato della struttura dati (array, puntatori, pila delle chiamate, intervalli…), riga di pseudocodice corrente evidenziata, didascalia «Passo k/N — cosa succede», e dove serve l'invariante o i contatori (confronti, passi, moltiplicazioni).
+- **Istanza:** quella delle slide quando esiste (es. ⟨5, 2, 4, 6, 1, 3⟩ per gli ordinamenti); altrimenti un'istanza piccola mia, dichiarata come tale nel titolo e nella didascalia.
+- **Pseudocodice:** quello della fonte, riportato come nella pagina entità.
+- **Controllo prima di incorporarla:** estrai alcuni fotogrammi e verifica che niente esca dai riquadri e che i valori coincidano con la traccia della pagina e con le slide.
+- **Didascalia:** `> 🧩 Animazione generata da me ([[genera_animazioni.py]]) …` con istanza e cosa si vede.
 
 **Grafici di funzione:** dove aiutano a capire (crescita delle funzioni, confronto $n^2$ vs $n\lg n$, costanti nascoste, soglia $n_0$, tempi misurati vs attesi), genera grafici con lo script `output/grafici/genera_grafici_<lezione>.py` e incorporali con didascalia 🧩 che spiega cosa si vede e cita la pagina PDF della formula.
 

@@ -41,6 +41,10 @@ Restituisce la prima posizione (da 0) in cui compare $p$, oppure $-1$.
 
 ## Esempio di esecuzione
 
+![[animazione-findmatch.svg]]
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, sull'esempio di p. 30 ($p$ = abba, $t$ = aababba): il pattern scorre sotto il testo, ogni confronto di caratteri è verde se uguale e rosso se diverso, fino all'occorrenza in posizione 3 dopo 10 confronti. Ogni fotogramma riporta in basso il numero del passo e cosa succede.
+
+
 Sull'esempio di [[05-Insertion sort.pdf#page=30]] ($p = abba$, $t = aababba$, $n = 7$, $m = 4$): la riga 5 prova $i = 0, 1, 2, 3$ (fino a $n - m = 3$); il `while` confronta 2, 3, 1 e 4 caratteri; a $i = 3$ si ha $j = m$ e la funzione restituisce 3. Tabella dei tentativi in [[substring-pattern-matching]].
 
 ## Correttezza
@@ -80,3 +84,4 @@ $$
 - [[05-Insertion sort.pdf#page=30]], [[05-Insertion sort.pdf#page=31]]
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
+_Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

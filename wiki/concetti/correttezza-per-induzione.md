@@ -61,6 +61,7 @@ Qui basta l'induzione **semplice** (si usa solo $S(n-1)$); l'induzione **forte**
 
 ## Connessioni
 
+- [[correttezza-parziale-e-totale]] — casi base e passo induttivo danno la correttezza **parziale**, la misura che decresce la terminazione
 - [[invariante-di-ciclo]] — l'invariante è un'induzione sul numero di iterazioni
 - [[equazioni-di-ricorrenza]] — stessa struttura (caso base + passo) usata per il costo
 - [[optimal-scheduling]] — dimostrazione per induzione sul numero di intervalli
@@ -72,3 +73,4 @@ Qui basta l'induzione **semplice** (si usa solo $S(n-1)$); l'induzione **forte**
 - [[03-Analisi di algoritmi.pdf#page=18]], [[03-Analisi di algoritmi.pdf#page=19]]
 
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
+_Aggiornato: 2026-10-01 — collegamento a correttezza-parziale-e-totale_

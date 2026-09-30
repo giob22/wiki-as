@@ -33,6 +33,10 @@ function power(a,n)
 
 ## Esempio di esecuzione
 
+![[animazione-potenza-veloce.svg]]
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, il calcolo di $2^{13}$: le chiamate scendono sulla pila dimezzando $n$ (13 → 6 → 3 → 1 → 0), poi risalgono con i valori e il contatore delle moltiplicazioni (7 in tutto, invece delle 12 del metodo ingenuo). Ogni fotogramma riporta in basso il numero del passo e cosa succede.
+
+
 > 🧩 Traccia mia, $a^{13}$ ($13 = 1101_2$):
 
 | chiamata | $\lfloor n/2 \rfloor$ | $x$ | $n$ pari? | risultato |
@@ -77,3 +81,4 @@ $$
 - [[05-Insertion sort.pdf#page=32]]
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
+_Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_
