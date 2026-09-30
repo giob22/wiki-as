@@ -83,7 +83,7 @@ Differenza rispetto ai casi precedenti: il test del `while` si esegue $t_j$ volt
 ### Caso 5 — selection sort: contare solo l'operazione dominante
 **Traccia:** esercizio 2.2.2, [[05-Insertion sort.pdf#page=27]], [[05-Insertion sort.pdf#page=28]].
 Il confronto `s[j] < s[min]` si esegue $n - 1 - i$ volte per ogni $i$:
-$$ \sum_{i=0}^{n-2} (n - 1 - i) = rac{n(n-1)}{2} = \Theta(n^2) $$
+$$ \sum_{i=0}^{n-2} (n - 1 - i) = \frac{n(n-1)}{2} = \Theta(n^2) $$
 per **ogni** input: caso migliore = caso peggiore. Dettagli in [[selection-sort]] § Complessità.
 
 ## Trappole

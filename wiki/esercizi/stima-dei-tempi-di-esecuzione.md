@@ -62,7 +62,7 @@ Con 1 ns per operazione. Esempi: $n\lg n$, $n = 10^6$: $10^6 \cdot 19.93$ ns $= 
 
 ### Caso 5 — ricerca binaria con split sbilanciato ([[05-Insertion sort.pdf#page=33]])
 **Traccia:** quante domande servono per cercare in un elenco di un milione di nomi se ogni divisione è 1/3–2/3 invece di 1/2–1/2?
-$$ \log_{3/2} 10^6 = rac{\ln 10^6}{\ln 1.5} = rac{13.8155}{0.4055} = 34.07 pprox 35, \qquad \lg 10^6 = 19.93 pprox 20 $$
+$$ \log_{3/2} 10^6 = \frac{\ln 10^6}{\ln 1.5} = \frac{13.8155}{0.4055} = 34.07 \approx 35, \qquad \lg 10^6 = 19.93 \approx 20 $$
 **Risultato:** circa 35 contro 20 domande nel caso peggiore: il rapporto è la costante $1/\lg(3/2) = 1.71$. La complessità resta logaritmica: la base non conta → [[logaritmi-nell-analisi]].
 
 ## Trappole
