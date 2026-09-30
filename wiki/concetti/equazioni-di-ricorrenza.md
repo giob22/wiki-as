@@ -1,0 +1,79 @@
+---
+tipo: concetto
+importanza_esame: alta
+prerequisiti: ["tempo-di-esecuzione", "iterazione-e-ricorsione"]
+fonti_pdf: ["03-Analisi di algoritmi.pdf#page=30", "03-Analisi di algoritmi.pdf#page=31", "03-Analisi di algoritmi.pdf#page=32", "03-Analisi di algoritmi.pdf#page=33"]
+---
+
+# Equazioni di ricorrenza (costo degli algoritmi ricorsivi)
+
+## Definizione
+
+> 📄 Fonte: [[03-Analisi di algoritmi.pdf#page=30]]
+
+Un programma ricorsivo viene richiamato più volte su una versione ridotta del problema. Il **costo complessivo** $T(n)$ è dato dalla **somma dei costi delle singole chiamate**, con $T(0)$ pari al costo del passo ricorsivo più interno (quello in cui la funzione non viene richiamata ulteriormente).
+
+Il costo si esprime quindi con un'**equazione di ricorrenza**: $T(n)$ definito in funzione di $T$ su valori più piccoli, più un caso base.
+
+## Formule
+
+> 📄 Fonte: [[03-Analisi di algoritmi.pdf#page=31]], [[03-Analisi di algoritmi.pdf#page=32]]
+
+Per [[somma-ricorsiva]]:
+- $T(0)$: un confronto e un return ⇒ **1**
+- $T(i)$, con $0 < i \le n$: una chiamata ricorsiva con argomento $i - 1$, una somma, un return ⇒ $T(i) = T(i-1) + c$
+
+> 🧮 Formula chiave:
+$$ T(n) = \begin{cases} 1 & n = 0 \\ T(n-1) + c & n > 0 \end{cases} \qquad \Longrightarrow \qquad T(n) = 1 + c\,n = O(n) $$
+
+Simboli: $T(n)$ = passi per l'input $n$; $c$ = costo costante del lavoro di una chiamata non base (confronto, somma, return, chiamata).
+
+## Derivazioni
+
+### Derivazione — soluzione per sostituzione iterata (srotolamento)
+**Fonte:** [[03-Analisi di algoritmi.pdf#page=33]]: «$T(n) = T(n-1) + c = T(n-2) + 2c = T(n-3) + 3c = \dots = T(0) + n\cdot c = 1 + c\cdot n = O(n)$»
+
+$$
+\begin{aligned}
+T(n) &= T(n-1) + c && \text{ricorrenza con } i = n \\
+     &= \big(T(n-2) + c\big) + c = T(n-2) + 2c && \text{ricorrenza con } i = n-1 \\
+     &= T(n-3) + 3c && \text{ricorrenza con } i = n-2 \\
+     &\ \ \vdots \\
+     &= T(n-k) + k\,c && \text{forma generale dopo } k \text{ passi} \\
+     &= T(0) + n\,c && k = n \text{: si raggiunge il caso base} \\
+     &= 1 + c\,n && T(0) = 1 \\
+     &= O(n) && \text{(anzi } \Theta(n)\text{, perché } c > 0\text{)}
+\end{aligned}
+$$
+
+> 🧩 Derivazione mia — verifica della forma generale per induzione su $k$: vale per $k = 1$; se $T(n) = T(n-k) + kc$ e $n - k > 0$, applicando la ricorrenza a $T(n-k)$ si ha $T(n) = T(n-k-1) + c + kc = T(n-(k+1)) + (k+1)c$. Senza questa verifica il «$\vdots$» è solo un'intuizione.
+
+**Sanity check:** $n = 0 \Rightarrow T = 1$ ✓ (solo caso base); $n = 1 \Rightarrow T = 1 + c$ (una chiamata non base + caso base) ✓. Con $c = 1$, [[somma_primi_n.py]] conta $T(n) = n + 1$ per $n \in \{0,1,2,5,10,100\}$.
+**Ipotesi:** costo di ogni chiamata non base costante (niente copie di dati dipendenti da $n$).
+
+![[03-analisi-algoritmi-p33-ricorrenza-somma-ricorsiva.png]]
+
+## Spiegazione
+
+La struttura della ricorrenza ricalca quella dell'algoritmo: il caso base dell'algoritmo dà il caso base di $T$, la chiamata ricorsiva dà il termine $T(n-1)$, il lavoro «locale» dà il termine $c$. La stessa struttura regge la [[correttezza-per-induzione]].
+
+La domanda «E la complessità spaziale?» ([[03-Analisi di algoritmi.pdf#page=34]]) ha risposta $\Theta(n)$ (🧩, profondità della ricorsione) → [[tempo-di-esecuzione]].
+
+> TODO: da espandere quando le lezioni introdurranno ricorrenze di tipo divide et impera (es. $T(n) = 2T(n/2) + \Theta(n)$) e i relativi metodi di soluzione.
+
+## Perché importa
+
+> 🎯 Esame: scrivere la ricorrenza di un algoritmo ricorsivo leggendo lo pseudocodice e risolverla srotolandola fino al caso base.
+
+## Connessioni
+
+- [[tempo-di-esecuzione]] — l'analogo per il codice iterativo
+- [[divide-et-impera]] — la fonte principale di ricorrenze nel corso
+- [[risoluzione-ricorrenze]] — esercizi
+
+## Fonti
+
+- [[lezione-03-analisi-di-algoritmi]]
+- [[03-Analisi di algoritmi.pdf#page=30]]–[[03-Analisi di algoritmi.pdf#page=34]]
+
+_Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_

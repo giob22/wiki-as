@@ -1,0 +1,9 @@
+{
+  "theme": "moonstone",
+  "cssTheme": "Solarized",
+  "enabledCssSnippets": [
+    "Catppuccin-Latte–Graph-View"
+  ],
+  "baseFontSizeAction": true,
+  "baseFontSize": 18
+}

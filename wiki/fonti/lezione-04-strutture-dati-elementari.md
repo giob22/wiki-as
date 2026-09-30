@@ -1,0 +1,53 @@
+---
+tipo: fonte
+titolo: "Lecture 4: Elementary Data Structures (Skiena, integrata dal Prof. Marrone)"
+file_raw: "04-Strutture dati elementari.pdf"
+pagine: "1-30"
+data_ingest: 2026-09-26
+formato: slide-pdf
+argomenti: [astrazione dei dati, strutture contigue e collegate, array, array dinamici, puntatori, liste concatenate, pile, code]
+---
+
+# Lezione 04 — Strutture dati elementari (04-Strutture dati elementari.pdf)
+
+## Sommario
+
+Slide di Skiena con integrazioni del Prof. Marrone (costi $\Theta$ in italiano sotto ai codici). Una struttura dati si descrive con le **operazioni astratte** e con la loro **implementazione**, e le implementazioni si dividono in **contigue** (array) e **collegate** (puntatori). Gli **array** danno accesso costante e località, ma hanno dimensione fissa. Gli **array dinamici** la superano raddoppiando la capacità: il costo totale delle copie resta $O(n)$ grazie alla serie geometrica. Le **liste concatenate** sono presentate con codice C per inserimento, ricerca e cancellazione, con i loro casi migliore e peggiore, i vantaggi rispetto agli array e la variante doppia. Chiudono **pile** (LIFO) e **code** (FIFO), con le figure 10.1 e 10.2 del Cormen, l'osservazione che tutte le operazioni costano $O(1)$ e il legame con DFS/BFS.
+
+## Punti chiave
+
+1. Strutture elementari come componenti «off-the-shelf»; operazioni astratte contro implementazione; Push/Pop ([[04-Strutture dati elementari.pdf#page=3]], [[04-Strutture dati elementari.pdf#page=4]]) → [[tipo-di-dato-astratto]].
+2. Contigue (array, matrici, heap, hash table) contro collegate (liste, alberi, liste di adiacenza) ([[04-Strutture dati elementari.pdf#page=5]]) → [[strutture-contigue-e-collegate]].
+3. Array: accesso costante, niente spazio sprecato, località per la cache ([[04-Strutture dati elementari.pdf#page=8]], [[04-Strutture dati elementari.pdf#page=9]]) → [[array]].
+4. Array dinamici: $\lceil\log_2 n\rceil$ raddoppi, $M \le 2n$ spostamenti, «free lunch» della serie geometrica; nota sul teorema no free lunch ([[04-Strutture dati elementari.pdf#page=10]]–[[04-Strutture dati elementari.pdf#page=12]]) → [[array-dinamico]].
+5. Puntatori, `*p`, `&x`, `NULL` ([[04-Strutture dati elementari.pdf#page=15]]).
+6. Liste: struttura C, `insert_list` $\Theta(1)$, `search_list` e `item_ahead` $\Theta(1)$/$\Theta(n)$, `delete_list` $\Theta(1)$/$\Theta(n)$ ([[04-Strutture dati elementari.pdf#page=16]]–[[04-Strutture dati elementari.pdf#page=20]]) → [[lista-concatenata]].
+7. Vantaggi delle liste sugli array statici; liste doppie a costo big-Oh nullo ([[04-Strutture dati elementari.pdf#page=21]], [[04-Strutture dati elementari.pdf#page=22]]).
+8. Pila (LIFO) e coda (FIFO); implementazioni su array (Figure 10.1, 10.2); tutte le operazioni $O(1)$; DFS contro BFS ([[04-Strutture dati elementari.pdf#page=25]]–[[04-Strutture dati elementari.pdf#page=29]]) → [[pila]], [[coda]], [[tracce-pila-e-coda]].
+
+## Refusi e note
+
+- p. 20: con l'`item_ahead` di p. 19 cancellare la **testa** costa $\Theta(n)$, non $\Theta(1)$ come suggerisce «cancelli la testa» (🧩, dettagli in [[lista-concatenata]]); inoltre `delete_list` presuppone che il nodo sia nella lista.
+- p. 4: «difference circumstances» → *different*.
+- p. 11: la formula $\sum i\cdot n/2^i$ è un conteggio approssimato; il conteggio esatto $2^{\lceil \lg n\rceil} - 1 < 2n$ dà lo stesso limite (🧩).
+- p. 12 (teorema NFL) è una nota a margine, non un argomento del corso.
+- Pagina del titolo: [[04-Strutture dati elementari.pdf#page=1|1]]; pagine di intestazione o «Questions?»: [[04-Strutture dati elementari.pdf#page=2|2]], [[04-Strutture dati elementari.pdf#page=6|6]], [[04-Strutture dati elementari.pdf#page=7|7]], [[04-Strutture dati elementari.pdf#page=13|13]], [[04-Strutture dati elementari.pdf#page=14|14]], [[04-Strutture dati elementari.pdf#page=23|23]], [[04-Strutture dati elementari.pdf#page=24|24]], [[04-Strutture dati elementari.pdf#page=30|30]].
+
+## Concetti introdotti
+
+[[tipo-di-dato-astratto]], [[strutture-contigue-e-collegate]], [[array]], [[array-dinamico]], [[lista-concatenata]], [[pila]], [[coda]]
+
+## Domande aperte
+
+- Heap e tabelle hash sono solo citate (p. 3, p. 5): saranno trattate più avanti.
+- DFS e BFS (p. 29) arriveranno con i grafi.
+
+## Domande da esame
+
+- Differenza tra operazioni astratte e implementazione; esempio.
+- Strutture contigue contro collegate: esempi, vantaggi e svantaggi.
+- Perché l'array dinamico costa $O(n)$ in totale? Derivare $M \le 2n$.
+- Costo di inserimento, ricerca e cancellazione in una lista (casi migliore e peggiore); cosa cambia con una lista doppia.
+- Implementare pila e coda su array; eseguire una traccia di PUSH/POP ed ENQUEUE/DEQUEUE.
+
+_Aggiornato: 2026-09-26 — ingest 04-Strutture dati elementari.pdf_
