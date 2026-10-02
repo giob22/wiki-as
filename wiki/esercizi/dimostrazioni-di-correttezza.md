@@ -52,13 +52,36 @@ difficoltà: media
 ### Caso 6 — selection sort (esercizio 2.2.2, [[05-Insertion sort.pdf#page=26]])
 > 🧩 Mio (la slide chiede «Dimostrarne la correttezza» senza soluzione). Invariante esterno: $A[1..i-1]$ contiene gli $i - 1$ elementi più piccoli, ordinati; invariante interno: $A[min]$ è il minimo di $A[i..j-1]$. Dimostrazione completa, e perché basta arrivare a $n - 1$ → [[selection-sort]] § Correttezza.
 
+### Caso 7 — Merge ([[06-Merge Sort.pdf#page=10]], [[06-Merge Sort.pdf#page=11]])
+- Pre: $A[p..q]$ e $A[q+1..r]$ ordinati. Post: $A[p..r]$ ordinato con gli stessi elementi.
+- Invariante (dalla slide): all'inizio di ogni iterazione del `for` finale, $A[p..k-1]$ contiene i $k - p$ elementi più piccoli di $L$ ed $R$, ordinati; $L[i]$ e $R[j]$ sono i più piccoli non ancora ricopiati.
+- Inizializzazione: $k = p$, sottosequenza vuota; $L[1]$, $R[1]$ minimi ✓. Conservazione: si copia $\min(L[i], R[j])$, che è il minimo dei rimasti ✓. Conclusione: $k = r + 1$, $A[p..r]$ contiene tutti gli $r - p + 1$ elementi ordinati; in $L$ e $R$ restano le sentinelle ✓.
+- Perché il minimo dei rimasti è $\min(L[i], R[j])$ e perché le sentinelle non vengono copiate (🧩) → [[merge]] § Correttezza.
+
+### Caso 8 — Merge-Sort (🧩, la slide non lo dimostra)
+- Induzione forte su $n = r - p + 1$: base $n \le 1$ (già ordinato); passo: le metà hanno $\lceil n/2 ceil$ e $\lfloor n/2 floor$ elementi, meno di $n$, quindi sono ordinate per ipotesi induttiva e Merge le fonde. → [[merge-sort]] § Correttezza.
+
+### Caso 9 — Partition ([[07-Quicksort.pdf#page=13]])
+- Invariante (dalla slide): $A[k] \le x$ per $p \le k \le i$; $A[k] > x$ per $i+1 \le k \le j-1$; $A[k] = x$ per $k = r$.
+- Inizializzazione: $i = p - 1$, $j = p$, prime due aree vuote ✓.
+- Conservazione (🧩, la slide la enuncia soltanto): se $A[j] > x$ cresce solo la 2ª area; se $A[j] \le x$, $i$ avanza e lo scambio porta $A[j]$ in coda alla 1ª area e il primo elemento della 2ª in coda alla 2ª ✓.
+- Conclusione: $j = r$; lo scambio $A[i+1] \leftrightarrow A[r]$ mette il pivot tra le due parti, $q = i + 1$ ✓. → [[partition]] § Correttezza.
+
+### Caso 10 — Quicksort, Torre di Hanoi, Nuts and Bolts (🧩)
+- Quicksort: induzione forte su $n$, usando la proprietà di Partition; il pivot è escluso dalle chiamate, quindi la dimensione cala → [[quicksort]] § Correttezza.
+- Torre di Hanoi: induzione su $n$; la mossa del disco $n$ è lecita perché gli altri sono tutti su `via` → [[torre-di-hanoi]] § Correttezza.
+- Nuts and Bolts: invariante del metodo quadratico; induzione per il randomizzato, con $|D_<| = |B_<|$ → [[nuts-and-bolts]].
+
 ## Trappole
 
 - Dimenticare la terminazione (si ottiene solo la correttezza parziale).
 - Invariante troppo debole: la conclusione non dà la post-condizione.
 - Valori iniziali sbagliati dell'indice (vedi il refuso «$i = 0$»).
 - Usare esempi o test come se fossero una dimostrazione ([[03-Analisi di algoritmi.pdf#page=15]]).
+- Invariante con più affermazioni (Merge, Partition): la conservazione va dimostrata per **ciascuna**, in **ciascun** ramo dell'`if`.
+- Dimenticare il passo dopo il ciclo (lo scambio finale di Partition) nella conclusione.
 
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
+_Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf (casi 7–10)_

@@ -136,6 +136,54 @@ Le slide sono lineari: segui l'ordine sopra. Durante la lezione, per le pp. 4–
 
 ---
 
+## Lezione 06 — Divide et impera: Merge Sort
+**PDF:** [[06-Merge Sort.pdf]] (pp. 1–30)
+
+### In ordine di slide
+1. [[torre-di-hanoi]] — pp. 2–4 · S&T: il problema, la figura dei pioli, le 7 mosse per 3 dischi; algoritmo ricorsivo e $2^n - 1$ mosse (🧩)
+2. [[merge-sort]] — pp. 5–7 (poi pp. 13–15) · idea divide et impera, albero su ⟨5, 2, 8, 0, 4, 7, 1, 9, 3, 2, 6⟩; pseudocodice (p. 13), ricorrenza $aT(n/b) + D(n) + C(n)$ (p. 14), albero di ricorsione e $\Theta(n\lg n)$ (p. 15)
+3. [[merge]] — pp. 8–12 · pseudocodice con sentinelle, traccia su ⟨2, 4, 5, 7⟩ + ⟨1, 2, 3, 6⟩, invariante, costo $\Theta(n)$
+4. [[massimo-sottoarray]] — p. 16 · S&T: solo il titolo e il rimando al libro (cap. 4.1)
+5. [[metodo-di-sostituzione]] — pp. 18–20 (poi p. 26) · ipotesi + induzione, $2T(\lfloor n/2 \rfloor) + n \le cn\lg n$ con $c \ge 2$, perché due casi base
+6. [[metodo-albero-di-ricorrenza]] — pp. 21–27 · $3T(n/4) + cn^2$: livelli, costo per livello, serie geometrica, verifica con $d \ge \frac{16}{13}c$, anche $\Omega(n^2)$
+7. [[teorema-dell-esperto]] — pp. 28–30 · tre casi, gap, esempi $9T(n/3) + n$, $T(2n/3) + 1$, $3T(n/4) + n\lg n$, $2T(n/2) + n\lg n$
+8. [[lezione-06-merge-sort]] — riepilogo, refusi (titolo «Imera», parti intere), domande d'esame
+
+Già lette, aggiornate con questa lezione: *divide-et-impera* (p. 14: ricorrenza generale e tabella degli esempi), *equazioni-di-ricorrenza* (p. 17: definizione di ricorrenza e i tre metodi), *invariante-di-ciclo* (p. 10, collegamento a Merge), *ordinamento* (tabella con merge sort), *efficienza-degli-algoritmi* ($n\lg n$ ora dimostrato), *risoluzione-ricorrenze* (casi 2–5 e 7), *dimostrazioni-di-correttezza* (casi 7–8), *correttezza-per-induzione*, *logaritmi-nell-analisi*.
+
+### Ordine consigliato
+Le slide spezzano merge sort in due (pp. 5–7 e 13–15) con Merge in mezzo (pp. 8–12), e il metodo dell'albero compare una prima volta a p. 15 prima di essere spiegato (pp. 21–27). Ordine suggerito:
+1. *torre-di-hanoi*, come riscaldamento sulla ricorsione;
+2. *merge* per intero: è il mattone che Merge-Sort usa, e il suo costo $\Theta(n)$ serve nell'analisi;
+3. *merge-sort* per intero: la sezione «Soluzione con l'albero di ricorsione» anticipa il metodo che *metodo-albero-di-ricorrenza* spiega in generale;
+4. *equazioni-di-ricorrenza* (solo la sezione nuova «Ricorrenze divide et impera»), poi *metodo-di-sostituzione*, *metodo-albero-di-ricorrenza*, *teorema-dell-esperto*, nell'ordine delle slide;
+5. *massimo-sottoarray* quando vuoi: è solo un rimando al libro.
+
+---
+
+## Lezione 07 — Quicksort
+**PDF:** [[07-Quicksort.pdf]] (pp. 1–25)
+
+### In ordine di slide
+1. [[quicksort]] — pp. 2–4 (poi pp. 14–18, 21–22) · proprietà, divide/conquer/combine, pseudocodice; caso peggiore (p. 14), migliore (p. 15), 9:1 (pp. 16–17), medio (p. 18), dimostrazione $\Theta(n^2)$ per sostituzione (pp. 21–22)
+2. [[partition]] — pp. 5–13 · quattro aree, traccia su ⟨2, 8, 7, 1, 3, 5, 6, 4⟩, pseudocodice e costo $\Theta(n)$ (p. 12), invariante (p. 13)
+3. [[randomizzazione]] — p. 19 (poi pp. 20, 23) · caso peggiore cattivo e caso medio buono; tempo atteso contro caso medio
+4. [[quicksort-randomizzato]] — pp. 20, 23 · Randomized-Partition, tempo atteso $O(n\log n)$ (dimostrazione sul libro)
+5. [[nuts-and-bolts]] — pp. 24–25 · S&T: algoritmo $O(n^2)$ e randomizzato $O(n\log n)$ atteso (soluzioni 🧩)
+6. [[progettazione-divide-et-impera]] — esercizi: Torre di Hanoi (L06), Nuts and Bolts, massimo sottoarray
+7. [[lezione-07-quicksort]] — riepilogo, refusi e note, domande d'esame
+
+Già lette, con casi nuovi da questa lezione: *divide-et-impera* (p. 3), *metodo-albero-di-ricorrenza* (pp. 16–18), *teorema-dell-esperto* (p. 15), *metodo-di-sostituzione* (p. 21), *casi-di-complessita* (pp. 14–18, 23), *insertion-sort* (p. 14, confronto sul vettore ordinato), *ordinamento* (righe di quicksort), *invariante-di-ciclo* (p. 13), *risoluzione-ricorrenze* (caso 6), *dimostrazioni-di-correttezza* (casi 9–10).
+
+### Ordine consigliato
+Le slide presentano quicksort (pp. 2–4), poi Partition (pp. 5–13), poi tornano all'analisi di quicksort (pp. 14–18), la interrompono con la randomizzazione (pp. 19–20) e la riprendono con la dimostrazione del caso peggiore (pp. 21–22). Ordine suggerito:
+1. *partition* per intero: è il cuore di quicksort, e la traccia di pp. 7–11 è la prima chiamata dell'esempio;
+2. *quicksort* per intero, compresa la dimostrazione di pp. 21–22 (sta nella stessa sezione «Complessità»);
+3. *randomizzazione* e *quicksort-randomizzato*;
+4. *nuts-and-bolts*, poi *progettazione-divide-et-impera* per ripassare la progettazione su entrambe le lezioni.
+
+---
+
 ## Materiale di supporto — a1: convenzioni per lo pseudocodice
 **PDF:** [[a1-indicazioni_psuedocodice.pdf]] (pp. 1–4)
 
@@ -144,3 +192,4 @@ Le slide sono lineari: segui l'ordine sopra. Durante la lezione, per le pp. 4–
 
 _Aggiornato: 2026-09-26 — riorganizzato: una pagina = un link in tutto il file, ordine di prima comparsa nelle slide, ordine consigliato dove le slide non sono lineari_
 _Aggiornato: 2026-09-30 — aggiunta la lezione 05 (Insertion sort)_
+_Aggiornato: 2026-10-01 — aggiunte le lezioni 06 (Merge Sort) e 07 (Quicksort)_

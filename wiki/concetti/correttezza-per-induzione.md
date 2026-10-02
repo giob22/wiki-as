@@ -65,6 +65,8 @@ Qui basta l'induzione **semplice** (si usa solo $S(n-1)$); l'induzione **forte**
 - [[invariante-di-ciclo]] — l'invariante è un'induzione sul numero di iterazioni
 - [[equazioni-di-ricorrenza]] — stessa struttura (caso base + passo) usata per il costo
 - [[optimal-scheduling]] — dimostrazione per induzione sul numero di intervalli
+- [[merge-sort]], [[quicksort]], [[torre-di-hanoi]], [[nuts-and-bolts]] — induzione **forte** sulla dimensione: i sottoproblemi sono metà, parti qualsiasi o $n - 1$ (🧩)
+- [[metodo-di-sostituzione]] — la stessa induzione, usata per dimostrare un limite sul costo invece della correttezza
 - [[dimostrazioni-di-correttezza]] — esercizi
 
 ## Fonti
@@ -74,3 +76,4 @@ Qui basta l'induzione **semplice** (si usa solo $S(n-1)$); l'induzione **forte**
 
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
 _Aggiornato: 2026-10-01 — collegamento a correttezza-parziale-e-totale_
+_Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_

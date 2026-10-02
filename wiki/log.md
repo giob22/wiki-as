@@ -93,3 +93,22 @@ Filtra ultimi 10: `grep "^## " wiki/log.md | tail -10`
 ## [2026-10-01] query → pagina | correttezza-parziale-e-totale
 - nuova pagina concetto [[correttezza-parziale-e-totale]] dalla spiegazione in chat: definizioni (01 p. 9, 03 p. 16), formalizzazione con pre/post-condizione (🧩), tabella «quale strumento dimostra cosa», esempio parzialmente ma non totalmente corretto (🧩), esempi somma_iterativa e somma_ricorsiva
 - collegata da lezioni.md (lezione 03, voce 6, e ordine consigliato), index.md, algoritmo-e-problema, invariante-di-ciclo, correttezza-per-induzione
+
+## [2026-10-01] ingest | 06-Merge Sort.pdf (Divide et impera) | pagine coperte: 1-30
+- fonte [[lezione-06-merge-sort]]; entità nuove [[torre-di-hanoi]], [[merge]], [[merge-sort]], [[massimo-sottoarray]]; concetti nuovi [[metodo-di-sostituzione]], [[metodo-albero-di-ricorrenza]], [[teorema-dell-esperto]]
+- derivazioni espanse: costo di Merge riga per riga, dimensioni ⌈n/2⌉ e ⌊n/2⌋, albero di merge sort con verifica per induzione, sostituzione con c ≥ 2 e casi base T(2), T(3), somma geometrica 16/13, d ≥ 16c/13, esempi dell'esperto con soluzioni esatte, gap 2T(n/2) + n lg n = Θ(n lg² n) (🧩)
+- aggiornati [[divide-et-impera]] (ricorrenza generale, tabella esempi), [[equazioni-di-ricorrenza]] (definizione di p. 17, tolto il TODO), [[ordinamento]], [[efficienza-degli-algoritmi]], [[invariante-di-ciclo]], [[correttezza-per-induzione]], [[logaritmi-nell-analisi]], [[insertion-sort]], [[stima-dei-tempi-di-esecuzione]], esercizi [[risoluzione-ricorrenze]] (casi 2–5, 7) e [[dimostrazioni-di-correttezza]] (casi 7–8)
+- 16 figure in raw/assets (06-merge-sort-pN-*.png)
+
+## [2026-10-01] ingest | 07-Quicksort.pdf | pagine coperte: 1-25
+- fonte [[lezione-07-quicksort]]; entità nuove [[quicksort]], [[partition]], [[quicksort-randomizzato]], [[nuts-and-bolts]]; concetto nuovo [[randomizzazione]]; esercizio nuovo [[progettazione-divide-et-impera]]
+- derivazioni espanse: costo e invariante di Partition (conservazione nei due casi), serie aritmetica del caso peggiore, esperto per il caso migliore, albero 9:1 con log_{10/9} n, alternanza buona/cattiva, sostituzione con massimo agli estremi e caso base T(0) (🧩)
+- tempo atteso del randomizzato: rimandato al libro come nella slide (📚 Cormen §7.4.2), non ricostruito
+- 14 figure in raw/assets (07-quicksort-pN-*.png)
+- verifiche numeriche in [[divide_et_impera.py]]; 8 animazioni nuove in output/animazioni (merge, merge-sort, partition, quicksort, quicksort-randomizzato, torre-di-hanoi, nuts-and-bolts, nuts-and-bolts-quadratico), controllate estraendo i fotogrammi
+- [[lezioni]]: lezioni 06 e 07 in ordine di slide, «Già lette» in corsivo, ordine consigliato (Merge prima di Merge-Sort, Partition prima di Quicksort); nessun link ripetuto
+- controlli: tutte le pagine di 06 e 07 citate, nessun link non risolto, nessun file orfano, ogni algoritmo con animazione
+
+## [2026-10-02] update | findmatch — versione con while
+- [[findmatch]]: aggiunta la versione alternativa con `while` e flag `trovato` indicata dal docente a lezione (non nel PDF, codice ricostruito 🧩), con invariante, funzione variante e tabella costo × esecuzioni ($k$ iterazioni, $t_i$ test interni); stessa complessità $O(nm)$
+- equivalenza con la versione con `for` verificata su 2005 casi in [[stringhe_e_logaritmi.py]]; nota in [[lezione-05-insertion-sort]]

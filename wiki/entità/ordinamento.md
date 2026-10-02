@@ -44,11 +44,13 @@ L'ordinamento serve come passo di molti altri problemi: **Searching**, **Closest
 |-----------|---------------|---------------|-------------------|--------|
 | [[insertion-sort]] | $\Theta(n)$ (già ordinato) | $\Theta(n^2)$ (ordine decrescente) | $\Theta(1)$, sul posto | [[05-Insertion sort.pdf#page=20]], [[05-Insertion sort.pdf#page=22]] |
 | [[selection-sort]] | $\Theta(n^2)$ | $\Theta(n^2)$ | $\Theta(1)$ (🧩) | [[05-Insertion sort.pdf#page=28]] |
-| merge sort | — | proporzionale a $n \log n$ | — | [[01-Introduzione.pdf#page=11]] |
+| [[merge-sort]] | $\Theta(n\lg n)$ | $\Theta(n\lg n)$ | $\Theta(n)$, **non** sul posto | [[06-Merge Sort.pdf#page=6]], [[06-Merge Sort.pdf#page=15]] |
+| [[quicksort]] | $\Theta(n\lg n)$ (partizioni bilanciate) | $\Theta(n^2)$ (vettore ordinato) | sul posto (pila da $\Theta(\lg n)$ a $\Theta(n)$, 🧩) | [[07-Quicksort.pdf#page=2]], [[07-Quicksort.pdf#page=14]], [[07-Quicksort.pdf#page=15]] |
+| [[quicksort-randomizzato]] | — | $\Theta(n^2)$ (improbabile); **atteso** $O(n\log n)$ | sul posto | [[07-Quicksort.pdf#page=20]], [[07-Quicksort.pdf#page=23]] |
 
 Confronto numerico su $n = 10^6$ a $10^9$ op/s: ≈ 16.7 minuti (insertion sort, $n^2$) contro ≈ 0.02 secondi (merge sort, $n \log n$) — derivazione in [[efficienza-degli-algoritmi]].
 
-> TODO: da espandere quando le lezioni su divide et impera presenteranno merge sort.
+> 🧩 Osservazione mia sulla tabella: l'input già ordinato è il caso **migliore** di insertion sort e il caso **peggiore** di quicksort con pivot $A[r]$ ([[07-Quicksort.pdf#page=14]]); merge sort non distingue gli input. Merge sort e insertion sort sono stabili, quicksort no (dettagli nelle pagine degli algoritmi).
 
 ## Altre occorrenze
 
@@ -59,7 +61,8 @@ Confronto numerico su $n = 10^6$ a $10^9$ op/s: ≈ 16.7 minuti (insertion sort,
 
 ## Fonti
 
-- [[lezione-01-introduzione]], [[lezione-05-insertion-sort]]
+- [[lezione-01-introduzione]], [[lezione-05-insertion-sort]], [[lezione-06-merge-sort]], [[lezione-07-quicksort]]
 - [[01-Introduzione.pdf#page=7]], [[01-Introduzione.pdf#page=11]], [[05-Insertion sort.pdf#page=2]], [[05-Insertion sort.pdf#page=3]]
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf (definizione di p. 2, applicazioni di p. 3, tabella degli algoritmi)_
+_Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_

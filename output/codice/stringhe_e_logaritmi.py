@@ -29,6 +29,28 @@ def findmatch(p, t):
     return -1, confronti, righe
 
 
+def findmatch_while(p, t):
+    """Versione con while e flag (indicazione del docente a lezione, codice ricostruito nel wiki).
+    Restituisce (posizione o -1, test del while interno, iterazioni k del while esterno)."""
+    m, n = len(p), len(t)                    # righe 4-5
+    trovato = False                          # riga 3
+    i = 0                                    # riga 6
+    test_interni, k = 0, 0
+    while i <= n - m and not trovato:        # riga 7
+        k += 1
+        j = 0                                # riga 8
+        while True:                          # riga 9: while ((j<m) && (t[i+j]==p[j]))
+            test_interni += 1
+            if not (j < m and t[i + j] == p[j]):
+                break
+            j += 1                           # riga 10
+        if j == m:                           # riga 11
+            trovato = True
+        else:                                # riga 12
+            i += 1
+    return (i if trovato else -1), test_interni, k   # righe 14-15
+
+
 moltiplicazioni = 0
 
 
@@ -57,6 +79,23 @@ if __name__ == "__main__":
     for n, m in [(10, 3), (100, 10), (100, 50), (1000, 500)]:
         _, c, _ = findmatch("a" * (m - 1) + "b", "a" * n)
         print(f"{n:>5} {m:>4} | {c:>9} | {(n - m + 1) * m:>9}")
+
+    print("\n== findmatch con while e flag: stessi risultati della versione con for ==")
+    import random
+    rng = random.Random(1)
+    casi = [("abba", "aababba"), ("a" * 9 + "b", "a" * 100), ("b", "aaa"), ("abc", "abc"), ("ab", "a")]
+    casi += [("".join(rng.choice("ab") for _ in range(rng.randint(1, 4))),
+              "".join(rng.choice("ab") for _ in range(rng.randint(0, 12)))) for _ in range(2000)]
+    for pp, tt in casi:
+        assert findmatch(pp, tt)[0] == findmatch_while(pp, tt)[0] == tt.find(pp)
+    print(f"  {len(casi)} casi: stessa posizione restituita (anche -1)")
+    pos, test, k = findmatch_while("abba", "aababba")
+    print(f"  abba in aababba: posizione {pos}, iterazioni del while esterno k = {k}, test del while interno = {test}")
+    for n, m in [(10, 3), (1000, 500)]:
+        pos, test, k = findmatch_while("a" * (m - 1) + "b", "a" * n)
+        print(f"  peggiore n={n}, m={m}: k = {k} = n-m+1, test interni = {test} = (n-m+1)*m = {(n - m + 1) * m}")
+    pos, test, k = findmatch_while("abc", "abcxyz")
+    print(f"  migliore (p in posizione 0): k = {k}, test interni = {test} = m+1")
 
     print("\n== power(a, n): moltiplicazioni contro 2(floor(lg n)+1) ==")
     for n in [1, 2, 3, 7, 8, 15, 16, 1000, 10**6]:

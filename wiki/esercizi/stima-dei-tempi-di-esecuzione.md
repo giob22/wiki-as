@@ -20,7 +20,7 @@ difficoltà: bassa
 ## Casi svolti
 
 ### Caso 1 — insertion sort vs merge sort ([[01-Introduzione.pdf#page=11]])
-$n = 10^6$, $10^9$ op/s: $t_{IS} = 10^{12}/10^9 = 1000$ s $\approx 16.7$ min; $t_{MS} = 10^6 \cdot 19.93 / 10^9 \approx 0.02$ s. Passaggi in [[efficienza-degli-algoritmi]].
+$n = 10^6$, $10^9$ op/s: $t_{IS} = 10^{12}/10^9 = 1000$ s $\approx 16.7$ min; $t_{MS} = 10^6 \cdot 19.93 / 10^9 \approx 0.02$ s. Passaggi in [[efficienza-degli-algoritmi]]; il costo $n\lg n$ di merge sort è dimostrato in [[merge-sort]] ([[06-Merge Sort.pdf#page=15]]).
 
 ### Caso 2 — tabella dell'$n$ massimo ([[01-Introduzione.pdf#page=12]])
 **Traccia:** «For each function $f(n)$ and time $t$ in the following table, determine the largest size $n$ of a problem that can be solved in time $t$, assuming that the algorithm to solve the problem takes $f(n)$ microseconds.» La tabella nella slide è **vuota**.
@@ -75,3 +75,4 @@ $$ \log_{3/2} 10^6 = \frac{\ln 10^6}{\ln 1.5} = \frac{13.8155}{0.4055} = 34.07 \
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf e 02-Notazione asintotica.pdf_
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
+_Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_

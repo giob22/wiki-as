@@ -715,7 +715,412 @@ def exhaustive_scheduling():
     an.salva("animazione-exhaustive-scheduling.svg")
 
 
+# =================================================================== DIVIDE ET IMPERA (lezioni 06-07)
+PSEUDO_MERGE = [(1, "n1 ← q-p+1"), (2, "n2 ← r-q"), (3, "// create L[1..n1+1] and R[1..n2+1]"),
+                (4, "for i ← 1 to n1"), (5, "    do L[i] ← A[p+i-1]"), (6, "for j ← 1 to n2"),
+                (7, "    do R[j] ← A[q+j]"), (8, "L[n1+1] ← R[n2+1] ← ∞"), (9, "i ← j ← 1"),
+                (10, "for k ← p to r"), (11, "    do if L[i] ≤ R[j]"), (12, "        then A[k] ← L[i]"),
+                (13, "             i ← i+1"), (14, "        else A[k] ← R[j]"), (15, "             j ← j+1")]
+
+
+def merge():
+    an = Animazione("Merge(A, p, q, r) su A[p..r] = ⟨2, 4, 5, 7, 1, 2, 3, 6⟩ (slide 06 p. 9)", 820, 470, 1.1)
+    A = [None, 2, 4, 5, 7, 1, 2, 3, 6]
+    p, q, r = 1, 4, 8
+    L = [None] + A[p:q + 1] + ["∞"]
+    R = [None] + A[q + 1:r + 1] + ["∞"]
+    X0 = 30
+
+    def scena(righe, k=None, i=None, j=None, copiati=False, scelto=None, nota=""):
+        col = {kk: ORDINATO for kk in range(p, k)} if k else {}
+        s = t(X0, 72, "A", 16, TESTO, bold=True) + array(A[1:], X0 + 20, 80, cw=46, ch=40, colori=col)
+        s += t(X0 + 20 + 23, 66, "p", 12, BLU, "middle", True) + t(X0 + 20 + 3 * 46 + 23, 66, "q", 12, BLU, "middle", True)
+        s += t(X0 + 20 + 7 * 46 + 23, 66, "r", 12, BLU, "middle", True)
+        if k and k <= r:
+            s += freccia_su(X0 + 20 + (k - 1) * 46 + 23, 122, "k", ROSSO)
+        if copiati:
+            cl = {i: ("#d9ecf7" if scelto == "L" else "#ffffff")} if i else {}
+            cr = {j: ("#d9ecf7" if scelto == "R" else "#ffffff")} if j else {}
+            s += t(X0, 222, "L", 16, TESTO, bold=True) + array(L[1:], X0 + 20, 200, cw=40, ch=36, colori=cl)
+            s += t(X0, 302, "R", 16, TESTO, bold=True) + array(R[1:], X0 + 20, 280, cw=40, ch=36, colori=cr)
+            if i:
+                s += t(X0 + 20 + (i - 1) * 40 + 20, 252, "i", 14, BLU, "middle", True)
+            if j:
+                s += t(X0 + 20 + (j - 1) * 40 + 20, 332, "j", 14, BLU, "middle", True)
+        if k:
+            s += t(X0, 372, f"invariante: A[p..k−1] = i {k - p} elementi più piccoli di L e R, ordinati", 13, VERDE, bold=True)
+        if nota:
+            s += t(X0, 395, nota, 13, TESTO)
+        s += an.pseudocodice(PSEUDO_MERGE, righe, 470, 60, 340, 18)
+        return s
+
+    an.frame(scena(set()), "le due metà A[p..q] e A[q+1..r] sono già ordinate")
+    an.frame(scena({1, 2, 3, 4, 5, 6, 7}, copiati=True), "n1 = 4, n2 = 4: copio A[p..q] in L e A[q+1..r] in R")
+    an.frame(scena({8, 9}, copiati=True, i=1, j=1), "metto le sentinelle ∞ in fondo a L e R; i ← j ← 1")
+    i = j = 1
+    for k in range(p, r + 1):
+        if L[i] != "∞" and (R[j] == "∞" or L[i] <= R[j]):
+            an.frame(scena({10, 11}, k, i, j, True, "L"), f"k = {k}: L[{i}] = {L[i]} ≤ R[{j}] = {R[j]}? sì")
+            A[k] = L[i]; i += 1
+            an.frame(scena({12, 13}, k + 1, i, j, True), f"A[{k}] ← {A[k]}, i ← {i}")
+        else:
+            an.frame(scena({10, 11}, k, i, j, True, "R"), f"k = {k}: L[{i}] = {L[i]} ≤ R[{j}] = {R[j]}? no")
+            A[k] = R[j]; j += 1
+            an.frame(scena({14, 15}, k + 1, i, j, True), f"A[{k}] ← {A[k]}, j ← {j}")
+    an.frame(scena(set(), r + 1, i, j, True, nota="in L e R restano solo le due sentinelle ∞ (slide 06 p. 11)"),
+             "k = r + 1: A[p..r] = ⟨1, 2, 2, 3, 4, 5, 6, 7⟩ ordinato; n = 8 iterazioni → Θ(n)", 2.5)
+    an.salva("animazione-merge.svg")
+
+
+def merge_sort():
+    PSEUDO = [(1, "if p<r"), (2, "    q ← ⌊(p+r)/2⌋"), (3, "    Merge-Sort (A,p,q)"),
+              (4, "    Merge-Sort (A,q+1,r)"), (5, "    Merge (A,p,q,r)")]
+    an = Animazione("Merge-Sort(A, 1, 11) su ⟨5, 2, 8, 0, 4, 7, 1, 9, 3, 2, 6⟩ (slide 06 p. 7)", 820, 520, 0.9)
+    A = [None, 5, 2, 8, 0, 4, 7, 1, 9, 3, 2, 6]
+    n = 11
+    cw, X0, Y0, DY = 66, 48, 70, 62
+    nodi = {}                    # (p, r) -> (profondita', valori, stato)
+
+    def scena(righe, attivo=None, nota=""):
+        s = ""
+        for (pp, rr), (prof, val, stato) in sorted(nodi.items()):
+            x = X0 + (pp - 1) * cw
+            y = Y0 + prof * DY
+            w = (rr - pp + 1) * cw - 6
+            fill = ORDINATO if stato == "ordinato" else "#ffffff"
+            bordo = ROSSO if (pp, rr) == attivo else (VERDE if stato == "ordinato" else GRIGIO)
+            s += rect(x, y, w, 40, fill=fill, stroke=bordo, sw=2.5 if (pp, rr) == attivo else 1.5)
+            s += t(x + w / 2, y + 27, "  ".join(str(v) for v in val), 17, TESTO, "middle", True, mono=True)
+            s += t(x + 2, y - 4, f"[{pp}..{rr}]", 10, GRIGIO)
+        s += t(X0, 400, "bianco: da ordinare · verde: ordinato (dopo Merge) · rosso: chiamata attiva", 12, GRIGIO)
+        if nota:
+            s += t(X0, 422, nota, 13, TESTO)
+        s += an.pseudocodice(PSEUDO, righe, 560, 400, 240, 15)
+        return s
+
+    def ms(pp, rr, prof):
+        nodi[(pp, rr)] = (prof, A[pp:rr + 1], "da ordinare")
+        if pp < rr:
+            q = (pp + rr) // 2
+            an.frame(scena({1, 2}, (pp, rr)), f"Merge-Sort(A, {pp}, {rr}): q = ⌊({pp}+{rr})/2⌋ = {q}, divido in [{pp}..{q}] e [{q + 1}..{rr}]")
+            ms(pp, q, prof + 1)
+            ms(q + 1, rr, prof + 1)
+            A[pp:rr + 1] = sorted(A[pp:rr + 1])
+            nodi[(pp, rr)] = (prof, A[pp:rr + 1], "ordinato")
+            an.frame(scena({5}, (pp, rr)), f"Merge(A, {pp}, {q}, {rr}): fondo le due metà ordinate → {A[pp:rr + 1]}")
+        else:
+            nodi[(pp, rr)] = (prof, A[pp:rr + 1], "ordinato")
+            an.frame(scena({1}, (pp, rr)), f"Merge-Sort(A, {pp}, {rr}): p = r, un solo elemento, già ordinato")
+
+    an.frame(scena(set()), "si invoca Merge-Sort(A, 1, n) con n = 11")
+    ms(1, n, 0)
+    an.frame(scena(set(), nota="non sul posto: Merge usa gli array ausiliari L e R (slide 06 p. 6)"),
+             "risultato ⟨0, 1, 2, 2, 3, 4, 5, 6, 7, 8, 9⟩: albero di ⌈lg 11⌉ + 1 = 5 livelli", 2.5)
+    an.salva("animazione-merge-sort.svg")
+
+
+PSEUDO_PARTITION = [(1, "x ← A[r]"), (2, "i ← p-1"), (3, "for j ← p to r-1"), (4, "    if A[j] ≤ x"),
+                    (5, "        i ← i+1"), (6, "        exchange A[i] ↔ A[j]"), (7, "exchange A[i+1] ↔ A[r]"),
+                    (8, "return i+1")]
+
+
+def scena_partition(an, A, p, r, i, j, righe, x0=40, y0=110, cw=56, extra="", finale=None):
+    """Quattro aree di slide 07 p.5: p..i giallo (<= x), i+1..j-1 rosso (> x), j..r-1 bianco, r pivot."""
+    col, tcol = {}, {}
+    for k in range(p, r + 1):
+        if finale is not None:
+            col[k] = "#d0e8f7" if k == finale else ("#fff3b0" if k < finale else "#fbc8c3")
+        elif k == r:
+            col[k] = "#d0e8f7"
+        elif k <= i:
+            col[k] = "#fff3b0"
+        elif j is not None and i + 1 <= k <= j - 1:
+            col[k] = "#fbc8c3"
+    s = array(A[1:], x0, y0, cw=cw, ch=48, colori=col)
+    s += t(x0 + (p - 1) * cw + cw / 2, y0 - 26, "p", 13, BLU, "middle", True)
+    s += t(x0 + (r - 1) * cw + cw / 2, y0 - 26, "r", 13, BLU, "middle", True)
+    if finale is None:
+        if i >= p:
+            s += freccia_su(x0 + (i - 1) * cw + cw / 2 - 8, y0 + 50, "i", VERDE)
+        else:
+            s += t(x0 + (p - 1) * cw - 6, y0 + 92, f"i = {i}", 13, VERDE, "end", True)
+        if j is not None and j <= r:
+            s += freccia_su(x0 + (j - 1) * cw + cw / 2 + 8, y0 + 50, "j", ROSSO)
+    s += t(x0, y0 + 130, "giallo: ≤ pivot · rosso: > pivot · bianco: non ancora analizzati · azzurro: pivot", 12, GRIGIO)
+    s += extra
+    return s
+
+
+def partition():
+    an = Animazione("Partition(A, 1, 8) su ⟨2, 8, 7, 1, 3, 5, 6, 4⟩, pivot x = A[r] = 4 (slide 07 pp. 5–12)", 820, 420, 1.2)
+    A = [None, 2, 8, 7, 1, 3, 5, 6, 4]
+    p, r = 1, 8
+    x = A[r]
+    pse = lambda righe: an.pseudocodice(PSEUDO_PARTITION, righe, 520, 90, 280)
+    an.frame(scena_partition(an, A, p, r, p - 1, p, set(), extra=pse({1, 2})), "x ← A[r] = 4, i ← p − 1 = 0: le prime due aree sono vuote")
+    i = p - 1
+    for j in range(p, r):
+        if A[j] <= x:
+            an.frame(scena_partition(an, A, p, r, i, j, set(), extra=pse({3, 4})), f"j = {j}: A[{j}] = {A[j]} ≤ 4? sì")
+            i += 1
+            A[i], A[j] = A[j], A[i]
+            an.frame(scena_partition(an, A, p, r, i, j + 1, set(), extra=pse({5, 6})),
+                     f"i ← {i}, scambio A[{i}] ↔ A[{j}]: l'elemento entra nell'area gialla")
+        else:
+            an.frame(scena_partition(an, A, p, r, i, j, set(), extra=pse({3, 4})), f"j = {j}: A[{j}] = {A[j]} ≤ 4? no")
+            an.frame(scena_partition(an, A, p, r, i, j + 1, set(), extra=pse({3})), f"basta far avanzare j: {A[j]} resta nell'area rossa")
+    A[i + 1], A[r] = A[r], A[i + 1]
+    an.frame(scena_partition(an, A, p, r, i, None, set(), extra=pse({7, 8}), finale=i + 1),
+             f"fine del ciclo: scambio A[{i + 1}] ↔ A[r], il pivot va in posizione q = {i + 1}; return {i + 1}", 2.5)
+    an.salva("animazione-partition.svg")
+
+
+def _quicksort_frames(an, A, pse, scegli=None, titolo_chiamata="Quicksort"):
+    n = len(A) - 1
+    fissati = set()
+
+    def colori(p, r):
+        c = {k: ORDINATO for k in fissati}
+        for k in range(p, r + 1):
+            if k not in fissati:
+                c[k] = "#fdf0c4"
+        return c
+
+    def scena(righe, p, r, nota=""):
+        s = array(A[1:], 40, 110, cw=56, ch=48, colori=colori(p, r))
+        if p == r:
+            s += t(40 + (p - 1) * 56 + 28, 84, "p,r", 13, BLU, "middle", True)
+        elif p < r:
+            s += t(40 + (p - 1) * 56 + 28, 84, "p", 13, BLU, "middle", True)
+            s += t(40 + (r - 1) * 56 + 28, 84, "r", 13, BLU, "middle", True)
+        s += t(40, 200, "giallo: chiamata attiva · verde: pivot al suo posto", 12, GRIGIO)
+        if nota:
+            s += t(40, 225, nota, 13, TESTO)
+        s += pse(righe)
+        return s
+
+    def qs(p, r, prof):
+        if p < r:
+            nota = ""
+            if scegli:
+                k = scegli(p, r)
+                A[r], A[k] = A[k], A[r]
+                nota = f"Random({p}, {r}) = {k}: scambio A[r] ↔ A[{k}], il pivot è {A[r]}"
+                an.frame(scena({2, 5, 6}, p, r, nota),
+                         f"{titolo_chiamata}(A, {p}, {r}) — profondità {prof}: pivot scelto a caso")
+            q = _partition_semplice(A, p, r)
+            fissati.add(q)
+            an.frame(scena({2} if titolo_chiamata == "Quicksort" else {7}, p, r, f"pivot {A[q]} in posizione q = {q}"),
+                     f"{titolo_chiamata}(A, {p}, {r}) — profondità {prof}: Partition → q = {q}")
+            qs(p, q - 1, prof + 1)
+            qs(q + 1, r, prof + 1)
+        elif p == r:
+            fissati.add(p)
+            an.frame(scena({1}, p, r),
+                     f"{titolo_chiamata}(A, {p}, {r}): un solo elemento, niente da fare")
+
+    an.frame(scena(set(), 1, n), f"si invoca {titolo_chiamata}(A, 1, {n})")
+    qs(1, n, 0)
+    fissati.update(range(1, n + 1))
+    return scena
+
+
+def _partition_semplice(A, p, r):
+    x, i = A[r], p - 1
+    for j in range(p, r):
+        if A[j] <= x:
+            i += 1
+            A[i], A[j] = A[j], A[i]
+    A[i + 1], A[r] = A[r], A[i + 1]
+    return i + 1
+
+
+def quicksort():
+    PSEUDO = [(1, "if p<r"), (2, "    q ← Partition (A,p,r)"), (3, "    Quicksort (A,p,q-1)"), (4, "    Quicksort (A,q+1,r)")]
+    an = Animazione("Quicksort(A, 1, 8) su ⟨2, 8, 7, 1, 3, 5, 6, 4⟩ (slide 07 pp. 4–12)", 820, 400, 1.3)
+    A = [None, 2, 8, 7, 1, 3, 5, 6, 4]
+    pse = lambda righe: an.pseudocodice(PSEUDO, righe, 520, 260, 280)
+    scena = _quicksort_frames(an, A, pse)
+    an.frame(scena(set(), 1, 0), "ordinato sul posto: ⟨1, 2, 3, 4, 5, 6, 7, 8⟩ (Combine: niente da fare)", 2.5)
+    an.salva("animazione-quicksort.svg")
+
+
+def quicksort_randomizzato():
+    import random as _r
+    PSEUDO = [(0, "Randomized-Quicksort (A,p,r)"), (1, "  if p<r"), (2, "    q ← Randomized-Partition (A,p,r)"),
+              (3, "    Randomized-Quicksort (A,p,q-1)"), (4, "    Randomized-Quicksort (A,q+1,r)"),
+              (0, "Randomized-Partition (A,p,r)"), (5, "  i ← Random (p,r)"),
+              (6, "  exchange A[r] ↔ A[i]"), (7, "  return Partition (A,p,r)")]
+    an = Animazione("Randomized-Quicksort su ⟨1, 2, …, 8⟩ già ordinato (istanza mia; slide 07 p. 20)", 820, 440, 1.3)
+    A = [None, 1, 2, 3, 4, 5, 6, 7, 8]
+    rng = _r.Random(4)
+    pse = lambda righe: an.pseudocodice(PSEUDO, righe, 425, 205, 385, 19)
+    scena = _quicksort_frames(an, A, pse, scegli=lambda p, r: rng.randint(p, r), titolo_chiamata="Randomized-Quicksort")
+    an.frame(scena(set(), 1, 0, "con pivot fisso A[r] la profondità sarebbe 7"),
+             "ordinato: il pivot casuale evita le partizioni n−1 / 0 dell'array ordinato", 2.5)
+    an.salva("animazione-quicksort-randomizzato.svg")
+
+
+def torre_di_hanoi():
+    PSEUDO = [(0, "HANOI(n, da, a, via)"), (1, "  if n > 0"), (2, "    HANOI(n−1, da, via, a)"),
+              (3, "    sposta disco n: da → a"), (4, "    HANOI(n−1, via, a, da)")]
+    an = Animazione("Torre di Hanoi con 3 dischi da A a C (slide 06 pp. 2–4; soluzione ricorsiva mia)", 820, 420, 1.4)
+    pioli = {"A": [3, 2, 1], "B": [], "C": []}
+    colori_disco = {1: ARANCIO, 2: "#c8c8c8", 3: VERDE}
+    PX = {"A": 110, "B": 260, "C": 410}
+
+    def scena(righe, k, nota, chiamata=""):
+        s = ""
+        for nome, x in PX.items():
+            s += rect(x - 4, 110, 8, 170, fill=BLU, stroke="none", rx=2) + t(x, 100, nome, 16, TESTO, "middle", True)
+            for liv, d in enumerate(pioli[nome]):
+                w = 40 + d * 34
+                s += rect(x - w / 2, 262 - liv * 22, w, 20, fill=colori_disco[d], stroke=TESTO, sw=1, rx=6)
+                s += t(x, 277 - liv * 22, d, 12, TESTO, "middle", True)
+        s += line(30, 283, 520, 283, TESTO, 3)
+        s += t(40, 315, f"mosse eseguite: {k} / 7 = 2³ − 1", 14, TESTO, bold=True)
+        if chiamata:
+            s += t(40, 338, chiamata, 13, VIOLA, mono=True)
+        s += an.pseudocodice(PSEUDO, righe, 548, 110, 268, 19)
+        return s
+
+    mosse = []
+
+    def hanoi(n, da, a, via, prof):
+        if n == 0:
+            return
+        hanoi(n - 1, da, via, a, prof + 1)
+        mosse.append((n, da, a, f"{'  ' * prof}HANOI({n}, {da}, {a}, {via})"))
+        hanoi(n - 1, via, a, da, prof + 1)
+
+    hanoi(3, "A", "C", "B", 0)
+    an.frame(scena(set(), 0, ""), "stato iniziale: tre dischi su A, il più grande in basso (slide 06 p. 3)")
+    for k, (d, da, a, chiamata) in enumerate(mosse, 1):
+        pioli[a].append(pioli[da].pop())
+        an.frame(scena({3}, k, "", "chiamata attiva: " + chiamata.strip()), f"mossa {k}: disco {d} da {da} a {a}")
+    an.frame(scena(set(), 7, ""), "tutti i dischi su C: 7 mosse, come nella sequenza di p. 4", 2.5)
+    an.salva("animazione-torre-di-hanoi.svg")
+
+
+def nuts_and_bolts():
+    import random as _r
+    PSEUDO = [(0, "NUTS-BOLTS(D, B)"), (1, "  if D = ∅ return"), (2, "  d ← dado scelto a caso in D"),
+              (3, "  dividi B con d: B<, b, B>"), (4, "  dividi D con b: D<, D>"),
+              (5, "  accoppia d con b"), (6, "  NUTS-BOLTS(D<, B<)"), (7, "  NUTS-BOLTS(D>, B>)")]
+    an = Animazione("Nuts and Bolts randomizzato su 6 coppie (istanza mia; slide 07 pp. 24–25)", 820, 440, 1.5)
+    rng = _r.Random(3)
+    dadi = [4, 1, 6, 3, 5, 2]
+    bulloni = [3, 6, 2, 5, 1, 4]
+    coppie = []
+    test = [0]
+
+    def riga(vals, y, etichetta, evid=None, forma="dado"):
+        s = t(30, y + 26, etichetta, 14, TESTO, bold=True)
+        for k, v in enumerate(vals):
+            x = 110 + k * 56
+            col = EVID if v == evid else "#ffffff"
+            if forma == "dado":
+                s += circle(x + 22, y + 20, 20, col, TESTO, 1.5)
+            else:
+                s += rect(x + 4, y, 36, 40, fill=col, stroke=TESTO, sw=1.5, rx=2)
+            s += t(x + 22, y + 26, v, 16, TESTO, "middle", True)
+        return s
+
+    def scena(righe, D, B, nota="", evid=None):
+        s = riga(D, 70, "dadi", evid, "dado") + riga(B, 140, "bulloni", evid, "bullone")
+        s += t(30, 225, "coppie trovate: " + (", ".join(f"{d}↔{b}" for d, b in coppie) or "nessuna"), 14, VERDE, bold=True)
+        s += t(30, 250, f"test dado–bullone eseguiti: {test[0]}", 14, TESTO)
+        if nota:
+            s += t(30, 275, nota, 13, TESTO)
+        s += t(30, 300, "(i numeri sono le larghezze, che si possono solo confrontare dado contro bullone)", 12, GRIGIO)
+        s += an.pseudocodice(PSEUDO, righe, 480, 70, 330, 19)
+        return s
+
+    def ricorri(D, B):
+        if not D:
+            return
+        d = rng.choice(D)
+        an.frame(scena({1, 2}, D, B, f"sottoproblema con {len(D)} coppie: scelgo a caso il dado {d}", d), f"dado pivot {d}")
+        Bm = [b for b in B if b < d]; BM = [b for b in B if b > d]
+        test[0] += len(B)
+        an.frame(scena({3}, D, B, f"bulloni più stretti {Bm}, gemello {d}, più larghi {BM}", d),
+                 f"{len(B)} test: divido i bulloni con il dado {d}")
+        Dm = [x for x in D if x < d]; DM = [x for x in D if x > d]
+        test[0] += len(D) - 1
+        coppie.append((d, d))
+        an.frame(scena({4, 5}, D, B, f"dadi più stretti {Dm}, più larghi {DM}; accoppio {d}↔{d}", d),
+                 f"{len(D) - 1} test: divido i dadi con il bullone gemello")
+        ricorri(Dm, Bm)
+        ricorri(DM, BM)
+
+    an.frame(scena(set(), dadi, bulloni), "n = 6 dadi e 6 bulloni da accoppiare")
+    ricorri(dadi, bulloni)
+    an.frame(scena(set(), dadi, bulloni, "è Partition di quicksort applicata due volte: tempo atteso O(n log n)"),
+             f"tutte le 6 coppie trovate con {test[0]} test (il metodo quadratico ne fa fino a n(n+1)/2 = 21)", 2.5)
+    an.salva("animazione-nuts-and-bolts.svg")
+
+
+def nuts_and_bolts_quadratico():
+    PSEUDO = [(0, "NUTS-BOLTS-QUADRATICO(D, B)"), (1, "for i ← 1 to n"), (2, "    j ← i"),
+              (3, "    while D[j] non combacia con B[i]"), (4, "        j ← j+1"),
+              (5, "    exchange D[i] ↔ D[j]")]
+    an = Animazione("Nuts and Bolts quadratico su 6 coppie (istanza mia; slide 07 p. 25)", 820, 400, 0.9)
+    D = [None, 4, 1, 6, 3, 5, 2]
+    B = [None, 3, 6, 2, 5, 1, 4]
+    n = 6
+    test = [0]
+
+    def scena(righe, i=None, j=None, esito=None, nota=""):
+        s = t(30, 96, "bulloni B", 14, TESTO, bold=True) + t(30, 176, "dadi D", 14, TESTO, bold=True)
+        for k in range(1, n + 1):
+            x = 120 + (k - 1) * 56
+            s += t(x + 22, 62, k, 11, GRIGIO, "middle")
+            fatto = i is not None and k < i
+            colB = ORDINATO if fatto else (EVID if k == i else "#ffffff")
+            s += rect(x + 4, 70, 36, 40, fill=colB, stroke=TESTO, sw=1.5, rx=2) + t(x + 22, 96, B[k], 16, TESTO, "middle", True)
+            colD = ORDINATO if fatto else "#ffffff"
+            if k == j and esito is not None:
+                colD = "#d0e8f7" if esito else "#fbc8c3"
+            s += circle(x + 22, 170, 20, colD, TESTO, 1.5) + t(x + 22, 176, D[k], 16, TESTO, "middle", True)
+        if i is not None and i <= n:
+            s += t(120 + (i - 1) * 56 + 22, 132, "i", 14, BLU, "middle", True)
+        if j is not None and j <= n:
+            s += freccia_su(120 + (j - 1) * 56 + 22, 192, "j", ROSSO)
+        s += t(30, 268, f"test dado–bullone eseguiti: {test[0]}", 14, TESTO, bold=True)
+        s += t(30, 292, "verde: coppie già formate (D[1..i−1] combacia con B[1..i−1])", 12, GRIGIO)
+        if nota:
+            s += t(30, 316, nota, 13, TESTO)
+        s += an.pseudocodice(PSEUDO, righe, 468, 70, 345, 21)
+        return s
+
+    an.frame(scena(set()), "n = 6: per ogni bullone si cercano i dadi uno alla volta")
+    for i in range(1, n + 1):
+        j = i
+        while True:
+            test[0] += 1
+            ok = D[j] == B[i]
+            an.frame(scena({3} if ok else {3, 4}, i, j, ok, f"D[{j}] = {D[j]} contro B[{i}] = {B[i]}: " + ("combaciano" if ok else "non combaciano")),
+                     f"i = {i}, j = {j}: test n. {test[0]}")
+            if ok:
+                break
+            j += 1
+        D[i], D[j] = D[j], D[i]
+        an.frame(scena({5}, i + 1, None, None, f"exchange D[{i}] ↔ D[{j}]: il dado {D[i]} va accanto al suo bullone"),
+                 f"coppia {i} formata dopo {j - i + 1} test")
+    an.frame(scena(set(), n + 1, None, None, "nel caso peggiore n + (n−1) + … + 1 = n(n+1)/2 = 21 test"),
+             f"tutte le coppie formate con {test[0]} test: O(n²)", 2.5)
+    an.salva("animazione-nuts-and-bolts-quadratico.svg")
+
+
 if __name__ == "__main__":
+    merge()
+    merge_sort()
+    partition()
+    quicksort()
+    quicksort_randomizzato()
+    torre_di_hanoi()
+    nuts_and_bolts()
+    nuts_and_bolts_quadratico()
     insertion_sort()
     selection_sort()
     findmatch()

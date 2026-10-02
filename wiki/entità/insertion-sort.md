@@ -224,7 +224,8 @@ void InsertionSort (vector<T> A)
 - [[invariante-di-ciclo]] — l'invariante di p. 16 è l'esempio canonico
 - [[analisi-del-costo-riga-per-riga]] — stessa tecnica della somma iterativa, ma qui $t_j$ dipende dall'input
 - [[casi-di-complessita]] — caso migliore e peggiore con ordini di crescita diversi
-- [[efficienza-degli-algoritmi]] — $n^2$ contro $n\log n$ di merge sort
+- [[efficienza-degli-algoritmi]] — $n^2$ contro $n\log n$ di [[merge-sort]]
+- [[quicksort]] — stesso caso peggiore $\Theta(n^2)$, ma sul vettore ordinato, che per insertion sort è il caso migliore ([[07-Quicksort.pdf#page=14]])
 
 ## Fonti
 
@@ -233,3 +234,4 @@ void InsertionSort (vector<T> A)
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_
+_Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_

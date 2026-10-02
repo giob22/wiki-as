@@ -40,6 +40,7 @@ Slide del Prof. Marrone, a.a. 26/27 ([[05-Insertion sort.pdf#page=1]]). La lezio
 - pp. 26, 27, 29, 31: le domande («Dimostrarne la correttezza», «Valutare l'efficienza asintotica», «E la memoria?») non hanno soluzione nelle slide; nel wiki le risposte sono marcate 🧩.
 - p. 33: «≈ 35» è $\lceil \log_{3/2} 10^6 \rceil = \lceil 34.07 \rceil$; una simulazione che scarta anche l'elemento interrogato dà 33 domande. Stesso ordine di grandezza.
 - p. 2: parentesi chiusa di troppo nella definizione («$a'_n$)»).
+- p. 31: a lezione il docente ha indicato che il `for` con `return` interno «non è ottimale per il calcolo della complessità» e va sostituito da un `while` che termini alla prima occorrenza. La versione ricostruita (🧩) e la sua analisi sono in [[findmatch]] § Versione alternativa con `while`.
 
 ## Concetti introdotti
 
@@ -61,3 +62,4 @@ Slide del Prof. Marrone, a.a. 26/27 ([[05-Insertion sort.pdf#page=1]]). La lezio
 - Perché la base del logaritmo non conta asintoticamente? Quante moltiplicazioni richiede la potenza veloce?
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
+_Aggiornato: 2026-10-02 — versione alternativa con while (indicazione del docente a lezione)_

@@ -26,7 +26,7 @@ $$ t = \frac{f(n)}{v} $$
 - $v$ = operazioni al secondo (nella slide $v = 10^9$ op/s)
 - $t$ = tempo in secondi
 
-Esempi della fonte: [[insertion-sort]] ha costo proporzionale a $n^2$, merge sort a $n\log n$ ([[01-Introduzione.pdf#page=11]]).
+Esempi della fonte: [[insertion-sort]] ha costo proporzionale a $n^2$, [[merge-sort]] a $n\log n$ ([[01-Introduzione.pdf#page=11]]; dimostrato nella lezione 06, [[06-Merge Sort.pdf#page=15]]).
 
 ## Derivazioni
 
@@ -66,6 +66,7 @@ Motiva lo studio dell'analisi asintotica ([[notazione-asintotica]], [[tempo-di-e
 - [[tempo-di-esecuzione]] — come si conta formalmente il numero di operazioni
 - [[dominanza-asintotica]] — tabella dei tempi di [[02-Notazione asintotica.pdf#page=36]], stessa idea con 1 ns per operazione
 - [[stima-dei-tempi-di-esecuzione]] — esercizi numerici
+- [[quicksort]] — «tra i più efficienti» nella pratica perché i fattori nascosti in $\Theta(n\lg n)$ sono piccoli ([[07-Quicksort.pdf#page=2]]): a parità di ordine di crescita contano le costanti
 
 ## Fonti
 
@@ -75,3 +76,4 @@ Motiva lo studio dell'analisi asintotica ([[notazione-asintotica]], [[tempo-di-e
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
+_Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_

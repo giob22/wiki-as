@@ -91,6 +91,9 @@ Nella classifica di [[dominanza-asintotica]] $\log n$ sta appena sopra le costan
 - [[potenza-veloce]] — esempio di algoritmo $O(\lg n)$
 - [[dominanza-asintotica]] — posizione di $\log n$ nella classifica
 - [[notazione-asintotica]] — il cambio di base è un fattore costante
+- [[metodo-albero-di-ricorrenza]] — il numero di livelli è $\log_b n + 1$ (dimezzando: $\lg n + 1$ livelli in [[merge-sort]])
+- [[quicksort]] — con split 9:1 la profondità è $\log_{10/9} n \approx 6.58\lg n$: ancora $\Theta(\lg n)$, come lo split sbilanciato di p. 33 ([[07-Quicksort.pdf#page=17]])
+- [[teorema-dell-esperto]] — esempio $T(2n/3) + 1 = \Theta(\lg n)$ ([[06-Merge Sort.pdf#page=29]])
 
 ## Fonti
 
@@ -98,3 +101,4 @@ Nella classifica di [[dominanza-asintotica]] $\log n$ sta appena sopra le costan
 - [[05-Insertion sort.pdf#page=32]], [[05-Insertion sort.pdf#page=33]]
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
+_Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_

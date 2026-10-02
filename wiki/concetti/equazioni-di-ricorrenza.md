@@ -2,7 +2,7 @@
 tipo: concetto
 importanza_esame: alta
 prerequisiti: ["tempo-di-esecuzione", "iterazione-e-ricorsione"]
-fonti_pdf: ["03-Analisi di algoritmi.pdf#page=30", "03-Analisi di algoritmi.pdf#page=31", "03-Analisi di algoritmi.pdf#page=32", "03-Analisi di algoritmi.pdf#page=33"]
+fonti_pdf: ["03-Analisi di algoritmi.pdf#page=30", "03-Analisi di algoritmi.pdf#page=31", "03-Analisi di algoritmi.pdf#page=32", "03-Analisi di algoritmi.pdf#page=33", "06-Merge Sort.pdf#page=17"]
 ---
 
 # Equazioni di ricorrenza (costo degli algoritmi ricorsivi)
@@ -14,6 +14,12 @@ fonti_pdf: ["03-Analisi di algoritmi.pdf#page=30", "03-Analisi di algoritmi.pdf#
 Un programma ricorsivo viene richiamato più volte su una versione ridotta del problema. Il **costo complessivo** $T(n)$ è dato dalla **somma dei costi delle singole chiamate**, con $T(0)$ pari al costo del passo ricorsivo più interno (quello in cui la funzione non viene richiamata ulteriormente).
 
 Il costo si esprime quindi con un'**equazione di ricorrenza**: $T(n)$ definito in funzione di $T$ su valori più piccoli, più un caso base.
+
+> 📄 Fonte: [[06-Merge Sort.pdf#page=17]]
+
+Una **ricorrenza** è un'equazione o **disequazione** che descrive una funzione in termini del suo valore su ingressi di dimensione inferiore. Il tempo di esecuzione di algoritmi ricorsivi è solitamente espresso mediante una ricorrenza, ad esempio per [[merge-sort]]:
+$$ T(n) = \begin{cases} \Theta(1) & \text{se } n = 1 \\ 2T(n/2) + \Theta(n) & \text{altrimenti} \end{cases} $$
+Vedremo tre metodi per risolvere una ricorrenza: [[metodo-di-sostituzione]], [[metodo-albero-di-ricorrenza]], metodo dell'esperto ([[teorema-dell-esperto]]).
 
 ## Formule
 
@@ -59,7 +65,16 @@ La struttura della ricorrenza ricalca quella dell'algoritmo: il caso base dell'a
 
 La domanda «E la complessità spaziale?» ([[03-Analisi di algoritmi.pdf#page=34]]) ha risposta $\Theta(n)$ (🧩, profondità della ricorsione) → [[tempo-di-esecuzione]].
 
-> TODO: da espandere quando le lezioni introdurranno ricorrenze di tipo divide et impera (es. $T(n) = 2T(n/2) + \Theta(n)$) e i relativi metodi di soluzione.
+### Ricorrenze divide et impera (lezioni 06–07)
+
+> 📄 Fonte: [[06-Merge Sort.pdf#page=14]]
+
+Per un algoritmo [[divide-et-impera]] la ricorrenza ha la forma $T(n) = aT(n/b) + D(n) + C(n)$, con caso banale $\Theta(1)$. Lo srotolamento usato sopra funziona bene quando la dimensione cala di 1; quando cala di un **fattore** $b$ si usano:
+- il [[metodo-albero-di-ricorrenza]], per trovare una soluzione di tentativo sommando i costi livello per livello;
+- il [[metodo-di-sostituzione]], per verificarla per induzione con costanti esplicite;
+- il [[teorema-dell-esperto]], che dà la soluzione direttamente se $f(n)$ ricade in uno dei tre casi.
+
+> 🧩 Le ricorrenze con $n - 1$ si incontrano ancora: il caso peggiore di [[quicksort]], $T(n) = T(n-1) + \Theta(n) = \Theta(n^2)$ (serie aritmetica, [[07-Quicksort.pdf#page=14]]), e la [[torre-di-hanoi]], $M(n) = 2M(n-1) + 1 = 2^n - 1$ (serie geometrica). Per queste il teorema dell'esperto non si applica e si srotola come per [[somma-ricorsiva]].
 
 ## Perché importa
 
@@ -69,11 +84,14 @@ La domanda «E la complessità spaziale?» ([[03-Analisi di algoritmi.pdf#page=3
 
 - [[tempo-di-esecuzione]] — l'analogo per il codice iterativo
 - [[divide-et-impera]] — la fonte principale di ricorrenze nel corso
+- [[metodo-di-sostituzione]], [[metodo-albero-di-ricorrenza]], [[teorema-dell-esperto]] — i tre metodi di soluzione della lezione 06
+- [[merge-sort]], [[quicksort]] — le ricorrenze dei due ordinamenti divide et impera
 - [[risoluzione-ricorrenze]] — esercizi
 
 ## Fonti
 
-- [[lezione-03-analisi-di-algoritmi]]
-- [[03-Analisi di algoritmi.pdf#page=30]]–[[03-Analisi di algoritmi.pdf#page=34]]
+- [[lezione-03-analisi-di-algoritmi]], [[lezione-06-merge-sort]], [[lezione-07-quicksort]]
+- [[03-Analisi di algoritmi.pdf#page=30]]–[[03-Analisi di algoritmi.pdf#page=34]], [[06-Merge Sort.pdf#page=14]], [[06-Merge Sort.pdf#page=17]], [[07-Quicksort.pdf#page=14]]
 
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
+_Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_
