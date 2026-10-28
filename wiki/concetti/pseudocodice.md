@@ -75,3 +75,8 @@ Nota: le slide delle convenzioni riportano «a.a. 25/26» ([[a1-indicazioni_psue
 - [[a1-indicazioni_psuedocodice.pdf#page=1]]–[[a1-indicazioni_psuedocodice.pdf#page=4]]
 
 _Aggiornato: 2026-09-26 — ingest a1-indicazioni_psuedocodice.pdf_
+
+<!-- nav:inizio -->
+---
+**Materiale di supporto · pagina 2 di 2** · ← [[convenzioni-per-lo-pseudocodice|Materiale di supporto: introduzione e riepilogo]] · [[lezioni|Indice]] · [[lezione-01-introduzione|Lezione 01: introduzione e riepilogo]] →
+<!-- nav:fine -->

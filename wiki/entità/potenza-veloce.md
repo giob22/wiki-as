@@ -78,7 +78,14 @@ $$
 ## Fonti
 
 - [[lezione-05-insertion-sort]]
+- le stesse slide sono riprese nella versione aggiornata della lezione 06 ([[lezione-06-merge-sort]]): [[06-Merge Sort (1).pdf#page=47]]
 - [[05-Insertion sort.pdf#page=32]]
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_
+_Aggiornato: 2026-10-10 — slide riprese nella versione aggiornata della lezione 06_
+
+<!-- nav:inizio -->
+---
+**Lezione 05 · pagina 7 di 7** · ← [[logaritmi-nell-analisi|L'importanza dei logaritmi]] · [[lezioni|Indice]] · [[lezione-06-merge-sort|Lezione 06: introduzione e riepilogo]] →
+<!-- nav:fine -->

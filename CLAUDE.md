@@ -20,13 +20,14 @@ wiki-as/
 │   ├── index.md           ← catalogo di tutto il wiki
 │   ├── log.md             ← log cronologico append-only
 │   ├── overview.md        ← panoramica del corso
-│   ├── lezioni.md         ← lezioni in ordine, argomenti e percorso di lettura
+│   ├── lezioni.md         ← indice del libro: lezioni e pagine nell'ordine di lettura
 │   ├── concetti/          ← pagine concetto (notazioni, tecniche di analisi, paradigmi di progetto, proprietà...)
 │   ├── entità/            ← pagine entità (algoritmi, strutture dati, problemi)
 │   ├── fonti/             ← un sommario per ogni fonte raw ingestita
 │   ├── esercizi/          ← esercizi svolti e metodi di risoluzione ricorrenti
 │   └── esame/             ← materiale preparazione esame
 └── output/                ← export: tabelle comparative, slide Marp, grafici, codice
+    ├── libro.py           ← genera la navigazione a libro dall'indice wiki/lezioni.md
     ├── grafici/           ← script e grafici di funzione generati (🧩)
     ├── codice/            ← implementazioni eseguibili (Python) usate per verificare tracce ed esempi
     └── animazioni/        ← animazioni SVG degli algoritmi (🧩), generate da genera_animazioni.py
@@ -54,14 +55,15 @@ LM Ingegneria Informatica, UNINA, a.a. 26/27. Corso integrato **ASD + ML**: doce
 
 **Lezioni:** `wiki/lezioni.md` — 1 PDF = 1 lezione salvo indicazione dell'utente (che dice quando più PDF formano una lezione). L'ordine delle lezioni è dato dal prefisso numerico del file (`00-`, `01-`, …). I file con prefisso `a` (es. `a1-indicazioni_psuedocodice.pdf`) sono **materiale di supporto**, non lezioni: vanno in una sezione a parte di `lezioni.md`. Ad ogni ingest aggiungi la lezione secondo il *Formato di `lezioni.md`* qui sotto.
 
-### Formato di `lezioni.md` (è il file che l'utente segue per studiare)
+### Formato di `lezioni.md`: l'indice del libro
 
-- **Una pagina = un link in tutto il file.** L'utente, aperta una pagina, la legge tutta: mai due link alla stessa pagina wiki, né nella stessa lezione né in lezioni diverse.
-- Per ogni lezione: riga `**PDF:** [[file.pdf]] (pp. …)`, poi `### In ordine di slide` = elenco numerato delle pagine **aggregate**, nell'ordine di **prima comparsa** del loro argomento nelle slide; accanto a ogni link le slide che copre (anche quelle successive, es. «p. 11 (poi pp. 17, 23–29)») e una riga di contenuto. Numeri di pagina in testo semplice, senza link al PDF.
-- Esercizi subito dopo le pagine che li preparano; la pagina fonte della lezione per ultima, come riepilogo.
-- Pagine già linkate in una lezione precedente: citale in corsivo senza link in una riga «Già letta/e: …», con le slide della lezione corrente che vi sono trattate.
-- `### Ordine consigliato`: aggiungilo quando le slide saltano avanti e indietro tra argomenti o quando una pagina presuppone argomenti che nelle slide arrivano dopo; spiega il perché e usa nomi in corsivo, senza link.
-- Nessun elenco slide-per-slide con link ripetuti.
+Il wiki si legge come un **libro**: `wiki/lezioni.md` è solo l'**indice**, il più piccolo possibile, e ogni pagina ha in fondo la navigazione «← precedente · Indice · successiva →».
+
+- **Indice:** per ogni lezione un titolo `## Lezione NN — Titolo` (il materiale di supporto `a…` come `## Materiale di supporto — …`, subito dopo la lezione 00) e un elenco numerato di soli link `N. [[pagina|Titolo]]`. Niente descrizioni, intervalli di slide, note o «già lette»: stanno nella pagina di apertura della lezione.
+- **Una pagina = un link in tutto l'indice**, nel capitolo in cui il suo argomento compare per la prima volta.
+- **Ordine in ogni capitolo:** prima la pagina fonte della lezione (apertura: sommario, percorso, punti chiave, refusi, domande d'esame), poi le pagine nell'ordine di **prima comparsa** nelle slide, con gli esercizi subito dopo le pagine che li preparano.
+- **Percorso della lezione:** nella pagina fonte, sezione `## Percorso della lezione` subito dopo il sommario: elenco delle pagine con le slide che coprono e una riga di contenuto; riga «Già lette, riprese in questa lezione: …» in corsivo; eventuale «**Ordine consigliato.**» quando le slide saltano avanti e indietro.
+- **Navigazione:** dopo ogni modifica all'indice esegui `python output/libro.py`. Lo script rinomina le etichette dell'indice con i titoli delle pagine e scrive in fondo a ogni pagina la barra tra i marcatori `<!-- nav:inizio -->` e `<!-- nav:fine -->` (non scriverla a mano). Si ferma se una pagina compare due volte nell'indice.
 
 ---
 
@@ -81,7 +83,7 @@ LM Ingegneria Informatica, UNINA, a.a. 26/27. Corso integrato **ASD + ML**: doce
 10. Aggiorna `wiki/overview.md`
 11. Aggiorna `wiki/index.md`
 12. **Revisione di copertura totale (obbligatoria, sempre)**: rileggi il PDF **pagina per pagina** (testo *e* figure) e verifica che **ogni** elemento — definizioni, bullet, esempi, pseudocodice, tabelle di costo, tracce di esecuzione, valori numerici, didascalie, contenuto delle figure — sia riportato nel wiki. Le uniche aggiunte ammesse sono **spiegazioni che aiutano ad acquisire il concetto** (incluse le derivazioni dei risultati delle slide): niente fatti esterni non necessari, esercizi inventati o anticipazioni di argomenti futuri. Riporta all'utente cosa mancava e cosa è stato aggiunto/rimosso
-13. Aggiorna `wiki/lezioni.md` con la lezione secondo il *Formato di `lezioni.md`* (una pagina = un link, ordine di prima comparsa nelle slide, ordine consigliato se le slide non sono lineari); verifica che nessun link sia ripetuto nel file
+13. Aggiungi la lezione all'indice `wiki/lezioni.md` e il «Percorso della lezione» alla pagina fonte secondo il *Formato di `lezioni.md`*; poi esegui `python output/libro.py` per aggiornare la navigazione del libro
 14. Appendi a `wiki/log.md`: `## [YYYY-MM-DD] ingest | [titolo fonte] | pagine coperte: [range]`
 
 > Una singola fonte può toccare 5–15 pagine. È normale e desiderato.
@@ -140,7 +142,7 @@ Scorri tutto il wiki e riporta:
 - **Pagine o sezioni senza link alla fonte** `raw/` (pagina/slide mancante)
 - Link `[[*.pdf#page=N]]` che puntano a file inesistenti in `raw/`
 - Salti `❓` ancora aperti
-- Link ripetuti in `wiki/lezioni.md` (ogni pagina deve comparire una sola volta) e pagine wiki assenti da `lezioni.md`
+- Link ripetuti in `wiki/lezioni.md` (ogni pagina deve comparire una sola volta), pagine wiki assenti dall'indice e pagine senza barra di navigazione aggiornata (`python output/libro.py`)
 - File del vault senza link in entrata (note, PDF, figure, script) e link non risolti
 - Proponi nuove domande da investigare
 

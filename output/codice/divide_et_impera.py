@@ -1,9 +1,9 @@
 """Verifica di 06-Merge Sort.pdf e 07-Quicksort.pdf.
 
-Merge e Merge-Sort (06 pp.7-15): traduzione 1:1 dello pseudocodice con array indicizzati da 1.
-Ricorrenze (06 pp.17-30): verifiche numeriche dei limiti ottenuti con sostituzione, albero, esperto.
+Merge e Merge-Sort (06 pp.7-25, slide aggiornate): traduzione 1:1 dello pseudocodice con array indicizzati da 1.
+Ricorrenze (06 pp.27-43): verifiche numeriche dei limiti ottenuti con sostituzione, albero, esperto.
 Partition e Quicksort (07 pp.4-23): traccia di pp.5-11, casi peggiore/migliore, versione randomizzata.
-Torre di Hanoi (06 pp.2-4) e Nuts and Bolts (07 pp.24-25): soluzioni (mie) verificate.
+Torre di Hanoi (06 pp.2-5) e Nuts and Bolts (07 pp.24-25): soluzioni (mie) verificate.
 
 Esecuzione: python divide_et_impera.py
 """
@@ -15,7 +15,7 @@ INF = math.inf
 CONTROLLA = {"attivo": True}   # verifica degli invarianti a ogni iterazione: solo sulle tracce piccole
 
 
-# ------------------------------------------------------------------ MERGE (06 p.8)
+# ------------------------------------------------------------------ MERGE (06 p.16)
 def merge(A, p, q, r, conta=None):
     """A e' una lista con A[0] inutilizzato (indici da 1)."""
     n1 = q - p + 1                          # n1 <- q-p+1
@@ -29,7 +29,7 @@ def merge(A, p, q, r, conta=None):
     L[n1 + 1] = R[n2 + 1] = INF             # sentinelle
     i = j = 1
     for k in range(p, r + 1):               # for k <- p to r
-        # invariante (06 p.10): A[p..k-1] = i k-p elementi piu' piccoli di L e R, ordinati
+        # invariante (06 p.19): A[p..k-1] = i k-p elementi piu' piccoli di L e R, ordinati
         if CONTROLLA["attivo"]:
             assert A[p:k] == sorted(L[1:n1 + 1] + R[1:n2 + 1])[:k - p]
         if conta is not None:
@@ -89,7 +89,7 @@ def randomized_quicksort(A, p, r, rng, conta=None):
         randomized_quicksort(A, q + 1, r, rng, conta)
 
 
-# ------------------------------------------------------------------ TORRE DI HANOI (06 pp.2-4)
+# ------------------------------------------------------------------ TORRE DI HANOI (06 pp.2-5)
 def hanoi(n, da, a, via, mosse):
     if n == 0:
         return
@@ -136,12 +136,12 @@ def nuts_bolts_randomizzato(dadi, bulloni, rng, test):
 if __name__ == "__main__":
     import sys
     sys.setrecursionlimit(20000)               # quicksort su input ordinato: profondita' n-1
-    print("== Merge, traccia di 06 p.9: A[p..r] = <2,4,5,7,1,2,3,6> ==")
+    print("== Merge, traccia di 06 p.17: A[p..r] = <2,4,5,7,1,2,3,6> ==")
     A = [None, 2, 4, 5, 7, 1, 2, 3, 6]
     L, R = merge(A, 1, 4, 8)
     print("  L =", L[1:], " R =", R[1:], " ->  A =", A[1:])
 
-    print("\n== Merge-Sort su <5,2,8,0,4,7,1,9,3,2,6> (06 p.7), sequenze prodotte per profondita' ==")
+    print("\n== Merge-Sort su <5,2,8,0,4,7,1,9,3,2,6> (06 p.8), sequenze prodotte per profondita' ==")
     A = [None, 5, 2, 8, 0, 4, 7, 1, 9, 3, 2, 6]
     livelli = {}
     merge_sort(A, 1, 11, livelli=livelli)
@@ -155,20 +155,20 @@ if __name__ == "__main__":
         c = [0]; A = [None] + random.sample(range(n), n); merge_sort(A, 1, n, conta=c)
         print(f"  n={n:5d}: iterazioni del for di Merge = {c[0]:6d}, n lg n = {n * int(math.log2(n)):6d}")
 
-    print("\n== 06 pp.18-19: T(n) = 2T(floor(n/2)) + n, T(1) = 1 ==")
+    print("\n== 06 pp.28-29: T(n) = 2T(floor(n/2)) + n, T(1) = 1 ==")
     @lru_cache(None)
     def T1(n): return 1 if n == 1 else 2 * T1(n // 2) + n
     print(f"  T(1)={T1(1)}, T(2)={T1(2)}, T(3)={T1(3)}")
     peggio = max(T1(n) / (n * math.log2(n)) for n in range(2, 100001))
     print(f"  max_(2<=n<=10^5) T(n)/(n lg n) = {peggio:.4f}  (deve essere <= c = 2)")
 
-    print("\n== 06 pp.22-26: T(n) = 3T(floor(n/4)) + n^2 (c = 1), limite d >= 16c/13 = 1.2308 ==")
+    print("\n== 06 pp.32-39: T(n) = 3T(floor(n/4)) + n^2 (c = 1), limite d >= 16c/13 = 1.2308 ==")
     @lru_cache(None)
     def T2(n): return 1 if n < 4 else 3 * T2(n // 4) + n * n
     print(f"  max_(1<=n<=10^5) T(n)/n^2 = {max(T2(n) / (n * n) for n in range(1, 100001)):.4f}")
     print(f"  T(4^8)/(4^8)^2 = {T2(4 ** 8) / (4 ** 8) ** 2:.4f}  -> 16/13 = {16 / 13:.4f}")
 
-    print("\n== 06 p.29-30: esempi del teorema dell'esperto (n potenza della base) ==")
+    print("\n== 06 pp.42-43: esempi del teorema dell'esperto (n potenza della base) ==")
     @lru_cache(None)
     def T3(n): return 1 if n <= 1 else 9 * T3(n // 3) + n
     @lru_cache(None)
@@ -222,7 +222,7 @@ if __name__ == "__main__":
             m = m * 9 / 10; livelli += 1
         print(f"  n=10^{int(math.log10(n))}: livelli {livelli}, log_(10/9) n = {math.log(n, 10 / 9):.1f}, log_10 n = {math.log10(n):.0f}")
 
-    print("\n== Torre di Hanoi (06 pp.2-4) ==")
+    print("\n== Torre di Hanoi (06 pp.2-5) ==")
     mosse = []
     hanoi(3, "A", "C", "B", mosse)
     print("  3 dischi:", ", ".join(f"disco {d}: {x}->{y}" for d, x, y in mosse))

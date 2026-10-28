@@ -2,7 +2,7 @@
 tipo: concetto
 importanza_esame: alta
 prerequisiti: ["tempo-di-esecuzione", "iterazione-e-ricorsione"]
-fonti_pdf: ["03-Analisi di algoritmi.pdf#page=30", "03-Analisi di algoritmi.pdf#page=31", "03-Analisi di algoritmi.pdf#page=32", "03-Analisi di algoritmi.pdf#page=33", "06-Merge Sort.pdf#page=17"]
+fonti_pdf: ["03-Analisi di algoritmi.pdf#page=30", "03-Analisi di algoritmi.pdf#page=31", "03-Analisi di algoritmi.pdf#page=32", "03-Analisi di algoritmi.pdf#page=33", "06-Merge Sort (1).pdf#page=27"]
 ---
 
 # Equazioni di ricorrenza (costo degli algoritmi ricorsivi)
@@ -15,7 +15,7 @@ Un programma ricorsivo viene richiamato più volte su una versione ridotta del p
 
 Il costo si esprime quindi con un'**equazione di ricorrenza**: $T(n)$ definito in funzione di $T$ su valori più piccoli, più un caso base.
 
-> 📄 Fonte: [[06-Merge Sort.pdf#page=17]]
+> 📄 Fonte: [[06-Merge Sort (1).pdf#page=27]]
 
 Una **ricorrenza** è un'equazione o **disequazione** che descrive una funzione in termini del suo valore su ingressi di dimensione inferiore. Il tempo di esecuzione di algoritmi ricorsivi è solitamente espresso mediante una ricorrenza, ad esempio per [[merge-sort]]:
 $$ T(n) = \begin{cases} \Theta(1) & \text{se } n = 1 \\ 2T(n/2) + \Theta(n) & \text{altrimenti} \end{cases} $$
@@ -67,14 +67,14 @@ La domanda «E la complessità spaziale?» ([[03-Analisi di algoritmi.pdf#page=3
 
 ### Ricorrenze divide et impera (lezioni 06–07)
 
-> 📄 Fonte: [[06-Merge Sort.pdf#page=14]]
+> 📄 Fonte: [[06-Merge Sort (1).pdf#page=23]]
 
 Per un algoritmo [[divide-et-impera]] la ricorrenza ha la forma $T(n) = aT(n/b) + D(n) + C(n)$, con caso banale $\Theta(1)$. Lo srotolamento usato sopra funziona bene quando la dimensione cala di 1; quando cala di un **fattore** $b$ si usano:
 - il [[metodo-albero-di-ricorrenza]], per trovare una soluzione di tentativo sommando i costi livello per livello;
 - il [[metodo-di-sostituzione]], per verificarla per induzione con costanti esplicite;
 - il [[teorema-dell-esperto]], che dà la soluzione direttamente se $f(n)$ ricade in uno dei tre casi.
 
-> 🧩 Le ricorrenze con $n - 1$ si incontrano ancora: il caso peggiore di [[quicksort]], $T(n) = T(n-1) + \Theta(n) = \Theta(n^2)$ (serie aritmetica, [[07-Quicksort.pdf#page=14]]), e la [[torre-di-hanoi]], $M(n) = 2M(n-1) + 1 = 2^n - 1$ (serie geometrica). Per queste il teorema dell'esperto non si applica e si srotola come per [[somma-ricorsiva]].
+> 🧩 Le ricorrenze con $n - 1$ si incontrano ancora: il caso peggiore di [[quicksort]], $T(n) = T(n-1) + \Theta(n) = \Theta(n^2)$ (serie aritmetica, [[07-Quicksort 1.pdf#page=14]]), e la [[torre-di-hanoi]], $M(n) = 2M(n-1) + 1 = 2^n - 1$ (serie geometrica). Per queste il teorema dell'esperto non si applica e si srotola come per [[somma-ricorsiva]].
 
 ## Perché importa
 
@@ -91,7 +91,14 @@ Per un algoritmo [[divide-et-impera]] la ricorrenza ha la forma $T(n) = aT(n/b) 
 ## Fonti
 
 - [[lezione-03-analisi-di-algoritmi]], [[lezione-06-merge-sort]], [[lezione-07-quicksort]]
-- [[03-Analisi di algoritmi.pdf#page=30]]–[[03-Analisi di algoritmi.pdf#page=34]], [[06-Merge Sort.pdf#page=14]], [[06-Merge Sort.pdf#page=17]], [[07-Quicksort.pdf#page=14]]
+- [[03-Analisi di algoritmi.pdf#page=30]]–[[03-Analisi di algoritmi.pdf#page=34]], [[06-Merge Sort (1).pdf#page=23]], [[06-Merge Sort (1).pdf#page=27]], [[07-Quicksort 1.pdf#page=14]]
 
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
 _Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_
+_Aggiornato: 2026-10-10 — link ripuntati alla versione aggiornata delle slide 06-Merge Sort (1).pdf_
+_Aggiornato: 2026-10-14 — link ripuntati alla versione aggiornata delle slide 07-Quicksort 1.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 03 · pagina 12 di 13** · ← [[analisi-del-costo-riga-per-riga|Analisi del costo riga per riga]] · [[lezioni|Indice]] · [[risoluzione-ricorrenze|Scrivere e risolvere equazioni di ricorrenza]] →
+<!-- nav:fine -->

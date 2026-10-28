@@ -92,13 +92,23 @@ Nella classifica di [[dominanza-asintotica]] $\log n$ sta appena sopra le costan
 - [[dominanza-asintotica]] — posizione di $\log n$ nella classifica
 - [[notazione-asintotica]] — il cambio di base è un fattore costante
 - [[metodo-albero-di-ricorrenza]] — il numero di livelli è $\log_b n + 1$ (dimezzando: $\lg n + 1$ livelli in [[merge-sort]])
-- [[quicksort]] — con split 9:1 la profondità è $\log_{10/9} n \approx 6.58\lg n$: ancora $\Theta(\lg n)$, come lo split sbilanciato di p. 33 ([[07-Quicksort.pdf#page=17]])
-- [[teorema-dell-esperto]] — esempio $T(2n/3) + 1 = \Theta(\lg n)$ ([[06-Merge Sort.pdf#page=29]])
+- [[quicksort]] — con split 9:1 la profondità è $\log_{10/9} n \approx 6.58\lg n$: ancora $\Theta(\lg n)$, come lo split sbilanciato di p. 33 ([[07-Quicksort 1.pdf#page=17]])
+- [[teorema-dell-esperto]] — esempio $T(2n/3) + 1 = \Theta(\lg n)$ ([[06-Merge Sort (1).pdf#page=42]])
+- [[albero]] — l'altezza di un albero $k$-ario bilanciato è $\Theta(\log_k n)$ ([[08-Grafi e alberi.pdf#page=43]])
 
 ## Fonti
 
 - [[lezione-05-insertion-sort]]
+- le stesse slide sono riprese nella versione aggiornata della lezione 06 ([[lezione-06-merge-sort]]): [[06-Merge Sort (1).pdf#page=47]], [[06-Merge Sort (1).pdf#page=48]]
 - [[05-Insertion sort.pdf#page=32]], [[05-Insertion sort.pdf#page=33]]
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
 _Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_
+_Aggiornato: 2026-10-10 — slide riprese nella versione aggiornata della lezione 06_
+_Aggiornato: 2026-10-14 — link ripuntati alla versione aggiornata delle slide 07-Quicksort 1.pdf_
+_Aggiornato: 2026-10-28 — collegamenti alle lezioni 08–09_
+
+<!-- nav:inizio -->
+---
+**Lezione 05 · pagina 6 di 7** · ← [[findmatch|findmatch — pattern matching a forza bruta]] · [[lezioni|Indice]] · [[potenza-veloce|power(a, n) — potenza veloce (fast exponentiation)]] →
+<!-- nav:fine -->

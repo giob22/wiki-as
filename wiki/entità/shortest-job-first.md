@@ -66,3 +66,8 @@ Commento della fonte: «This idea makes sense at first. At least until we realiz
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_
+
+<!-- nav:inizio -->
+---
+**Lezione 01 · pagina 14 di 18** · ← [[earliest-job-first|EarliestJobFirst (Soluzione 1 del Movie Scheduling)]] · [[lezioni|Indice]] · [[exhaustive-scheduling|ExhaustiveScheduling (Soluzione 3 del Movie Scheduling)]] →
+<!-- nav:fine -->

@@ -121,3 +121,8 @@ Il test del limite è il modo più rapido per confrontare due funzioni di costo;
 _Aggiornato: 2026-09-26 — ingest 02-Notazione asintotica.pdf_
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 02 · pagina 8 di 8** · ← [[regole-di-calcolo-asintotico|Regole di calcolo con la notazione asintotica]] · [[lezioni|Indice]] · [[lezione-03-analisi-di-algoritmi|Lezione 03: introduzione e riepilogo]] →
+<!-- nav:fine -->

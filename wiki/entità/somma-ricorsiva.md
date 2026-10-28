@@ -77,3 +77,8 @@ Srotolamento completo e verifica della forma generale → [[equazioni-di-ricorre
 
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_
+
+<!-- nav:inizio -->
+---
+**Lezione 03 · pagina 6 di 13** · ← [[somma-iterativa|somma_iterativa — somma dei primi n interi (versione iterativa)]] · [[lezioni|Indice]] · [[correttezza-parziale-e-totale|Correttezza parziale e correttezza totale]] →
+<!-- nav:fine -->

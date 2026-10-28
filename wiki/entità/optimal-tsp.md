@@ -64,3 +64,8 @@ $$
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_
+
+<!-- nav:inizio -->
+---
+**Lezione 01 · pagina 9 di 18** · ← [[closest-pair|ClosestPair (Soluzione 2 del Robot Tour)]] · [[lezioni|Indice]] · [[ricerca-combinatoria|Ricerca combinatoria (ricerca esaustiva)]] →
+<!-- nav:fine -->

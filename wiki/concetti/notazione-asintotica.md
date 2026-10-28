@@ -152,3 +152,8 @@ $O$ è un «≤» asintotico, $\Omega$ un «≥», $\Theta$ un «=» tra ordini 
 - [[02-Notazione asintotica.pdf#page=14]] (intestazione «The Big Oh Notation»), [[02-Notazione asintotica.pdf#page=15]]–[[02-Notazione asintotica.pdf#page=18]], [[02-Notazione asintotica.pdf#page=20]] (intestazione «Working with the Big Oh»), [[02-Notazione asintotica.pdf#page=21]]–[[02-Notazione asintotica.pdf#page=23]], [[02-Notazione asintotica.pdf#page=27]]
 
 _Aggiornato: 2026-09-26 — ingest 02-Notazione asintotica.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 02 · pagina 5 di 8** · ← [[casi-di-complessita|Caso peggiore, migliore e medio]] · [[lezioni|Indice]] · [[dimostrazioni-notazione-asintotica|Dimostrare (o confutare) f = O/Ω/Θ(g)]] →
+<!-- nav:fine -->

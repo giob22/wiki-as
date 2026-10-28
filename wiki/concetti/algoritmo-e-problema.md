@@ -63,3 +63,8 @@ Tutto il corso ruota intorno ad **analisi** (correttezza, complessità) e **prog
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
 _Aggiornato: 2026-10-01 — collegamento a correttezza-parziale-e-totale_
+
+<!-- nav:inizio -->
+---
+**Lezione 01 · pagina 2 di 18** · ← [[lezione-01-introduzione|Lezione 01: introduzione e riepilogo]] · [[lezioni|Indice]] · [[ordinamento|Problema dell'ordinamento (Sorting)]] →
+<!-- nav:fine -->

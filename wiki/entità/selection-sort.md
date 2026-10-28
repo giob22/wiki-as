@@ -137,3 +137,8 @@ $$
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_
+
+<!-- nav:inizio -->
+---
+**Lezione 05 · pagina 3 di 7** · ← [[insertion-sort|Insertion sort]] · [[lezioni|Indice]] · [[substring-pattern-matching|Substring Pattern Matching (ricerca di una sottostringa)]] →
+<!-- nav:fine -->

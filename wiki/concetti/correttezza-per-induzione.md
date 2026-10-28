@@ -77,3 +77,8 @@ Qui basta l'induzione **semplice** (si usa solo $S(n-1)$); l'induzione **forte**
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
 _Aggiornato: 2026-10-01 — collegamento a correttezza-parziale-e-totale_
 _Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 03 · pagina 9 di 13** · ← [[invariante-di-ciclo|Invariante di ciclo (correttezza degli algoritmi iterativi)]] · [[lezioni|Indice]] · [[dimostrazioni-di-correttezza|Dimostrazioni di correttezza (invariante e induzione)]] →
+<!-- nav:fine -->

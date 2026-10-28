@@ -112,3 +112,34 @@ Filtra ultimi 10: `grep "^## " wiki/log.md | tail -10`
 ## [2026-10-02] update | findmatch — versione con while
 - [[findmatch]]: aggiunta la versione alternativa con `while` e flag `trovato` indicata dal docente a lezione (non nel PDF, codice ricostruito 🧩), con invariante, funzione variante e tabella costo × esecuzioni ($k$ iterazioni, $t_i$ test interni); stessa complessità $O(nm)$
 - equivalenza con la versione con `for` verificata su 2005 casi in [[stringhe_e_logaritmi.py]]; nota in [[lezione-05-insertion-sort]]
+
+## [2026-10-10] ingest | 06-Merge Sort (1).pdf (versione aggiornata della lezione 06) | pagine coperte: 1-48
+- la nuova versione (48 pagine) sostituisce [[06-Merge Sort.pdf]] (30 pagine): tutti i link del wiki ripuntati alla nuova numerazione (177 link, mappa vecchia → nuova in [[lezione-06-merge-sort]] § Cosa cambia); il vecchio PDF resta in raw/ ed è linkato solo dalla pagina fonte e dall'index
+- contenuti nuovi integrati: Hanoi con enunciato e approccio divide et impera (pp. 3–4) in [[torre-di-hanoi]]; primo pseudocodice `MergeSort(A)` con L e R, criticità, versione con indici, memoria ausiliaria in Merge (pp. 9–15) e ricorrenza a domande (p. 23) in [[merge-sort]]; Merge senza sentinelle (p. 15) e «codice completo» (p. 16) in [[merge]]; costruzione dell'albero su pp. 32–35 e S&T «Albero di ricorsione?» (p. 44) in [[metodo-albero-di-ricorrenza]]; pp. 45–48 = slide 30–33 della lezione 05, segnalate nelle pagine relative
+- annotazioni a mano del PDF (pp. 4, 7, 9, 11, 15, 22, 23) trascritte accanto alle slide; spiegazioni mie marcate 🧩 (perché non dividere per n, perdita di dati senza copie, assenza di sentinelle a p. 15, caso base di Hanoi)
+- figure di 06 rigenerate dalla nuova versione (22 in raw/assets, nomi con la nuova pagina; le 16 vecchie rimosse, restano nella storia git); didascalie delle animazioni e commenti di [[divide_et_impera.py]] aggiornati, animazioni rigenerate
+- [[lezioni]]: lezione 06 riscritta sulla nuova numerazione, con ordine consigliato; nessun link ripetuto
+- controlli: tutte le 48 pagine citate, nessun link non risolto, nessun file orfano
+
+## [2026-10-14] ingest | 07-Quicksort 1.pdf (versione aggiornata della lezione 07) | pagine coperte: 1-25
+- la nuova versione sostituisce [[07-Quicksort.pdf]]: stesse 25 pagine nello stesso ordine (confronto testo e pixel), unica differenza le annotazioni a mano di p. 4; 174 link ripuntati, numeri di pagina invariati; il vecchio PDF resta in raw/ ed è linkato dalla pagina fonte e dall'index
+- annotazioni di p. 4 trascritte in [[quicksort]] § Pseudocodice; «pivot piccolo: troppi swap / pivot grande: sposto solo una barriera» segnalata come ⚠️ contraddizione con la regola di Partition (p. 6), verificata con il codice (pivot massimo: 7 scambi; pivot minimo: 0 scambi)
+- [[quicksort]] § Complessità riorganizzata per metodo: ricorrenza $T(q) + T(n-q-1) + \Theta(n)$ ricavata dallo pseudocodice, tabella caso → $q$ → ricorrenza → metodo → risultato, e per ogni caso «come funziona il metodo» + applicazione passo per passo (srotolamento, teorema dell'esperto, albero di ricorrenza, sostituzione); tolte le digressioni
+- nuova figura raw/assets/07-quicksort-p4-pseudocodice-quicksort.png; [[lezioni]], [[index]], [[lezione-07-quicksort]] aggiornati
+
+## [2026-10-28] ingest | 08-Grafi e alberi.pdf | pagine coperte: 1-44
+- fonte [[lezione-08-grafi-e-alberi]]; concetti nuovi [[grafo]], [[tipi-di-grafo]], [[albero]]; strutture dati nuove [[matrice-di-adiacenza]], [[liste-di-adiacenza]]
+- derivazioni espanse: somma dei gradi $= 2m$, massimo di archi $n(n-1)/2$, costi della tabella matrice/liste riga per riga, $n - 1$ archi di un albero per induzione, altezza dell'albero $k$-ario perfetto $h = \log_k(n(k-1)+1) - 1$ (🧩)
+- appunti a mano trascritti (pp. 3, 8, 12, 27, 29, 39); ⚠️ «più nodi che archi → non connesso» non vale in generale
+- animazione nuova: costruzione delle liste di adiacenza con `insert_edge`; verifiche in [[grafi_e_alberi.py]]; 22 figure in raw/assets
+
+## [2026-10-28] ingest | 09-Alberi binari ricerca.pdf | pagine coperte: 1-21
+- fonte [[lezione-09-alberi-binari-di-ricerca]]; strutture dati nuove [[coda-di-priorita]], [[albero-binario-di-ricerca]]; algoritmi nuovi [[inorder-tree-walk]], [[tree-search]], [[tree-minimum-maximum]], [[tree-successor]], [[tree-insert]], [[tree-delete]], ognuno con animazione
+- derivazioni espanse: visita in ordine $\Theta(n)$ con il metodo di sostituzione (il parametro $k$ si elimina), ricerca $O(h)$ per srotolamento sull'altezza, $O(h)$ di minimo, successore, inserimento, eliminazione; correttezze per induzione e invarianti (🧩)
+- ⚠️ l'albero di p. 18 non è il risultato dell'inserimento di 19 di p. 17; verifiche sugli alberi delle slide in [[grafi_e_alberi.py]]; 18 figure in raw/assets
+- esercizi: [[risoluzione-ricorrenze]] casi 8–9, [[dimostrazioni-di-correttezza]] caso 11
+
+## [2026-10-28] riorganizzazione | lezioni come libro
+- [[lezioni]] ridotto a indice: per ogni lezione solo i link alle pagine, una volta sola, nell'ordine di lettura (apertura = pagina fonte, poi l'ordine delle slide; materiale di supporto a1 dopo la lezione 00)
+- descrizioni, intervalli di slide, «già lette» e ordine consigliato spostati nella sezione «Percorso della lezione» delle pagine fonte
+- barra «← precedente · Indice · successiva →» in fondo a tutte le 88 pagine, generata da [[libro.py]] (marcatori `nav:inizio`/`nav:fine`); regole aggiornate in CLAUDE.md e nella memoria

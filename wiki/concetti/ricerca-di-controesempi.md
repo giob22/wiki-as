@@ -55,3 +55,8 @@ Suggerimenti per trovare controesempi ([[03-Analisi di algoritmi.pdf#page=14]]):
 - [[03-Analisi di algoritmi.pdf#page=12]] (intestazione «Correttezza»), [[03-Analisi di algoritmi.pdf#page=13]], [[03-Analisi di algoritmi.pdf#page=14]], [[03-Analisi di algoritmi.pdf#page=15]], [[01-Introduzione.pdf#page=60]]
 
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 01 · pagina 17 di 18** · ← [[optimal-scheduling|OptimalScheduling (Soluzione 4 del Movie Scheduling)]] · [[lezioni|Indice]] · [[controesempi-per-euristiche|Trovare controesempi per euristiche (greedy)]] →
+<!-- nav:fine -->

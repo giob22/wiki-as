@@ -65,3 +65,8 @@ Fa parte del programma ([[00-Presentazione.pdf#page=5]], «Ricerca combinatorial
 - [[03-Analisi di algoritmi.pdf#page=5]], [[01-Introduzione.pdf#page=29]], [[01-Introduzione.pdf#page=58]], [[01-Introduzione.pdf#page=59]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf e 03-Analisi di algoritmi.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 01 · pagina 10 di 18** · ← [[optimal-tsp|OptimalTSP (Soluzione 3 del Robot Tour)]] · [[lezioni|Indice]] · [[metodi-euristici|Metodi euristici (e differenza tra algoritmi ed euristiche)]] →
+<!-- nav:fine -->

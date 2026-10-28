@@ -79,3 +79,8 @@ La scelta contigua/collegata è la prima decisione implementativa per ogni [[tip
 
 _Aggiornato: 2026-09-26 — ingest 04-Strutture dati elementari.pdf_
 _Aggiornato: 2026-09-30 — chiarito il punto 2 di p. 21 (vantaggio della lista, non dell'array); aggiunta la tabella dei costi per tipo di inserimento/cancellazione_
+
+<!-- nav:inizio -->
+---
+**Lezione 04 · pagina 3 di 9** · ← [[tipo-di-dato-astratto|Astrazione dei dati (operazioni astratte vs implementazione)]] · [[lezioni|Indice]] · [[array|Array]] →
+<!-- nav:fine -->

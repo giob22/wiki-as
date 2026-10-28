@@ -14,6 +14,35 @@ argomenti: [paradigmi di progettazione, iterazione e ricorsione, correttezza, co
 
 La lezione ha quattro parti. **Classificazione dei problemi**: tre famiglie di approcci (divide et impera, ricerca combinatoria, metodi euristici) che bilanciano tempo, qualità e scalabilità. **Caratterizzazione degli algoritmi**: iterazione contro ricorsione, con l'esempio della somma dei primi $n$ numeri in entrambe le forme. **Correttezza**: controesempi e testing per dimostrare l'incorrettezza (con cinque suggerimenti pratici), invariante di ciclo per gli algoritmi iterativi, induzione per quelli ricorsivi, applicati alla somma. **Analisi di complessità**: il costo riga per riga della somma iterativa ($2n + 4 = O(n)$) e la ricorrenza $T(n) = T(n-1) + c$ della somma ricorsiva ($1 + cn = O(n)$), con la domanda aperta sulla complessità spaziale.
 
+## Percorso della lezione
+
+**PDF:** [[03-Analisi di algoritmi.pdf]] (pp. 1–34)
+
+Pagine del wiki nell'ordine di prima comparsa nelle slide (è l'ordine delle pagine di questa lezione nel libro, dopo questa):
+1. [[paradigmi-di-progettazione]] — pp. 2–3 · tre famiglie di approcci
+2. [[divide-et-impera]] — p. 4
+3. [[iterazione-e-ricorsione]] — pp. 7–11 · confronto dei due stili
+4. [[somma-iterativa]] — p. 11 (poi pp. 17, 23–29) · pseudocodice, invariante, costo $2n+4$
+5. [[somma-ricorsiva]] — p. 11 (poi pp. 19, 30–34) · pseudocodice, induzione, ricorrenza
+6. [[correttezza-parziale-e-totale]] — p. 16 (con la definizione di 01 p. 9) · parziale = «se termina, è giusto»; totale = parziale + terminazione; quale strumento dimostra cosa
+7. [[invariante-di-ciclo]] — pp. 16–17
+8. [[correttezza-per-induzione]] — pp. 18–19
+9. [[dimostrazioni-di-correttezza]] — esercizio su invariante e induzione
+10. [[analisi-del-costo-riga-per-riga]] — esercizio sulle pp. 23–29 (e su Base/Base2 della lezione 02)
+11. [[equazioni-di-ricorrenza]] — pp. 30–34
+12. [[risoluzione-ricorrenze]] — esercizio sulle pp. 30–33
+
+Già lette: *ricerca-combinatoria* (p. 5), *metodi-euristici* (p. 6), *ricerca-di-controesempi* (pp. 12–15) nella lezione 01; *modello-ram* e *tempo-di-esecuzione* (pp. 20–22, identiche alle pp. 2–3 della lezione 02) nella lezione 02.
+
+**Ordine consigliato.**
+Qui le slide non sono lineari rispetto alle pagine: la somma $1..n$ compare a p. 11, ma la sua correttezza (pp. 17–19) e la sua complessità (pp. 23–34) arrivano molto dopo, e le pagine delle due somme contengono già tutto. Conviene prima la **teoria** e poi gli **esempi**:
+
+1. *paradigmi-di-progettazione* → *divide-et-impera* → *iterazione-e-ricorsione*
+2. *correttezza-parziale-e-totale* (il quadro) → *invariante-di-ciclo* → *correttezza-per-induzione* (gli strumenti)
+3. *equazioni-di-ricorrenza* (complessità ricorsiva; la parte iterativa è in *tempo-di-esecuzione*, già letta)
+4. *somma-iterativa* → *somma-ricorsiva* (gli esempi completi, come sintesi)
+5. esercizi: *dimostrazioni-di-correttezza* → *analisi-del-costo-riga-per-riga* → *risoluzione-ricorrenze*
+
 ## Punti chiave
 
 1. Tre famiglie di progettazione ([[03-Analisi di algoritmi.pdf#page=3]]–[[03-Analisi di algoritmi.pdf#page=6]]) → [[paradigmi-di-progettazione]], [[divide-et-impera]], [[ricerca-combinatoria]], [[metodi-euristici]].
@@ -54,3 +83,9 @@ La lezione ha quattro parti. **Classificazione dei problemi**: tre famiglie di a
 - Calcola il costo di `somma_iterativa` riga per riga e risolvi la ricorrenza di `somma_ricorsiva`; confronta anche lo spazio.
 
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
+_Aggiornato: 2026-10-28 — aggiunto il «Percorso della lezione» (spostato dall'indice lezioni.md)_
+
+<!-- nav:inizio -->
+---
+**Lezione 03 · pagina 1 di 13** · ← [[dominanza-asintotica|Dominanza asintotica, little-o e crescita delle funzioni]] · [[lezioni|Indice]] · [[paradigmi-di-progettazione|Paradigmi (famiglie) di progettazione degli algoritmi]] →
+<!-- nav:fine -->

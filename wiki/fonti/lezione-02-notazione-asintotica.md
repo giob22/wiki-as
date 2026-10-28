@@ -14,6 +14,24 @@ argomenti: [modello RAM, analisi di un algoritmo, casi peggiore/migliore/medio, 
 
 Slide in inglese di Steven Skiena (Stony Brook) con inserti in italiano del Prof. Marrone ([[02-Notazione asintotica.pdf#page=1]]). La lezione fissa il **modello RAM** (ogni operazione semplice e ogni accesso in memoria costano un passo) e definisce i casi **peggiore, migliore e medio** come funzioni «tempo contro dimensione»; il corso userà di norma il caso peggiore. Poiché l'analisi esatta è difficile, si introducono i limiti superiori e inferiori $O$, $\Omega$, $\Theta$ con definizioni formali (costanti $c$ e soglia $n_0$), esempi su $3n^2 - 100n + 6$, regole per somme, costanti e prodotti e proprietà (transitiva, riflessiva, simmetrica, trasposta). Chiude la **dominanza asintotica** (little-o, test del limite, classifiche di crescita) con la tabella dei tempi a 1 ns per operazione.
 
+## Percorso della lezione
+
+**PDF:** [[02-Notazione asintotica.pdf]] (pp. 1–38)
+
+Pagine del wiki nell'ordine di prima comparsa nelle slide (è l'ordine delle pagine di questa lezione nel libro, dopo questa):
+1. [[modello-ram]] — pp. 2, 5–6 · ipotesi del modello, «flat-earth model»
+2. [[tempo-di-esecuzione]] — pp. 3, 8 · $T(n) = \sum c_i t_i(n)$, efficienza asintotica, complessità spaziale
+3. [[casi-di-complessita]] — pp. 7, 9–12 · Base(), Base2(n), peggiore/migliore/medio, lotteria
+4. [[notazione-asintotica]] — pp. 15–18, 21–23, 27 · $O$, $\Omega$, $\Theta$, esempi su $3n^2-100n+6$, proprietà
+5. [[dimostrazioni-notazione-asintotica]] — esercizio sugli esempi di pp. 21–24
+6. [[regole-di-calcolo-asintotico]] — pp. 24–26 · somma, differenza, costante, prodotto
+7. [[dominanza-asintotica]] — pp. 30–37 · razzo e vela, little-o, limite, tabella di crescita, classifiche
+
+Già letta: *stima-dei-tempi-di-esecuzione* (lezione 01) — il caso 4 ricalcola la tabella di p. 36.
+
+**Ordine consigliato.**
+Le slide alternano argomenti: modello RAM (p. 2) → tempo (p. 3) → modello RAM (pp. 5–6) → casi (p. 7) → tempo (p. 8) → casi (pp. 9–12), e le proprietà di $O$/$\Omega$/$\Theta$ (p. 27) arrivano dopo le regole di calcolo (pp. 24–26). Aggregando per pagina, l'ordine sopra è già quello consigliato: prima il modello, poi come si conta, poi quale caso, poi la notazione **completa** (proprietà incluse) e solo dopo le regole di calcolo, che la usano.
+
 ## Punti chiave
 
 1. Analisi = stima di memoria, banda, tempo; modello: singolo processore, memoria ad accesso casuale, nessuna gerarchia; operazioni a tempo costante ([[02-Notazione asintotica.pdf#page=2]]) → [[modello-ram]].
@@ -55,3 +73,9 @@ Slide in inglese di Steven Skiena (Stony Brook) con inserti in italiano del Prof
 - Ipotesi del modello RAM e perché è «utile come la terra piatta».
 
 _Aggiornato: 2026-09-26 — ingest 02-Notazione asintotica.pdf_
+_Aggiornato: 2026-10-28 — aggiunto il «Percorso della lezione» (spostato dall'indice lezioni.md)_
+
+<!-- nav:inizio -->
+---
+**Lezione 02 · pagina 1 di 8** · ← [[controesempi-per-euristiche|Trovare controesempi per euristiche (greedy)]] · [[lezioni|Indice]] · [[modello-ram|Modello di calcolo RAM]] →
+<!-- nav:fine -->

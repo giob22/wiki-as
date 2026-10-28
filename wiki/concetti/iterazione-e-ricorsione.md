@@ -53,3 +53,8 @@ La forma dell'algoritmo determina **come** se ne dimostra la correttezza (invari
 - [[03-Analisi di algoritmi.pdf#page=7]]–[[03-Analisi di algoritmi.pdf#page=11]]
 
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 03 · pagina 4 di 13** · ← [[divide-et-impera|Divide et impera]] · [[lezioni|Indice]] · [[somma-iterativa|somma_iterativa — somma dei primi n interi (versione iterativa)]] →
+<!-- nav:fine -->

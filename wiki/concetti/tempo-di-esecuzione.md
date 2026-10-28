@@ -81,3 +81,8 @@ $$
 - [[03-Analisi di algoritmi.pdf#page=20]] (intestazione «Analisi di complessità»), [[03-Analisi di algoritmi.pdf#page=21]], [[03-Analisi di algoritmi.pdf#page=22]], [[02-Notazione asintotica.pdf#page=3]], [[02-Notazione asintotica.pdf#page=8]]
 
 _Aggiornato: 2026-09-26 — ingest 02-Notazione asintotica.pdf e 03-Analisi di algoritmi.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 02 · pagina 3 di 8** · ← [[modello-ram|Modello di calcolo RAM]] · [[lezioni|Indice]] · [[casi-di-complessita|Caso peggiore, migliore e medio]] →
+<!-- nav:fine -->

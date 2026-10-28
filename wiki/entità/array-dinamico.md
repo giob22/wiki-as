@@ -77,3 +77,8 @@ Nel contesto della complessità computazionale e dell'ottimizzazione, il teorema
 - [[04-Strutture dati elementari.pdf#page=10]], [[04-Strutture dati elementari.pdf#page=11]], [[04-Strutture dati elementari.pdf#page=12]]
 
 _Aggiornato: 2026-09-26 — ingest 04-Strutture dati elementari.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 04 · pagina 5 di 9** · ← [[array|Array]] · [[lezioni|Indice]] · [[lista-concatenata|Lista concatenata (semplice e doppia)]] →
+<!-- nav:fine -->

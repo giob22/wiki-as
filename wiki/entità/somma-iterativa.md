@@ -87,3 +87,8 @@ $$ T(n) = 1 + 1 + (n+1) + n + 1 = 2n + 4 \ \Rightarrow\ O(n) $$
 
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_
+
+<!-- nav:inizio -->
+---
+**Lezione 03 · pagina 5 di 13** · ← [[iterazione-e-ricorsione|Iterazione e ricorsione]] · [[lezioni|Indice]] · [[somma-ricorsiva|somma_ricorsiva — somma dei primi n interi (versione ricorsiva)]] →
+<!-- nav:fine -->

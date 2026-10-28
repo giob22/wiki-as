@@ -724,7 +724,7 @@ PSEUDO_MERGE = [(1, "n1 ← q-p+1"), (2, "n2 ← r-q"), (3, "// create L[1..n1+1
 
 
 def merge():
-    an = Animazione("Merge(A, p, q, r) su A[p..r] = ⟨2, 4, 5, 7, 1, 2, 3, 6⟩ (slide 06 p. 9)", 820, 470, 1.1)
+    an = Animazione("Merge(A, p, q, r) su A[p..r] = ⟨2, 4, 5, 7, 1, 2, 3, 6⟩ (slide 06 p. 17)", 820, 470, 1.1)
     A = [None, 2, 4, 5, 7, 1, 2, 3, 6]
     p, q, r = 1, 4, 8
     L = [None] + A[p:q + 1] + ["∞"]
@@ -767,7 +767,7 @@ def merge():
             an.frame(scena({10, 11}, k, i, j, True, "R"), f"k = {k}: L[{i}] = {L[i]} ≤ R[{j}] = {R[j]}? no")
             A[k] = R[j]; j += 1
             an.frame(scena({14, 15}, k + 1, i, j, True), f"A[{k}] ← {A[k]}, j ← {j}")
-    an.frame(scena(set(), r + 1, i, j, True, nota="in L e R restano solo le due sentinelle ∞ (slide 06 p. 11)"),
+    an.frame(scena(set(), r + 1, i, j, True, nota="in L e R restano solo le due sentinelle ∞ (slide 06 p. 20)"),
              "k = r + 1: A[p..r] = ⟨1, 2, 2, 3, 4, 5, 6, 7⟩ ordinato; n = 8 iterazioni → Θ(n)", 2.5)
     an.salva("animazione-merge.svg")
 
@@ -775,7 +775,7 @@ def merge():
 def merge_sort():
     PSEUDO = [(1, "if p<r"), (2, "    q ← ⌊(p+r)/2⌋"), (3, "    Merge-Sort (A,p,q)"),
               (4, "    Merge-Sort (A,q+1,r)"), (5, "    Merge (A,p,q,r)")]
-    an = Animazione("Merge-Sort(A, 1, 11) su ⟨5, 2, 8, 0, 4, 7, 1, 9, 3, 2, 6⟩ (slide 06 p. 7)", 820, 520, 0.9)
+    an = Animazione("Merge-Sort(A, 1, 11) su ⟨5, 2, 8, 0, 4, 7, 1, 9, 3, 2, 6⟩ (slide 06 p. 8)", 820, 520, 0.9)
     A = [None, 5, 2, 8, 0, 4, 7, 1, 9, 3, 2, 6]
     n = 11
     cw, X0, Y0, DY = 66, 48, 70, 62
@@ -814,7 +814,7 @@ def merge_sort():
 
     an.frame(scena(set()), "si invoca Merge-Sort(A, 1, n) con n = 11")
     ms(1, n, 0)
-    an.frame(scena(set(), nota="non sul posto: Merge usa gli array ausiliari L e R (slide 06 p. 6)"),
+    an.frame(scena(set(), nota="non sul posto: Merge usa gli array ausiliari L e R (slide 06 p. 7)"),
              "risultato ⟨0, 1, 2, 2, 3, 4, 5, 6, 7, 8, 9⟩: albero di ⌈lg 11⌉ + 1 = 5 livelli", 2.5)
     an.salva("animazione-merge-sort.svg")
 
@@ -964,7 +964,7 @@ def quicksort_randomizzato():
 def torre_di_hanoi():
     PSEUDO = [(0, "HANOI(n, da, a, via)"), (1, "  if n > 0"), (2, "    HANOI(n−1, da, via, a)"),
               (3, "    sposta disco n: da → a"), (4, "    HANOI(n−1, via, a, da)")]
-    an = Animazione("Torre di Hanoi con 3 dischi da A a C (slide 06 pp. 2–4; soluzione ricorsiva mia)", 820, 420, 1.4)
+    an = Animazione("Torre di Hanoi con 3 dischi da A a C (slide 06 pp. 2–5; pseudocodice mio)", 820, 420, 1.4)
     pioli = {"A": [3, 2, 1], "B": [], "C": []}
     colori_disco = {1: ARANCIO, 2: "#c8c8c8", 3: VERDE}
     PX = {"A": 110, "B": 260, "C": 410}
@@ -994,11 +994,11 @@ def torre_di_hanoi():
         hanoi(n - 1, via, a, da, prof + 1)
 
     hanoi(3, "A", "C", "B", 0)
-    an.frame(scena(set(), 0, ""), "stato iniziale: tre dischi su A, il più grande in basso (slide 06 p. 3)")
+    an.frame(scena(set(), 0, ""), "stato iniziale: tre dischi su A, il più grande in basso (slide 06 p. 5)")
     for k, (d, da, a, chiamata) in enumerate(mosse, 1):
         pioli[a].append(pioli[da].pop())
         an.frame(scena({3}, k, "", "chiamata attiva: " + chiamata.strip()), f"mossa {k}: disco {d} da {da} a {a}")
-    an.frame(scena(set(), 7, ""), "tutti i dischi su C: 7 mosse, come nella sequenza di p. 4", 2.5)
+    an.frame(scena(set(), 7, ""), "tutti i dischi su C: 7 mosse, come nella sequenza di p. 5", 2.5)
     an.salva("animazione-torre-di-hanoi.svg")
 
 
@@ -1112,7 +1112,370 @@ def nuts_and_bolts_quadratico():
     an.salva("animazione-nuts-and-bolts-quadratico.svg")
 
 
+
+# =================================================================== GRAFI E ALBERI (lezioni 08-09)
+class _N:
+    def __init__(self, key, left=None, right=None):
+        self.key, self.left, self.right, self.p = key, left, right, None
+        for c in (left, right):
+            if c is not None:
+                c.p = self
+
+
+def _bst(chiavi):
+    root = None
+    for k in chiavi:
+        z, y, x = _N(k), None, root
+        while x is not None:
+            y = x
+            x = x.left if k < x.key else x.right
+        z.p = y
+        if y is None:
+            root = z
+        elif k < y.key:
+            y.left = z
+        else:
+            y.right = z
+    return root
+
+
+def _disegna_albero(root, x0=25, y0=80, w=420, dy=62, col=None, etich=None, r=17):
+    """Nodi in ascissa per rango nella visita in ordine, in ordinata per profondita'."""
+    col, etich = col or {}, etich or {}
+    pos, ordine = {}, []
+
+    def visita(x, d):
+        if x is None:
+            return
+        visita(x.left, d + 1)
+        ordine.append((x, d))
+        visita(x.right, d + 1)
+
+    visita(root, 0)
+    n = max(len(ordine), 1)
+    dx = w / n
+    for k, (x, d) in enumerate(ordine):
+        pos[x] = (x0 + dx * (k + 0.5), y0 + d * dy)
+    s = ""
+    for x, (px, py) in pos.items():
+        for c in (x.left, x.right):
+            if c is not None:
+                cx, cy = pos[c]
+                s += line(px, py, cx, cy, GRIGIO, 1.6)
+    for x, (px, py) in pos.items():
+        s += circle(px, py, r, col.get(x, "#fff7c2"), TESTO, 1.4)
+        s += t(px, py + 5, x.key, 14, TESTO, "middle", True)
+        if x in etich:
+            s += t(px + r + 3, py - r + 2, etich[x], 13, ROSSO, "start", True)
+    return s
+
+
+AZZ, VERDINO, ROSA = "#d0e8f7", "#cfe8b8", "#fbc8c3"
+
+
+def inorder_tree_walk():
+    PSEUDO = [(0, "Inorder-Tree-Walk (x)"), (1, "if x≠NIL"), (2, "  then Inorder-Tree-Walk (left[x])"),
+              (3, "       print key[x]"), (4, "       Inorder-Tree-Walk (right[x])")]
+    an = Animazione("Inorder-Tree-Walk sull'albero di 09 p. 7", 820, 400, 0.9)
+    radice = _N(5, _N(3, _N(2), _N(5)), _N(7, None, _N(8)))
+    stampate, chiamate, pila = [], [0], []
+
+    def scena(righe, x, nota):
+        col = {y: ORDINATO for y in fatti}
+        if x is not None:
+            col[x] = EVID
+        s = _disegna_albero(radice, col=col, etich={x: "x"} if x is not None else {})
+        s += t(30, 300, "chiavi stampate: " + (" ".join(str(k) for k in stampate) or "—"), 15, VERDE, bold=True)
+        s += t(30, 324, f"chiamate eseguite: {chiamate[0]}  ·  pila: " + (" → ".join(pila) or "—"), 13, TESTO)
+        if nota:
+            s += t(30, 346, nota, 13, GRIGIO)
+        s += an.pseudocodice(PSEUDO, righe, 505, 90, 300, 21)
+        return s
+
+    fatti = set()
+
+    def walk(x):
+        chiamate[0] += 1
+        if x is None:
+            an.frame(scena({1}, None, "x = NIL: il test della riga 1 è falso, la chiamata termina"), f"chiamata n. {chiamate[0]} su NIL")
+            return
+        pila.append(str(x.key))
+        an.frame(scena({1, 2}, x, f"x = {x.key}: prima tutto il sottoalbero sinistro"), f"chiamata n. {chiamate[0]} sul nodo {x.key}")
+        walk(x.left)
+        stampate.append(x.key)
+        fatti.add(x)
+        an.frame(scena({3}, x, f"sinistra finita: stampo {x.key}"), f"print {x.key}")
+        walk(x.right)
+        pila.pop()
+
+    an.frame(scena(set(), None, "si invoca Inorder-Tree-Walk(root)"), "visita in ordine: sinistra → nodo → destra")
+    walk(radice)
+    an.frame(scena(set(), None, f"n = 6 nodi: {chiamate[0]} chiamate = 2n + 1 (una per nodo, una per ogni figlio NIL)"),
+             "chiavi in ordine crescente: 2 3 5 5 7 8", 2.5)
+    an.salva("animazione-inorder-tree-walk.svg")
+
+
+ALBERO_SLIDE = [15, 6, 18, 3, 7, 17, 20, 2, 4, 13, 9]
+
+
+def tree_search():
+    PSEUDO = [(0, "Tree-Search (x,k)"), (1, "if x=NIL or key[x]=k"), (2, "  then return x"),
+              (3, "if k < key[x]"), (4, "  then return Tree-Search (left[x],k)"),
+              (5, "  else return Tree-Search (right[x],k)")]
+    an = Animazione("Tree-Search sull'albero di 09 p. 13: ricerca di 13 e di 11", 820, 440, 1.0)
+    radice = _bst(ALBERO_SLIDE)
+
+    def scena(righe, x, visti, k, nota, esito=None):
+        col = {y: AZZ for y in visti}
+        if x is not None:
+            col[x] = VERDINO if esito == "trovato" else EVID
+        s = _disegna_albero(radice, col=col, etich={x: "x"} if x is not None else {})
+        s += t(30, 372, f"chiave cercata k = {k}  ·  nodi visitati: {len(visti) + (1 if x is not None else 0)}", 14, TESTO, bold=True)
+        s += t(30, 394, nota, 13, TESTO)
+        s += an.pseudocodice(PSEUDO, righe, 470, 90, 340, 21)
+        return s
+
+    for k in (13, 11):
+        x, visti = radice, []
+        an.frame(scena(set(), None, [], k, "si parte dalla radice"), f"Tree-Search(root, {k})")
+        while True:
+            if x is None:
+                an.frame(scena({1, 2}, None, visti, k, "x = NIL: la chiave non c'è, si restituisce NIL"), f"{k} non trovato: return NIL", 1.8)
+                break
+            if x.key == k:
+                an.frame(scena({1, 2}, x, visti, k, f"key[x] = {k}: trovato", "trovato"), f"{k} trovato dopo {len(visti) + 1} nodi", 1.8)
+                break
+            if k < x.key:
+                an.frame(scena({1, 3, 4}, x, visti, k, f"{k} < {x.key}: si scende a sinistra"), f"x = {x.key}")
+                visti.append(x); x = x.left
+            else:
+                an.frame(scena({1, 3, 5}, x, visti, k, f"{k} > {x.key}: si scende a destra"), f"x = {x.key}")
+                visti.append(x); x = x.right
+    an.salva("animazione-tree-search.svg")
+
+
+def tree_minimum_maximum():
+    PSEUDO = [(0, "Tree-Minimum (x)"), (1, "while left[x]≠NIL"), (2, "    do x ← left[x]"), (3, "return x"),
+              (0, ""), (0, "Tree-Maximum (x)"), (4, "while right[x]≠NIL"), (5, "    do x ← right[x]"), (6, "return x")]
+    an = Animazione("Tree-Minimum e Tree-Maximum sull'albero di 09 p. 13", 820, 430, 1.0)
+    radice = _bst(ALBERO_SLIDE)
+
+    def scena(righe, x, visti, nota, fine=False):
+        col = {y: AZZ for y in visti}
+        col[x] = VERDINO if fine else EVID
+        s = _disegna_albero(radice, col=col, etich={x: "x"})
+        s += t(30, 380, nota, 13, TESTO)
+        s += an.pseudocodice(PSEUDO, righe, 500, 80, 300, 21)
+        return s
+
+    for nome, figlio, r_test, r_passo, r_ret in (("minimo", "left", 1, 2, 3), ("massimo", "right", 4, 5, 6)):
+        x, visti = radice, []
+        while getattr(x, figlio) is not None:
+            an.frame(scena({r_test, r_passo}, x, visti, f"{figlio}[x] ≠ NIL: si scende"), f"{nome}: x = {x.key}")
+            visti.append(x); x = getattr(x, figlio)
+        an.frame(scena({r_test, r_ret}, x, visti, f"{figlio}[x] = NIL: x è il {nome}", True), f"{nome} = {x.key} dopo {len(visti)} passi", 1.8)
+    an.salva("animazione-tree-minimum-maximum.svg")
+
+
+def tree_successor():
+    PSEUDO = [(0, "Tree-Successor (x)"), (1, "if right[x]≠NIL"), (2, "  then return Tree-Minimum(right[x])"),
+              (3, "y ← p[x]"), (4, "while y≠NIL and x=right[y]"), (5, "    do x ← y"), (6, "       y ← p[y]"), (7, "return y")]
+    an = Animazione("Tree-Successor sull'albero di 09 pp. 13–14: successori di 6 e di 13", 820, 430, 1.1)
+    radice = _bst(ALBERO_SLIDE)
+
+    def trova(k):
+        x = radice
+        while x.key != k:
+            x = x.left if k < x.key else x.right
+        return x
+
+    def scena(righe, x, y, nota, ris=None, partenza=None):
+        col, et = {}, {}
+        if partenza is not None:
+            col[partenza] = ROSA; et[partenza] = "nodo dato"
+        if x is not None:
+            col.setdefault(x, EVID); et[x] = "x" if x is not partenza else "nodo dato, x"
+        if y is not None:
+            col[y] = AZZ; et[y] = "y"
+        if ris is not None:
+            col[ris] = VERDINO; et[ris] = "successore"
+        s = _disegna_albero(radice, col=col, etich=et)
+        s += t(30, 380, nota, 13, TESTO)
+        s += an.pseudocodice(PSEUDO, righe, 475, 90, 335, 21)
+        return s
+
+    z = trova(6)
+    an.frame(scena({1}, z, None, "right[6] = 7 ≠ NIL: caso 1", partenza=z), "successore di 6")
+    m = z.right
+    while m.left is not None:
+        m = m.left
+    an.frame(scena({1, 2}, None, None, "il successore è il minimo del sottoalbero destro: 7", ris=m, partenza=z), "successore di 6 = 7 (slide p. 13)", 1.8)
+    z = trova(13)
+    x, y = z, z.p
+    an.frame(scena({1, 3}, x, y, "right[13] = NIL: caso 2, si risale; y ← p[x] = 7", partenza=z), "successore di 13")
+    while y is not None and x is y.right:
+        an.frame(scena({4, 5, 6}, x, y, f"x = {x.key} è figlio destro di y = {y.key}: si sale ancora", partenza=z), f"x = {x.key}, y = {y.key}")
+        x, y = y, y.p
+    an.frame(scena({4, 7}, x, y, f"x = {x.key} è figlio sinistro di y = {y.key}: il ciclo si ferma", ris=y, partenza=z),
+             "successore di 13 = 15 (slide p. 13)", 2.0)
+    an.salva("animazione-tree-successor.svg")
+
+
+def tree_insert():
+    PSEUDO = [(0, "Tree-Insert (T,z)"), (1, "y ← NIL"), (2, "x ← root[T]"), (3, "while x≠NIL"), (4, "    do y ← x"),
+              (5, "       if key[z] < key[x]"), (6, "          then x ← left[x]"), (7, "          else x ← right[x]"),
+              (8, "p[z] ← y"), (9, "if y = NIL"), (10, "   then root[T] ← z"), (11, "   else if key[z] < key[y]"),
+              (12, "      then left[y] ← z"), (13, "      else right[y] ← z")]
+    an = Animazione("Tree-Insert: inserimento di 19 e poi di 10 (09 pp. 16–18)", 820, 460, 1.0)
+    radice = _bst([15, 6, 18, 3, 7, 17, 20, 2, 4, 13])
+
+    def scena(righe, x, y, k, nota, nuovo=None):
+        col, et = {}, {}
+        if y is not None:
+            col[y] = AZZ; et[y] = "y"
+        if x is not None:
+            col[x] = EVID; et[x] = "x" if x is not y else "x, y"
+        if nuovo is not None:
+            col[nuovo] = VERDINO; et[nuovo] = "z"
+        s = _disegna_albero(radice, col=col, etich=et, dy=58)
+        s += t(30, 340, f"chiave da inserire: key[z] = {k}", 14, TESTO, bold=True)
+        s += t(30, 362, nota, 13, TESTO)
+        s += an.pseudocodice(PSEUDO, righe, 505, 62, 305, 20)
+        return s
+
+    for k in (19, 10):
+        y, x = None, radice
+        an.frame(scena({1, 2}, x, y, k, "y ← NIL, x ← radice"), f"Tree-Insert(T, {k})")
+        while x is not None:
+            y = x
+            if k < x.key:
+                an.frame(scena({3, 4, 5, 6}, x, y, k, f"{k} < {x.key}: x scende a sinistra"), f"y = {y.key}")
+                x = x.left
+            else:
+                an.frame(scena({3, 4, 5, 7}, x, y, k, f"{k} ≥ {x.key}: x scende a destra"), f"y = {y.key}")
+                x = x.right
+        z = _N(k); z.p = y
+        if k < y.key:
+            y.left = z; lato, riga = "sinistro", 12
+        else:
+            y.right = z; lato, riga = "destro", 13
+        an.frame(scena({3, 8, 9, 11, riga}, None, y, k, f"x = NIL: z diventa figlio {lato} di y = {y.key}", z),
+                 f"{k} inserito come figlio {lato} di {y.key}", 1.8)
+    an.salva("animazione-tree-insert.svg")
+
+
+def tree_delete():
+    PSEUDO = [(0, "Tree-Delete (T,z)"), (1, "if left[z]=NIL or right[z]=NIL"), (2, "  then y ← z"),
+              (3, "  else y ← Tree-Successor (z)"), (4, "if left[y] ≠NIL"), (5, "  then x ← left[y]"),
+              (6, "  else x ← right[y]"), (7, "if x ≠NIL"), (8, "  then p[x] ← p[y]"), (9, "if p[y] = NIL"),
+              (10, "  then root[T] ← x"), (11, "  else if y = left[p[y]]"), (12, "     then left[p[y]] ← x"),
+              (13, "     else right[p[y]] ← x"), (14, "if y ≠z"), (15, "  then key[z] ← key[y]"),
+              (16, "  (copia i dati satellite di y in z)"), (17, "return y")]
+    an = Animazione("Tree-Delete: i tre casi sull'albero di 09 pp. 19–21", 820, 500, 1.2)
+    radice = [_bst([15, 6, 18, 3, 10, 17, 20, 2, 8, 13, 9])]
+
+    def trova(k):
+        x = radice[0]
+        while x.key != k:
+            x = x.left if k < x.key else x.right
+        return x
+
+    def scena(righe, z, y, x, nota):
+        col, et = {}, {}
+        for nodo, c, e in ((z, ROSA, "z"), (y, AZZ, "y"), (x, EVID, "x")):
+            if nodo is not None:
+                col.setdefault(nodo, c); et[nodo] = (et[nodo] + ", " + e) if nodo in et else e
+        s = _disegna_albero(radice[0], col=col, etich=et, dy=60)
+        s += t(30, 380, nota, 13, TESTO)
+        s += an.pseudocodice(PSEUDO, righe, 505, 62, 305, 19)
+        return s
+
+    for k, caso in ((20, "caso z′: nessun figlio"), (3, "caso z″: un solo figlio"), (6, "caso z‴: due figli")):
+        z = trova(k)
+        an.frame(scena(set(), z, None, None, caso), f"Tree-Delete(T, {k})")
+        if z.left is None or z.right is None:
+            y = z
+            an.frame(scena({1, 2}, z, y, None, "z ha al più un figlio: si taglia fuori z stesso (y ← z)"), f"{caso}: y = {y.key}")
+        else:
+            y = z.right
+            while y.left is not None:
+                y = y.left
+            an.frame(scena({1, 3}, z, y, None, f"z ha due figli: y ← successore di z = {y.key}, che non ha figlio sinistro"), f"{caso}: y = {y.key}")
+        x = y.left if y.left is not None else y.right
+        an.frame(scena({4, 5} if y.left is not None else {4, 6}, z, y, x,
+                       f"x ← l'unico figlio di y: {x.key if x else 'NIL'}"), "x = " + (str(x.key) if x else "NIL"))
+        righe = {7, 9} | ({8} if x is not None else set())
+        if y.p is None:
+            righe |= {10}
+        else:
+            righe |= {11, 12 if y is y.p.left else 13}
+        if x is not None:
+            x.p = y.p
+        if y.p is None:
+            radice[0] = x
+        elif y is y.p.left:
+            y.p.left = x
+        else:
+            y.p.right = x
+        if y is not z:
+            z.key = y.key
+            an.frame(scena(righe | {14, 15, 16, 17}, z, None, x, f"y tagliato fuori; key[z] ← key[y]: il nodo z ora contiene {z.key}"),
+                     f"Delete({k}) completato: al posto di {k} c'è {z.key}", 2.0)
+        else:
+            an.frame(scena(righe | {14, 17}, None, None, x, f"y = z tagliato fuori: il padre punta a x = {x.key if x else 'NIL'}"),
+                     f"Delete({k}) completato", 1.8)
+    an.salva("animazione-tree-delete.svg")
+
+
+def liste_di_adiacenza():
+    an = Animazione("Costruzione delle liste di adiacenza con insert_edge (grafo di 08 p. 28)", 820, 420, 1.0)
+    archi = [(1, 2), (1, 5), (2, 3), (2, 4), (2, 5), (3, 4), (4, 5)]
+    pos = {1: (90, 110), 2: (230, 110), 3: (300, 190), 4: (230, 260), 5: (90, 260)}
+    liste = {v: [] for v in pos}
+    grado = {v: 0 for v in pos}
+    fatti = []
+
+    def scena(nuovo, nota):
+        s = ""
+        for (a, b) in fatti:
+            c = ROSSO if (a, b) == nuovo else GRIGIO
+            s += line(*pos[a], *pos[b], c, 3 if (a, b) == nuovo else 1.8)
+        for v, (x, y) in pos.items():
+            s += circle(x, y, 17, "#ffffff", TESTO, 1.5) + t(x, y + 5, v, 14, TESTO, "middle", True)
+        for i, v in enumerate(sorted(pos)):
+            yy = 80 + i * 46
+            s += rect(400, yy, 34, 30, fill="#ffffff", stroke=TESTO, sw=1.2, rx=2) + t(417, yy + 20, v, 13, TESTO, "middle", True)
+            s += t(392, yy + 20, f"grado {grado[v]}", 11, GRIGIO, "end")
+            xx = 450
+            for k, w in enumerate(liste[v]):
+                testa = nuovo is not None and k == 0 and v in nuovo
+                s += line(xx - 16, yy + 15, xx, yy + 15, GRIGIO, 1.2, arrow=True)
+                s += rect(xx, yy + 2, 30, 26, fill=EVID if testa else "#fdfdfd", stroke=TESTO, sw=1, rx=2)
+                s += t(xx + 15, yy + 20, w, 13, TESTO, "middle")
+                xx += 46
+            s += t(xx - 8, yy + 20, "/", 13, GRIGIO)
+        s += t(30, 330, f"archi inseriti: {len(fatti)}  ·  nodi di lista: {sum(len(l) for l in liste.values())} = 2m", 14, TESTO, bold=True)
+        s += t(30, 352, nota, 13, TESTO)
+        return s
+
+    an.frame(scena(None, "initialize_graph: tutte le liste vuote, tutti i gradi a 0"), "grafo vuoto")
+    for (a, b) in archi:
+        fatti.append((a, b))
+        liste[a].insert(0, b); grado[a] += 1
+        liste[b].insert(0, a); grado[b] += 1
+        an.frame(scena((a, b), f"insert_edge({a},{b}): {b} in testa alla lista di {a} e, non orientato, {a} in testa a quella di {b}"),
+                 f"arco ({a},{b})")
+    an.frame(scena(None, "spazio: n celle dell'array + 2m nodi di lista = Θ(n + m)"), "7 archi, 14 nodi di lista", 2.5)
+    an.salva("animazione-liste-di-adiacenza.svg")
+
 if __name__ == "__main__":
+    inorder_tree_walk()
+    tree_search()
+    tree_minimum_maximum()
+    tree_successor()
+    tree_insert()
+    tree_delete()
+    liste_di_adiacenza()
     merge()
     merge_sort()
     partition()

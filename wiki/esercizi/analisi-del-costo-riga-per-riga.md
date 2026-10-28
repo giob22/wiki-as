@@ -98,3 +98,8 @@ per **ogni** input: caso migliore = caso peggiore. Dettagli in [[selection-sort]
 _Aggiornato: 2026-09-26 — ingest 02-Notazione asintotica.pdf e 03-Analisi di algoritmi.pdf_
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 03 · pagina 11 di 13** · ← [[dimostrazioni-di-correttezza|Dimostrazioni di correttezza (invariante e induzione)]] · [[lezioni|Indice]] · [[equazioni-di-ricorrenza|Equazioni di ricorrenza (costo degli algoritmi ricorsivi)]] →
+<!-- nav:fine -->

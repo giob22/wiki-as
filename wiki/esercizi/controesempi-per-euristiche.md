@@ -51,3 +51,8 @@ $$ L_{CP} = 3(0.88) + 2(1.12) + 2.407 = 7.29, \qquad L_{opt} = 4(1.12) + 2(0.88)
 - Confrontare sempre con l'**ottimo**, non con un'altra euristica.
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf e 03-Analisi di algoritmi.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 01 · pagina 18 di 18** · ← [[ricerca-di-controesempi|Incorrettezza e ricerca di controesempi]] · [[lezioni|Indice]] · [[lezione-02-notazione-asintotica|Lezione 02: introduzione e riepilogo]] →
+<!-- nav:fine -->

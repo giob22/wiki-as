@@ -14,6 +14,26 @@ argomenti: [ordinamento, insertion sort, invariante di ciclo, analisi caso migli
 
 Slide del Prof. Marrone, a.a. 26/27 ([[05-Insertion sort.pdf#page=1]]). La lezione riprende il problema dell'**ordinamento** e ne elenca le applicazioni. Presenta poi **insertion sort** completo: idea e ordinamento sul posto, pseudocodice, traccia passo per passo su ⟨5, 2, 4, 6, 1, 3⟩, dimostrazione di correttezza con invariante di ciclo, analisi di complessità con la tabella costo × esecuzioni, caso migliore lineare e caso peggiore quadratico, implementazione in C++. Segue l'esercizio del libro di testo 2.2.2 su **selection sort** (implementazione, invariante, correttezza, efficienza, memoria). Due problemi «Stop & Think» chiudono la lezione con la crescita delle funzioni: il **pattern matching** di sottostringhe e l'**importanza dei logaritmi**, con la potenza veloce e lo split sbilanciato della ricerca binaria.
 
+## Percorso della lezione
+
+**PDF:** [[05-Insertion sort.pdf]] (pp. 1–33)
+
+Pagine del wiki nell'ordine di prima comparsa nelle slide (è l'ordine delle pagine di questa lezione nel libro, dopo questa):
+1. [[insertion-sort]] — pp. 4–23 · idea e ordinamento sul posto (p. 4), pseudocodice e traccia su ⟨5, 2, 4, 6, 1, 3⟩ (pp. 5–15), invariante (p. 16), tabella dei costi (p. 17), $T(n)$ (pp. 18–19), caso migliore lineare (p. 20), caso peggiore quadratico (pp. 21–22), codice C++ (p. 23)
+2. [[selection-sort]] — pp. 24–29 · esercizio 2.2.2: consegne, codice C, correttezza, efficienza $n(n-1)/2$, memoria (risposte 🧩)
+3. [[substring-pattern-matching]] — p. 30 · il problema e l'esempio *abba* in *aababba*
+4. [[findmatch]] — p. 31 · algoritmo a forza bruta e sua efficienza $O(nm)$
+5. [[logaritmi-nell-analisi]] — pp. 32–33 · dimezzamento ripetuto, alberi, bit, numeri armonici, split 1/3–2/3 della ricerca binaria
+6. [[potenza-veloce]] — p. 32 · `power(a,n)` con $O(\lg n)$ moltiplicazioni
+
+Prima, pp. 2–3: *ordinamento* (già letta nella lezione 01). È stata aggiornata con questa lezione: rileggi le sezioni «Definizione formale» (p. 2), «Applicazioni» (p. 3) e la nuova tabella «Algoritmi che lo risolvono».
+
+
+Già lette, con casi nuovi da questa lezione: *invariante-di-ciclo* (p. 16), *casi-di-complessita* (pp. 20–22), *efficienza-degli-algoritmi* (insertion sort ora ha la sua pagina), *dominanza-asintotica* (collegamento ai logaritmi), *analisi-del-costo-riga-per-riga* (casi 4–5), *dimostrazioni-di-correttezza* (casi 5–6), *stima-dei-tempi-di-esecuzione* (caso 5, p. 33).
+
+**Ordine consigliato.**
+Le slide sono lineari: segui l'ordine sopra. Durante la lezione, per le pp. 4–23 tieni aperta solo *insertion-sort*: le sue sezioni sono nello stesso ordine delle slide. Le pagine di esercizi «già lette» servono dopo, per ripassare.
+
 ## Punti chiave
 
 1. Problema dell'ordinamento e applicazioni: searching, closest pair, element uniqueness, frequency distribution, selection, convex hulls ([[05-Insertion sort.pdf#page=2]], [[05-Insertion sort.pdf#page=3]]) → [[ordinamento]].
@@ -63,3 +83,9 @@ Slide del Prof. Marrone, a.a. 26/27 ([[05-Insertion sort.pdf#page=1]]). La lezio
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
 _Aggiornato: 2026-10-02 — versione alternativa con while (indicazione del docente a lezione)_
+_Aggiornato: 2026-10-28 — aggiunto il «Percorso della lezione» (spostato dall'indice lezioni.md)_
+
+<!-- nav:inizio -->
+---
+**Lezione 05 · pagina 1 di 7** · ← [[tracce-pila-e-coda|Tracce di operazioni su pila e coda (su array)]] · [[lezioni|Indice]] · [[insertion-sort|Insertion sort]] →
+<!-- nav:fine -->

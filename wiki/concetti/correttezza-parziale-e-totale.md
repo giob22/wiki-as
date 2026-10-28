@@ -118,3 +118,8 @@ Passaggi → [[correttezza-per-induzione]].
 - [[01-Introduzione.pdf#page=9]], [[03-Analisi di algoritmi.pdf#page=15]], [[03-Analisi di algoritmi.pdf#page=16]], [[03-Analisi di algoritmi.pdf#page=17]], [[03-Analisi di algoritmi.pdf#page=18]], [[03-Analisi di algoritmi.pdf#page=19]]
 
 _Aggiornato: 2026-10-01 — creata dalla spiegazione in chat su correttezza parziale e totale_
+
+<!-- nav:inizio -->
+---
+**Lezione 03 · pagina 7 di 13** · ← [[somma-ricorsiva|somma_ricorsiva — somma dei primi n interi (versione ricorsiva)]] · [[lezioni|Indice]] · [[invariante-di-ciclo|Invariante di ciclo (correttezza degli algoritmi iterativi)]] →
+<!-- nav:fine -->

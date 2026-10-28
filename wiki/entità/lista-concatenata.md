@@ -153,6 +153,8 @@ Con le **liste doppiamente concatenate** (ogni nodo punta anche al predecessore)
 - [[coda]] — implementazione naturale su lista ([[04-Strutture dati elementari.pdf#page=28]])
 - [[casi-di-complessita]] — ogni operazione ha casi migliore e peggiore distinti
 - [[iterazione-e-ricorsione]] — `search_list` e `item_ahead` sono ricorsive; LIST-SEARCH è la versione iterativa
+- [[liste-di-adiacenza]] — ogni lista di adiacenza di un grafo è una lista concatenata con inserimento in testa ([[08-Grafi e alberi.pdf#page=28]])
+- [[albero-binario-di-ricerca]] — il BST degenere è una lista concatenata, con operazioni $\Theta(n)$ ([[09-Alberi binari ricerca.pdf#page=6]])
 
 ## Fonti
 
@@ -160,3 +162,9 @@ Con le **liste doppiamente concatenate** (ogni nodo punta anche al predecessore)
 - [[04-Strutture dati elementari.pdf#page=16]]–[[04-Strutture dati elementari.pdf#page=22]]
 
 _Aggiornato: 2026-09-26 — ingest 04-Strutture dati elementari.pdf_
+_Aggiornato: 2026-10-28 — collegamenti alle lezioni 08–09_
+
+<!-- nav:inizio -->
+---
+**Lezione 04 · pagina 6 di 9** · ← [[array-dinamico|Array dinamico (raddoppio della capacità)]] · [[lezioni|Indice]] · [[pila|Pila (stack) — LIFO]] →
+<!-- nav:fine -->

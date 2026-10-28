@@ -52,3 +52,8 @@ Un **array** è una struttura di record di dati di **dimensione fissa** tali che
 - [[04-Strutture dati elementari.pdf#page=7]] (intestazione «Arrays»), [[04-Strutture dati elementari.pdf#page=8]], [[04-Strutture dati elementari.pdf#page=9]]
 
 _Aggiornato: 2026-09-26 — ingest 04-Strutture dati elementari.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 04 · pagina 4 di 9** · ← [[strutture-contigue-e-collegate|Strutture dati contigue e collegate (e puntatori)]] · [[lezioni|Indice]] · [[array-dinamico|Array dinamico (raddoppio della capacità)]] →
+<!-- nav:fine -->

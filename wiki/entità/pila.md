@@ -80,3 +80,8 @@ Entrambe sono adatte a un contenitore in cui l'ordine non conta, ma a volte cont
 - [[04-Strutture dati elementari.pdf#page=24]] (intestazione «Containers»), [[04-Strutture dati elementari.pdf#page=25]], [[04-Strutture dati elementari.pdf#page=26]], [[04-Strutture dati elementari.pdf#page=28]], [[04-Strutture dati elementari.pdf#page=29]]
 
 _Aggiornato: 2026-09-26 — ingest 04-Strutture dati elementari.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 04 · pagina 7 di 9** · ← [[lista-concatenata|Lista concatenata (semplice e doppia)]] · [[lezioni|Indice]] · [[coda|Coda (queue) — FIFO]] →
+<!-- nav:fine -->

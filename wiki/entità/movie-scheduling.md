@@ -47,3 +47,8 @@ Introdotto come «S&T: Problema 2 — Movie scheduling» ([[01-Introduzione.pdf#
 - [[01-Introduzione.pdf#page=36]]–[[01-Introduzione.pdf#page=60]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 01 · pagina 12 di 18** · ← [[metodi-euristici|Metodi euristici (e differenza tra algoritmi ed euristiche)]] · [[lezioni|Indice]] · [[earliest-job-first|EarliestJobFirst (Soluzione 1 del Movie Scheduling)]] →
+<!-- nav:fine -->

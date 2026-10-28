@@ -53,3 +53,8 @@ Per il [[movie-scheduling]] esiste invece una regola corretta **ed** efficiente:
 - [[03-Analisi di algoritmi.pdf#page=6]], [[01-Introduzione.pdf#page=35]], [[01-Introduzione.pdf#page=60]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf e 03-Analisi di algoritmi.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 01 · pagina 11 di 18** · ← [[ricerca-combinatoria|Ricerca combinatoria (ricerca esaustiva)]] · [[lezioni|Indice]] · [[movie-scheduling|Movie Scheduling Problem (selezione di intervalli)]] →
+<!-- nav:fine -->

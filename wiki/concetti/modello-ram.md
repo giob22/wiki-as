@@ -50,3 +50,8 @@ Il paragone con la «terra piatta» dice due cose: il modello è **falso** in se
 - [[02-Notazione asintotica.pdf#page=2]], [[02-Notazione asintotica.pdf#page=5]], [[02-Notazione asintotica.pdf#page=6]], [[03-Analisi di algoritmi.pdf#page=21]]
 
 _Aggiornato: 2026-09-26 — ingest 02-Notazione asintotica.pdf e 03-Analisi di algoritmi.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 02 · pagina 2 di 8** · ← [[lezione-02-notazione-asintotica|Lezione 02: introduzione e riepilogo]] · [[lezioni|Indice]] · [[tempo-di-esecuzione|Analisi di un algoritmo: tempo di esecuzione (e spazio)]] →
+<!-- nav:fine -->

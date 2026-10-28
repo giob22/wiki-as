@@ -58,3 +58,8 @@ Commento della fonte: «The slowness of this approach make it prohibitive like t
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_
+
+<!-- nav:inizio -->
+---
+**Lezione 01 · pagina 15 di 18** · ← [[shortest-job-first|ShortestJobFirst (Soluzione 2 del Movie Scheduling)]] · [[lezioni|Indice]] · [[optimal-scheduling|OptimalScheduling (Soluzione 4 del Movie Scheduling)]] →
+<!-- nav:fine -->

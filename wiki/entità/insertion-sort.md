@@ -225,7 +225,7 @@ void InsertionSort (vector<T> A)
 - [[analisi-del-costo-riga-per-riga]] — stessa tecnica della somma iterativa, ma qui $t_j$ dipende dall'input
 - [[casi-di-complessita]] — caso migliore e peggiore con ordini di crescita diversi
 - [[efficienza-degli-algoritmi]] — $n^2$ contro $n\log n$ di [[merge-sort]]
-- [[quicksort]] — stesso caso peggiore $\Theta(n^2)$, ma sul vettore ordinato, che per insertion sort è il caso migliore ([[07-Quicksort.pdf#page=14]])
+- [[quicksort]] — stesso caso peggiore $\Theta(n^2)$, ma sul vettore ordinato, che per insertion sort è il caso migliore ([[07-Quicksort 1.pdf#page=14]])
 
 ## Fonti
 
@@ -235,3 +235,9 @@ void InsertionSort (vector<T> A)
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_
 _Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_
+_Aggiornato: 2026-10-14 — link ripuntati alla versione aggiornata delle slide 07-Quicksort 1.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 05 · pagina 2 di 7** · ← [[lezione-05-insertion-sort|Lezione 05: introduzione e riepilogo]] · [[lezioni|Indice]] · [[selection-sort|Selection sort (Esercizio del libro di testo 2.2.2)]] →
+<!-- nav:fine -->

@@ -69,6 +69,7 @@ Le file in banca sono code; la differenza tra BFS e DFS è solo se i vertici da 
 
 - [[pila]], [[lista-concatenata]], [[array]]
 - [[tracce-pila-e-coda]] — esercizi
+- [[coda-di-priorita]] — simile a una coda, ma l'ordine è dato dalla priorità ([[09-Alberi binari ricerca.pdf#page=4]])
 
 ## Fonti
 
@@ -76,3 +77,9 @@ Le file in banca sono code; la differenza tra BFS e DFS è solo se i vertici da 
 - [[04-Strutture dati elementari.pdf#page=25]], [[04-Strutture dati elementari.pdf#page=27]], [[04-Strutture dati elementari.pdf#page=28]], [[04-Strutture dati elementari.pdf#page=29]]
 
 _Aggiornato: 2026-09-26 — ingest 04-Strutture dati elementari.pdf_
+_Aggiornato: 2026-10-28 — collegamenti alle lezioni 08–09_
+
+<!-- nav:inizio -->
+---
+**Lezione 04 · pagina 8 di 9** · ← [[pila|Pila (stack) — LIFO]] · [[lezioni|Indice]] · [[tracce-pila-e-coda|Tracce di operazioni su pila e coda (su array)]] →
+<!-- nav:fine -->

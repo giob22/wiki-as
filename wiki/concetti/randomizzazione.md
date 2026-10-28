@@ -2,14 +2,14 @@
 tipo: concetto
 importanza_esame: media
 prerequisiti: ["casi-di-complessita", "quicksort"]
-fonti_pdf: ["07-Quicksort.pdf#page=19", "07-Quicksort.pdf#page=20", "07-Quicksort.pdf#page=23"]
+fonti_pdf: ["07-Quicksort 1.pdf#page=19", "07-Quicksort 1.pdf#page=20", "07-Quicksort 1.pdf#page=23"]
 ---
 
 # Randomizzazione
 
 ## Definizione
 
-> 📄 Fonte: [[07-Quicksort.pdf#page=19]]
+> 📄 Fonte: [[07-Quicksort 1.pdf#page=19]]
 
 La slide cita (in inglese) che la randomizzazione è «a powerful tool to improve algorithms» con **caso peggiore cattivo** ma **caso medio buono**. Tre usi elencati:
 - *random sampling* (campionamento casuale);
@@ -20,7 +20,7 @@ La slide cita (in inglese) che la randomizzazione è «a powerful tool to improv
 
 ## Formule
 
-> 📄 Fonte: [[07-Quicksort.pdf#page=23]]
+> 📄 Fonte: [[07-Quicksort 1.pdf#page=23]]
 
 Per un algoritmo randomizzato interessa il **tempo di esecuzione atteso**: per quicksort randomizzato si dimostra che è $O(n\log n)$ (dimostrazione sul libro di testo).
 
@@ -30,12 +30,12 @@ $$ \max_{|I| = n} \mathbb{E}[T(I)] = O(n \log n) $$
 
 ## Spiegazione
 
-> 📄 Fonte: [[07-Quicksort.pdf#page=20]]
+> 📄 Fonte: [[07-Quicksort 1.pdf#page=20]]
 
 L'esempio della lezione è **quicksort**: scegliere il pivot in maniera aleatoria aumenta la probabilità che in media il partizionamento sia ben bilanciato, e la versione randomizzata è ritenuta la scelta migliore per ordinare array di grosse dimensioni.
 
 > 🧩 Spiegazione mia — perché funziona proprio per algoritmi con «caso peggiore cattivo, caso medio buono»:
-> - il [[quicksort]] deterministico ha caso medio $\Theta(n\lg n)$ ma caso peggiore $\Theta(n^2)$, e il caso peggiore è un input **comune**: l'array già ordinato ([[07-Quicksort.pdf#page=14]]);
+> - il [[quicksort]] deterministico ha caso medio $\Theta(n\lg n)$ ma caso peggiore $\Theta(n^2)$, e il caso peggiore è un input **comune**: l'array già ordinato ([[07-Quicksort 1.pdf#page=14]]);
 > - con il pivot casuale il costo non dipende più dall'ordine dell'input ma dalle estrazioni: l'array ordinato si comporta come un input qualsiasi;
 > - il caso peggiore $\Theta(n^2)$ resta possibile, ma richiede estrazioni sfortunate a quasi ogni livello, ed è molto improbabile.
 >
@@ -55,6 +55,12 @@ L'esempio della lezione è **quicksort**: scegliere il pivot in maniera aleatori
 ## Fonti
 
 - [[lezione-07-quicksort]]
-- [[07-Quicksort.pdf#page=19]], [[07-Quicksort.pdf#page=20]], [[07-Quicksort.pdf#page=23]]
+- [[07-Quicksort 1.pdf#page=19]], [[07-Quicksort 1.pdf#page=20]], [[07-Quicksort 1.pdf#page=23]]
 
 _Aggiornato: 2026-10-01 — ingest 07-Quicksort.pdf_
+_Aggiornato: 2026-10-14 — link ripuntati alla versione aggiornata delle slide 07-Quicksort 1.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 07 · pagina 4 di 7** · ← [[partition|Partition]] · [[lezioni|Indice]] · [[quicksort-randomizzato|Quicksort randomizzato]] →
+<!-- nav:fine -->

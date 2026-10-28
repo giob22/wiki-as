@@ -14,6 +14,23 @@ argomenti: [astrazione dei dati, strutture contigue e collegate, array, array di
 
 Slide di Skiena con integrazioni del Prof. Marrone (costi $\Theta$ in italiano sotto ai codici). Una struttura dati si descrive con le **operazioni astratte** e con la loro **implementazione**, e le implementazioni si dividono in **contigue** (array) e **collegate** (puntatori). Gli **array** danno accesso costante e località, ma hanno dimensione fissa. Gli **array dinamici** la superano raddoppiando la capacità: il costo totale delle copie resta $O(n)$ grazie alla serie geometrica. Le **liste concatenate** sono presentate con codice C per inserimento, ricerca e cancellazione, con i loro casi migliore e peggiore, i vantaggi rispetto agli array e la variante doppia. Chiudono **pile** (LIFO) e **code** (FIFO), con le figure 10.1 e 10.2 del Cormen, l'osservazione che tutte le operazioni costano $O(1)$ e il legame con DFS/BFS.
 
+## Percorso della lezione
+
+**PDF:** [[04-Strutture dati elementari.pdf]] (pp. 1–30)
+
+Pagine del wiki nell'ordine di prima comparsa nelle slide (è l'ordine delle pagine di questa lezione nel libro, dopo questa):
+1. [[tipo-di-dato-astratto]] — pp. 2–4 · operazioni astratte contro implementazione
+2. [[strutture-contigue-e-collegate]] — p. 5 (poi pp. 15, 21) · array contro puntatori, vantaggi delle liste
+3. [[array]] — pp. 7–9
+4. [[array-dinamico]] — pp. 10–12 · raddoppio, $M \le 2n$, «no free lunch»
+5. [[lista-concatenata]] — pp. 14–22 · codice C, costi, liste doppie
+6. [[pila]] — pp. 24–26, 28–29 · LIFO, Figura 10.1, DFS
+7. [[coda]] — pp. 25, 27–29 · FIFO, Figura 10.2, BFS
+8. [[tracce-pila-e-coda]] — esercizio sulle Figure 10.1 e 10.2
+
+**Ordine consigliato.**
+*strutture-contigue-e-collegate* compare a p. 5 ma la sua tabella di confronto usa anche le liste (pp. 15, 21): leggila **dopo** *lista-concatenata*. Ordine: *tipo-di-dato-astratto* → *array* → *array-dinamico* → *lista-concatenata* → *strutture-contigue-e-collegate* → *pila* → *coda* → *tracce-pila-e-coda*.
+
 ## Punti chiave
 
 1. Strutture elementari come componenti «off-the-shelf»; operazioni astratte contro implementazione; Push/Pop ([[04-Strutture dati elementari.pdf#page=3]], [[04-Strutture dati elementari.pdf#page=4]]) → [[tipo-di-dato-astratto]].
@@ -51,3 +68,9 @@ Slide di Skiena con integrazioni del Prof. Marrone (costi $\Theta$ in italiano s
 - Implementare pila e coda su array; eseguire una traccia di PUSH/POP ed ENQUEUE/DEQUEUE.
 
 _Aggiornato: 2026-09-26 — ingest 04-Strutture dati elementari.pdf_
+_Aggiornato: 2026-10-28 — aggiunto il «Percorso della lezione» (spostato dall'indice lezioni.md)_
+
+<!-- nav:inizio -->
+---
+**Lezione 04 · pagina 1 di 9** · ← [[risoluzione-ricorrenze|Scrivere e risolvere equazioni di ricorrenza]] · [[lezioni|Indice]] · [[tipo-di-dato-astratto|Astrazione dei dati (operazioni astratte vs implementazione)]] →
+<!-- nav:fine -->

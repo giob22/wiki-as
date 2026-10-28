@@ -44,13 +44,13 @@ L'ordinamento serve come passo di molti altri problemi: **Searching**, **Closest
 |-----------|---------------|---------------|-------------------|--------|
 | [[insertion-sort]] | $\Theta(n)$ (già ordinato) | $\Theta(n^2)$ (ordine decrescente) | $\Theta(1)$, sul posto | [[05-Insertion sort.pdf#page=20]], [[05-Insertion sort.pdf#page=22]] |
 | [[selection-sort]] | $\Theta(n^2)$ | $\Theta(n^2)$ | $\Theta(1)$ (🧩) | [[05-Insertion sort.pdf#page=28]] |
-| [[merge-sort]] | $\Theta(n\lg n)$ | $\Theta(n\lg n)$ | $\Theta(n)$, **non** sul posto | [[06-Merge Sort.pdf#page=6]], [[06-Merge Sort.pdf#page=15]] |
-| [[quicksort]] | $\Theta(n\lg n)$ (partizioni bilanciate) | $\Theta(n^2)$ (vettore ordinato) | sul posto (pila da $\Theta(\lg n)$ a $\Theta(n)$, 🧩) | [[07-Quicksort.pdf#page=2]], [[07-Quicksort.pdf#page=14]], [[07-Quicksort.pdf#page=15]] |
-| [[quicksort-randomizzato]] | — | $\Theta(n^2)$ (improbabile); **atteso** $O(n\log n)$ | sul posto | [[07-Quicksort.pdf#page=20]], [[07-Quicksort.pdf#page=23]] |
+| [[merge-sort]] | $\Theta(n\lg n)$ | $\Theta(n\lg n)$ | $\Theta(n)$, **non** sul posto | [[06-Merge Sort (1).pdf#page=7]], [[06-Merge Sort (1).pdf#page=25]] |
+| [[quicksort]] | $\Theta(n\lg n)$ (partizioni bilanciate) | $\Theta(n^2)$ (vettore ordinato) | sul posto (pila da $\Theta(\lg n)$ a $\Theta(n)$, 🧩) | [[07-Quicksort 1.pdf#page=2]], [[07-Quicksort 1.pdf#page=14]], [[07-Quicksort 1.pdf#page=15]] |
+| [[quicksort-randomizzato]] | — | $\Theta(n^2)$ (improbabile); **atteso** $O(n\log n)$ | sul posto | [[07-Quicksort 1.pdf#page=20]], [[07-Quicksort 1.pdf#page=23]] |
 
 Confronto numerico su $n = 10^6$ a $10^9$ op/s: ≈ 16.7 minuti (insertion sort, $n^2$) contro ≈ 0.02 secondi (merge sort, $n \log n$) — derivazione in [[efficienza-degli-algoritmi]].
 
-> 🧩 Osservazione mia sulla tabella: l'input già ordinato è il caso **migliore** di insertion sort e il caso **peggiore** di quicksort con pivot $A[r]$ ([[07-Quicksort.pdf#page=14]]); merge sort non distingue gli input. Merge sort e insertion sort sono stabili, quicksort no (dettagli nelle pagine degli algoritmi).
+> 🧩 Osservazione mia sulla tabella: l'input già ordinato è il caso **migliore** di insertion sort e il caso **peggiore** di quicksort con pivot $A[r]$ ([[07-Quicksort 1.pdf#page=14]]); merge sort non distingue gli input. Merge sort e insertion sort sono stabili, quicksort no (dettagli nelle pagine degli algoritmi).
 
 ## Altre occorrenze
 
@@ -66,3 +66,10 @@ Confronto numerico su $n = 10^6$ a $10^9$ op/s: ≈ 16.7 minuti (insertion sort,
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf (definizione di p. 2, applicazioni di p. 3, tabella degli algoritmi)_
 _Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_
+_Aggiornato: 2026-10-10 — link ripuntati alla versione aggiornata delle slide 06-Merge Sort (1).pdf_
+_Aggiornato: 2026-10-14 — link ripuntati alla versione aggiornata delle slide 07-Quicksort 1.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 01 · pagina 3 di 18** · ← [[algoritmo-e-problema|Algoritmo, problema computazionale, istanza, correttezza, struttura dati]] · [[lezioni|Indice]] · [[efficienza-degli-algoritmi|Efficienza degli algoritmi («Algorithms as a technology»)]] →
+<!-- nav:fine -->

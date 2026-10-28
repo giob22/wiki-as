@@ -85,3 +85,8 @@ Permette di analizzare algoritmi componendo i costi dei pezzi.
 - [[02-Notazione asintotica.pdf#page=24]], [[02-Notazione asintotica.pdf#page=25]], [[02-Notazione asintotica.pdf#page=26]]
 
 _Aggiornato: 2026-09-26 — ingest 02-Notazione asintotica.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 02 · pagina 7 di 8** · ← [[dimostrazioni-notazione-asintotica|Dimostrare (o confutare) f = O/Ω/Θ(g)]] · [[lezioni|Indice]] · [[dominanza-asintotica|Dominanza asintotica, little-o e crescita delle funzioni]] →
+<!-- nav:fine -->

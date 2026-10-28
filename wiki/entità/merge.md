@@ -2,23 +2,23 @@
 tipo: entità
 categoria: algoritmo
 paradigma: "[[divide-et-impera]] (passo Combine di merge sort)"
-fonti_pdf: ["06-Merge Sort.pdf#page=8", "06-Merge Sort.pdf#page=9", "06-Merge Sort.pdf#page=10", "06-Merge Sort.pdf#page=11", "06-Merge Sort.pdf#page=12"]
+fonti_pdf: ["06-Merge Sort (1).pdf#page=15", "06-Merge Sort (1).pdf#page=16", "06-Merge Sort (1).pdf#page=18", "06-Merge Sort (1).pdf#page=17", "06-Merge Sort (1).pdf#page=19", "06-Merge Sort (1).pdf#page=20", "06-Merge Sort (1).pdf#page=21"]
 ---
 
 # Merge (fusione di sequenze ordinate)
 
-Le sezioni seguono l'ordine delle slide: pseudocodice (p. 8) → esempio (p. 9) → correttezza (pp. 10–11) → complessità (p. 12).
+Le sezioni seguono l'ordine delle slide: prima versione senza sentinelle (p. 15) → codice completo (p. 16) → esempio (p. 17) → correttezza (pp. 18–20) → complessità (p. 21).
 
 ## Problema risolto
 
-> 📄 Fonte: [[06-Merge Sort.pdf#page=6]], [[06-Merge Sort.pdf#page=8]]
+> 📄 Fonte: [[06-Merge Sort (1).pdf#page=7]], [[06-Merge Sort (1).pdf#page=16]]
 
 **Merge** combina due sottosequenze ordinate in una sequenza ordinata. È la prima delle «due funzioni» di [[merge-sort]]; l'altra, Merge-Sort, la invoca per ricombinare le metà ordinate.
 
 - **Input:** un array $A$ e tre indici $p \le q < r$ tali che $A[p..q]$ e $A[q+1..r]$ sono **già ordinati**.
 - **Output:** $A[p..r]$ contiene gli stessi elementi, **ordinati**.
 
-> 🧩 Derivazione mia (pre-condizione resa esplicita): la slide non scrive l'ipotesi $p \le q < r$, ma è quella garantita da Merge-Sort, che la chiama solo con $p < r$ e $q = \lfloor (p+r)/2 \rfloor$ ([[06-Merge Sort.pdf#page=13]]). Così entrambe le metà sono non vuote: $n_1 \ge 1$ e $n_2 \ge 1$.
+> 🧩 Derivazione mia (pre-condizione resa esplicita): la slide non scrive l'ipotesi $p \le q < r$, ma è quella garantita da Merge-Sort, che la chiama solo con $p < r$ e $q = \lfloor (p+r)/2 \rfloor$ ([[06-Merge Sort (1).pdf#page=22]]). Così entrambe le metà sono non vuote: $n_1 \ge 1$ e $n_2 \ge 1$.
 
 ## Idea
 
@@ -26,9 +26,41 @@ Le sezioni seguono l'ordine delle slide: pseudocodice (p. 8) → esempio (p. 9) 
 
 Lo pseudocodice della slide evita il controllo «un mazzo è finito?» con le **sentinelle**: in fondo a $L$ e $R$ mette $\infty$. Una sentinella non è mai minore di un elemento vero, quindi non viene scelta finché nell'altro array resta qualcosa.
 
-## Pseudocodice
+## Prima versione (senza sentinelle)
 
-> 📄 Fonte: [[06-Merge Sort.pdf#page=8]] (ripetuto in [[06-Merge Sort.pdf#page=9]] e [[06-Merge Sort.pdf#page=12]]); riportato fedelmente, numeri di riga miei
+> 📄 Fonte: [[06-Merge Sort (1).pdf#page=15]] (riportata fedelmente; numeri di riga miei)
+
+Nel passaggio dalla prima versione di Merge-Sort a quella con gli indici (→ [[merge-sort]] § Dal primo pseudocodice alla versione con indici), la creazione di $L$ e $R$ viene **spostata da Merge-Sort a Merge**. Merge deve usare memoria accessoria per copiare i sotto-vettori, perché l'inserimento in $A$ è ora una **sovrascrittura** e senza copie si perderebbero elementi.
+
+```
+Merge(A, p, q, r)
+1  copia A[p..q]   in L
+2  copia A[q+1..r] in R
+3  i ← 1
+4  j ← 1
+5  per k da p a r
+6      se L[i] ≤ R[j]
+7          A[k] ← L[i]
+8          i ← i + 1
+9      altrimenti
+10         A[k] ← R[j]
+11         j ← j + 1
+```
+
+- righe 1–2: **creazione effettiva di $L$ e $R$** (spostata da Merge-Sort a Merge);
+- righe 5–11: **inserimento in ordine**, cioè «pop» da $L$ e $R$ e inserimento con sovrascrittura in $A$.
+
+Qui nasce il «non in-place»: la memoria ausiliaria non serve solo per dividere, ma per fondere in modo semplice e sicuro.
+
+![[06-merge-sort-p15-merge-semplificato.png]]
+
+Annotazioni a mano: accanto alle righe 1–2 «faceva parte della fase discendente pre modifiche» (nella prima versione di Merge-Sort le copie si facevano dividendo, cioè in discesa); accanto al ciclo «fase ascendente».
+
+> 🧩 Osservazione mia: questa versione non ha le sentinelle e non controlla se $L$ o $R$ sono finiti. Con $L = \langle 1, 2 \rangle$ e $R = \langle 3, 4 \rangle$, dopo due iterazioni $i = 3$ e il confronto della riga 6 leggerebbe $L[3]$, che non esiste. Il «codice completo» qui sotto risolve il problema con la sentinella $\infty$ in fondo a $L$ e $R$ (riga 8).
+
+## Pseudocodice (codice completo)
+
+> 📄 Fonte: [[06-Merge Sort (1).pdf#page=16]] (titolo «Merge: codice completo»; ripetuto in [[06-Merge Sort (1).pdf#page=17]] e [[06-Merge Sort (1).pdf#page=21]]); riportato fedelmente, numeri di riga miei
 
 ```
 Merge (A,p,q,r)
@@ -55,19 +87,25 @@ Significato dei simboli:
 - $i$, $j$ = indice del primo elemento di $L$ e di $R$ non ancora ricopiato in $A$;
 - $k$ = posizione di $A$ da riempire.
 
+Accanto al codice la slide ripete i punti dell'idea di merge sort e aggiunge ([[06-Merge Sort (1).pdf#page=16]]):
+- **è una funzione iterativa!!** (Merge-Sort è ricorsiva, Merge no);
+- **non** effettua un ordinamento sul posto: infatti non fa proprio ordinamento, ma piuttosto **inserisce elementi in $A$ in maniera ordinata**, prendendoli da $L$ e $R$.
+
+![[06-merge-sort-p16-merge-codice-completo.png]]
+
 > ⚠️ Contraddizione (di notazione): la slide usa `do`/`then`/`else` e il commento `//` (stile della 2ª edizione del Cormen), mentre le [[pseudocodice|convenzioni del corso]] prevedono commenti con $\triangleright$ e nessun `do`/`then`. Il significato è lo stesso. Anche l'assegnamento multiplo `L[n1+1] ← R[n2+1] ← ∞` (riga 8) e `i ← j ← 1` (riga 9) non è previsto dalle convenzioni: si legge come due assegnamenti.
 
 ## Esempio di esecuzione
 
 ![[animazione-merge.svg]]
-> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo sull'istanza della slide 06 p. 9: $A[p..r] = \langle 2, 4, 5, 7, 1, 2, 3, 6 \rangle$ con $q$ a metà. Si vedono la copia in $L$ e $R$ con le sentinelle, i puntatori $i$, $j$, $k$, il confronto $L[i] \le R[j]$ (in azzurro l'elemento scelto), la parte già fusa $A[p..k-1]$ in verde (l'invariante di p. 10) e la riga di pseudocodice corrente.
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo sull'istanza della slide 06 p. 17: $A[p..r] = \langle 2, 4, 5, 7, 1, 2, 3, 6 \rangle$ con $q$ a metà. Si vedono la copia in $L$ e $R$ con le sentinelle, i puntatori $i$, $j$, $k$, il confronto $L[i] \le R[j]$ (in azzurro l'elemento scelto), la parte già fusa $A[p..k-1]$ in verde (l'invariante di p. 19) e la riga di pseudocodice corrente.
 
-> 📄 Fonte: [[06-Merge Sort.pdf#page=9]]
+> 📄 Fonte: [[06-Merge Sort (1).pdf#page=17]]
 
 Stato iniziale della slide: $A[p..q] = \langle 2, 4, 5, 7 \rangle$, $A[q+1..r] = \langle 1, 2, 3, 6 \rangle$, quindi $n_1 = n_2 = 4$, $L = \langle 2, 4, 5, 7, \infty \rangle$, $R = \langle 1, 2, 3, 6, \infty \rangle$, $i = j = 1$.
 
-![[06-merge-sort-p9-traccia-merge.png]]
-*Le due metà copiate in $L$ e $R$ con le sentinelle; sopra, $A[p..r]$ già fuso. ([[06-Merge Sort.pdf#page=9]])*
+![[06-merge-sort-p17-traccia-merge.png]]
+*Le due metà copiate in $L$ e $R$ con le sentinelle; sopra, $A[p..r]$ già fuso. ([[06-Merge Sort (1).pdf#page=17]])*
 
 > 🧩 Derivazione mia — traccia del ciclo delle righe 10–15 (la slide mostra solo lo stato iniziale e quello finale; verificata con [[divide_et_impera.py]]):
 
@@ -82,11 +120,13 @@ Stato iniziale della slide: $A[p..q] = \langle 2, 4, 5, 7 \rangle$, $A[q+1..r] =
 | 7 | 4 | 4 | $7 \le 6$? no | $R[4] = 6$ | ⟨1, …, 5, 6⟩ |
 | 8 | 4 | 5 | $7 \le \infty$? sì | $L[4] = 7$ | ⟨1, 2, 2, 3, 4, 5, 6, 7⟩ |
 
-Alla fine $i = 5$ e $j = 5$: in $L$ e $R$ restano solo le due sentinelle, come dice [[06-Merge Sort.pdf#page=11]]. Al passo $k = 8$ la sentinella $R[5] = \infty$ fa scegliere $L[4]$ senza controllare che $R$ sia finito.
+Alla fine $i = 5$ e $j = 5$: in $L$ e $R$ restano solo le due sentinelle, come dice [[06-Merge Sort (1).pdf#page=20]]. Al passo $k = 8$ la sentinella $R[5] = \infty$ fa scegliere $L[4]$ senza controllare che $R$ sia finito.
 
 ## Correttezza
 
-> 📄 Fonte: [[06-Merge Sort.pdf#page=10]], [[06-Merge Sort.pdf#page=11]]
+> 📄 Fonte: [[06-Merge Sort (1).pdf#page=19]], [[06-Merge Sort (1).pdf#page=20]]
+
+(La slide [[06-Merge Sort (1).pdf#page=18]] ha solo il titolo «Merge: analisi di correttezza» e la pagina vuota: l'analisi è nelle due slide successive.)
 
 **Invariante:** all'inizio di ciascuna iterazione dell'ultimo ciclo `for` (righe 10–15), la sottosequenza $A[p..k-1]$ contiene i $k - p$ elementi più piccoli di $L$ ed $R$, ordinati. Inoltre $L[i]$ e $R[j]$ sono i più piccoli elementi dei loro array a non essere stati ricopiati in $A$.
 
@@ -104,7 +144,7 @@ Alla fine $i = 5$ e $j = 5$: in $L$ e $R$ restano solo le due sentinelle, come d
 
 ## Complessità
 
-> 📄 Fonte: [[06-Merge Sort.pdf#page=12]]
+> 📄 Fonte: [[06-Merge Sort (1).pdf#page=21]]
 
 La slide raggruppa le righe e assegna a ogni gruppo un costo:
 
@@ -115,10 +155,10 @@ La slide raggruppa le righe e assegna a ogni gruppo un costo:
 | 8–9 | sentinelle, $i \leftarrow j \leftarrow 1$ | tempo costante |
 | 10–15 | ciclo di fusione | $n$ iterazioni, ciascuna richiedente un tempo costante ⇒ tempo proporzionale a $n$ |
 
-![[06-merge-sort-p12-costo-merge.png]]
+![[06-merge-sort-p21-costo-merge.png]]
 
 ### Derivazione — Merge è $\Theta(n)$
-**Fonte:** [[06-Merge Sort.pdf#page=12]] (costi per gruppi, senza conteggio esplicito)
+**Fonte:** [[06-Merge Sort (1).pdf#page=21]] (costi per gruppi, senza conteggio esplicito)
 **Si parte da:** [[tempo-di-esecuzione]] — $T(n) = \sum_i c_i \cdot (\text{n. esecuzioni riga } i)$, con $n = r - p + 1$
 
 > 🧩 Derivazione mia — tabella costo × numero di esecuzioni:
@@ -147,19 +187,19 @@ Anche il limite inferiore è lineare: il solo ciclo delle righe 10–15 esegue $
 
 > 🧮 Formula chiave: $T_{\text{Merge}}(n) = \Theta(n)$, con $n = r - p + 1$, **in ogni caso**. Il numero di iterazioni non dipende dai valori, solo da $n$.
 
-**Sanity check:** nella traccia di p. 9, $n = 8$: 8 iterazioni del ciclo di fusione, 4 + 4 copie iniziali.
+**Sanity check:** nella traccia di p. 17, $n = 8$: 8 iterazioni del ciclo di fusione, 4 + 4 copie iniziali.
 **Ipotesi:** [[modello-ram]], costo costante per riga, compresa la creazione di $L$ e $R$ a meno della loro dimensione.
 
-**Spazio:** $L$ e $R$ hanno $n_1 + 1 + n_2 + 1 = n + 2$ celle ⇒ $\Theta(n)$ memoria aggiuntiva (🧩). È il motivo per cui merge sort «**non** effettua un ordinamento sul posto» ([[06-Merge Sort.pdf#page=6]]).
+**Spazio:** $L$ e $R$ hanno $n_1 + 1 + n_2 + 1 = n + 2$ celle ⇒ $\Theta(n)$ memoria aggiuntiva (🧩). È il motivo per cui merge sort «**non** effettua un ordinamento sul posto» ([[06-Merge Sort (1).pdf#page=7]]).
 
 ## Proprietà
 
-- **Non sul posto** — usa gli array ausiliari $L$ e $R$ ([[06-Merge Sort.pdf#page=6]]).
-- **Stabile** — 🧩 derivabile dallo pseudocodice: a parità ($L[i] = R[j]$) la riga 11 sceglie $L[i]$, cioè l'elemento che stava prima in $A$. Nella traccia di p. 9 il 2 di $L$ finisce in $A[2]$, prima del 2 di $R$.
+- **Non sul posto** — usa gli array ausiliari $L$ e $R$ ([[06-Merge Sort (1).pdf#page=7]]).
+- **Stabile** — 🧩 derivabile dallo pseudocodice: a parità ($L[i] = R[j]$) la riga 11 sceglie $L[i]$, cioè l'elemento che stava prima in $A$. Nella traccia di p. 17 il 2 di $L$ finisce in $A[2]$, prima del 2 di $R$.
 
 ## Connessioni
 
-- [[merge-sort]] — Merge è il suo passo Combine, con $C(n) = \Theta(n)$ ([[06-Merge Sort.pdf#page=14]])
+- [[merge-sort]] — Merge è il suo passo Combine, con $C(n) = \Theta(n)$ ([[06-Merge Sort (1).pdf#page=23]])
 - [[invariante-di-ciclo]] — invariante con due affermazioni (prefisso di $A$ e puntatori $i$, $j$)
 - [[partition]] — il passo «lineare» di quicksort, che però lavora nel Divide e sul posto
 - [[analisi-del-costo-riga-per-riga]] — stessa tecnica di insertion sort, ma qui il numero di esecuzioni non dipende dall'input
@@ -168,6 +208,12 @@ Anche il limite inferiore è lineare: il solo ciclo delle righe 10–15 esegue $
 ## Fonti
 
 - [[lezione-06-merge-sort]]
-- [[06-Merge Sort.pdf#page=6]], [[06-Merge Sort.pdf#page=8]]–[[06-Merge Sort.pdf#page=12]]
+- [[06-Merge Sort (1).pdf#page=7]], [[06-Merge Sort (1).pdf#page=15]]–[[06-Merge Sort (1).pdf#page=21]]
 
 _Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf_
+_Aggiornato: 2026-10-10 — nuova versione delle slide (06-Merge Sort (1).pdf): prima versione senza sentinelle, «codice completo»_
+
+<!-- nav:inizio -->
+---
+**Lezione 06 · pagina 4 di 8** · ← [[merge-sort|Merge sort]] · [[lezioni|Indice]] · [[massimo-sottoarray|Problema del massimo sottoarray]] →
+<!-- nav:fine -->

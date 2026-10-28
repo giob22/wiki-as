@@ -76,8 +76,8 @@ L'invariante va scelto in modo che la **conclusione** dia esattamente la post-co
 
 - [[correttezza-parziale-e-totale]] — l'invariante dà la correttezza **parziale**, la funzione variante la terminazione: insieme la **totale**
 - [[insertion-sort]] — l'invariante di [[05-Insertion sort.pdf#page=16]] («$A[1..j-1]$ contiene gli elementi originali di $A[1..j-1]$, ordinati») è l'esempio canonico del metodo
-- [[merge]] — invariante con due affermazioni: prefisso $A[p..k-1]$ ordinato e puntatori $i$, $j$ sui minimi rimasti ([[06-Merge Sort.pdf#page=10]])
-- [[partition]] — invariante con tre condizioni, una per area ([[07-Quicksort.pdf#page=13]])
+- [[merge]] — invariante con due affermazioni: prefisso $A[p..k-1]$ ordinato e puntatori $i$, $j$ sui minimi rimasti ([[06-Merge Sort (1).pdf#page=19]])
+- [[partition]] — invariante con tre condizioni, una per area ([[07-Quicksort 1.pdf#page=13]])
 - [[selection-sort]] — invariante con due cicli annidati (esercizio 2.2.2, [[05-Insertion sort.pdf#page=26]])
 
 - [[correttezza-per-induzione]] — l'analogo per la ricorsione, «simile nello spirito» ([[03-Analisi di algoritmi.pdf#page=18]])
@@ -94,3 +94,10 @@ _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
 _Aggiornato: 2026-10-01 — collegamento a correttezza-parziale-e-totale_
 _Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_
+_Aggiornato: 2026-10-10 — link ripuntati alla versione aggiornata delle slide 06-Merge Sort (1).pdf_
+_Aggiornato: 2026-10-14 — link ripuntati alla versione aggiornata delle slide 07-Quicksort 1.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 03 · pagina 8 di 13** · ← [[correttezza-parziale-e-totale|Correttezza parziale e correttezza totale]] · [[lezioni|Indice]] · [[correttezza-per-induzione|Correttezza degli algoritmi ricorsivi (per induzione)]] →
+<!-- nav:fine -->

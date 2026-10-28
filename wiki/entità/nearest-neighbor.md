@@ -113,3 +113,8 @@ Ipotesi: calcolo della distanza in tempo costante ([[modello-ram]]), nessuna str
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_
+
+<!-- nav:inizio -->
+---
+**Lezione 01 · pagina 7 di 18** · ← [[robot-tour-optimization|Robot Tour Optimization (problema del commesso viaggiatore, TSP)]] · [[lezioni|Indice]] · [[closest-pair|ClosestPair (Soluzione 2 del Robot Tour)]] →
+<!-- nav:fine -->

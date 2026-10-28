@@ -90,8 +90,8 @@ FINE
 
 - [[insertion-sort]] — esempio completo: caso migliore $\Theta(n)$ con l'array già ordinato, caso peggiore $\Theta(n^2)$ con l'array decrescente ([[05-Insertion sort.pdf#page=20]], [[05-Insertion sort.pdf#page=22]]); [[selection-sort]] invece ha caso migliore = caso peggiore
 
-- [[quicksort]] — tre casi con ordini diversi: migliore e medio $\Theta(n\lg n)$, peggiore $\Theta(n^2)$ sul vettore ordinato ([[07-Quicksort.pdf#page=14]]–[[07-Quicksort.pdf#page=18]]); [[merge-sort]] invece è $\Theta(n\lg n)$ in ogni caso
-- [[randomizzazione]], [[quicksort-randomizzato]] — gli «algoritmi randomizzati» di p. 12: per loro si studia il tempo **atteso** (media sulle scelte casuali, input qualsiasi), che non richiede ipotesi sulla distribuzione degli input ([[07-Quicksort.pdf#page=23]])
+- [[quicksort]] — tre casi con ordini diversi: migliore e medio $\Theta(n\lg n)$, peggiore $\Theta(n^2)$ sul vettore ordinato ([[07-Quicksort 1.pdf#page=14]]–[[07-Quicksort 1.pdf#page=18]]); [[merge-sort]] invece è $\Theta(n\lg n)$ in ogni caso
+- [[randomizzazione]], [[quicksort-randomizzato]] — gli «algoritmi randomizzati» di p. 12: per loro si studia il tempo **atteso** (media sulle scelte casuali, input qualsiasi), che non richiede ipotesi sulla distribuzione degli input ([[07-Quicksort 1.pdf#page=23]])
 - [[notazione-asintotica]] — ciascun caso è una funzione di $n$ che si descrive con $O$, $\Omega$, $\Theta$
 - [[lista-concatenata]] — best/worst case di ricerca e cancellazione
 - [[tempo-di-esecuzione]]
@@ -105,3 +105,9 @@ _Aggiornato: 2026-09-26 — ingest 02-Notazione asintotica.pdf_
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
 _Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_
+_Aggiornato: 2026-10-14 — link ripuntati alla versione aggiornata delle slide 07-Quicksort 1.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 02 · pagina 4 di 8** · ← [[tempo-di-esecuzione|Analisi di un algoritmo: tempo di esecuzione (e spazio)]] · [[lezioni|Indice]] · [[notazione-asintotica|Notazione asintotica: O, Ω, Θ]] →
+<!-- nav:fine -->

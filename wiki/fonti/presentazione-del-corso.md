@@ -14,6 +14,12 @@ argomenti: [organizzazione del corso, modalità d'esame, programma, obiettivi, m
 
 Slide organizzative del Prof. Stefano Marrone, a.a. 26/27 ([[00-Presentazione.pdf#page=1]]). Il corso di Algoritmi e Strutture Dati (ASD) è integrato con Machine Learning (ML): due moduli in sequenza (ASD → ML), con argomenti «ponte» e una valutazione unica al 50 % ciascuno. Le slide riportano docenti e ricevimento, le due modalità d'esame, gli argomenti del modulo ASD, gli obiettivi formativi e i libri di riferimento.
 
+## Percorso della lezione
+
+**PDF:** [[00-Presentazione.pdf]] (pp. 1–8)
+
+> 💡 Prima di iniziare con la lezione 01 conviene leggere anche la pagina sulle convenzioni per lo pseudocodice (è il capitolo «Materiale di supporto», subito dopo questa pagina): lo pseudocodice compare già dalla lezione 01.
+
 ## Punti chiave
 
 1. **Corso integrato ASD + ML** ([[00-Presentazione.pdf#page=2]]): *Algorithms, Data Structures and Machine Learning*.
@@ -55,3 +61,9 @@ Slide organizzative del Prof. Stefano Marrone, a.a. 26/27 ([[00-Presentazione.pd
 - (organizzative, non d'esame) Differenze tra opzione A e B; ruolo della soglia sulla pratica.
 
 _Aggiornato: 2026-09-26 — ingest 00-Presentazione.pdf_
+_Aggiornato: 2026-10-28 — aggiunto il «Percorso della lezione» (spostato dall'indice lezioni.md)_
+
+<!-- nav:inizio -->
+---
+**Lezione 00 · pagina 1 di 1** · ← inizio del libro · [[lezioni|Indice]] · [[convenzioni-per-lo-pseudocodice|Materiale di supporto: introduzione e riepilogo]] →
+<!-- nav:fine -->

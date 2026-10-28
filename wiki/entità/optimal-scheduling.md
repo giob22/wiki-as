@@ -66,3 +66,8 @@ La slide afferma che la soluzione è corretta ed efficiente ma **non** riporta l
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_
+
+<!-- nav:inizio -->
+---
+**Lezione 01 · pagina 16 di 18** · ← [[exhaustive-scheduling|ExhaustiveScheduling (Soluzione 3 del Movie Scheduling)]] · [[lezioni|Indice]] · [[ricerca-di-controesempi|Incorrettezza e ricerca di controesempi]] →
+<!-- nav:fine -->

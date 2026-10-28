@@ -1,14 +1,14 @@
 ---
 tipo: entità
 categoria: problema
-fonti_pdf: ["06-Merge Sort.pdf#page=16"]
+fonti_pdf: ["06-Merge Sort (1).pdf#page=26"]
 ---
 
 # Problema del massimo sottoarray
 
 ## Definizione formale
 
-> 📄 Fonte: [[06-Merge Sort.pdf#page=16]]
+> 📄 Fonte: [[06-Merge Sort (1).pdf#page=26]]
 
 La slide è un «Stop & Think» che contiene solo il titolo, «Problema del massimo sottoarray», e il rimando al **Capitolo 4.1 del libro di testo**. Non ci sono testo del problema, algoritmo o analisi.
 
@@ -30,6 +30,12 @@ TODO: da espandere se una lezione presenterà la soluzione. Le slide non la dann
 ## Fonti
 
 - [[lezione-06-merge-sort]]
-- [[06-Merge Sort.pdf#page=16]]
+- [[06-Merge Sort (1).pdf#page=26]]
 
 _Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf_
+_Aggiornato: 2026-10-10 — link ripuntati alla versione aggiornata delle slide 06-Merge Sort (1).pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 06 · pagina 5 di 8** · ← [[merge|Merge (fusione di sequenze ordinate)]] · [[lezioni|Indice]] · [[metodo-di-sostituzione|Metodo di sostituzione]] →
+<!-- nav:fine -->

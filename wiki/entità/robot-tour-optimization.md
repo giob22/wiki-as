@@ -49,3 +49,8 @@ Figure delle istanze:
 - [[01-Introduzione.pdf#page=13]]–[[01-Introduzione.pdf#page=35]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 01 · pagina 6 di 18** · ← [[stima-dei-tempi-di-esecuzione|Stima dei tempi di esecuzione e dell'n massimo risolvibile]] · [[lezioni|Indice]] · [[nearest-neighbor|NearestNeighbor (Soluzione 1 del Robot Tour)]] →
+<!-- nav:fine -->

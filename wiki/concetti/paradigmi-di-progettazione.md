@@ -51,3 +51,8 @@ Davanti a un problema non noto (obiettivo esplicito del corso, [[00-Presentazion
 - [[03-Analisi di algoritmi.pdf#page=2]], [[03-Analisi di algoritmi.pdf#page=3]]
 
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 03 · pagina 2 di 13** · ← [[lezione-03-analisi-di-algoritmi|Lezione 03: introduzione e riepilogo]] · [[lezioni|Indice]] · [[divide-et-impera|Divide et impera]] →
+<!-- nav:fine -->

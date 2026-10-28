@@ -158,8 +158,15 @@ Sull'istanza peggiore della sezione precedente ($t = a^n$, $p = a^{m-1}b$): $k =
 ## Fonti
 
 - [[lezione-05-insertion-sort]]
+- le stesse slide sono riprese nella versione aggiornata della lezione 06 ([[lezione-06-merge-sort]]): [[06-Merge Sort (1).pdf#page=45]], [[06-Merge Sort (1).pdf#page=46]]
 - [[05-Insertion sort.pdf#page=30]], [[05-Insertion sort.pdf#page=31]]
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_
 _Aggiornato: 2026-10-02 — versione alternativa con while (indicazione del docente a lezione)_
+_Aggiornato: 2026-10-10 — slide riprese nella versione aggiornata della lezione 06_
+
+<!-- nav:inizio -->
+---
+**Lezione 05 · pagina 5 di 7** · ← [[substring-pattern-matching|Substring Pattern Matching (ricerca di una sottostringa)]] · [[lezioni|Indice]] · [[logaritmi-nell-analisi|L'importanza dei logaritmi]] →
+<!-- nav:fine -->

@@ -49,3 +49,8 @@ Risultato coincidente con la figura: (b) $tail = 3$, $head = 7$; (c) $head = 8$,
 - Credere che `POP` cancelli fisicamente l'elemento: cambia solo `top`.
 
 _Aggiornato: 2026-09-26 — ingest 04-Strutture dati elementari.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 04 · pagina 9 di 9** · ← [[coda|Coda (queue) — FIFO]] · [[lezioni|Indice]] · [[lezione-05-insertion-sort|Lezione 05: introduzione e riepilogo]] →
+<!-- nav:fine -->

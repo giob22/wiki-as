@@ -61,3 +61,8 @@ $n^3$ contro $n^2$: $\lim n^2/n^3 = \lim 1/n = 0$ ⇒ $n^2 = o(n^3)$, $n^3$ domi
 - Nella differenza il limite inferiore si perde.
 
 _Aggiornato: 2026-09-26 — ingest 02-Notazione asintotica.pdf_
+
+<!-- nav:inizio -->
+---
+**Lezione 02 · pagina 6 di 8** · ← [[notazione-asintotica|Notazione asintotica: O, Ω, Θ]] · [[lezioni|Indice]] · [[regole-di-calcolo-asintotico|Regole di calcolo con la notazione asintotica]] →
+<!-- nav:fine -->

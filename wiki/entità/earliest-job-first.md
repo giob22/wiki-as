@@ -68,3 +68,8 @@ Commento della fonte: «This idea makes sense, at least until we realize that ac
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_
+
+<!-- nav:inizio -->
+---
+**Lezione 01 · pagina 13 di 18** · ← [[movie-scheduling|Movie Scheduling Problem (selezione di intervalli)]] · [[lezioni|Indice]] · [[shortest-job-first|ShortestJobFirst (Soluzione 2 del Movie Scheduling)]] →
+<!-- nav:fine -->

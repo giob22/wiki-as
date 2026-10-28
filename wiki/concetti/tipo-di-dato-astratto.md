@@ -40,6 +40,7 @@ Separare **cosa** fa una struttura da **come** lo fa è il presupposto per anali
 - [[strutture-contigue-e-collegate]] — le due grandi famiglie di implementazione
 - [[pila]], [[coda]] — esempi di contenitori definiti dalle operazioni
 - [[algoritmo-e-problema]] — definizione di struttura dati
+- [[coda-di-priorita]] — altro tipo di dato astratto, implementabile con un array ordinato o con un BST ([[09-Alberi binari ricerca.pdf#page=4]])
 
 ## Fonti
 
@@ -47,3 +48,9 @@ Separare **cosa** fa una struttura da **come** lo fa è il presupposto per anali
 - [[04-Strutture dati elementari.pdf#page=2]] (intestazione), [[04-Strutture dati elementari.pdf#page=3]], [[04-Strutture dati elementari.pdf#page=4]]
 
 _Aggiornato: 2026-09-26 — ingest 04-Strutture dati elementari.pdf_
+_Aggiornato: 2026-10-28 — collegamenti alle lezioni 08–09_
+
+<!-- nav:inizio -->
+---
+**Lezione 04 · pagina 2 di 9** · ← [[lezione-04-strutture-dati-elementari|Lezione 04: introduzione e riepilogo]] · [[lezioni|Indice]] · [[strutture-contigue-e-collegate|Strutture dati contigue e collegate (e puntatori)]] →
+<!-- nav:fine -->
