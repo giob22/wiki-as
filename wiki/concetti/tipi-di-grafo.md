@@ -7,7 +7,7 @@ fonti_pdf: ["08-Grafi e alberi.pdf#page=8", "08-Grafi e alberi.pdf#page=9", "08-
 
 # Tipi di grafo («flavors of graphs»)
 
-## Definizione · [[08-Grafi e alberi.pdf#page=8|p. 8]], [[08-Grafi e alberi.pdf#page=9|9]]
+## Definizione · [[08-Grafi e alberi.pdf#page=8|p. 8]], [[08-Grafi e alberi.pdf#page=9|9]], [[08-Grafi e alberi.pdf#page=10|p. 10]], [[08-Grafi e alberi.pdf#page=11|p. 11]], [[08-Grafi e alberi.pdf#page=12|p. 12]], [[08-Grafi e alberi.pdf#page=13|p. 13]], [[08-Grafi e alberi.pdf#page=14|p. 14]], [[08-Grafi e alberi.pdf#page=15|p. 15]]
 
 Il primo passo in ogni problema su grafi è capire **con che tipo di grafo** si ha a che fare: il tipo di grafo ha un grande impatto su quali algoritmi sono appropriati ed efficienti. Imparare il vocabolario («talk the talk») è parte importante del saperli usare («walk the walk»).
 

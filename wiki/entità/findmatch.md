@@ -108,7 +108,7 @@ $$
 >
 > **Ipotesi:** [[modello-ram]], confronto di due caratteri in tempo costante.
 
-### Complessità della versione con `while` · [[05-Insertion sort.pdf#page=21|p. 19]]
+### Complessità della versione con `while` · [[05-Insertion sort.pdf#page=19|p. 19]]
 
 > 🧩 Derivazione mia — perché il `while` rende l'analisi più pulita. Nelle tabelle costo × numero di esecuzioni ([[analisi-del-costo-riga-per-riga]]) si usa la regola «**la guardia di un ciclo viene valutata una volta in più delle iterazioni**». Nella versione con `for` la regola vale solo se $p$ **non** compare: se compare in posizione $q$, il `return` della riga 9 esce dal ciclo senza un ultimo test, e la guardia della riga 5 è valutata $q + 1$ volte, non $q + 2$; inoltre la riga 11 viene eseguita o no a seconda dell'esito. Con il `while` la regola vale **sempre**, perché l'unica uscita è la guardia.
 

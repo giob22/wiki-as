@@ -34,7 +34,7 @@ L'ordinamento serve come passo di molti altri problemi: **Searching**, **Closest
 
 ![[05-insertion-sort-p3-applicazioni-ordinamento.png]]
 
-## Algoritmi che lo risolvono · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=24|p. 22]], [[05-Insertion sort.pdf#page=26|p. 24]], [[05-Insertion sort.pdf#page=38|p. 33]] · Merge Sort [[06-Merge Sort (1).pdf#page=7|p. 7]], [[06-Merge Sort (1).pdf#page=29|p. 27]] · Quicksort [[07-Quicksort 1.pdf#page=2|p. 2]], [[07-Quicksort 1.pdf#page=14|p. 14]], [[07-Quicksort 1.pdf#page=15|15]], [[07-Quicksort 1.pdf#page=20|p. 20]], [[07-Quicksort 1.pdf#page=23|p. 23]]
+## Algoritmi che lo risolvono · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=22|p. 22]], [[05-Insertion sort.pdf#page=24|p. 24]], [[05-Insertion sort.pdf#page=33|p. 33]] · Merge Sort [[06-Merge Sort (1).pdf#page=7|p. 7]], [[06-Merge Sort (1).pdf#page=27|p. 27]] · Quicksort [[07-Quicksort 1.pdf#page=2|p. 2]], [[07-Quicksort 1.pdf#page=14|p. 14]], [[07-Quicksort 1.pdf#page=15|15]], [[07-Quicksort 1.pdf#page=20|p. 20]], [[07-Quicksort 1.pdf#page=23|p. 23]]
 
 | Algoritmo | Caso migliore | Caso peggiore | Spazio aggiuntivo |
 |---|---|---|---|

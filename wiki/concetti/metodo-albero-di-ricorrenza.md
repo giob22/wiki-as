@@ -7,7 +7,7 @@ fonti_pdf: ["06-Merge Sort (1).pdf#page=27", "06-Merge Sort (1).pdf#page=33", "0
 
 # Metodo dell'albero di ricorrenza
 
-## Definizione · [[06-Merge Sort (1).pdf#page=35|p. 33]]
+## Definizione · [[06-Merge Sort (1).pdf#page=33|p. 33]]
 
 - Il metodo dell'albero di ricorrenza può essere usato per **generare delle buone soluzioni di tentativo**, da verificare con il [[metodo-di-sostituzione]] se sono state fatte ipotesi semplificative per derivare le soluzioni.
 - I **nodi** dell'albero di ricorrenza riportano il **costo per risolvere un dato (sotto)problema**.
@@ -31,11 +31,11 @@ Simboli: $i$ = livello (radice = 0); $a^i$ = nodi al livello $i$; $n/b^i$ = dime
 
 ## Derivazioni
 
-### Esempio 1 — merge sort, $T(n) = 2T(n/2) + cn$ · [[06-Merge Sort (1).pdf#page=29|p. 27]]
+### Esempio 1 — merge sort, $T(n) = 2T(n/2) + cn$ · [[06-Merge Sort (1).pdf#page=27|p. 27]]
 
 L'albero ha $\lg n + 1$ livelli, ciascuno di costo $cn$: totale $cn(\lg n + 1) = \Theta(n\lg n)$. Derivazione livello per livello in [[merge-sort]] § Soluzione con l'albero di ricorsione.
 
-### Esempio 2 — $T(n) = 3T(\lfloor n/4 \rfloor) + \Theta(n^2)$ · [[06-Merge Sort (1).pdf#page=36|p. 34]]–[[06-Merge Sort (1).pdf#page=43|40]]
+### Esempio 2 — $T(n) = 3T(\lfloor n/4 \rfloor) + \Theta(n^2)$ · [[06-Merge Sort (1).pdf#page=34|p. 34]]–[[06-Merge Sort (1).pdf#page=40|40]]
 > 📄 Fonte: p. 34–p. 37 (l'albero è costruito un passo per slide: a p. 34 c'è solo $T(n)$, a p. 35 e p. 36 si espandono i livelli, a p. 37 l'albero è completo)
 
 Consideriamo $T(n) = 3T(\lfloor n/4 \rfloor) + \Theta(n^2)$. Costruiamo l'albero di ricorrenza per $T(n) = 3T(n/4) + cn^2$:
@@ -76,7 +76,7 @@ $$
 $$
 > Il costo è **dominato dalla radice**: i livelli decrescono geometricamente (ognuno costa $3/16$ del precedente) e la somma è un multiplo costante del primo termine $cn^2$.
 
-### Verifica per sostituzione · [[06-Merge Sort (1).pdf#page=44|p. 41]]
+### Verifica per sostituzione · [[06-Merge Sort (1).pdf#page=41|p. 41]]
 
 Verifichiamo con il [[metodo-di-sostituzione]] che $T(n) = O(n^2)$, ovvero $\exists\, d > 0 : T(n) \le dn^2$. Passo induttivo (assumiamo vero per $\lfloor n/4 \rfloor$, dimostriamo per $n$), con i commenti miei (🧩):
 
@@ -101,7 +101,7 @@ Per $n = 1$ (caso base), $T(1) \le d$: verificato quindi per $d \ge T(1)$.
 >
 > Precisazione (🧩): per $n = 2, 3$ si ha $\lfloor n/4 \rfloor = 0$, fuori dal dominio dell'induzione; anche $n = 2$ e $n = 3$ vanno trattati come casi base, scegliendo $d \ge \max(T(1), T(2)/4, T(3)/9)$.
 
-### Anche limite inferiore · [[06-Merge Sort (1).pdf#page=47|p. 43]]
+### Anche limite inferiore · [[06-Merge Sort (1).pdf#page=43|p. 43]]
 
 Con il metodo di sostituzione abbiamo verificato che $T(n) = O(n^2)$. In realtà è anche $T(n) = \Omega(n^2)$: la prima chiamata ricorsiva contribuisce con un costo $\Theta(n^2)$ e quindi $\Omega(n^2)$ è un limite inferiore per la ricorrenza. Quindi $T(n) = \Theta(n^2)$.
 
@@ -120,7 +120,7 @@ L'albero rende visibile **dove** sta il costo:
 
 > 💡 Connessione: sono esattamente i casi 2, 3 e 1 del [[teorema-dell-esperto]], che confronta $f(n)$ (radice) con $n^{\log_b a}$ (foglie).
 
-### S&T: «Albero di ricorsione?» · [[06-Merge Sort (1).pdf#page=10|p. 9]], [[06-Merge Sort (1).pdf#page=52|p. 48]]
+### S&T: «Albero di ricorsione?» · [[06-Merge Sort (1).pdf#page=9|p. 9]], [[06-Merge Sort (1).pdf#page=48|p. 48]]
 
 Dopo il teorema dell'esperto la lezione chiude la parte sulle ricorrenze con uno «Stop & Think» che contiene solo la domanda **«Albero di ricorsione?»**, senza altro testo.
 
@@ -139,7 +139,7 @@ Dopo il teorema dell'esperto la lezione chiude la parte sulle ricorrenze con uno
 - [[risoluzione-ricorrenze]] — esercizi
 - [[albero]] — gli alberi di ricorsione come caso degli alberi, insieme a cartelle ed espressioni
 
-## Fonti · Merge Sort [[06-Merge Sort (1).pdf#page=29|p. 27]], [[06-Merge Sort (1).pdf#page=35|p. 33]], [[06-Merge Sort (1).pdf#page=47|p. 43]] · Quicksort [[07-Quicksort 1.pdf#page=16|p. 16]], [[07-Quicksort 1.pdf#page=18|p. 18]]
+## Fonti · Merge Sort [[06-Merge Sort (1).pdf#page=27|p. 27]], [[06-Merge Sort (1).pdf#page=33|p. 33]], [[06-Merge Sort (1).pdf#page=43|p. 43]] · Quicksort [[07-Quicksort 1.pdf#page=16|p. 16]], [[07-Quicksort 1.pdf#page=18|p. 18]]
 
 - [[lezione-06-merge-sort]], [[lezione-07-quicksort]]
 

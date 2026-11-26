@@ -22,8 +22,137 @@ note = []
 # Nome corto di ogni PDF, usato nei titoli quando una sezione cita più file (riferimenti_nei_titoli.py).
 # Le lezioni 06 e 07 hanno una versione aggiornata (la vecchia resta in raw/ come «versione precedente»).
 [pdf_corti]
+"00-Presentazione.pdf" = "Presentazione"
 "06-Merge Sort (1).pdf" = "Merge Sort"
 "06-Merge Sort.pdf" = "Merge Sort (vecchia)"
 "07-Quicksort 1.pdf" = "Quicksort"
 "07-Quicksort.pdf" = "Quicksort (vecchia)"
 "a1-indicazioni_psuedocodice.pdf" = "Pseudocodice"
+
+[[lezioni]]
+n = 0
+breve = "Presentazione del corso e pseudocodice"
+concetti = ["pseudocodice"]
+esercizi = []
+fonte = "presentazione-del-corso"
+domande = true
+
+[[lezioni]]
+n = 1
+breve = "Introduzione"
+concetti = ["algoritmo-e-problema", "ordinamento", "efficienza-degli-algoritmi", "robot-tour-optimization", "nearest-neighbor", "closest-pair", "optimal-tsp", "ricerca-combinatoria", "metodi-euristici", "movie-scheduling", "earliest-job-first", "shortest-job-first", "exhaustive-scheduling", "optimal-scheduling", "ricerca-di-controesempi"]
+esercizi = ["stima-dei-tempi-di-esecuzione", "controesempi-per-euristiche"]
+fonte = "lezione-01-introduzione"
+domande = true
+
+[[lezioni]]
+n = 2
+breve = "Notazione asintotica"
+concetti = ["modello-ram", "tempo-di-esecuzione", "casi-di-complessita", "notazione-asintotica", "regole-di-calcolo-asintotico", "dominanza-asintotica"]
+esercizi = ["dimostrazioni-notazione-asintotica"]
+fonte = "lezione-02-notazione-asintotica"
+domande = true
+
+[[lezioni]]
+n = 3
+breve = "Analisi di algoritmi"
+concetti = ["paradigmi-di-progettazione", "divide-et-impera", "iterazione-e-ricorsione", "somma-iterativa", "somma-ricorsiva", "correttezza-parziale-e-totale", "invariante-di-ciclo", "correttezza-per-induzione", "equazioni-di-ricorrenza"]
+esercizi = ["dimostrazioni-di-correttezza", "analisi-del-costo-riga-per-riga", "risoluzione-ricorrenze"]
+fonte = "lezione-03-analisi-di-algoritmi"
+domande = true
+
+[[lezioni]]
+n = 4
+breve = "Strutture dati elementari"
+concetti = ["tipo-di-dato-astratto", "strutture-contigue-e-collegate", "array", "array-dinamico", "lista-concatenata", "pila", "coda"]
+esercizi = ["tracce-pila-e-coda"]
+fonte = "lezione-04-strutture-dati-elementari"
+domande = true
+
+[[lezioni]]
+n = 5
+breve = "Insertion sort"
+concetti = ["insertion-sort", "selection-sort", "substring-pattern-matching", "findmatch", "logaritmi-nell-analisi", "potenza-veloce"]
+esercizi = []
+fonte = "lezione-05-insertion-sort"
+domande = true
+
+[[lezioni]]
+n = 6
+breve = "Merge Sort"
+concetti = ["torre-di-hanoi", "merge-sort", "merge", "massimo-sottoarray", "metodo-di-sostituzione", "metodo-albero-di-ricorrenza", "teorema-dell-esperto"]
+esercizi = []
+fonte = "lezione-06-merge-sort"
+domande = true
+
+[[lezioni]]
+n = 7
+breve = "Quicksort"
+concetti = ["quicksort", "partition", "randomizzazione", "quicksort-randomizzato", "nuts-and-bolts"]
+esercizi = ["progettazione-divide-et-impera"]
+fonte = "lezione-07-quicksort"
+domande = true
+
+[[lezioni]]
+n = 8
+breve = "Grafi e alberi"
+concetti = ["grafo", "tipi-di-grafo", "matrice-di-adiacenza", "liste-di-adiacenza", "albero"]
+esercizi = []
+fonte = "lezione-08-grafi-e-alberi"
+domande = true
+
+[[lezioni]]
+n = 9
+breve = "Alberi binari di ricerca"
+concetti = ["coda-di-priorita", "albero-binario-di-ricerca", "inorder-tree-walk", "tree-search", "tree-minimum-maximum", "tree-successor", "tree-insert", "tree-delete"]
+esercizi = []
+fonte = "lezione-09-alberi-binari-di-ricerca"
+domande = true
+
+[[lezioni]]
+n = 10
+breve = "Heapsort"
+concetti = ["heap", "max-heapify", "build-max-heap", "heapsort", "heap-extract-max", "heap-increase-key", "max-heap-insert"]
+esercizi = ["tracce-su-heap"]
+fonte = "lezione-10-heap-e-heapsort"
+domande = true
+
+[[lezioni]]
+n = 11
+breve = "Alberi rosso-neri"
+concetti = ["albero-rosso-nero", "left-rotate", "rb-insert", "rb-delete"]
+esercizi = []
+fonte = "lezione-11-alberi-rosso-neri"
+domande = true
+
+[[lezioni]]
+n = 12
+breve = "Alberi auto-aggiustanti"
+concetti = ["splay-tree", "splay", "splay-tree-operazioni"]
+esercizi = []
+fonte = "lezione-12-alberi-auto-aggiustanti"
+domande = true
+
+[[lezioni]]
+n = 13
+breve = "Algoritmi di visita di un grafo"
+concetti = ["visita-di-un-grafo", "visita-in-ampiezza", "print-path", "visita-in-profondita", "ordinamento-topologico", "dijkstra"]
+esercizi = []
+fonte = "lezione-13-algoritmi-di-visita-di-un-grafo"
+domande = true
+
+[[lezioni]]
+n = 14
+breve = "Backpropagation"
+concetti = ["grafo-computazionale", "backpropagation"]
+esercizi = []
+fonte = "lezione-14-backpropagation"
+domande = true
+
+[[lezioni]]
+n = 15
+breve = "Backtracking"
+concetti = ["backtracking", "generazione-di-permutazioni"]
+esercizi = []
+fonte = "lezione-15-backtracking"
+domande = true

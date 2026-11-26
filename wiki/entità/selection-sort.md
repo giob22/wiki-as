@@ -13,7 +13,7 @@ Le sezioni seguono l'ordine delle slide: traccia dell'esercizio (p. 24) → codi
 
 [[ordinamento]].
 
-## Traccia dell'esercizio e idea · [[05-Insertion sort.pdf#page=31|p. 26]]
+## Traccia dell'esercizio e idea · [[05-Insertion sort.pdf#page=26|p. 26]]
 
 > 📄 Fonte: p. 26 — «Esercizio Libro di testo: 2.2.2» (Cormen, esercizio 2.2-2)
 
@@ -26,7 +26,7 @@ Consegne: **Implementa**. **Analizza**: quale invariante di ciclo conserva? Perc
 
 ![[05-insertion-sort-p24-esercizio-selection-sort.png]]
 
-## Pseudocodice (implementazione) · [[05-Insertion sort.pdf#page=33|p. 28]]
+## Pseudocodice (implementazione) · [[05-Insertion sort.pdf#page=28|p. 28]]
 
 ```c
 selection_sort(int s[], int n) {
@@ -69,7 +69,7 @@ SELECTION-SORT(A)
 | 4 | 4 (pos. 6) | $A[4] \leftrightarrow A[6]$ | ⟨1, 2, 3, **4**, 5, 6⟩ |
 | 5 | 5 (pos. 5) | con sé stesso | ⟨1, 2, 3, 4, **5**, 6⟩ |
 
-## Correttezza · [[05-Insertion sort.pdf#page=36|p. 31]]
+## Correttezza · [[05-Insertion sort.pdf#page=31|p. 31]]
 
 > 📄 Fonte: p. 31 — «Dimostrarne la correttezza» (senza soluzione)
 
@@ -85,7 +85,7 @@ SELECTION-SORT(A)
 >
 > Verificato con [[ordinamento.py]] (asserzione dell'invariante a ogni iterazione).
 
-## Complessità · [[05-Insertion sort.pdf#page=37|p. 32]], [[05-Insertion sort.pdf#page=38|33]]
+## Complessità · [[05-Insertion sort.pdf#page=32|p. 32]], [[05-Insertion sort.pdf#page=33|33]]
 
 > 📄 Fonte: p. 32 — «Valutare l'efficienza asintotica»; p. 33 — conteggio dei confronti:
 
@@ -127,7 +127,7 @@ $$
 - [[invariante-di-ciclo]], [[dimostrazioni-di-correttezza]] — correttezza
 - [[analisi-del-costo-riga-per-riga]] — conteggio dei confronti
 
-## Fonti · [[05-Insertion sort.pdf#page=31|p. 26]], [[05-Insertion sort.pdf#page=34|p. 34]]
+## Fonti · [[05-Insertion sort.pdf#page=26|p. 26]], [[05-Insertion sort.pdf#page=34|p. 34]]
 
 - [[lezione-05-insertion-sort]]
 

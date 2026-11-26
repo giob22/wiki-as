@@ -144,7 +144,7 @@ $$
 
 **Verifica** ([[divide_et_impera.py]]): su un array ordinato Partition fa $\frac{n(n-1)}{2}$ confronti in tutto, cioè 4950 per $n = 100$.
 
-### 2. Caso migliore — teorema dell'esperto · Quicksort [[07-Quicksort 1.pdf#page=15|p. 15]] · Merge Sort [[06-Merge Sort (1).pdf#page=48|p. 44]]
+### 2. Caso migliore — teorema dell'esperto · Quicksort [[07-Quicksort 1.pdf#page=15|p. 15]] · Merge Sort [[06-Merge Sort (1).pdf#page=44|p. 44]]
 
 - Il caso migliore è quando i due sottoproblemi sono perfettamente bilanciati ad ogni iterazione: dimensioni $\lfloor n/2 \rfloor$ e $\lceil n/2 \rceil - 1$.
 - Tempo di esecuzione $T(n) \le 2T(n/2) + \Theta(n)$.
@@ -219,7 +219,7 @@ Con 99:1 cambia solo la base del logaritmo, $\log_{100/99} n$: la profondità re
 
 È un argomento intuitivo: la dimostrazione del tempo atteso riguarda la versione randomizzata ed è sul libro di testo (→ [[quicksort-randomizzato]]).
 
-### 5. Dimostrazione del caso peggiore — metodo di sostituzione · Quicksort [[07-Quicksort 1.pdf#page=21|p. 21]], [[07-Quicksort 1.pdf#page=22|22]] · Merge Sort [[06-Merge Sort (1).pdf#page=32|p. 30]]
+### 5. Dimostrazione del caso peggiore — metodo di sostituzione · Quicksort [[07-Quicksort 1.pdf#page=21|p. 21]], [[07-Quicksort 1.pdf#page=22|22]] · Merge Sort [[06-Merge Sort (1).pdf#page=30|p. 30]]
 
 Dimostriamo che il tempo di esecuzione è $\Theta(n^2)$ nel caso peggiore, dimostrando prima con il metodo di sostituzione che $T(n) = O(n^2)$:
 

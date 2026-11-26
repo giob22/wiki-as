@@ -330,6 +330,10 @@ def pagina_wiki(cartella, nome):
 
 
 def concetto_html(nome, out, usati, cartella="concetti"):
+    # estensione per questo corso: «concetti» può nominare anche pagine entità (algoritmi, strutture dati)
+    entita = False
+    if cartella == "concetti" and not (WIKI / "concetti" / f"{nome}.md").exists() and (WIKI / "entità" / f"{nome}.md").exists():
+        cartella, entita = "entità", True
     md = pagina_wiki(cartella, nome)
     if md is None:
         return ""
@@ -338,6 +342,11 @@ def concetto_html(nome, out, usati, cartella="concetti"):
     sp = sezione(md, "Spiegazione")
     if sp:
         pezzi.append("#### Spiegazione\n\n" + demota(sp, 1))
+    if entita:
+        for nome_sez in ("Correttezza", "Complessità"):
+            alt = sezione(md, nome_sez)
+            if alt:
+                pezzi.append(f"#### {nome_sez}\n\n" + demota(alt, 1))
     perche = sezione(md, "Perché importa")
     if perche:
         pezzi.append("#### Perché importa\n\n" + perche)

@@ -85,7 +85,7 @@ Nella classifica di [[dominanza-asintotica]] $\log n$ sta appena sopra le costan
 
 > 🎯 Esame: riconoscere il dimezzamento ripetuto come fonte di $\lg n$; spiegare perché la base del logaritmo non conta asintoticamente (take-home lesson di p. 33).
 
-## Connessioni · Quicksort [[07-Quicksort 1.pdf#page=17|p. 17]] · Merge Sort [[06-Merge Sort (1).pdf#page=50|p. 46]] · 08-Grafi e alberi.pdf [[08-Grafi e alberi.pdf#page=43|p. 43]]
+## Connessioni · Quicksort [[07-Quicksort 1.pdf#page=17|p. 17]] · Merge Sort [[06-Merge Sort (1).pdf#page=46|p. 46]] · 08-Grafi e alberi.pdf [[08-Grafi e alberi.pdf#page=43|p. 43]]
 
 - [[potenza-veloce]] — esempio di algoritmo $O(\lg n)$
 - [[dominanza-asintotica]] — posizione di $\log n$ nella classifica

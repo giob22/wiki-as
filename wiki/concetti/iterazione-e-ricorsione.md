@@ -7,7 +7,7 @@ fonti_pdf: ["03-Analisi di algoritmi.pdf#page=8", "03-Analisi di algoritmi.pdf#p
 
 # Iterazione e ricorsione
 
-## Definizione · [[03-Analisi di algoritmi.pdf#page=7|p. 7]]–[[03-Analisi di algoritmi.pdf#page=9|9]]
+## Definizione · [[03-Analisi di algoritmi.pdf#page=7|p. 7]]–[[03-Analisi di algoritmi.pdf#page=9|9]], [[03-Analisi di algoritmi.pdf#page=8|p. 8]]
 
 Due stili con lo **stesso potere espressivo**: la scelta dipende da chiarezza, costi e vincoli.
 

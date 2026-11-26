@@ -6,7 +6,7 @@ difficoltà: media
 
 # Scrivere e risolvere equazioni di ricorrenza
 
-## Metodo · [[06-Merge Sort (1).pdf#page=26|p. 24]]
+## Metodo · [[06-Merge Sort (1).pdf#page=24|p. 24]]
 
 1. Dallo pseudocodice ricorsivo: **caso base** → valore di $T$ sul caso base (costo costante).
 2. **Caso ricorsivo**: $T(n) =$ (somma dei $T$ delle chiamate ricorsive, con i loro argomenti) $+$ (costo del lavoro locale: confronti, somme, return). Per un algoritmo divide et impera: $T(n) = aT(n/b) + D(n) + C(n)$.
@@ -53,7 +53,7 @@ Verifica della forma generale per induzione su $k$: in [[equazioni-di-ricorrenza
 
 **Sanity check:** $T(1) = 1 + c$; con $c = 1$ lo script [[somma_primi_n.py]] misura $T(n) = n + 1$.
 
-### Caso 2 — merge sort: scrivere la ricorrenza e risolverla con l'albero · [[06-Merge Sort (1).pdf#page=24|p. 23]], [[06-Merge Sort (1).pdf#page=26|24]], [[06-Merge Sort (1).pdf#page=29|p. 27]]
+### Caso 2 — merge sort: scrivere la ricorrenza e risolverla con l'albero · [[06-Merge Sort (1).pdf#page=23|p. 23]], [[06-Merge Sort (1).pdf#page=24|24]], [[06-Merge Sort (1).pdf#page=27|p. 27]]
 **Traccia:** p. 23–p. 27.
 
 - Dallo pseudocodice: $D(n) = \Theta(1)$ (calcolo di $q$), $a = b = 2$ (due chiamate su metà), $C(n) = \Theta(n)$ ([[merge]]) ⇒ $T(n) = 2T(n/2) + \Theta(n)$.
@@ -62,7 +62,7 @@ Verifica della forma generale per induzione su $k$: in [[equazioni-di-ricorrenza
 
 **Risultato:** $\Theta(n\lg n)$. Controllo con il teorema dell'esperto: caso 2.
 
-### Caso 3 — sostituzione: $T(n) = 2T(\lfloor n/2 \rfloor) + n$, $T(1) = 1$ · [[06-Merge Sort (1).pdf#page=32|p. 30]], [[06-Merge Sort (1).pdf#page=34|p. 32]]
+### Caso 3 — sostituzione: $T(n) = 2T(\lfloor n/2 \rfloor) + n$, $T(1) = 1$ · [[06-Merge Sort (1).pdf#page=30|p. 30]], [[06-Merge Sort (1).pdf#page=32|p. 32]]
 **Traccia:** p. 30–p. 32: dimostrare $T(n) = O(n\lg n)$.
 
 $$
@@ -78,7 +78,7 @@ $$
 
 **Risultato:** $T(n) \le 2n\lg n$ per $n \ge 2$; [[divide_et_impera.py]] conferma $\max T(n)/(n\lg n) = 2$.
 
-### Caso 4 — albero + sostituzione: $T(n) = 3T(\lfloor n/4 \rfloor) + \Theta(n^2)$ · [[06-Merge Sort (1).pdf#page=36|p. 34]], [[06-Merge Sort (1).pdf#page=47|p. 43]]
+### Caso 4 — albero + sostituzione: $T(n) = 3T(\lfloor n/4 \rfloor) + \Theta(n^2)$ · [[06-Merge Sort (1).pdf#page=34|p. 34]], [[06-Merge Sort (1).pdf#page=43|p. 43]]
 **Traccia:** p. 34–p. 43.
 
 1. Albero di $3T(n/4) + cn^2$: livello $i$ con $3^i$ nodi da $c(n/4^i)^2$, cioè $(3/16)^i cn^2$; $\log_4 n$ livelli interni; $n^{\log_4 3}$ foglie.
@@ -90,7 +90,7 @@ Passaggi riga per riga in [[metodo-albero-di-ricorrenza]].
 
 **Risultato:** $T(n) = \Theta(n^2)$; [[divide_et_impera.py]] trova $\max T(n)/n^2 = 1.2308 \approx \frac{16}{13}$ con $c = 1$.
 
-### Caso 5 — teorema dell'esperto: quattro ricorrenze · [[06-Merge Sort (1).pdf#page=50|p. 46]], [[06-Merge Sort (1).pdf#page=51|47]]
+### Caso 5 — teorema dell'esperto: quattro ricorrenze · [[06-Merge Sort (1).pdf#page=46|p. 46]], [[06-Merge Sort (1).pdf#page=47|47]]
 **Traccia:** p. 46, p. 47.
 
 | Ricorrenza | $a$ | $b$ | $f(n)$ | $n^{\log_b a}$ | Confronto | Caso | $T(n)$ |

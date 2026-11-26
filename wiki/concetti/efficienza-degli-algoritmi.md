@@ -13,7 +13,7 @@ L'**efficienza** di un algoritmo è solitamente misurata in termini di **numero 
 
 Oltre a **correttezza** ed **efficienza**, una terza proprietà, non meno importante, è la **facilità di implementazione**.
 
-## Formule · 01-Introduzione.pdf [[01-Introduzione.pdf#page=11|p. 11]] · Merge Sort [[06-Merge Sort (1).pdf#page=29|p. 27]]
+## Formule · 01-Introduzione.pdf [[01-Introduzione.pdf#page=11|p. 11]] · Merge Sort [[06-Merge Sort (1).pdf#page=27|p. 27]]
 
 Se un algoritmo esegue $f(n)$ operazioni su un'istanza di dimensione $n$ e il calcolatore esegue $v$ operazioni al secondo, il tempo è
 

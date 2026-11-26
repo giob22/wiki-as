@@ -33,7 +33,7 @@ Già lette, con casi nuovi da questa lezione: *invariante-di-ciclo* (p. 18), *ca
 **Ordine consigliato.**
 Le slide sono lineari: segui l'ordine sopra. Durante la lezione, per le pp. 4–25 tieni aperta solo *insertion-sort*: le sue sezioni sono nello stesso ordine delle slide. Le pagine di esercizi «già lette» servono dopo, per ripassare.
 
-## Punti chiave · [[05-Insertion sort.pdf#page=2|p. 2]]–[[05-Insertion sort.pdf#page=5|5]], [[05-Insertion sort.pdf#page=19|p. 17]]–[[05-Insertion sort.pdf#page=31|26]], [[05-Insertion sort.pdf#page=34|p. 34]]–[[05-Insertion sort.pdf#page=38|38]]
+## Punti chiave · [[05-Insertion sort.pdf#page=2|p. 2]]–[[05-Insertion sort.pdf#page=5|5]], [[05-Insertion sort.pdf#page=17|p. 17]]–[[05-Insertion sort.pdf#page=26|26]], [[05-Insertion sort.pdf#page=34|p. 34]]–[[05-Insertion sort.pdf#page=38|38]]
 
 1. Problema dell'ordinamento e applicazioni: searching, closest pair, element uniqueness, frequency distribution, selection, convex hulls → [[ordinamento]].
 2. Insertion sort considera un valore alla volta e lo inserisce tra i precedenti; ordina sul posto → [[insertion-sort]].

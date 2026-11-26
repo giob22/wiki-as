@@ -75,12 +75,12 @@ $$ T_{worst}(n) = 1 + 1 + (n+2) + (n+1) + 1 = 2n + 6 = \Theta(n) $$
 ### Caso 3 — Base() · [[02-Notazione asintotica.pdf#page=7|p. 7]]
 **Traccia:** p. 7. 🧩 Caso fortunato: test + 2 istruzioni + return = 4; sfortunato: test + 10 istruzioni + return = 12. Entrambi $\Theta(1)$: caso migliore e peggiore differiscono di una costante.
 
-### Caso 4 — insertion sort: il numero di esecuzioni dipende dall'input · [[05-Insertion sort.pdf#page=21|p. 19]], [[05-Insertion sort.pdf#page=26|p. 24]]
+### Caso 4 — insertion sort: il numero di esecuzioni dipende dall'input · [[05-Insertion sort.pdf#page=19|p. 19]], [[05-Insertion sort.pdf#page=24|p. 24]]
 **Traccia:** p. 19–p. 24.
 Differenza rispetto ai casi precedenti: il test del `while` si esegue $t_j$ volte, e $t_j$ dipende dai valori nell'array. Si scrive quindi $T(n)$ con le sommatorie $\sum t_j$ e $\sum (t_j - 1)$, poi si sostituisce $t_j = 1$ (caso migliore, array già ordinato) e $t_j = j$ (caso peggiore, array decrescente).
 **Risultato:** $T_{best}(n) = an + b = \Theta(n)$, $T_{worst}(n) = an^2 + bn + c = \Theta(n^2)$. Tabella dei costi e sviluppo completo delle sommatorie in [[insertion-sort]] § Complessità.
 
-### Caso 5 — selection sort: contare solo l'operazione dominante · [[05-Insertion sort.pdf#page=37|p. 32]], [[05-Insertion sort.pdf#page=38|33]]
+### Caso 5 — selection sort: contare solo l'operazione dominante · [[05-Insertion sort.pdf#page=32|p. 32]], [[05-Insertion sort.pdf#page=33|33]]
 **Traccia:** esercizio 2.2.2, p. 32, p. 33.
 Il confronto `s[j] < s[min]` si esegue $n - 1 - i$ volte per ogni $i$:
 $$ \sum_{i=0}^{n-2} (n - 1 - i) = \frac{n(n-1)}{2} = \Theta(n^2) $$

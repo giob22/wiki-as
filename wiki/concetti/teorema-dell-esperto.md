@@ -7,7 +7,7 @@ fonti_pdf: ["06-Merge Sort (1).pdf#page=44", "06-Merge Sort (1).pdf#page=46", "0
 
 # Teorema dell'esperto (metodo dell'esperto)
 
-## Definizione · [[06-Merge Sort (1).pdf#page=48|p. 44]]
+## Definizione · [[06-Merge Sort (1).pdf#page=44|p. 44]]
 
 Il **metodo dell'esperto** si basa sul **teorema dell'esperto** (*master theorem*).
 
@@ -26,7 +26,7 @@ dove $n/b$ può essere interpretato sia come $\lfloor n/b \rfloor$ che come $\lc
 
 ![[06-merge-sort-p41-teorema-esperto.png]]
 
-## Formule · [[06-Merge Sort (1).pdf#page=26|p. 24]]
+## Formule · [[06-Merge Sort (1).pdf#page=24|p. 24]]
 
 > 🧮 Formula chiave — il confronto da fare sempre:
 $$ f(n) \quad \text{contro} \quad n^{\log_b a} $$
@@ -39,7 +39,7 @@ Simboli: $a$ = numero di sottoproblemi; $n/b$ = dimensione di ciascuno ($1/b$ = 
 
 ## Derivazioni
 
-### Esempi della slide · Merge Sort [[06-Merge Sort (1).pdf#page=50|p. 46]] · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=38|p. 38]]
+### Esempi della slide · Merge Sort [[06-Merge Sort (1).pdf#page=46|p. 46]] · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=38|p. 38]]
 > 📄 Fonte: p. 42 (enunciati e caso applicato); commenti 🧩 miei
 
 ![[06-merge-sort-p42-esempi-esperto.png]]
@@ -81,7 +81,7 @@ $$
 
 > **Sanity check** ([[divide_et_impera.py]]): $T(n)/(n\lg n) = 2.19,\ 2.66,\ 2.96$ per $n = 4^5, 4^8, 4^{11}$: cresce lentamente verso una costante. 🧩 Con l'albero si trova $T(n) \approx 4n\lg n - 24n$ (serie $\sum (3/4)^i = 4$ e $\sum i(3/4)^i = 12$), quindi il rapporto è $\approx 4 - 24/\lg n$; per $n = 4^{20}$ e $4^{40}$ il calcolo dà 3.40 e 3.70, come previsto.
 
-### Esempio fuori dal teorema: il gap tra i casi 2 e 3 · [[06-Merge Sort (1).pdf#page=51|p. 47]]
+### Esempio fuori dal teorema: il gap tra i casi 2 e 3 · [[06-Merge Sort (1).pdf#page=47|p. 47]]
 
 $T(n) = 2T(n/2) + n\lg n$:
 - $a = 2$, $b = 2$, $f(n) = n\lg n$, $n^{\log_b a} = n^{\log_2 2} = n$;
@@ -103,7 +103,7 @@ T(n) &\approx \sum_{i=0}^{\lg n - 1} n(\lg n - i) = n\sum_{k=1}^{\lg n} k && k =
 $$
 > Verifica ([[divide_et_impera.py]]): $T(n)/(n\lg^2 n) = 0.560,\ 0.528,\ 0.513$ per $n = 2^{10}, 2^{20}, 2^{40}$, verso $\frac12$; $T(n)/(n\lg n)$ invece cresce senza limite (5.6, 10.6, 20.5).
 
-### Applicazioni nelle lezioni · Merge Sort [[06-Merge Sort (1).pdf#page=31|p. 29]], [[06-Merge Sort (1).pdf#page=47|p. 43]] · Quicksort [[07-Quicksort 1.pdf#page=14|p. 14]], [[07-Quicksort 1.pdf#page=15|15]]
+### Applicazioni nelle lezioni · Merge Sort [[06-Merge Sort (1).pdf#page=29|p. 29]], [[06-Merge Sort (1).pdf#page=43|p. 43]] · Quicksort [[07-Quicksort 1.pdf#page=14|p. 14]], [[07-Quicksort 1.pdf#page=15|15]]
 
 | Ricorrenza | $a$, $b$, $f(n)$ | $n^{\log_b a}$ | Caso | Soluzione | Fonte |
 |---|---|---|---|---|---|
@@ -134,7 +134,7 @@ Procedura d'uso (🧩):
 - [[logaritmi-nell-analisi]] — $n^{\log_b a}$ e il cambio di base
 - [[risoluzione-ricorrenze]] — esercizi
 
-## Fonti · Merge Sort [[06-Merge Sort (1).pdf#page=48|p. 44]], [[06-Merge Sort (1).pdf#page=51|p. 47]] · Quicksort [[07-Quicksort 1.pdf#page=15|p. 15]]
+## Fonti · Merge Sort [[06-Merge Sort (1).pdf#page=44|p. 44]], [[06-Merge Sort (1).pdf#page=47|p. 47]] · Quicksort [[07-Quicksort 1.pdf#page=15|p. 15]]
 
 - [[lezione-06-merge-sort]], [[lezione-07-quicksort]]
 

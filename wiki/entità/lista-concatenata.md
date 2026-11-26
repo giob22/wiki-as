@@ -130,7 +130,7 @@ Con le **liste doppiamente concatenate** (ogni nodo punta anche al predecessore)
 
 > 🧩 Derivazione mia: in una lista doppia il predecessore di $x$ è `x.prev`, quindi la cancellazione di un nodo di cui si ha il puntatore costa $\Theta(1)$ invece di $\Theta(n)$: è la «flessibilità sulle interrogazioni del predecessore».
 
-## Costi riassunti · [[04-Strutture dati elementari.pdf#page=17|p. 17]]–[[04-Strutture dati elementari.pdf#page=20|20]]
+## Costi riassunti · [[04-Strutture dati elementari.pdf#page=17|p. 17]]–[[04-Strutture dati elementari.pdf#page=20|20]], [[04-Strutture dati elementari.pdf#page=18|p. 18]], [[04-Strutture dati elementari.pdf#page=19|p. 19]]
 
 | Operazione | Lista semplice | Fonte |
 |---|---|---|

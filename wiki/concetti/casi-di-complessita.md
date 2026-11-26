@@ -78,7 +78,7 @@ FINE
 
 > 🎯 Esame: salvo indicazione contraria, «analizza l'algoritmo» significa **caso peggiore**. Saper indicare *quale* istanza realizza il caso migliore e il peggiore (es. per la ricerca in una [[lista-concatenata]]: elemento in testa vs. ultimo o assente).
 
-## Connessioni · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=24|p. 22]], [[05-Insertion sort.pdf#page=26|p. 24]] · Quicksort [[07-Quicksort 1.pdf#page=14|p. 14]], [[07-Quicksort 1.pdf#page=18|p. 18]], [[07-Quicksort 1.pdf#page=23|p. 23]]
+## Connessioni · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=22|p. 22]], [[05-Insertion sort.pdf#page=24|p. 24]] · Quicksort [[07-Quicksort 1.pdf#page=14|p. 14]], [[07-Quicksort 1.pdf#page=18|p. 18]], [[07-Quicksort 1.pdf#page=23|p. 23]]
 
 - [[insertion-sort]] — esempio completo: caso migliore $\Theta(n)$ con l'array già ordinato, caso peggiore $\Theta(n^2)$ con l'array decrescente; [[selection-sort]] invece ha caso migliore = caso peggiore
 

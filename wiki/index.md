@@ -4,6 +4,7 @@
 - [[overview]] — panoramica del corso, copertura
 - [[log]] — registro cronologico delle operazioni sul wiki
 - [[CLAUDE]] — schema e regole di manutenzione del wiki
+- [[corso-completo]] — **testo di studio**: tutte le lezioni (0–15) in un unico file, sorgente del sito (`python output/crea_sito.py`, pubblicato su GitHub Pages)
 - [[lezioni]] — **indice del libro**: le pagine lezione per lezione, nell'ordine di lettura; ogni pagina ha in fondo i link precedente · indice · successiva (generati da [[libro.py]])
 
 ## Concetti
@@ -103,10 +104,10 @@
 - [[presentazione-del-corso]] — 00-Presentazione.pdf, pp. 1–8
 - [[lezione-01-introduzione]] — 01-Introduzione.pdf, pp. 1–60
 - [[lezione-02-notazione-asintotica]] — 02-Notazione asintotica.pdf, pp. 1–38
-- [[lezione-03-analisi-di-algoritmi]] — 03-Analisi di algoritmi.pdf, pp. 1–34
+- [[lezione-03-analisi-di-algoritmi]] — 03-Analisi di algoritmi.pdf, pp. 1–35
 - [[lezione-04-strutture-dati-elementari]] — 04-Strutture dati elementari.pdf, pp. 1–30
-- [[lezione-05-insertion-sort]] — 05-Insertion sort.pdf, pp. 1–33
-- [[lezione-06-merge-sort]] — 06-Merge Sort (1).pdf, pp. 1–48 (versione aggiornata; la precedente di 30 pagine è sostituita)
+- [[lezione-05-insertion-sort]] — 05-Insertion sort.pdf, pp. 1–38
+- [[lezione-06-merge-sort]] — 06-Merge Sort (1).pdf, pp. 1–52 (versione aggiornata; la precedente di 30 pagine è sostituita)
 - [[lezione-07-quicksort]] — 07-Quicksort 1.pdf, pp. 1–25 (versione aggiornata; la precedente è sostituita)
 - [[lezione-08-grafi-e-alberi]] — 08-Grafi e alberi.pdf, pp. 1–44
 - [[lezione-09-alberi-binari-di-ricerca]] — 09-Alberi binari ricerca.pdf, pp. 1–21
@@ -122,11 +123,55 @@
 - [[tracce-pila-e-coda]] — Figure 10.1 e 10.2 (bassa)
 - [[progettazione-divide-et-impera]] — Torre di Hanoi, Nuts and Bolts (media)
 
+## Lezioni 10–15 (ingest del 2026-11-26)
+**Lezione 10 — Heapsort**
+- [[lezione-10-heap-e-heapsort]] — Introduzione e riepilogo
+- [[heap]] — Heap (binary heap)
+- [[max-heapify]] — Max-Heapify
+- [[build-max-heap]] — Build-Max-Heap
+- [[heapsort]] — Heap-Sort
+- [[heap-extract-max]] — Heap-Maximum e Heap-Extract-Max
+- [[heap-increase-key]] — Heap-Increase-Key
+- [[max-heap-insert]] — Max-Heap-Insert
+- [[tracce-su-heap]] — Tracce su heap
+
+**Lezione 11 — Alberi rosso-neri**
+- [[lezione-11-alberi-rosso-neri]] — Introduzione e riepilogo
+- [[albero-rosso-nero]] — Albero rosso-nero
+- [[left-rotate]] — Rotazioni (Left-Rotate e Right-Rotate)
+- [[rb-insert]] — RB-Insert e RB-Insert-Fixup
+- [[rb-delete]] — RB-Delete e RB-Delete-Fixup
+
+**Lezione 12 — Alberi auto-aggiustanti**
+- [[lezione-12-alberi-auto-aggiustanti]] — Introduzione e riepilogo
+- [[splay-tree]] — Splay tree (albero auto-aggiustante)
+- [[splay]] — Splay
+- [[splay-tree-operazioni]] — Splay-Tree-Search, Splay-Tree-Insert e Splay-Tree-Delete
+
+**Lezione 13 — Algoritmi di visita di un grafo**
+- [[lezione-13-algoritmi-di-visita-di-un-grafo]] — Introduzione e riepilogo
+- [[visita-di-un-grafo]] — Visita di un grafo
+- [[visita-in-ampiezza]] — Visita in ampiezza (BFS)
+- [[print-path]] — Print-Path
+- [[visita-in-profondita]] — Visita in profondità (DFS)
+- [[ordinamento-topologico]] — Ordinamento topologico (Topological-Sort)
+- [[dijkstra]] — Algoritmo di Dijkstra (percorsi minimi)
+
+**Lezione 14 — Backpropagation**
+- [[lezione-14-backpropagation]] — Introduzione e riepilogo
+- [[grafo-computazionale]] — Grafo computazionale
+- [[backpropagation]] — Backpropagation
+
+**Lezione 15 — Backtracking**
+- [[lezione-15-backtracking]] — Introduzione e riepilogo
+- [[backtracking]] — Backtracking
+- [[generazione-di-permutazioni]] — Generazione di tutte le permutazioni
+
 ## Esame
 _nessun materiale ancora — lancia `prepara esame`_
 
 ## Asset
-Figure in `raw/assets/` (nome `<file>-pN-descrizione.png`, 110 dpi con PyMuPDF): 2 da 00, 10 da 01, 6 da 02, 5 da 03, 6 da 04, 14 da 05, 22 da 06 (dalla versione aggiornata), 15 da 07, 22 da 08, 18 da 09.
+Figure in `raw/assets/` (nome `<file>-pN-descrizione.png`, 110 dpi con PyMuPDF): 2 da 00, 10 da 01, 6 da 02, 5 da 03, 6 da 04, 14 da 05, 22 da 06 (dalla versione aggiornata), 15 da 07, 22 da 08, 18 da 09, più quelle delle lezioni 10–15 (`10-heap-heapsort-…`, `11-alberi-rosso-neri-…`, `12-…`, `13-visite-grafi-…`, `14-backpropagation-…`, `15-backtracking-…`) e le pagine di appunti a mano di 05 e 06 (`…-appunti-…`).
 Grafici di funzione generati (🧩) in `output/grafici/` — script [[genera_grafici_as.py]] (SVG, solo libreria standard): $3n^2-100n+6$ contro $3n^2$ e $0.01n^3$; $f(n)/n^2$ e soglia $\Theta$; crescita delle funzioni in scala log; razzo contro vela; copie dell'array dinamico; test del while di insertion sort (migliore/peggiore).
 Script dei grafici: [[genera_grafici_as.py]].
 Animazioni degli algoritmi (🧩) in `output/animazioni/`: 28 SVG `animazione-<algoritmo>.svg`: una per ogni pagina entità di categoria algoritmo (24), per gli algoritmi miei dei problemi [[torre-di-hanoi]] e [[nuts-and-bolts]] (3) e per la costruzione delle [[liste-di-adiacenza]] (1), incorporate in «Esempio di esecuzione».
@@ -144,3 +189,4 @@ Navigazione a libro: [[libro.py]] legge [[lezioni]] e scrive in fondo a ogni pag
 _Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_
 _Aggiornato: 2026-10-10 — versione aggiornata delle slide 06-Merge Sort (1).pdf_
 _Aggiornato: 2026-10-28 — ingest 08 e 09; indice delle lezioni come libro_
+_Aggiornato: 2026-11-26 — ingest lezioni 10–15, corso-completo e sito di studio_

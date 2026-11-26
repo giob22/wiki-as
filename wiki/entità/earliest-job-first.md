@@ -21,7 +21,7 @@ EarliestJobFirst(I)
 
 (la slide scrive «earlest», refuso per *earliest*)
 
-## Esempio di esecuzione · [[01-Introduzione.pdf#page=37|p. 37]], [[01-Introduzione.pdf#page=39|p. 39]], [[01-Introduzione.pdf#page=45|p. 45]], [[01-Introduzione.pdf#page=46|46]]
+## Esempio di esecuzione · [[01-Introduzione.pdf#page=37|p. 37]], [[01-Introduzione.pdf#page=39|p. 39]], [[01-Introduzione.pdf#page=45|p. 45]], [[01-Introduzione.pdf#page=46|46]], [[01-Introduzione.pdf#page=40|p. 40]], [[01-Introduzione.pdf#page=41|p. 41]], [[01-Introduzione.pdf#page=42|p. 42]], [[01-Introduzione.pdf#page=43|p. 43]], [[01-Introduzione.pdf#page=44|p. 44]]
 
 ![[animazione-earliest-job-first.svg]]
 > 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, sui 9 film di p. 37 (intervalli misurati sulla figura della slide): a ogni passo il job che inizia prima, i job esclusi perché si sovrappongono (✘) e gli accettati (cerchio blu), con lo stesso esito delle slide (pp. 39–45). Ogni fotogramma riporta in basso il numero del passo e cosa succede.
@@ -30,13 +30,13 @@ Traccia sull'istanza di p. 37, una slide per passo; ✔ = accettato, ✘ = esclu
 
 | Pagina | Evento |
 |---|---|
-| [[01-Introduzione.pdf#page=39\|p. 39]] | ✔ The President's Algorist (inizia per primo) |
-| [[01-Introduzione.pdf#page=40\|p. 40]] | ✘ Tarjan of the Jungle, ✘ Halting State, ✘ "Discrete" Mathematics |
-| [[01-Introduzione.pdf#page=41\|p. 41]] | ✔ Steiner's Tree |
-| [[01-Introduzione.pdf#page=42\|p. 42]] | ✘ The Four Volume Problem |
-| [[01-Introduzione.pdf#page=43\|p. 43]] | ✔ Programming Challenges |
-| [[01-Introduzione.pdf#page=44\|p. 44]] | ✘ Process Terminated |
-| [[01-Introduzione.pdf#page=45\|p. 45]] | ✔ Calculated Bets |
+| p. 39 | ✔ The President's Algorist (inizia per primo) |
+| p. 40 | ✘ Tarjan of the Jungle, ✘ Halting State, ✘ "Discrete" Mathematics |
+| p. 41 | ✔ Steiner's Tree |
+| p. 42 | ✘ The Four Volume Problem |
+| p. 43 | ✔ Programming Challenges |
+| p. 44 | ✘ Process Terminated |
+| p. 45 | ✔ Calculated Bets |
 
 Risultato: **4** film.
 

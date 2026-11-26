@@ -7,7 +7,7 @@ fonti_pdf: ["03-Analisi di algoritmi.pdf#page=30", "03-Analisi di algoritmi.pdf#
 
 # Equazioni di ricorrenza (costo degli algoritmi ricorsivi)
 
-## Definizione · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=30|p. 30]] · Merge Sort [[06-Merge Sort (1).pdf#page=31|p. 29]]
+## Definizione · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=30|p. 30]] · Merge Sort [[06-Merge Sort (1).pdf#page=29|p. 29]]
 
 Un programma ricorsivo viene richiamato più volte su una versione ridotta del problema. Il **costo complessivo** $T(n)$ è dato dalla **somma dei costi delle singole chiamate**, con $T(0)$ pari al costo del passo ricorsivo più interno (quello in cui la funzione non viene richiamata ulteriormente).
 
@@ -59,7 +59,7 @@ La struttura della ricorrenza ricalca quella dell'algoritmo: il caso base dell'a
 
 La domanda «E la complessità spaziale?» ha risposta $\Theta(n)$ (🧩, profondità della ricorsione) → [[tempo-di-esecuzione]].
 
-### Ricorrenze divide et impera (lezioni 06–07) · Merge Sort [[06-Merge Sort (1).pdf#page=26|p. 24]] · Quicksort [[07-Quicksort 1.pdf#page=14|p. 14]]
+### Ricorrenze divide et impera (lezioni 06–07) · Merge Sort [[06-Merge Sort (1).pdf#page=24|p. 24]] · Quicksort [[07-Quicksort 1.pdf#page=14|p. 14]]
 
 Per un algoritmo [[divide-et-impera]] la ricorrenza ha la forma $T(n) = aT(n/b) + D(n) + C(n)$, con caso banale $\Theta(1)$. Lo srotolamento usato sopra funziona bene quando la dimensione cala di 1; quando cala di un **fattore** $b$ si usano:
 - il [[metodo-albero-di-ricorrenza]], per trovare una soluzione di tentativo sommando i costi livello per livello;
@@ -80,7 +80,7 @@ Per un algoritmo [[divide-et-impera]] la ricorrenza ha la forma $T(n) = aT(n/b) 
 - [[merge-sort]], [[quicksort]] — le ricorrenze dei due ordinamenti divide et impera
 - [[risoluzione-ricorrenze]] — esercizi
 
-## Fonti · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=30|p. 30]], [[03-Analisi di algoritmi.pdf#page=35|p. 35]] · Merge Sort [[06-Merge Sort (1).pdf#page=26|p. 24]], [[06-Merge Sort (1).pdf#page=31|p. 29]] · Quicksort [[07-Quicksort 1.pdf#page=14|p. 14]]
+## Fonti · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=30|p. 30]], [[03-Analisi di algoritmi.pdf#page=35|p. 35]] · Merge Sort [[06-Merge Sort (1).pdf#page=24|p. 24]], [[06-Merge Sort (1).pdf#page=29|p. 29]] · Quicksort [[07-Quicksort 1.pdf#page=14|p. 14]]
 
 - [[lezione-03-analisi-di-algoritmi]], [[lezione-06-merge-sort]], [[lezione-07-quicksort]]
 

@@ -26,7 +26,7 @@ La figura mostra tre pioli (*Tower*) e una pila di dischi (*Disks*) di dimension
 
 > 🧩 Formalizzazione mia: **input** $n$ dischi sulla torre sorgente, ordinati dal più grande (in basso) al più piccolo; **output** la sequenza di mosse che li porta tutti sulla torre destinazione rispettando i due vincoli.
 
-## Approccio divide et impera · [[06-Merge Sort (1).pdf#page=4|p. 4]], [[06-Merge Sort (1).pdf#page=11|p. 10]]
+## Approccio divide et impera · [[06-Merge Sort (1).pdf#page=4|p. 4]], [[06-Merge Sort (1).pdf#page=10|p. 10]]
 
 - **Dividere** il problema iniziale in uno o più sottoproblemi fino ad arrivare al caso base. Ad esempio: sposto solo la **sotto-torre** fatta dai dischi verde e arancione dal centro ad uno dei lati.
 - Il problema più «piccolo» è lo spostamento di un **solo disco generico** da una torre di partenza ad una di destinazione: è il **caso base**.

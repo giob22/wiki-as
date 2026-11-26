@@ -24,7 +24,7 @@ Esempi classici citati: **ordinamento**, **ricerca**, «…».
 
 > 🧩 Derivazione mia: la stima del costo di un algoritmo divide et impera porta naturalmente a un'[[equazioni-di-ricorrenza|equazione di ricorrenza]] (costo del problema = costo dei sottoproblemi + costo di divisione e combinazione), che è il motivo per cui la lezione 03 introduce le ricorrenze sul caso semplice di [[somma-ricorsiva]].
 
-### La ricorrenza del divide et impera · [[06-Merge Sort (1).pdf#page=26|p. 24]], [[06-Merge Sort (1).pdf#page=31|p. 29]]
+### La ricorrenza del divide et impera · [[06-Merge Sort (1).pdf#page=24|p. 24]], [[06-Merge Sort (1).pdf#page=29|p. 29]]
 
 Per un approccio divide et impera, detti $\Theta(1)$ il tempo per risolvere il caso «banale», $D(n)$ il tempo per suddividere un problema, $C(n)$ il tempo per ricombinare le soluzioni dei sottoproblemi, $a$ il numero di sottoproblemi in cui si divide un problema e $1/b$ il fattore di riduzione della dimensione di un problema, la complessità è esprimibile in forma di ricorrenza:
 
@@ -35,7 +35,7 @@ $$
 
 Si risolve con i tre metodi della lezione 06: [[metodo-di-sostituzione]], [[metodo-albero-di-ricorrenza]], [[teorema-dell-esperto]].
 
-### Gli esempi delle lezioni 06–07 · Merge Sort [[06-Merge Sort (1).pdf#page=29|p. 27]], [[06-Merge Sort (1).pdf#page=30|28]] · Quicksort [[07-Quicksort 1.pdf#page=3|p. 3]] · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=4|p. 4]]
+### Gli esempi delle lezioni 06–07 · Merge Sort [[06-Merge Sort (1).pdf#page=27|p. 27]], [[06-Merge Sort (1).pdf#page=28|28]] · Quicksort [[07-Quicksort 1.pdf#page=3|p. 3]] · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=4|p. 4]]
 
 | Algoritmo | Divide | Conquer | Combine | Ricorrenza | Costo |
 |---|---|---|---|---|---|
@@ -62,7 +62,7 @@ Il [[massimo-sottoarray]] è posto come ulteriore problema nella lezione 06, con
 - [[teorema-dell-esperto]] — risolve direttamente $aT(n/b) + f(n)$
 - [[progettazione-divide-et-impera]] — esercizi di progettazione (Torre di Hanoi, Nuts and Bolts)
 
-## Fonti · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=4|p. 4]] · Merge Sort [[06-Merge Sort (1).pdf#page=26|p. 24]] · Quicksort [[07-Quicksort 1.pdf#page=3|p. 3]]
+## Fonti · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=4|p. 4]] · Merge Sort [[06-Merge Sort (1).pdf#page=24|p. 24]] · Quicksort [[07-Quicksort 1.pdf#page=3|p. 3]]
 
 - [[lezione-03-analisi-di-algoritmi]], [[lezione-06-merge-sort]], [[lezione-07-quicksort]]
 

@@ -143,3 +143,13 @@ Filtra ultimi 10: `grep "^## " wiki/log.md | tail -10`
 - [[lezioni]] ridotto a indice: per ogni lezione solo i link alle pagine, una volta sola, nell'ordine di lettura (apertura = pagina fonte, poi l'ordine delle slide; materiale di supporto a1 dopo la lezione 00)
 - descrizioni, intervalli di slide, «già lette» e ordine consigliato spostati nella sezione «Percorso della lezione» delle pagine fonte
 - barra «← precedente · Indice · successiva →» in fondo a tutte le 88 pagine, generata da [[libro.py]] (marcatori `nav:inizio`/`nav:fine`); regole aggiornate in CLAUDE.md e nella memoria
+
+## [2026-11-26] ingest | Lezioni 10–15 (Heap e Heapsort, Alberi rosso-neri, Alberi auto-aggiustanti, Algoritmi di visita di un grafo, Backpropagation, Backtracking) | pagine coperte: 1–50, 1–48, 1–16, 1–53, 1–30, 1–24
+- nuove pagine entità, concetti, esercizi e fonti per le lezioni 10–15; 19 nuove animazioni SVG; codice di verifica in `output/codice/` (heap, alberi_rosso_neri, splay_tree, visite_di_grafi, backpropagation, backtracking)
+- PDF 03, 05 e 06 (1) aggiornati dal docente (pagine inserite e appunti a mano): riferimenti di pagina rimappati; le annotazioni a mano sulle slide già ingestite non sono ancora integrate nelle pagine
+
+## [2026-11-26] riorganizzazione | allineamento al template wiki-template e sito di studio
+- CLAUDE.md riscritto secondo il template; aggiunti `corso.toml`, `README.md`, `requirements.txt`, `modelli/`, `.github/workflows/sito.yml`, `output/crea_sito.py` (esteso: `concetti` può nominare pagine entità), `crea_pdf.py`, `controlla_corso.py`, `config_corso.py`
+- [[corso-completo]]: testo di studio delle lezioni 0–15 (le lezioni 1–9 assemblate dalle pagine esistenti)
+- riferimenti ai PDF spostati nei titoli di sezione in tutte le pagine
+

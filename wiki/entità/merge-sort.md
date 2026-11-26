@@ -13,7 +13,7 @@ Le sezioni seguono l'ordine delle slide: idea (p. 7) → funzionamento su un ese
 
 [[ordinamento]]: data una sequenza di $n$ valori, restituirne la permutazione ordinata in senso crescente.
 
-## Idea · [[06-Merge Sort (1).pdf#page=7|p. 7]], [[06-Merge Sort (1).pdf#page=18|p. 17]]
+## Idea · [[06-Merge Sort (1).pdf#page=7|p. 7]], [[06-Merge Sort (1).pdf#page=17|p. 17]]
 
 - Approccio **[[divide-et-impera]]**:
   - **suddivide** una sequenza di $n$ elementi in due sottosequenze di $n/2$ elementi;
@@ -37,7 +37,7 @@ Annotazioni a mano sulla slide:
 
 Le slide costruiscono lo pseudocodice in tre tappe: una prima versione con vettori nuovi (pp. 9–12), il passaggio agli indici (pp. 13–14), lo spostamento della memoria ausiliaria dentro Merge (p. 15).
 
-### Prima versione: vettori $L$ e $R$ · [[06-Merge Sort (1).pdf#page=11|p. 10]]–[[06-Merge Sort (1).pdf#page=14|13]]
+### Prima versione: vettori $L$ e $R$ · [[06-Merge Sort (1).pdf#page=10|p. 10]]–[[06-Merge Sort (1).pdf#page=13|13]]
 
 ```
 MergeSort(A)
@@ -71,7 +71,7 @@ Annotazioni a mano: «Caso base — fase ascendente» accanto alle righe 1–2, 
 
 > 🧩 Perché è una criticità: ogni chiamata copia la propria porzione in due vettori nuovi prima ancora di cominciare a fondere. A ogni livello dell'albero delle chiamate si copiano così tutti gli $n$ elementi, solo per dividere, e i vettori creati vanno poi restituiti e ricopiati da Merge.
 
-### Miglioramento: dal vettore agli indici · [[06-Merge Sort (1).pdf#page=15|p. 14]], [[06-Merge Sort (1).pdf#page=16|15]]
+### Miglioramento: dal vettore agli indici · [[06-Merge Sort (1).pdf#page=14|p. 14]], [[06-Merge Sort (1).pdf#page=15|15]]
 
 **Un sottoproblema non è un nuovo array: è una porzione dell'array originale.** La figura mostra $A = \langle 5, 2, 8, 1, 4, 7, 3, 6 \rangle$ con la metà sinistra $A[p..q] = \langle 5, 2, 8, 1 \rangle$ (in blu) e la destra $A[q+1..r] = \langle 4, 7, 3, 6 \rangle$ (in rosso).
 
@@ -97,7 +97,7 @@ MergeSort(A, p, r)
 
 **Tutto troppo bello?**
 
-### Sotto-array e merge: dove nasce il «non in-place» · [[06-Merge Sort (1).pdf#page=17|p. 16]]
+### Sotto-array e merge: dove nasce il «non in-place» · [[06-Merge Sort (1).pdf#page=16|p. 16]]
 
 Merge deve utilizzare **memoria accessoria** per copiare il contenuto dei sotto-vettori, per evitare perdite durante l'inserimento in $A$, che a questo punto è una **sovrascrittura**. La creazione effettiva di $L$ e $R$ è **spostata da Merge-Sort a Merge**; il ciclo di Merge fa un «pop» da $L$ e $R$ e inserisce con sovrascrittura in $A$ (pseudocodice in [[merge]]).
 
@@ -105,7 +105,7 @@ Merge deve utilizzare **memoria accessoria** per copiare il contenuto dei sotto-
 
 > 🧩 Esempio mio della «perdita»: con $A[p..r] = \langle 5, 8 \mid 1, 2 \rangle$, fondere scrivendo direttamente in $A$ metterebbe 1 in $A[p]$ e cancellerebbe il 5 prima che sia stato collocato. Copiando prima le due metà in $L = \langle 5, 8 \rangle$ e $R = \langle 1, 2 \rangle$, $A$ si può sovrascrivere senza perdere nulla.
 
-## Pseudocodice (versione definitiva) · [[06-Merge Sort (1).pdf#page=24|p. 23]]
+## Pseudocodice (versione definitiva) · [[06-Merge Sort (1).pdf#page=23|p. 23]]
 
 ```
 Merge-Sort (A,p,r)
@@ -136,7 +136,7 @@ r - q     &= n - \left\lceil \tfrac{n}{2} \right\rceil = \left\lfloor \tfrac{n}{
 $$
 > Per $n \ge 2$ entrambe le metà hanno almeno un elemento e meno di $n$ elementi: la ricorsione termina. Con $n = 11$ (l'esempio di p. 9) si ottengono 6 e 5 elementi.
 
-## Esempio di esecuzione · [[06-Merge Sort (1).pdf#page=10|p. 9]]
+## Esempio di esecuzione · [[06-Merge Sort (1).pdf#page=9|p. 9]]
 
 ![[animazione-merge-sort.svg]]
 > 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo sulla sequenza della slide 06 p. 9, ⟨5, 2, 8, 0, 4, 7, 1, 9, 3, 2, 6⟩. Mostra l'albero delle chiamate: ogni nodo è un sotto-array $A[p..r]$ (indici sopra il riquadro), bianco finché è da ordinare, rosso quando è la chiamata attiva, verde quando è ordinato dopo Merge. Si vedono la riga di pseudocodice corrente e il risultato di ogni Merge; l'albero ha $\lceil \lg 11 \rceil + 1 = 5$ livelli.
@@ -156,7 +156,7 @@ La slide mostra l'albero di ricorsione su ⟨5, 2, 8, 0, 4, 7, 1, 9, 3, 2, 6⟩ 
 
 > 🧩 Verificato con [[divide_et_impera.py]], che stampa le sequenze prodotte a ogni profondità: coincidono con la figura. Le metà sinistre sono sempre quelle con un elemento in più ($\lceil n/2 \rceil$), come previsto dalla derivazione sopra.
 
-## Correttezza · [[06-Merge Sort (1).pdf#page=7|p. 7]], [[06-Merge Sort (1).pdf#page=21|p. 20]], [[06-Merge Sort (1).pdf#page=22|21]]
+## Correttezza · [[06-Merge Sort (1).pdf#page=7|p. 7]], [[06-Merge Sort (1).pdf#page=20|p. 20]], [[06-Merge Sort (1).pdf#page=21|21]]
 
 La slide non dimostra la correttezza di Merge-Sort; dimostra quella di [[merge]].
 
@@ -168,7 +168,7 @@ La slide non dimostra la correttezza di Merge-Sort; dimostra quella di [[merge]]
 
 ## Complessità
 
-### Ricorrenza del divide et impera · [[06-Merge Sort (1).pdf#page=26|p. 24]], [[06-Merge Sort (1).pdf#page=28|26]], [[06-Merge Sort (1).pdf#page=31|p. 29]]
+### Ricorrenza del divide et impera · [[06-Merge Sort (1).pdf#page=24|p. 24]], [[06-Merge Sort (1).pdf#page=26|26]], [[06-Merge Sort (1).pdf#page=29|p. 29]]
 
 Per un approccio [[divide-et-impera]], detti:
 - $\Theta(1)$ il tempo per risolvere il caso «banale»;
@@ -198,7 +198,7 @@ Risposta: nel caso di merge sort $D(n) = \Theta(1)$, $C(n) = \Theta(n)$, $a = b 
 
 ![[06-merge-sort-p24-ricorrenza-divide-et-impera.png]]
 
-### Soluzione con l'albero di ricorsione · [[06-Merge Sort (1).pdf#page=29|p. 27]]
+### Soluzione con l'albero di ricorsione · [[06-Merge Sort (1).pdf#page=27|p. 27]]
 
 Supponendo che $n$ sia una potenza di 2 e
 $$
@@ -210,7 +210,7 @@ $$ cn(\lg n + 1) = cn\lg n + cn = \Theta(n \lg n). $$
 ![[06-merge-sort-p25-albero-ricorsione-merge-sort.png]]
 *Radice $cn$, due figli $cn/2$, quattro nipoti $cn/4$, …, $n$ foglie di costo $c$: ogni livello somma a $cn$.*
 
-### Derivazione — $T(n) = cn(\lg n + 1)$ · [[06-Merge Sort (1).pdf#page=29|p. 27]], [[06-Merge Sort (1).pdf#page=35|p. 33]], [[06-Merge Sort (1).pdf#page=48|p. 44]]
+### Derivazione — $T(n) = cn(\lg n + 1)$ · [[06-Merge Sort (1).pdf#page=27|p. 27]], [[06-Merge Sort (1).pdf#page=33|p. 33]], [[06-Merge Sort (1).pdf#page=44|p. 44]]
 **Si parte da:** [[metodo-albero-di-ricorrenza]] — si somma il costo di tutti i nodi, livello per livello
 
 > 🧩 Derivazione mia:
@@ -264,7 +264,7 @@ $$
 - [[efficienza-degli-algoritmi]] — il confronto $n^2$ contro $n \lg n$ di p. 11
 - [[ordinamento]] — tabella comparativa degli algoritmi
 
-## Fonti · [[06-Merge Sort (1).pdf#page=6|p. 6]], [[06-Merge Sort (1).pdf#page=17|p. 16]], [[06-Merge Sort (1).pdf#page=24|p. 23]], [[06-Merge Sort (1).pdf#page=29|p. 27]]
+## Fonti · [[06-Merge Sort (1).pdf#page=6|p. 6]], [[06-Merge Sort (1).pdf#page=16|p. 16]], [[06-Merge Sort (1).pdf#page=23|p. 23]], [[06-Merge Sort (1).pdf#page=27|p. 27]]
 
 - [[lezione-06-merge-sort]]
 

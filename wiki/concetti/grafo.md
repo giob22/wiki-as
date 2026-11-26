@@ -26,7 +26,7 @@ Simboli usati nelle slide successive: $n = |V|$ numero di vertici, $m = |E|$ num
 ![[08-grafi-e-alberi-p4-rete-stradale.png]]
 ![[08-grafi-e-alberi-p5-circuito.png]]
 
-## Terminologia: il grafo delle amicizie · [[08-Grafi e alberi.pdf#page=18|p. 18]]
+## Terminologia: il grafo delle amicizie · [[08-Grafi e alberi.pdf#page=18|p. 18]], [[08-Grafi e alberi.pdf#page=19|p. 19]], [[08-Grafi e alberi.pdf#page=20|p. 20]], [[08-Grafi e alberi.pdf#page=21|p. 21]], [[08-Grafi e alberi.pdf#page=22|p. 22]]
 
 Si considera il grafo in cui i vertici sono persone e c'è un arco tra due persone **se e solo se** sono amiche. È ben definito su qualunque insieme di persone (Stony Brook, New York, il mondo). Che domande ci si può porre su questo grafo? Ognuna introduce un concetto.
 
@@ -35,10 +35,10 @@ Si considera il grafo in cui i vertici sono persone e c'è un arco tra due perso
 
 | Domanda (slide) | Concetto | Definizione |
 |---|---|---|
-| «Se io sono tuo amico, tu sei mio amico?» ([[08-Grafi e alberi.pdf#page=19\|p. 19]]) | grafo **non orientato** / **orientato** | non orientato se $(x, y) \in E$ implica $(y, x) \in E$; altrimenti orientato |
-| «Sono collegato a una celebrità da una catena di amici?» ([[08-Grafi e alberi.pdf#page=20\|p. 20]]) | **cammino** | sequenza di archi che collega due vertici |
-| «C'è un cammino di amici tra due persone qualsiasi?» ([[08-Grafi e alberi.pdf#page=21\|p. 21]]) | grafo **connesso** / **fortemente connesso** | connesso se c'è un cammino tra due vertici qualsiasi; un grafo orientato è fortemente connesso se c'è un cammino orientato tra due vertici qualsiasi |
-| «Chi ha più amici?» ([[08-Grafi e alberi.pdf#page=22\|p. 22]]) | **grado** | numero di archi adiacenti al vertice |
+| «Se io sono tuo amico, tu sei mio amico?» (p. 19) | grafo **non orientato** / **orientato** | non orientato se $(x, y) \in E$ implica $(y, x) \in E$; altrimenti orientato |
+| «Sono collegato a una celebrità da una catena di amici?» (p. 20) | **cammino** | sequenza di archi che collega due vertici |
+| «C'è un cammino di amici tra due persone qualsiasi?» (p. 21) | grafo **connesso** / **fortemente connesso** | connesso se c'è un cammino tra due vertici qualsiasi; un grafo orientato è fortemente connesso se c'è un cammino orientato tra due vertici qualsiasi |
+| «Chi ha più amici?» (p. 22) | **grado** | numero di archi adiacenti al vertice |
 | «Qual è la cricca più grande?» (p. 23) | **cricca** (*clique*) | sottografo completo: ogni coppia dei suoi vertici è collegata da un arco |
 
 Dettagli delle slide:

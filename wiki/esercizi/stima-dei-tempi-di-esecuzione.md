@@ -19,7 +19,7 @@ difficoltà: bassa
 
 ## Casi svolti
 
-### Caso 1 — insertion sort vs merge sort ([[01-Introduzione.pdf#page=11]]) · [[06-Merge Sort (1).pdf#page=29|p. 27]]
+### Caso 1 — insertion sort vs merge sort ([[01-Introduzione.pdf#page=11]]) · [[06-Merge Sort (1).pdf#page=27|p. 27]]
 $n = 10^6$, $10^9$ op/s: $t_{IS} = 10^{12}/10^9 = 1000$ s $\approx 16.7$ min; $t_{MS} = 10^6 \cdot 19.93 / 10^9 \approx 0.02$ s. Passaggi in [[efficienza-degli-algoritmi]]; il costo $n\lg n$ di merge sort è dimostrato in [[merge-sort]].
 
 ### Caso 2 — tabella dell'$n$ massimo ([[01-Introduzione.pdf#page=12]])

@@ -46,7 +46,7 @@ Nelle [[pseudocodice|convenzioni del corso]] la riga 2 si scrive `for i ← 1 to
 
 Invariante: all'inizio dell'iterazione $i$, $s = \sum_{k=1}^{i-1} k$. Dimostrazione completa, con la segnalazione del refuso «$i = 0$» della slide → [[invariante-di-ciclo]].
 
-## Complessità · [[03-Analisi di algoritmi.pdf#page=23|p. 23]]–[[03-Analisi di algoritmi.pdf#page=29|29]]
+## Complessità · [[03-Analisi di algoritmi.pdf#page=23|p. 23]]–[[03-Analisi di algoritmi.pdf#page=29|29]], [[03-Analisi di algoritmi.pdf#page=24|p. 24]], [[03-Analisi di algoritmi.pdf#page=25|p. 25]], [[03-Analisi di algoritmi.pdf#page=26|p. 26]], [[03-Analisi di algoritmi.pdf#page=27|p. 27]]
 
 | Riga | Operazione | Costo × esecuzioni |
 |---|---|---|

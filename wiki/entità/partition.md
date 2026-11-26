@@ -58,7 +58,7 @@ Partition (A,p,r)
 
 Simboli: $x$ = pivot; $i$ = ultima posizione della 1ª area (vale $p - 1$ quando l'area è vuota); $j$ = primo elemento non analizzato; `exchange` = scambio di due elementi; il valore restituito $i + 1$ è la posizione finale $q$ del pivot.
 
-## Esempio di esecuzione · [[07-Quicksort 1.pdf#page=7|p. 7]]–[[07-Quicksort 1.pdf#page=11|11]]
+## Esempio di esecuzione · [[07-Quicksort 1.pdf#page=7|p. 7]]–[[07-Quicksort 1.pdf#page=11|11]], [[07-Quicksort 1.pdf#page=8|p. 8]], [[07-Quicksort 1.pdf#page=9|p. 9]], [[07-Quicksort 1.pdf#page=10|p. 10]]
 
 ![[animazione-partition.svg]]
 > 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo sull'array delle slide 07 pp. 5–12, ⟨2, 8, 7, 1, 3, 5, 6, 4⟩ con pivot $x = 4$. I colori sono quelli delle slide (giallo $\le$ pivot, rosso $>$ pivot, bianco non analizzato, azzurro il pivot); si vedono i puntatori $i$ e $j$, il confronto $A[j] \le x$ e la riga di pseudocodice corrente.
@@ -67,14 +67,14 @@ Array iniziale $A[1..8] = \langle 2, 8, 7, 1, 3, 5, 6, 4 \rangle$, $p = 1$, $r =
 
 | Slide | $j$ | $A[j]$ | $A[j] \le 4$? | Azione | $i$ dopo | $A$ dopo |
 |---|---|---|---|---|---|---|
-| [[07-Quicksort 1.pdf#page=7\|p. 7]] | 1 | 2 | sì | $i \leftarrow 1$, scambio $A[1] \leftrightarrow A[1]$ | 1 | ⟨2, 8, 7, 1, 3, 5, 6, 4⟩ |
-| [[07-Quicksort 1.pdf#page=8\|p. 8]] | 2 | 8 | no | solo $j$ avanza | 1 | invariato |
-| [[07-Quicksort 1.pdf#page=8\|p. 8]] | 3 | 7 | no | solo $j$ avanza | 1 | invariato |
-| [[07-Quicksort 1.pdf#page=9\|p. 9]] | 4 | 1 | sì | $i \leftarrow 2$, scambio $A[2] \leftrightarrow A[4]$ | 2 | ⟨2, 1, 7, 8, 3, 5, 6, 4⟩ |
-| [[07-Quicksort 1.pdf#page=10\|p. 10]] | 5 | 3 | sì | $i \leftarrow 3$, scambio $A[3] \leftrightarrow A[5]$ | 3 | ⟨2, 1, 3, 8, 7, 5, 6, 4⟩ |
-| [[07-Quicksort 1.pdf#page=10\|p. 10]] | 6 | 5 | no | solo $j$ avanza | 3 | invariato |
-| [[07-Quicksort 1.pdf#page=11\|p. 11]] | 7 | 6 | no | solo $j$ avanza | 3 | invariato |
-| [[07-Quicksort 1.pdf#page=11\|p. 11]] | — | — | — | il ciclo è finito ($j = r$): scambio $A[i+1] \leftrightarrow A[r]$ | 3 | ⟨2, 1, 3, **4**, 7, 5, 6, 8⟩ |
+| p. 7 | 1 | 2 | sì | $i \leftarrow 1$, scambio $A[1] \leftrightarrow A[1]$ | 1 | ⟨2, 8, 7, 1, 3, 5, 6, 4⟩ |
+| p. 8 | 2 | 8 | no | solo $j$ avanza | 1 | invariato |
+| p. 8 | 3 | 7 | no | solo $j$ avanza | 1 | invariato |
+| p. 9 | 4 | 1 | sì | $i \leftarrow 2$, scambio $A[2] \leftrightarrow A[4]$ | 2 | ⟨2, 1, 7, 8, 3, 5, 6, 4⟩ |
+| p. 10 | 5 | 3 | sì | $i \leftarrow 3$, scambio $A[3] \leftrightarrow A[5]$ | 3 | ⟨2, 1, 3, 8, 7, 5, 6, 4⟩ |
+| p. 10 | 6 | 5 | no | solo $j$ avanza | 3 | invariato |
+| p. 11 | 7 | 6 | no | solo $j$ avanza | 3 | invariato |
+| p. 11 | — | — | — | il ciclo è finito ($j = r$): scambio $A[i+1] \leftrightarrow A[r]$ | 3 | ⟨2, 1, 3, **4**, 7, 5, 6, 8⟩ |
 
 Return $q = i + 1 = 4$: a sinistra ⟨2, 1, 3⟩ (tutti $\le 4$), a destra ⟨7, 5, 6, 8⟩ (tutti $> 4$). Verificato con [[divide_et_impera.py]].
 

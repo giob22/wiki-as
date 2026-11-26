@@ -7,7 +7,7 @@ fonti_pdf: ["03-Analisi di algoritmi.pdf#page=3", "00-Presentazione.pdf#page=5"]
 
 # Paradigmi (famiglie) di progettazione degli algoritmi
 
-## Definizione · [[03-Analisi di algoritmi.pdf#page=2|p. 2]]–[[03-Analisi di algoritmi.pdf#page=6|6]]
+## Definizione · [[03-Analisi di algoritmi.pdf#page=2|p. 2]]–[[03-Analisi di algoritmi.pdf#page=6|6]], [[03-Analisi di algoritmi.pdf#page=4|p. 4]], [[03-Analisi di algoritmi.pdf#page=5|p. 5]]
 
 I problemi possono essere affrontati in molti modi; qui si guarda **agli approcci**, non alle strutture dati. Ogni approccio bilancia tre grandezze: **tempo di calcolo**, **qualità della soluzione** e **scalabilità**. Le tre famiglie principali sono:
 

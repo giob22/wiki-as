@@ -20,7 +20,7 @@ Le sezioni seguono l'ordine delle slide: idea (p. 4) → pseudocodice e traccia 
 
 > 🧩 Esempio mio per fissare l'idea: è il modo in cui si ordinano le carte da gioco in mano. Si prende una carta alla volta e la si fa scorrere verso sinistra finché non trova il suo posto tra quelle già ordinate.
 
-## Pseudocodice · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=5|p. 5]], [[05-Insertion sort.pdf#page=21|p. 19]] · Pseudocodice [[a1-indicazioni_psuedocodice.pdf#page=4|p. 4]]
+## Pseudocodice · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=5|p. 5]], [[05-Insertion sort.pdf#page=19|p. 19]] · Pseudocodice [[a1-indicazioni_psuedocodice.pdf#page=4|p. 4]]
 
 ```
 Insertion-Sort (A)
@@ -43,7 +43,7 @@ La condizione `i>0 and A[i]>key` sfrutta il **corto circuito** di `and`: quando 
 
 > ⚠️ Contraddizione (di notazione): la slide usa `do` e il commento `//` (stile della 2ª edizione del Cormen), mentre le [[pseudocodice|convenzioni del corso]] prevedono commenti con $\triangleright$ e nessun `do`. Il significato è lo stesso.
 
-## Esempio di esecuzione · [[05-Insertion sort.pdf#page=5|p. 5]], [[05-Insertion sort.pdf#page=19|p. 17]]
+## Esempio di esecuzione · [[05-Insertion sort.pdf#page=5|p. 5]], [[05-Insertion sort.pdf#page=17|p. 17]], [[05-Insertion sort.pdf#page=8|p. 8]], [[05-Insertion sort.pdf#page=9|p. 9]], [[05-Insertion sort.pdf#page=10|p. 10]], [[05-Insertion sort.pdf#page=11|p. 11]], [[05-Insertion sort.pdf#page=12|p. 12]], [[05-Insertion sort.pdf#page=13|p. 13]], [[05-Insertion sort.pdf#page=14|p. 14]], [[05-Insertion sort.pdf#page=15|p. 15]], [[05-Insertion sort.pdf#page=16|p. 16]]
 
 ![[animazione-insertion-sort.svg]]
 > 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, sull'array ⟨5, 2, 4, 6, 1, 3⟩ delle slide (pp. 5–17), un fotogramma per ogni riga eseguita: `key`, i puntatori `i` e `j`, il confronto del `while` (rosso = sposto, azzurro = mi fermo), la parte già ordinata $A[1..j-1]$ in verde (l'invariante di p. 18) e la riga di pseudocodice corrente evidenziata. Ogni fotogramma riporta in basso il numero del passo e cosa succede.
@@ -55,18 +55,18 @@ Array iniziale: $A = \langle 5, 2, 4, 6, 1, 3 \rangle$.
 
 | Slide | $j$ | $key$ | Cosa succede | $A$ dopo l'iterazione |
 |---|---|---|---|---|
-| [[05-Insertion sort.pdf#page=6\|p. 6]], [[05-Insertion sort.pdf#page=7\|7]] | 2 | 2 | 5 > 2: il 5 scorre a destra, 2 va in $A[1]$ | ⟨**2**, 5, 4, 6, 1, 3⟩ |
-| [[05-Insertion sort.pdf#page=8\|p. 8]], [[05-Insertion sort.pdf#page=9\|9]] | 3 | 4 | 5 > 4 scorre; 2 ≤ 4 si ferma: 4 va in $A[2]$ | ⟨2, **4**, 5, 6, 1, 3⟩ |
-| [[05-Insertion sort.pdf#page=10\|p. 10]], [[05-Insertion sort.pdf#page=11\|11]] | 4 | 6 | 5 ≤ 6: nessuno spostamento | ⟨2, 4, 5, **6**, 1, 3⟩ |
-| [[05-Insertion sort.pdf#page=12\|p. 12]], [[05-Insertion sort.pdf#page=13\|13]] | 5 | 1 | 6, 5, 4, 2 scorrono tutti; $i$ arriva a 0 | ⟨**1**, 2, 4, 5, 6, 3⟩ |
-| [[05-Insertion sort.pdf#page=14\|p. 14]], [[05-Insertion sort.pdf#page=15\|15]] | 6 | 3 | 6, 5, 4 scorrono; 2 ≤ 3 si ferma | ⟨1, 2, **3**, 4, 5, 6⟩ |
+| p. 8, p. 9 | 2 | 2 | 5 > 2: il 5 scorre a destra, 2 va in $A[1]$ | ⟨**2**, 5, 4, 6, 1, 3⟩ |
+| p. 10, p. 11 | 3 | 4 | 5 > 4 scorre; 2 ≤ 4 si ferma: 4 va in $A[2]$ | ⟨2, **4**, 5, 6, 1, 3⟩ |
+| p. 12, p. 13 | 4 | 6 | 5 ≤ 6: nessuno spostamento | ⟨2, 4, 5, **6**, 1, 3⟩ |
+| p. 14, p. 15 | 5 | 1 | 6, 5, 4, 2 scorrono tutti; $i$ arriva a 0 | ⟨**1**, 2, 4, 5, 6, 3⟩ |
+| p. 16, p. 17 | 6 | 3 | 6, 5, 4 scorrono; 2 ≤ 3 si ferma | ⟨1, 2, **3**, 4, 5, 6⟩ |
 
 ![[05-insertion-sort-p15-traccia-completa.png]]
 *Traccia completa: ogni riga è lo stato dopo un'iterazione del `for`, con il valore di `key` a sinistra.*
 
 > 🧩 Derivazione mia — numero di test del `while` per ogni $j$ (servirà nell'analisi): $t_2 = 2$, $t_3 = 2$, $t_4 = 1$, $t_5 = 5$, $t_6 = 4$. Ogni test vero sposta un elemento; l'ultimo test, falso, ferma il ciclo. Per $j = 5$: quattro test veri (6, 5, 4, 2 > 1) più il test con $i = 0$. Verificato con [[ordinamento.py]], che controlla anche l'invariante a ogni iterazione.
 
-## Correttezza · [[05-Insertion sort.pdf#page=20|p. 18]]
+## Correttezza · [[05-Insertion sort.pdf#page=18|p. 18]]
 
 **Invariante:** all'inizio di ciascuna iterazione del ciclo `for`, la sottosequenza $A[1..j-1]$ consiste degli **elementi originali** di $A[1..j-1]$, ma **ordinati** in senso crescente.
 
@@ -87,7 +87,7 @@ Array iniziale: $A = \langle 5, 2, 4, 6, 1, 3 \rangle$.
 
 ## Complessità
 
-### Tabella dei costi · [[05-Insertion sort.pdf#page=21|p. 19]]
+### Tabella dei costi · [[05-Insertion sort.pdf#page=19|p. 19]]
 
 | Riga | Istruzione | Costo | Numero di esecuzioni |
 |---|---|---|---|
@@ -109,7 +109,7 @@ Array iniziale: $A = \langle 5, 2, 4, 6, 1, 3 \rangle$.
 > - righe 2, 4, 8: una volta per iterazione del `for` → $n - 1$;
 > - righe 6, 7: il corpo del `while` si esegue una volta in meno del suo test (l'ultimo test è falso) → $t_j - 1$ per ogni $j$.
 
-### Formula generale · [[05-Insertion sort.pdf#page=22|p. 20]], [[05-Insertion sort.pdf#page=23|21]]
+### Formula generale · [[05-Insertion sort.pdf#page=20|p. 20]], [[05-Insertion sort.pdf#page=21|21]]
 
 > 🧮 Formula chiave:
 $$
@@ -118,7 +118,7 @@ $$
 
 Il tempo dipende dall'**input**, non solo da $n$: le tre sommatorie (cerchiate in p. 21) dipendono da quanti elementi scorrono, cioè da quanto l'array è già in ordine.
 
-### Caso migliore · [[05-Insertion sort.pdf#page=24|p. 22]]
+### Caso migliore · [[05-Insertion sort.pdf#page=22|p. 22]]
 
 Il **caso migliore** si verifica quando il vettore è **già ordinato** ($t_j = 1$):
 $$ T(n) = c_1 n + c_2(n-1) + c_4(n-1) + c_5(n-1) + c_8(n-1) = an + b $$
@@ -136,7 +136,7 @@ $$
 
 ![[05-insertion-sort-p20-caso-migliore.png]]
 
-### Caso peggiore · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=25|p. 23]], [[05-Insertion sort.pdf#page=26|24]] · 01-Introduzione.pdf [[01-Introduzione.pdf#page=11|p. 11]]
+### Caso peggiore · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=23|p. 23]], [[05-Insertion sort.pdf#page=24|24]] · 01-Introduzione.pdf [[01-Introduzione.pdf#page=11|p. 11]]
 
 Il **caso peggiore** si verifica quando il vettore è **ordinato in senso decrescente**. Si usano le due sommatorie:
 $$ \sum_{j=2}^{n} j = \frac{n(n+1)}{2} - 1 \qquad\qquad \sum_{j=2}^{n} (j-1) = \frac{n(n-1)}{2} $$
@@ -170,7 +170,7 @@ $$
 
 **Spazio:** $\Theta(1)$ oltre all'array ($key$, $i$, $j$) — è la proprietà «sul posto» di p. 4.
 
-## Implementazione in C++ · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=28|p. 25]] · Pseudocodice [[a1-indicazioni_psuedocodice.pdf#page=3|p. 3]]
+## Implementazione in C++ · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=25|p. 25]] · Pseudocodice [[a1-indicazioni_psuedocodice.pdf#page=3|p. 3]]
 
 ```cpp
 template <typename T>
@@ -212,7 +212,7 @@ void InsertionSort (vector<T> A)
 - [[efficienza-degli-algoritmi]] — $n^2$ contro $n\log n$ di [[merge-sort]]
 - [[quicksort]] — stesso caso peggiore $\Theta(n^2)$, ma sul vettore ordinato, che per insertion sort è il caso migliore
 
-## Fonti · [[05-Insertion sort.pdf#page=4|p. 4]], [[05-Insertion sort.pdf#page=28|p. 25]]
+## Fonti · [[05-Insertion sort.pdf#page=4|p. 4]], [[05-Insertion sort.pdf#page=25|p. 25]]
 
 - [[lezione-05-insertion-sort]]
 

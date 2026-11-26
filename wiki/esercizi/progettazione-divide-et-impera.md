@@ -6,7 +6,7 @@ difficoltà: media
 
 # Progettazione di algoritmi divide et impera
 
-## Metodo · Merge Sort [[06-Merge Sort (1).pdf#page=26|p. 24]] · Quicksort [[07-Quicksort 1.pdf#page=3|p. 3]]
+## Metodo · Merge Sort [[06-Merge Sort (1).pdf#page=24|p. 24]] · Quicksort [[07-Quicksort 1.pdf#page=3|p. 3]]
 
 > 🧩 Procedura mia, ricavata dallo schema delle lezioni 06–07:
 1. **Specifica:** input, output, operazioni ammesse (es. solo confronti dado–bullone).
@@ -56,7 +56,7 @@ Pseudocodice, animazioni e misure in [[nuts-and-bolts]].
 
 **Risultato:** $O(n^2)$ deterministico; $O(n\log n)$ atteso con il pivot casuale.
 
-### Caso 3 — Massimo sottoarray · [[06-Merge Sort (1).pdf#page=30|p. 28]]
+### Caso 3 — Massimo sottoarray · [[06-Merge Sort (1).pdf#page=28|p. 28]]
 **Traccia:** p. 28 (S&T, solo titolo e rimando al libro, cap. 4.1).
 
 Non svolto: le slide non danno né il testo né la soluzione. Enunciato (📚 Cormen §4.1) in [[massimo-sottoarray]]. TODO: da espandere se una lezione presenterà la soluzione.

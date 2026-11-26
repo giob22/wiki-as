@@ -44,15 +44,15 @@ difficoltà: media
 ### Caso 4 — OptimalScheduling
 > 🧩 Mio. Induzione sul numero di intervalli con argomento di scambio: esiste sempre una soluzione ottima che contiene il job che finisce per primo. → [[optimal-scheduling]]
 
-### Caso 5 — insertion sort ([[05-Insertion sort.pdf#page=20]])
+### Caso 5 — insertion sort ([[05-Insertion sort.pdf#page=18]])
 - Invariante (dalla slide): all'inizio di ogni iterazione del `for`, $A[1..j-1]$ contiene gli elementi originali di $A[1..j-1]$, ordinati.
 - Inizializzazione: $j = 2$, $A[1..1]$ ha un solo elemento ✓. Conservazione: $A[j]$ è inserito mantenendo ordinato $A[1..j]$ ✓. Conclusione: all'uscita $j = n + 1$, $A[1..n]$ è ordinato ✓.
 - Passaggi della conservazione e terminazione del `while` → [[insertion-sort]] § Correttezza.
 
-### Caso 6 — selection sort (esercizio 2.2.2, [[05-Insertion sort.pdf#page=36]])
+### Caso 6 — selection sort (esercizio 2.2.2, [[05-Insertion sort.pdf#page=31]])
 > 🧩 Mio (la slide chiede «Dimostrarne la correttezza» senza soluzione). Invariante esterno: $A[1..i-1]$ contiene gli $i - 1$ elementi più piccoli, ordinati; invariante interno: $A[min]$ è il minimo di $A[i..j-1]$. Dimostrazione completa, e perché basta arrivare a $n - 1$ → [[selection-sort]] § Correttezza.
 
-### Caso 7 — Merge ([[06-Merge Sort (1).pdf#page=21]], [[06-Merge Sort (1).pdf#page=22]])
+### Caso 7 — Merge ([[06-Merge Sort (1).pdf#page=20]], [[06-Merge Sort (1).pdf#page=21]])
 - Pre: $A[p..q]$ e $A[q+1..r]$ ordinati. Post: $A[p..r]$ ordinato con gli stessi elementi.
 - Invariante (dalla slide): all'inizio di ogni iterazione del `for` finale, $A[p..k-1]$ contiene i $k - p$ elementi più piccoli di $L$ ed $R$, ordinati; $L[i]$ e $R[j]$ sono i più piccoli non ancora ricopiati.
 - Inizializzazione: $k = p$, sottosequenza vuota; $L[1]$, $R[1]$ minimi ✓. Conservazione: si copia $\min(L[i], R[j])$, che è il minimo dei rimasti ✓. Conclusione: $k = r + 1$, $A[p..r]$ contiene tutti gli $r - p + 1$ elementi ordinati; in $L$ e $R$ restano le sentinelle ✓.

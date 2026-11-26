@@ -41,7 +41,7 @@ Le slide spezzano merge sort in due (pp. 6–16 e 22–25) con Merge in mezzo (p
 5. *equazioni-di-ricorrenza* (solo la sezione «Ricorrenze divide et impera»), poi *metodo-di-sostituzione*, *metodo-albero-di-ricorrenza*, *teorema-dell-esperto*, nell'ordine delle slide;
 6. *massimo-sottoarray* quando vuoi: è solo un rimando al libro. Le pp. 49–52 sono un ripasso della lezione 05.
 
-## Punti chiave · [[06-Merge Sort (1).pdf#page=2|p. 2]]–[[06-Merge Sort (1).pdf#page=5|5]], [[06-Merge Sort (1).pdf#page=7|p. 7]]–[[06-Merge Sort (1).pdf#page=11|10]], [[06-Merge Sort (1).pdf#page=14|p. 13]]–[[06-Merge Sort (1).pdf#page=20|19]], [[06-Merge Sort (1).pdf#page=22|p. 21]]–[[06-Merge Sort (1).pdf#page=32|30]], [[06-Merge Sort (1).pdf#page=34|p. 32]], [[06-Merge Sort (1).pdf#page=35|33]], [[06-Merge Sort (1).pdf#page=47|p. 43]]–[[06-Merge Sort (1).pdf#page=49|49]], [[06-Merge Sort (1).pdf#page=52|p. 52]]
+## Punti chiave · [[06-Merge Sort (1).pdf#page=2|p. 2]]–[[06-Merge Sort (1).pdf#page=5|5]], [[06-Merge Sort (1).pdf#page=7|p. 7]]–[[06-Merge Sort (1).pdf#page=10|10]], [[06-Merge Sort (1).pdf#page=13|p. 13]]–[[06-Merge Sort (1).pdf#page=19|19]], [[06-Merge Sort (1).pdf#page=21|p. 21]]–[[06-Merge Sort (1).pdf#page=30|30]], [[06-Merge Sort (1).pdf#page=32|p. 32]], [[06-Merge Sort (1).pdf#page=33|33]], [[06-Merge Sort (1).pdf#page=43|p. 43]]–[[06-Merge Sort (1).pdf#page=49|49]], [[06-Merge Sort (1).pdf#page=52|p. 52]]
 
 1. S&T Torre di Hanoi: problema e vincoli, domanda sulla riduzione a problemi più piccoli → [[torre-di-hanoi]].
 2. Approccio divide et impera per Hanoi: sotto-torre, caso base di un solo disco, combinazione delle soluzioni; fase decrescente e ascendente; sequenza di 7 mosse per 3 dischi.
@@ -94,7 +94,7 @@ Il PDF contiene annotazioni scritte a mano, riportate nelle pagine del wiki acca
 - p. 23: «Restituisci A ⇒ non operare su A se devi considerare il singolo elemento di A»; «l'ottimizzazione della firma ci ha portato a tutti questi benefici» → [[merge-sort]];
 - p. 24: «Ricorrenza: formula matematica», «potrei avere più casi base», $D(n)$ «equivale al costo dell'operazione per ottenere $q$» → [[merge-sort]].
 
-## Refusi e note · [[06-Merge Sort (1).pdf#page=6|p. 6]], [[06-Merge Sort (1).pdf#page=20|p. 19]], [[06-Merge Sort (1).pdf#page=30|p. 28]]
+## Refusi e note · [[06-Merge Sort (1).pdf#page=6|p. 6]], [[06-Merge Sort (1).pdf#page=19|p. 19]], [[06-Merge Sort (1).pdf#page=28|p. 28]]
 
 - p. 1: «Divide et **Imera**» per «Impera». Il file si chiama «Merge Sort» ma copre l'intero paradigma divide et impera e i metodi per le ricorrenze.
 - Le pagine p. 6 (titolo «Merge Sort») e p. 28 (titolo dello S&T) sono solo titoli; p. 19 ha solo il titolo e la pagina vuota. Le pagine 3, 5, 8, 9, 13, 15, 21, 25, 30 e 32–38 hanno il contenuto soprattutto come figura: è trascritto nelle pagine del wiki, con l'immagine accanto.

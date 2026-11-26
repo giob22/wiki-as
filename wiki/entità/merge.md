@@ -9,7 +9,7 @@ fonti_pdf: ["06-Merge Sort (1).pdf#page=16", "06-Merge Sort (1).pdf#page=17", "0
 
 Le sezioni seguono l'ordine delle slide: prima versione senza sentinelle (p. 15) → codice completo (p. 16) → esempio (p. 17) → correttezza (pp. 18–20) → complessità (p. 21).
 
-## Problema risolto · [[06-Merge Sort (1).pdf#page=7|p. 7]], [[06-Merge Sort (1).pdf#page=18|p. 17]], [[06-Merge Sort (1).pdf#page=24|p. 23]]
+## Problema risolto · [[06-Merge Sort (1).pdf#page=7|p. 7]], [[06-Merge Sort (1).pdf#page=17|p. 17]], [[06-Merge Sort (1).pdf#page=23|p. 23]]
 
 **Merge** combina due sottosequenze ordinate in una sequenza ordinata. È la prima delle «due funzioni» di [[merge-sort]]; l'altra, Merge-Sort, la invoca per ricombinare le metà ordinate.
 
@@ -24,7 +24,7 @@ Le sezioni seguono l'ordine delle slide: prima versione senza sentinelle (p. 15)
 
 Lo pseudocodice della slide evita il controllo «un mazzo è finito?» con le **sentinelle**: in fondo a $L$ e $R$ mette $\infty$. Una sentinella non è mai minore di un elemento vero, quindi non viene scelta finché nell'altro array resta qualcosa.
 
-## Prima versione (senza sentinelle) · [[06-Merge Sort (1).pdf#page=17|p. 16]]
+## Prima versione (senza sentinelle) · [[06-Merge Sort (1).pdf#page=16|p. 16]]
 
 Nel passaggio dalla prima versione di Merge-Sort a quella con gli indici (→ [[merge-sort]] § Dal primo pseudocodice alla versione con indici), la creazione di $L$ e $R$ viene **spostata da Merge-Sort a Merge**. Merge deve usare memoria accessoria per copiare i sotto-vettori, perché l'inserimento in $A$ è ora una **sovrascrittura** e senza copie si perderebbero elementi.
 
@@ -54,7 +54,7 @@ Annotazioni a mano: accanto alle righe 1–2 «faceva parte della fase discenden
 
 > 🧩 Osservazione mia: questa versione non ha le sentinelle e non controlla se $L$ o $R$ sono finiti. Con $L = \langle 1, 2 \rangle$ e $R = \langle 3, 4 \rangle$, dopo due iterazioni $i = 3$ e il confronto della riga 6 leggerebbe $L[3]$, che non esiste. Il «codice completo» qui sotto risolve il problema con la sentinella $\infty$ in fondo a $L$ e $R$ (riga 8).
 
-## Pseudocodice (codice completo) · [[06-Merge Sort (1).pdf#page=18|p. 17]], [[06-Merge Sort (1).pdf#page=19|18]], [[06-Merge Sort (1).pdf#page=23|p. 22]]
+## Pseudocodice (codice completo) · [[06-Merge Sort (1).pdf#page=17|p. 17]], [[06-Merge Sort (1).pdf#page=18|18]], [[06-Merge Sort (1).pdf#page=22|p. 22]]
 
 > 📄 Fonte: p. 17 (titolo «Merge: codice completo»; ripetuto in p. 18 e p. 22); riportato fedelmente, numeri di riga miei
 
@@ -91,7 +91,7 @@ Accanto al codice la slide ripete i punti dell'idea di merge sort e aggiunge:
 
 > ⚠️ Contraddizione (di notazione): la slide usa `do`/`then`/`else` e il commento `//` (stile della 2ª edizione del Cormen), mentre le [[pseudocodice|convenzioni del corso]] prevedono commenti con $\triangleright$ e nessun `do`/`then`. Il significato è lo stesso. Anche l'assegnamento multiplo `L[n1+1] ← R[n2+1] ← ∞` (riga 8) e `i ← j ← 1` (riga 9) non è previsto dalle convenzioni: si legge come due assegnamenti.
 
-## Esempio di esecuzione · [[06-Merge Sort (1).pdf#page=19|p. 18]], [[06-Merge Sort (1).pdf#page=22|p. 21]]
+## Esempio di esecuzione · [[06-Merge Sort (1).pdf#page=18|p. 18]], [[06-Merge Sort (1).pdf#page=21|p. 21]]
 
 ![[animazione-merge.svg]]
 > 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo sull'istanza della slide 06 p. 18: $A[p..r] = \langle 2, 4, 5, 7, 1, 2, 3, 6 \rangle$ con $q$ a metà. Si vedono la copia in $L$ e $R$ con le sentinelle, i puntatori $i$, $j$, $k$, il confronto $L[i] \le R[j]$ (in azzurro l'elemento scelto), la parte già fusa $A[p..k-1]$ in verde (l'invariante di p. 20) e la riga di pseudocodice corrente.
@@ -116,7 +116,7 @@ Stato iniziale della slide: $A[p..q] = \langle 2, 4, 5, 7 \rangle$, $A[q+1..r] =
 
 Alla fine $i = 5$ e $j = 5$: in $L$ e $R$ restano solo le due sentinelle, come dice p. 21. Al passo $k = 8$ la sentinella $R[5] = \infty$ fa scegliere $L[4]$ senza controllare che $R$ sia finito.
 
-## Correttezza · [[06-Merge Sort (1).pdf#page=20|p. 19]]–[[06-Merge Sort (1).pdf#page=22|21]]
+## Correttezza · [[06-Merge Sort (1).pdf#page=19|p. 19]]–[[06-Merge Sort (1).pdf#page=21|21]]
 
 (La slide p. 19 ha solo il titolo «Merge: analisi di correttezza» e la pagina vuota: l'analisi è nelle due slide successive.)
 
@@ -134,7 +134,7 @@ Alla fine $i = 5$ e $j = 5$: in $L$ e $R$ restano solo le due sentinelle, come d
 >
 > **Terminazione:** il `for` delle righe 10–15 esegue esattamente $r - p + 1$ iterazioni (variante: $r + 1 - k$).
 
-## Complessità · [[06-Merge Sort (1).pdf#page=23|p. 22]]
+## Complessità · [[06-Merge Sort (1).pdf#page=22|p. 22]]
 
 La slide raggruppa le righe e assegna a ogni gruppo un costo:
 
@@ -147,7 +147,7 @@ La slide raggruppa le righe e assegna a ogni gruppo un costo:
 
 ![[06-merge-sort-p21-costo-merge.png]]
 
-### Derivazione — Merge è $\Theta(n)$ · [[06-Merge Sort (1).pdf#page=7|p. 7]], [[06-Merge Sort (1).pdf#page=23|p. 22]]
+### Derivazione — Merge è $\Theta(n)$ · [[06-Merge Sort (1).pdf#page=7|p. 7]], [[06-Merge Sort (1).pdf#page=22|p. 22]]
 **Si parte da:** [[tempo-di-esecuzione]] — $T(n) = \sum_i c_i \cdot (\text{n. esecuzioni riga } i)$, con $n = r - p + 1$
 
 > 🧩 Derivazione mia — tabella costo × numero di esecuzioni:
@@ -186,7 +186,7 @@ Anche il limite inferiore è lineare: il solo ciclo delle righe 10–15 esegue $
 - **Non sul posto** — usa gli array ausiliari $L$ e $R$.
 - **Stabile** — 🧩 derivabile dallo pseudocodice: a parità ($L[i] = R[j]$) la riga 11 sceglie $L[i]$, cioè l'elemento che stava prima in $A$. Nella traccia di p. 18 il 2 di $L$ finisce in $A[2]$, prima del 2 di $R$.
 
-## Connessioni · [[06-Merge Sort (1).pdf#page=26|p. 24]]
+## Connessioni · [[06-Merge Sort (1).pdf#page=24|p. 24]]
 
 - [[merge-sort]] — Merge è il suo passo Combine, con $C(n) = \Theta(n)$
 - [[invariante-di-ciclo]] — invariante con due affermazioni (prefisso di $A$ e puntatori $i$, $j$)
@@ -194,7 +194,7 @@ Anche il limite inferiore è lineare: il solo ciclo delle righe 10–15 esegue $
 - [[analisi-del-costo-riga-per-riga]] — stessa tecnica di insertion sort, ma qui il numero di esecuzioni non dipende dall'input
 - [[dimostrazioni-di-correttezza]] — esercizi
 
-## Fonti · [[06-Merge Sort (1).pdf#page=7|p. 7]], [[06-Merge Sort (1).pdf#page=17|p. 16]], [[06-Merge Sort (1).pdf#page=23|p. 22]]
+## Fonti · [[06-Merge Sort (1).pdf#page=7|p. 7]], [[06-Merge Sort (1).pdf#page=16|p. 16]], [[06-Merge Sort (1).pdf#page=22|p. 22]]
 
 - [[lezione-06-merge-sort]]
 

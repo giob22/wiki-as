@@ -69,7 +69,7 @@ L'invariante va scelto in modo che la **conclusione** dia esattamente la post-co
 
 > 🎯 Esame: scrivere invariante, inizializzazione, conservazione, conclusione **e** terminazione per un ciclo dato. Senza terminazione si ha solo correttezza parziale.
 
-## Connessioni · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=20|p. 18]], [[05-Insertion sort.pdf#page=36|p. 31]] · Merge Sort [[06-Merge Sort (1).pdf#page=21|p. 20]] · Quicksort [[07-Quicksort 1.pdf#page=13|p. 13]] · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=18|p. 18]]
+## Connessioni · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=18|p. 18]], [[05-Insertion sort.pdf#page=31|p. 31]] · Merge Sort [[06-Merge Sort (1).pdf#page=20|p. 20]] · Quicksort [[07-Quicksort 1.pdf#page=13|p. 13]] · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=18|p. 18]]
 
 - [[correttezza-parziale-e-totale]] — l'invariante dà la correttezza **parziale**, la funzione variante la terminazione: insieme la **totale**
 - [[insertion-sort]] — l'invariante di p. 16 («$A[1..j-1]$ contiene gli elementi originali di $A[1..j-1]$, ordinati») è l'esempio canonico del metodo

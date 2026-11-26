@@ -20,7 +20,7 @@ ShortestJobFirst(I)
 3      Delete j, and any interval which intersects j from S.
 ```
 
-## Esempio di esecuzione · [[01-Introduzione.pdf#page=37|p. 37]], [[01-Introduzione.pdf#page=48|p. 48]], [[01-Introduzione.pdf#page=54|p. 54]], [[01-Introduzione.pdf#page=55|55]]
+## Esempio di esecuzione · [[01-Introduzione.pdf#page=37|p. 37]], [[01-Introduzione.pdf#page=48|p. 48]], [[01-Introduzione.pdf#page=54|p. 54]], [[01-Introduzione.pdf#page=55|55]], [[01-Introduzione.pdf#page=49|p. 49]], [[01-Introduzione.pdf#page=50|p. 50]], [[01-Introduzione.pdf#page=51|p. 51]], [[01-Introduzione.pdf#page=52|p. 52]], [[01-Introduzione.pdf#page=53|p. 53]]
 
 ![[animazione-shortest-job-first.svg]]
 > 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, sui 9 film di p. 37: a ogni passo il job più corto e gli intervalli eliminati perché lo intersecano, con lo stesso esito delle slide (pp. 48–54). Ogni fotogramma riporta in basso il numero del passo e cosa succede.
@@ -29,13 +29,13 @@ Traccia sull'istanza di p. 37:
 
 | Pagina | Evento |
 |---|---|
-| [[01-Introduzione.pdf#page=48\|p. 48]] | ✔ Steiner's Tree (il più corto) |
-| [[01-Introduzione.pdf#page=49\|p. 49]] | ✘ Tarjan of the Jungle, ✘ The Four Volume Problem, ✘ Halting State |
-| [[01-Introduzione.pdf#page=50\|p. 50]] | ✔ "Discrete" Mathematics |
-| [[01-Introduzione.pdf#page=51\|p. 51]] | ✘ The President's Algorist |
-| [[01-Introduzione.pdf#page=52\|p. 52]] | ✔ Calculated Bets |
-| [[01-Introduzione.pdf#page=53\|p. 53]] | ✘ Process Terminated |
-| [[01-Introduzione.pdf#page=54\|p. 54]] | ✔ Programming Challenges |
+| p. 48 | ✔ Steiner's Tree (il più corto) |
+| p. 49 | ✘ Tarjan of the Jungle, ✘ The Four Volume Problem, ✘ Halting State |
+| p. 50 | ✔ "Discrete" Mathematics |
+| p. 51 | ✘ The President's Algorist |
+| p. 52 | ✔ Calculated Bets |
+| p. 53 | ✘ Process Terminated |
+| p. 54 | ✔ Programming Challenges |
 
 Risultato: **4** film. Su questa istanza entrambe le euristiche ([[earliest-job-first]] e questa) ne selezionano 4: il loro difetto emerge su istanze diverse.
 
