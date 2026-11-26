@@ -6,9 +6,7 @@ fonti_pdf: ["01-Introduzione.pdf#page=7", "01-Introduzione.pdf#page=11", "05-Ins
 
 # Problema dell'ordinamento (Sorting)
 
-## Definizione formale
-
-> 📄 Fonte: [[01-Introduzione.pdf#page=7]]
+## Definizione formale · 01-Introduzione.pdf [[01-Introduzione.pdf#page=7|p. 7]] · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=2|p. 2]]
 
 - **Problem:** Sorting
 - **Input:** una sequenza di $n$ chiavi $a_1, \dots, a_n$
@@ -16,13 +14,11 @@ fonti_pdf: ["01-Introduzione.pdf#page=7", "01-Introduzione.pdf#page=11", "05-Ins
 
 È l'esempio con cui la lezione 01 introduce le nozioni di problema computazionale e di [[algoritmo-e-problema|istanza]].
 
-> 📄 Fonte: [[05-Insertion sort.pdf#page=2]] — la lezione 05 riprende la stessa definizione in italiano
+> 📄 La lezione 05 riprende la stessa definizione in italiano
 
 **Problema:** data una sequenza di $n$ valori di ingresso $(a_1, a_2, \dots, a_n)$, determinare una permutazione $(a'_1, a'_2, \dots, a'_n)$ della sequenza di ingresso tale che $a'_1 \le a'_2 \le \dots \le a'_n$.
 
-## Applicazioni
-
-> 📄 Fonte: [[05-Insertion sort.pdf#page=3]]
+## Applicazioni · [[05-Insertion sort.pdf#page=3|p. 3]]
 
 L'ordinamento serve come passo di molti altri problemi: **Searching**, **Closest pair**, **Element uniqueness**, **Frequency distribution**, **Selection in an array**, **Convex hulls**, «…».
 
@@ -38,31 +34,30 @@ L'ordinamento serve come passo di molti altri problemi: **Searching**, **Closest
 
 ![[05-insertion-sort-p3-applicazioni-ordinamento.png]]
 
-## Algoritmi che lo risolvono
+## Algoritmi che lo risolvono · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=24|p. 22]], [[05-Insertion sort.pdf#page=26|p. 24]], [[05-Insertion sort.pdf#page=38|p. 33]] · Merge Sort [[06-Merge Sort (1).pdf#page=7|p. 7]], [[06-Merge Sort (1).pdf#page=29|p. 27]] · Quicksort [[07-Quicksort 1.pdf#page=2|p. 2]], [[07-Quicksort 1.pdf#page=14|p. 14]], [[07-Quicksort 1.pdf#page=15|15]], [[07-Quicksort 1.pdf#page=20|p. 20]], [[07-Quicksort 1.pdf#page=23|p. 23]]
 
-| Algoritmo | Caso migliore | Caso peggiore | Spazio aggiuntivo | Pagina |
-|-----------|---------------|---------------|-------------------|--------|
-| [[insertion-sort]] | $\Theta(n)$ (già ordinato) | $\Theta(n^2)$ (ordine decrescente) | $\Theta(1)$, sul posto | [[05-Insertion sort.pdf#page=20]], [[05-Insertion sort.pdf#page=22]] |
-| [[selection-sort]] | $\Theta(n^2)$ | $\Theta(n^2)$ | $\Theta(1)$ (🧩) | [[05-Insertion sort.pdf#page=28]] |
-| [[merge-sort]] | $\Theta(n\lg n)$ | $\Theta(n\lg n)$ | $\Theta(n)$, **non** sul posto | [[06-Merge Sort (1).pdf#page=7]], [[06-Merge Sort (1).pdf#page=25]] |
-| [[quicksort]] | $\Theta(n\lg n)$ (partizioni bilanciate) | $\Theta(n^2)$ (vettore ordinato) | sul posto (pila da $\Theta(\lg n)$ a $\Theta(n)$, 🧩) | [[07-Quicksort 1.pdf#page=2]], [[07-Quicksort 1.pdf#page=14]], [[07-Quicksort 1.pdf#page=15]] |
-| [[quicksort-randomizzato]] | — | $\Theta(n^2)$ (improbabile); **atteso** $O(n\log n)$ | sul posto | [[07-Quicksort 1.pdf#page=20]], [[07-Quicksort 1.pdf#page=23]] |
+| Algoritmo | Caso migliore | Caso peggiore | Spazio aggiuntivo |
+|---|---|---|---|
+| [[insertion-sort]] | $\Theta(n)$ (già ordinato) | $\Theta(n^2)$ (ordine decrescente) | $\Theta(1)$, sul posto |
+| [[selection-sort]] | $\Theta(n^2)$ | $\Theta(n^2)$ | $\Theta(1)$ (🧩) |
+| [[merge-sort]] | $\Theta(n\lg n)$ | $\Theta(n\lg n)$ | $\Theta(n)$, **non** sul posto |
+| [[quicksort]] | $\Theta(n\lg n)$ (partizioni bilanciate) | $\Theta(n^2)$ (vettore ordinato) | sul posto (pila da $\Theta(\lg n)$ a $\Theta(n)$, 🧩) |
+| [[quicksort-randomizzato]] | — | $\Theta(n^2)$ (improbabile); **atteso** $O(n\log n)$ | sul posto |
 
 Confronto numerico su $n = 10^6$ a $10^9$ op/s: ≈ 16.7 minuti (insertion sort, $n^2$) contro ≈ 0.02 secondi (merge sort, $n \log n$) — derivazione in [[efficienza-degli-algoritmi]].
 
-> 🧩 Osservazione mia sulla tabella: l'input già ordinato è il caso **migliore** di insertion sort e il caso **peggiore** di quicksort con pivot $A[r]$ ([[07-Quicksort 1.pdf#page=14]]); merge sort non distingue gli input. Merge sort e insertion sort sono stabili, quicksort no (dettagli nelle pagine degli algoritmi).
+> 🧩 Osservazione mia sulla tabella: l'input già ordinato è il caso **migliore** di insertion sort e il caso **peggiore** di quicksort con pivot $A[r]$; merge sort non distingue gli input. Merge sort e insertion sort sono stabili, quicksort no (dettagli nelle pagine degli algoritmi).
 
-## Altre occorrenze
+## Altre occorrenze · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=4|p. 4]], [[03-Analisi di algoritmi.pdf#page=22|p. 22]] · 02-Notazione asintotica.pdf [[02-Notazione asintotica.pdf#page=3|p. 3]], [[02-Notazione asintotica.pdf#page=5|p. 5]] · Pseudocodice [[a1-indicazioni_psuedocodice.pdf#page=4|p. 4]]
 
-- Per gli algoritmi di ordinamento la **dimensione dell'input** è la lunghezza della sequenza da ordinare ([[03-Analisi di algoritmi.pdf#page=22]], [[02-Notazione asintotica.pdf#page=3]]) → [[tempo-di-esecuzione]].
-- «"Sort" is not a single step operation» nel [[modello-ram]] ([[02-Notazione asintotica.pdf#page=5]]).
-- Ordinamento è uno degli esempi classici di [[divide-et-impera]] ([[03-Analisi di algoritmi.pdf#page=4]]).
-- Nello pseudocodice degli esercizi, `sort` può essere usata come funzione di libreria solo se esplicitamente consentito ([[a1-indicazioni_psuedocodice.pdf#page=4]]) → [[pseudocodice]].
+- Per gli algoritmi di ordinamento la **dimensione dell'input** è la lunghezza della sequenza da ordinare → [[tempo-di-esecuzione]].
+- «"Sort" is not a single step operation» nel [[modello-ram]].
+- Ordinamento è uno degli esempi classici di [[divide-et-impera]].
+- Nello pseudocodice degli esercizi, `sort` può essere usata come funzione di libreria solo se esplicitamente consentito → [[pseudocodice]].
 
-## Fonti
+## Fonti · 01-Introduzione.pdf [[01-Introduzione.pdf#page=7|p. 7]], [[01-Introduzione.pdf#page=11|p. 11]] · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=2|p. 2]], [[05-Insertion sort.pdf#page=3|3]]
 
 - [[lezione-01-introduzione]], [[lezione-05-insertion-sort]], [[lezione-06-merge-sort]], [[lezione-07-quicksort]]
-- [[01-Introduzione.pdf#page=7]], [[01-Introduzione.pdf#page=11]], [[05-Insertion sort.pdf#page=2]], [[05-Insertion sort.pdf#page=3]]
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf (definizione di p. 2, applicazioni di p. 3, tabella degli algoritmi)_
 _Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_

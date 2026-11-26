@@ -8,9 +8,7 @@ fonti_pdf: ["08-Grafi e alberi.pdf#page=28", "08-Grafi e alberi.pdf#page=29", "0
 
 Le sezioni seguono le slide: definizione (p. 28), appunti (p. 29), confronto con la matrice (p. 30), implementazione in C (pp. 31–35).
 
-## Cos'è
-
-> 📄 Fonte: [[08-Grafi e alberi.pdf#page=28]]
+## Cos'è · [[08-Grafi e alberi.pdf#page=28|p. 28]], [[08-Grafi e alberi.pdf#page=29|29]]
 
 Una **lista di adiacenza** è un array di $N \times 1$ puntatori, in cui l'$i$-esimo elemento punta a una [[lista-concatenata]] degli archi incidenti sul vertice $i$.
 
@@ -19,18 +17,16 @@ Una **lista di adiacenza** è un array di $N \times 1$ puntatori, in cui l'$i$-e
 - Se necessario, le due **copie** di ogni arco possono essere collegate da un puntatore per facilitare le cancellazioni.
 
 ![[08-grafi-e-alberi-p28-liste-di-adiacenza.png]]
-*Grafo non orientato con 5 vertici e 7 archi e le sue liste: 1 → 2, 5; 2 → 1, 5, 4, 3; 3 → 2, 4; 4 → 5, 2, 3; 5 → 1, 2, 4. Ogni arco compare in due liste. ([[08-Grafi e alberi.pdf#page=28]])*
+*Grafo non orientato con 5 vertici e 7 archi e le sue liste: 1 → 2, 5; 2 → 1, 5, 4, 3; 3 → 2, 4; 4 → 5, 2, 3; 5 → 1, 2, 4. Ogni arco compare in due liste.*
 
-Appunto a mano di [[08-Grafi e alberi.pdf#page=29]] (pagina a righe): «modalità di navigazione → come scorro il grafo partendo da un nodo». La lista del vertice $v$ dà direttamente i vicini di $v$, cioè i passi possibili da $v$.
+Appunto a mano di p. 29 (pagina a righe): «modalità di navigazione → come scorro il grafo partendo da un nodo». La lista del vertice $v$ dà direttamente i vicini di $v$, cioè i passi possibili da $v$.
 
 ![[08-grafi-e-alberi-p29-appunti-navigazione.png]]
 
-## Confronto con la matrice di adiacenza
-
-> 📄 Fonte: [[08-Grafi e alberi.pdf#page=30]]
+## Confronto con la matrice di adiacenza · [[08-Grafi e alberi.pdf#page=30|p. 30]]
 
 | Confronto | Vincitore |
-|-----------|-----------|
+|---|---|
 | più veloce verificare se $(x, y)$ esiste? | matrici |
 | più veloce trovare il grado di un vertice? | liste |
 | meno memoria su grafi piccoli? | liste ($m + n$ contro $n^2$) |
@@ -47,7 +43,7 @@ Entrambe le rappresentazioni sono molto utili e hanno proprietà diverse, anche 
 > 🧩 Derivazione mia, riga per riga (matrice: → [[matrice-di-adiacenza]]):
 
 | Confronto | Matrice | Liste | Perché |
-|-----------|---------|-------|--------|
+|---|---|---|---|
 | test $(x, y)$ | $O(1)$ | $O(d_x)$ | la matrice accede direttamente a $M[x, y]$; la lista va scorsa |
 | grado | $\Theta(n)$ | $O(1)$ | la riga va scorsa tutta; con le liste il grado è un campo della struttura (`degree[x]`, p. 32) |
 | spazio | $\Theta(n^2)$ | $\Theta(n + m)$ | liste: $n$ puntatori più $\sum_v d_v = 2m$ nodi di lista (non orientato, [[grafo]] § Formule) |
@@ -58,9 +54,7 @@ Entrambe le rappresentazioni sono molto utili e hanno proprietà diverse, anche 
 >
 > **Sanity check** ([[grafi_e_alberi.py]]): sul grafo di p. 28 le liste contengono 14 nodi $= 2m$; con $n = 1000$, $m = 499\,500$ (grafo completo) le voci delle liste sono $n + 2m = 10^6$, quante le celle della matrice.
 
-## Implementazione in C
-
-> 📄 Fonte: [[08-Grafi e alberi.pdf#page=31]]–[[08-Grafi e alberi.pdf#page=35]] (codice riportato fedelmente)
+## Implementazione in C · [[08-Grafi e alberi.pdf#page=31|p. 31]]–[[08-Grafi e alberi.pdf#page=35|35]]
 
 **Archi** (p. 31):
 ```c
@@ -71,7 +65,7 @@ typedef struct edgenode {
 } edgenode;
 ```
 
-**Grafo** ([[08-Grafi e alberi.pdf#page=32|p. 32]]):
+**Grafo**:
 ```c
 typedef struct {
     edgenode *edges[MAXV+1];  /* adjacency info */
@@ -84,7 +78,7 @@ typedef struct {
 
 Il campo `degree` conta il numero di voci significative per il vertice dato. Un arco non orientato $(x, y)$ compare **due volte** in qualunque struttura basata sull'adiacenza: una volta come $y$ nella lista di $x$ e una volta come $x$ nella lista di $y$.
 
-**Inizializzazione** ([[08-Grafi e alberi.pdf#page=33|p. 33]]):
+**Inizializzazione**:
 ```c
 void initialize_graph(graph *g, bool directed) {
     int i;                    /* counter */
@@ -100,7 +94,7 @@ void initialize_graph(graph *g, bool directed) {
 }
 ```
 
-**Lettura** ([[08-Grafi e alberi.pdf#page=34|p. 34]]): un formato tipico ha una prima riga con il numero di vertici e di archi, seguita dall'elenco degli archi, una coppia di vertici per riga.
+**Lettura**: un formato tipico ha una prima riga con il numero di vertici e di archi, seguita dall'elenco degli archi, una coppia di vertici per riga.
 ```c
 void read_graph(graph *g, bool directed) {
     int i;                    /* counter */
@@ -147,6 +141,17 @@ void insert_edge(graph *g, int x, int y, bool directed) {
 > - `insert_edge`: numero costante di assegnamenti, più al più una chiamata ricorsiva che non ne fa altre ⇒ $O(1)$;
 > - `read_graph`: inizializzazione più $m$ chiamate a `insert_edge` a costo costante ⇒ $\Theta(\texttt{MAXV} + m)$.
 
+## Ripresa nella lezione 13 · [[13 - Algoritmi di visita di un grafo.pdf#page=2|p. 2]]–[[13 - Algoritmi di visita di un grafo.pdf#page=4|4]]
+
+La lezione sulle visite ripete le due rappresentazioni dei grafi, che possono essere **direzionali e non direzionali** (p. 2): le liste di adiacenza sono **tipicamente preferite per i grafi sparsi** ($\lvert E vert \ll \lvert V vert^2$), la matrice per i grafi densi o quando serve sapere velocemente se due nodi sono connessi.
+
+- Un array $Adj$ di $\lvert V vert$ liste, una per ciascun vertice; ogni lista $Adj[u]$ contiene i vertici $v$ tali che $(u, v) \in E$ (p. 3). Esempi della slide: il grafo non orientato a 5 vertici ha $Adj[1] = \langle 2, 5 angle$, $Adj[2] = \langle 1, 5, 3, 4 angle$, $Adj[3] = \langle 2, 4 angle$, $Adj[4] = \langle 2, 5, 3 angle$, $Adj[5] = \langle 4, 1, 2 angle$; il grafo orientato a 6 vertici (con un cappio su 6) ha $Adj[1] = \langle 2, 4 angle$, $Adj[2] = \langle 5 angle$, $Adj[3] = \langle 6, 5 angle$, $Adj[4] = \langle 2 angle$, $Adj[5] = \langle 4 angle$, $Adj[6] = \langle 6 angle$.
+- La somma delle lunghezze di tutte le liste è $\lvert E vert$ se $G$ è orientato, $2\lvert E vert$ se non orientato; la memoria richiesta è in ogni caso $\Theta(V + E)$ (p. 4).
+- Le liste possono rappresentare **grafi pesati**: a ogni arco è associato un peso dato dalla funzione $w: E 	o \mathbb{R}$, e il peso $w(u, v)$ si può memorizzare insieme al vertice $v$ nella lista di $u$.
+- Svantaggio: per sapere se un arco $(u, v)$ è presente bisogna **cercare nella lista di $u$** (p. 4).
+
+![[13-visite-grafi-p3-liste-di-adiacenza.png]]
+
 ## Connessioni
 
 - [[matrice-di-adiacenza]] — l'altra rappresentazione
@@ -154,10 +159,9 @@ void insert_edge(graph *g, int x, int y, bool directed) {
 - [[grafo]] — somma dei gradi $= 2m$, da cui lo spazio $\Theta(n + m)$
 - [[tipi-di-grafo]] — sui grafi sparsi le liste sono la scelta naturale
 
-## Fonti
+## Fonti · [[08-Grafi e alberi.pdf#page=28|p. 28]], [[08-Grafi e alberi.pdf#page=36|p. 36]], [[13 - Algoritmi di visita di un grafo.pdf#page=3|p. 3]], [[13 - Algoritmi di visita di un grafo.pdf#page=4|4]]
 
 - [[lezione-08-grafi-e-alberi]]
-- [[08-Grafi e alberi.pdf#page=28]]–[[08-Grafi e alberi.pdf#page=36]]
 
 _Aggiornato: 2026-10-28 — ingest 08-Grafi e alberi.pdf_
 

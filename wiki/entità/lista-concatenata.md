@@ -6,13 +6,11 @@ fonti_pdf: ["04-Strutture dati elementari.pdf#page=16", "04-Strutture dati eleme
 
 # Lista concatenata (semplice e doppia)
 
-## Cos'è
+## Cos'è · [[04-Strutture dati elementari.pdf#page=16|p. 16]]
 
-Struttura **collegata**: ogni nodo contiene un dato e un puntatore al successore; l'ultimo punta a `NIL` ([[04-Strutture dati elementari.pdf#page=16]]). → [[strutture-contigue-e-collegate]]
+Struttura **collegata**: ogni nodo contiene un dato e un puntatore al successore; l'ultimo punta a `NIL`. → [[strutture-contigue-e-collegate]]
 
-## Rappresentazione in memoria
-
-> 📄 Fonte: [[04-Strutture dati elementari.pdf#page=16]] (codice C riportato fedelmente)
+## Rappresentazione in memoria · [[04-Strutture dati elementari.pdf#page=16|p. 16]]
 
 ```c
 typedef struct list {
@@ -22,12 +20,11 @@ typedef struct list {
 ```
 
 ![[04-strutture-dati-p16-lista-concatenata.png]]
-*Lista Turing → Knuth → Karp → NIL; il cerchio grigio è il puntatore alla testa. ([[04-Strutture dati elementari.pdf#page=16]])*
+*Lista Turing → Knuth → Karp → NIL; il cerchio grigio è il puntatore alla testa.*
 
 ## Operazioni
 
-### Inserimento in testa
-> 📄 Fonte: [[04-Strutture dati elementari.pdf#page=17]]
+### Inserimento in testa · [[04-Strutture dati elementari.pdf#page=17|p. 17]]
 
 Non serve mantenere un ordine particolare, quindi conviene inserire ogni nuovo elemento **in testa**.
 
@@ -41,10 +38,9 @@ void insert_list(list **l, item_type x) {
 }
 ```
 
-Nota il `**l`: la testa della lista cambia, quindi serve un puntatore al puntatore di testa. **Costo: $\Theta(1)$** ([[04-Strutture dati elementari.pdf#page=17]]).
+Nota il `**l`: la testa della lista cambia, quindi serve un puntatore al puntatore di testa. **Costo: $\Theta(1)$**.
 
-### Ricerca
-> 📄 Fonte: [[04-Strutture dati elementari.pdf#page=18]]
+### Ricerca · [[04-Strutture dati elementari.pdf#page=18|p. 18]]
 
 La ricerca si può fare in modo iterativo o ricorsivo; la slide mostra la versione ricorsiva:
 
@@ -63,8 +59,7 @@ list *search_list(list *l, item_type x) {
 
 **Best case:** $\Theta(1)$ — il primo nodo è quello cercato. **Worst case:** $\Theta(n)$ — è l'ultimo o non c'è.
 
-### Cancellazione — ricerca del predecessore
-> 📄 Fonte: [[04-Strutture dati elementari.pdf#page=19]]
+### Cancellazione — ricerca del predecessore · [[04-Strutture dati elementari.pdf#page=19|p. 19]]
 
 ```c
 list *item_ahead(list *l, list *x) {
@@ -81,8 +76,7 @@ list *item_ahead(list *l, list *x) {
 
 **Best case:** $\Theta(1)$ — il primo nodo è quello cercato (è il predecessore). **Worst case:** $\Theta(n)$ — è l'ultimo o non c'è.
 
-### Cancellazione — rimozione del nodo
-> 📄 Fonte: [[04-Strutture dati elementari.pdf#page=20]]
+### Cancellazione — rimozione del nodo · 04-Strutture dati elementari.pdf [[04-Strutture dati elementari.pdf#page=20|p. 20]] · Pseudocodice [[a1-indicazioni_psuedocodice.pdf#page=4|p. 4]]
 
 ```c
 void delete_list(list **l, list **x) {
@@ -125,41 +119,38 @@ LIST-DELETE(L, x)                     ▷ x appartiene a L
 6      p.next ← x.next
 ```
 
-Il corto circuito di `and` alla riga 2 di LIST-SEARCH evita di leggere `x.key` quando `x = NIL` ([[a1-indicazioni_psuedocodice.pdf#page=4]]).
+Il corto circuito di `and` alla riga 2 di LIST-SEARCH evita di leggere `x.key` quando `x = NIL`.
 
-## Liste semplici e doppie
-
-> 📄 Fonte: [[04-Strutture dati elementari.pdf#page=22]]
+## Liste semplici e doppie · [[04-Strutture dati elementari.pdf#page=22|p. 22]]
 
 Con le **liste doppiamente concatenate** (ogni nodo punta anche al predecessore) si guadagna flessibilità nelle interrogazioni sul predecessore, al costo di **raddoppiare il numero di puntatori**. Poiché il costo extra in big-Oh è **zero**, di solito si assume che le liste siano mantenute doppie, anche se non sempre è necessario. «Singly linked to doubly-linked list is as a conga line is to a can-can line.»
 
 ![[04-strutture-dati-p22-lista-semplice-doppia.png]]
-*Sopra: lista semplice A→…→F; sotto: lista doppia con puntatori in entrambi i versi. ([[04-Strutture dati elementari.pdf#page=22]])*
+*Sopra: lista semplice A→…→F; sotto: lista doppia con puntatori in entrambi i versi.*
 
 > 🧩 Derivazione mia: in una lista doppia il predecessore di $x$ è `x.prev`, quindi la cancellazione di un nodo di cui si ha il puntatore costa $\Theta(1)$ invece di $\Theta(n)$: è la «flessibilità sulle interrogazioni del predecessore».
 
-## Costi riassunti
+## Costi riassunti · [[04-Strutture dati elementari.pdf#page=17|p. 17]]–[[04-Strutture dati elementari.pdf#page=20|20]]
 
 | Operazione | Lista semplice | Fonte |
-|-----------|----------------|-------|
-| inserimento in testa | $\Theta(1)$ | [[04-Strutture dati elementari.pdf#page=17]] |
-| ricerca | best $\Theta(1)$, worst $\Theta(n)$ | [[04-Strutture dati elementari.pdf#page=18]] |
-| predecessore | best $\Theta(1)$, worst $\Theta(n)$ | [[04-Strutture dati elementari.pdf#page=19]] |
-| cancellazione | best $\Theta(1)$, worst $\Theta(n)$ | [[04-Strutture dati elementari.pdf#page=20]] |
+|---|---|---|
+| inserimento in testa | $\Theta(1)$ | p. 17 |
+| ricerca | best $\Theta(1)$, worst $\Theta(n)$ | p. 18 |
+| predecessore | best $\Theta(1)$, worst $\Theta(n)$ | p. 19 |
+| cancellazione | best $\Theta(1)$, worst $\Theta(n)$ | p. 20 |
 
-## Connessioni
+## Connessioni · 04-Strutture dati elementari.pdf [[04-Strutture dati elementari.pdf#page=21|p. 21]], [[04-Strutture dati elementari.pdf#page=28|p. 28]] · 08-Grafi e alberi.pdf [[08-Grafi e alberi.pdf#page=28|p. 28]] · 09-Alberi binari ricerca.pdf [[09-Alberi binari ricerca.pdf#page=6|p. 6]]
 
-- [[array]] — confronto vantaggi/svantaggi ([[04-Strutture dati elementari.pdf#page=21]]) in [[strutture-contigue-e-collegate]]
-- [[coda]] — implementazione naturale su lista ([[04-Strutture dati elementari.pdf#page=28]])
+- [[array]] — confronto vantaggi/svantaggi in [[strutture-contigue-e-collegate]]
+- [[coda]] — implementazione naturale su lista
 - [[casi-di-complessita]] — ogni operazione ha casi migliore e peggiore distinti
 - [[iterazione-e-ricorsione]] — `search_list` e `item_ahead` sono ricorsive; LIST-SEARCH è la versione iterativa
-- [[liste-di-adiacenza]] — ogni lista di adiacenza di un grafo è una lista concatenata con inserimento in testa ([[08-Grafi e alberi.pdf#page=28]])
-- [[albero-binario-di-ricerca]] — il BST degenere è una lista concatenata, con operazioni $\Theta(n)$ ([[09-Alberi binari ricerca.pdf#page=6]])
+- [[liste-di-adiacenza]] — ogni lista di adiacenza di un grafo è una lista concatenata con inserimento in testa
+- [[albero-binario-di-ricerca]] — il BST degenere è una lista concatenata, con operazioni $\Theta(n)$
 
-## Fonti
+## Fonti · [[04-Strutture dati elementari.pdf#page=16|p. 16]], [[04-Strutture dati elementari.pdf#page=22|p. 22]]
 
 - [[lezione-04-strutture-dati-elementari]]
-- [[04-Strutture dati elementari.pdf#page=16]]–[[04-Strutture dati elementari.pdf#page=22]]
 
 _Aggiornato: 2026-09-26 — ingest 04-Strutture dati elementari.pdf_
 _Aggiornato: 2026-10-28 — collegamenti alle lezioni 08–09_

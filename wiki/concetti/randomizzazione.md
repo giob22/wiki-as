@@ -7,9 +7,7 @@ fonti_pdf: ["07-Quicksort 1.pdf#page=19", "07-Quicksort 1.pdf#page=20", "07-Quic
 
 # Randomizzazione
 
-## Definizione
-
-> 📄 Fonte: [[07-Quicksort 1.pdf#page=19]]
+## Definizione · [[07-Quicksort 1.pdf#page=19|p. 19]]
 
 La slide cita (in inglese) che la randomizzazione è «a powerful tool to improve algorithms» con **caso peggiore cattivo** ma **caso medio buono**. Tre usi elencati:
 - *random sampling* (campionamento casuale);
@@ -18,9 +16,7 @@ La slide cita (in inglese) che la randomizzazione è «a powerful tool to improv
 
 > 🧩 Definizione operativa mia: un algoritmo **randomizzato** prende alcune decisioni in base a valori estratti a caso durante l'esecuzione (in [[quicksort-randomizzato]], `Random(p,r)`). A parità di input, esecuzioni diverse possono seguire percorsi e avere costi diversi.
 
-## Formule
-
-> 📄 Fonte: [[07-Quicksort 1.pdf#page=23]]
+## Formule · [[07-Quicksort 1.pdf#page=23|p. 23]]
 
 Per un algoritmo randomizzato interessa il **tempo di esecuzione atteso**: per quicksort randomizzato si dimostra che è $O(n\log n)$ (dimostrazione sul libro di testo).
 
@@ -28,14 +24,12 @@ Per un algoritmo randomizzato interessa il **tempo di esecuzione atteso**: per q
 $$ \max_{|I| = n} \mathbb{E}[T(I)] = O(n \log n) $$
 > Nel «caso medio» di [[casi-di-complessita]], invece, la media è fatta sugli **input**, secondo una distribuzione da ipotizzare.
 
-## Spiegazione
-
-> 📄 Fonte: [[07-Quicksort 1.pdf#page=20]]
+## Spiegazione · [[07-Quicksort 1.pdf#page=14|p. 14]], [[07-Quicksort 1.pdf#page=20|p. 20]]
 
 L'esempio della lezione è **quicksort**: scegliere il pivot in maniera aleatoria aumenta la probabilità che in media il partizionamento sia ben bilanciato, e la versione randomizzata è ritenuta la scelta migliore per ordinare array di grosse dimensioni.
 
 > 🧩 Spiegazione mia — perché funziona proprio per algoritmi con «caso peggiore cattivo, caso medio buono»:
-> - il [[quicksort]] deterministico ha caso medio $\Theta(n\lg n)$ ma caso peggiore $\Theta(n^2)$, e il caso peggiore è un input **comune**: l'array già ordinato ([[07-Quicksort 1.pdf#page=14]]);
+> - il [[quicksort]] deterministico ha caso medio $\Theta(n\lg n)$ ma caso peggiore $\Theta(n^2)$, e il caso peggiore è un input **comune**: l'array già ordinato;
 > - con il pivot casuale il costo non dipende più dall'ordine dell'input ma dalle estrazioni: l'array ordinato si comporta come un input qualsiasi;
 > - il caso peggiore $\Theta(n^2)$ resta possibile, ma richiede estrazioni sfortunate a quasi ogni livello, ed è molto improbabile.
 >
@@ -52,10 +46,9 @@ L'esempio della lezione è **quicksort**: scegliere il pivot in maniera aleatori
 - [[casi-di-complessita]] — tempo atteso contro caso medio e caso peggiore
 - [[metodi-euristici]] — 🧩 entrambi rinunciano a qualcosa: l'euristica alla garanzia di ottimalità, l'algoritmo randomizzato alla garanzia sul tempo nel caso peggiore (ma il risultato resta sempre corretto)
 
-## Fonti
+## Fonti · [[07-Quicksort 1.pdf#page=19|p. 19]], [[07-Quicksort 1.pdf#page=20|20]], [[07-Quicksort 1.pdf#page=23|p. 23]]
 
 - [[lezione-07-quicksort]]
-- [[07-Quicksort 1.pdf#page=19]], [[07-Quicksort 1.pdf#page=20]], [[07-Quicksort 1.pdf#page=23]]
 
 _Aggiornato: 2026-10-01 — ingest 07-Quicksort.pdf_
 _Aggiornato: 2026-10-14 — link ripuntati alla versione aggiornata delle slide 07-Quicksort 1.pdf_

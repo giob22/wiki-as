@@ -7,17 +7,15 @@ fonti_pdf: ["02-Notazione asintotica.pdf#page=7", "02-Notazione asintotica.pdf#p
 
 # Caso peggiore, migliore e medio
 
-## Definizione
-
-> 📄 Fonte: [[02-Notazione asintotica.pdf#page=9]], [[02-Notazione asintotica.pdf#page=10]]
+## Definizione · [[02-Notazione asintotica.pdf#page=9|p. 9]], [[02-Notazione asintotica.pdf#page=10|10]]
 
 - La **complessità nel caso peggiore** (*worst case*) di un algoritmo è la funzione definita dal **massimo** numero di passi eseguiti su una qualunque istanza di dimensione $n$.
 - La **complessità nel caso migliore** (*best case*) è la funzione definita dal **minimo** numero di passi eseguiti su una qualunque istanza di dimensione $n$.
 - La **complessità nel caso medio** (*average case*) è la funzione definita da un numero **medio** di passi eseguiti sulle istanze di dimensione $n$.
 
-«Each of these complexities defines a numerical function: time vs. size!» ([[02-Notazione asintotica.pdf#page=10]])
+«Each of these complexities defines a numerical function: time vs. size!»
 
-## Formule
+## Formule · [[02-Notazione asintotica.pdf#page=9|p. 9]]
 
 > 🧩 Derivazione mia (scrittura formale delle definizioni a parole): indicando con $I_n$ l'insieme delle istanze di dimensione $n$ e con $\text{passi}(x)$ i passi eseguiti sull'istanza $x$,
 $$
@@ -28,13 +26,11 @@ $$
 Il caso medio richiede quindi un'**ipotesi sulla distribuzione** $\Pr[x]$ delle istanze. Per costruzione $T_{best}(n) \le T_{avg}(n) \le T_{worst}(n)$ per ogni $n$.
 
 ![[02-notazione-asintotica-p9-casi-peggiore-medio-migliore.png]]
-*Per ogni dimensione $n$ i punti in verticale sono le istanze; la curva alta (worst) ne unisce i massimi, la bassa (best) i minimi, quella intermedia (average) le medie. ([[02-Notazione asintotica.pdf#page=9]])*
+*Per ogni dimensione $n$ i punti in verticale sono le istanze; la curva alta (worst) ne unisce i massimi, la bassa (best) i minimi, quella intermedia (average) le medie.*
 
-## Spiegazione
+## Spiegazione · [[02-Notazione asintotica.pdf#page=7|p. 7]], [[02-Notazione asintotica.pdf#page=11|p. 11]]
 
 Esempi della fonte (pseudocodice in stile italiano della slide):
-
-> 📄 Fonte: [[02-Notazione asintotica.pdf#page=7]]
 
 ```
 ALGORITMO Base()
@@ -52,8 +48,6 @@ FINE
 
 > 🧩 Derivazione mia: il caso migliore esegue il ramo fortunato (test + 2 istruzioni + return = 4 passi), il peggiore il ramo sfortunato (test + 10 istruzioni + return = 12 passi). Entrambi sono **costanti** ($\Theta(1)$): i casi cambiano il numero di passi ma non l'ordine di crescita.
 
-> 📄 Fonte: [[02-Notazione asintotica.pdf#page=11]]
-
 ```
 ALGORITMO Base2(n)
    SE CONDIZIONE_VERA ALLORA          // best case
@@ -70,9 +64,7 @@ FINE
 
 > 🧩 Derivazione mia: caso migliore $T_{best}(n) = 4 = \Theta(1)$; caso peggiore: il ciclo `PER i = 0 .. n` esegue il corpo per $i = 0, 1, \dots, n$, cioè $n+1$ volte, e il test $n+2$ volte, quindi $T_{worst}(n) = 1 + 1 + (n+2) + (n+1) + 1 = 2n + 6 = \Theta(n)$ (stesso conteggio di [[analisi-del-costo-riga-per-riga]]). Qui i due casi hanno **ordini di crescita diversi**. Nota: il ciclo parte da 0, mentre le [[pseudocodice|convenzioni del corso]] fanno partire da 1 gli *indici degli array* (qui $i$ è solo un contatore).
 
-### La posizione del corso
-
-> 📄 Fonte: [[02-Notazione asintotica.pdf#page=12]]
+### La posizione del corso · [[02-Notazione asintotica.pdf#page=12|p. 12]]
 
 - Domanda: quale sarebbe il ragionamento sull'acquisto di un **biglietto della lotteria** in base ai casi migliore, peggiore e medio?
 - In generale si userà la **complessità nel caso peggiore** come misura preferita dell'efficienza.
@@ -82,24 +74,23 @@ FINE
 
 > 🧩 Derivazione mia (risposta alla domanda della lotteria): nel caso **migliore** si vince sempre → comprare; nel **peggiore** si perde sempre → non comprare; nel **medio** il guadagno atteso di una lotteria è negativo (il banco trattiene una parte) → non comprare. Il caso migliore è il più ingannevole: descrive un evento raro.
 
-## Perché importa
+## Perché importa · [[04-Strutture dati elementari.pdf#page=18|p. 18]]
 
-> 🎯 Esame: salvo indicazione contraria, «analizza l'algoritmo» significa **caso peggiore**. Saper indicare *quale* istanza realizza il caso migliore e il peggiore (es. per la ricerca in una [[lista-concatenata]]: elemento in testa vs. ultimo o assente, [[04-Strutture dati elementari.pdf#page=18]]).
+> 🎯 Esame: salvo indicazione contraria, «analizza l'algoritmo» significa **caso peggiore**. Saper indicare *quale* istanza realizza il caso migliore e il peggiore (es. per la ricerca in una [[lista-concatenata]]: elemento in testa vs. ultimo o assente).
 
-## Connessioni
+## Connessioni · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=24|p. 22]], [[05-Insertion sort.pdf#page=26|p. 24]] · Quicksort [[07-Quicksort 1.pdf#page=14|p. 14]], [[07-Quicksort 1.pdf#page=18|p. 18]], [[07-Quicksort 1.pdf#page=23|p. 23]]
 
-- [[insertion-sort]] — esempio completo: caso migliore $\Theta(n)$ con l'array già ordinato, caso peggiore $\Theta(n^2)$ con l'array decrescente ([[05-Insertion sort.pdf#page=20]], [[05-Insertion sort.pdf#page=22]]); [[selection-sort]] invece ha caso migliore = caso peggiore
+- [[insertion-sort]] — esempio completo: caso migliore $\Theta(n)$ con l'array già ordinato, caso peggiore $\Theta(n^2)$ con l'array decrescente; [[selection-sort]] invece ha caso migliore = caso peggiore
 
-- [[quicksort]] — tre casi con ordini diversi: migliore e medio $\Theta(n\lg n)$, peggiore $\Theta(n^2)$ sul vettore ordinato ([[07-Quicksort 1.pdf#page=14]]–[[07-Quicksort 1.pdf#page=18]]); [[merge-sort]] invece è $\Theta(n\lg n)$ in ogni caso
-- [[randomizzazione]], [[quicksort-randomizzato]] — gli «algoritmi randomizzati» di p. 12: per loro si studia il tempo **atteso** (media sulle scelte casuali, input qualsiasi), che non richiede ipotesi sulla distribuzione degli input ([[07-Quicksort 1.pdf#page=23]])
+- [[quicksort]] — tre casi con ordini diversi: migliore e medio $\Theta(n\lg n)$, peggiore $\Theta(n^2)$ sul vettore ordinato; [[merge-sort]] invece è $\Theta(n\lg n)$ in ogni caso
+- [[randomizzazione]], [[quicksort-randomizzato]] — gli «algoritmi randomizzati» di p. 12: per loro si studia il tempo **atteso** (media sulle scelte casuali, input qualsiasi), che non richiede ipotesi sulla distribuzione degli input
 - [[notazione-asintotica]] — ciascun caso è una funzione di $n$ che si descrive con $O$, $\Omega$, $\Theta$
 - [[lista-concatenata]] — best/worst case di ricerca e cancellazione
 - [[tempo-di-esecuzione]]
 
-## Fonti
+## Fonti · [[02-Notazione asintotica.pdf#page=4|p. 4]], [[02-Notazione asintotica.pdf#page=7|p. 7]], [[02-Notazione asintotica.pdf#page=9|p. 9]]–[[02-Notazione asintotica.pdf#page=12|12]]
 
 - [[lezione-02-notazione-asintotica]]
-- [[02-Notazione asintotica.pdf#page=4]] (intestazione «Algorithmic Time Complexity»), [[02-Notazione asintotica.pdf#page=7]], [[02-Notazione asintotica.pdf#page=9]], [[02-Notazione asintotica.pdf#page=10]], [[02-Notazione asintotica.pdf#page=11]], [[02-Notazione asintotica.pdf#page=12]]
 
 _Aggiornato: 2026-09-26 — ingest 02-Notazione asintotica.pdf_
 

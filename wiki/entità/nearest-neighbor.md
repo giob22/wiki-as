@@ -11,13 +11,11 @@ fonti_pdf: ["01-Introduzione.pdf#page=18", "01-Introduzione.pdf#page=24"]
 
 [[robot-tour-optimization]]: dato un insieme di punti nel piano, trovare il ciclo più corto che li visita tutti. **Non** lo risolve correttamente: è un'euristica.
 
-## Idea
+## Idea · [[01-Introduzione.pdf#page=18|p. 18]]
 
-Parti da un punto e vai sempre al **punto non ancora visitato più vicino**; alla fine torna al punto di partenza ([[01-Introduzione.pdf#page=18]]).
+Parti da un punto e vai sempre al **punto non ancora visitato più vicino**; alla fine torna al punto di partenza.
 
-## Pseudocodice
-
-> 📄 Fonte: [[01-Introduzione.pdf#page=18]] (riportato fedelmente, notazione della slide)
+## Pseudocodice · [[01-Introduzione.pdf#page=18|p. 18]]
 
 ```
 NearestNeighbor(P)
@@ -44,27 +42,26 @@ NEAREST-NEIGHBOR(P)            ▷ P[1..n] punti
 7  return tour                 ▷ il ciclo si chiude da tour[n] a tour[1]
 ```
 
-## Esempio di esecuzione
+## Esempio di esecuzione · [[01-Introduzione.pdf#page=16|p. 16]], [[01-Introduzione.pdf#page=17|17]], [[01-Introduzione.pdf#page=19|p. 19]]–[[01-Introduzione.pdf#page=24|24]]
 
 ![[animazione-nearest-neighbor.svg]]
 > 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, sui punti della retta di p. 22, partendo da 0: a ogni passo i due candidati equidistanti (in verde) e la scelta fatta come nella figura di p. 24, fino al giro di lunghezza 84 contro l'ottimo 64. Ogni fotogramma riporta in basso il numero del passo e cosa succede.
 
+**Caso buono** — punti su una circonferenza: il giro 0→1→2→…→8→0 è quello ottimo.
 
-**Caso buono** — punti su una circonferenza ([[01-Introduzione.pdf#page=16]], [[01-Introduzione.pdf#page=17]]): il giro 0→1→2→…→8→0 è quello ottimo.
+**Punti casuali**: il giro prodotto ha incroci, segno che non è minimo.
 
-**Punti casuali** ([[01-Introduzione.pdf#page=20]], [[01-Introduzione.pdf#page=21]]): il giro prodotto ha incroci, segno che non è minimo.
+**Casi limite**: la slide li introduce in p. 19 (solo il titolo), mostra i punti casuali in p. 20–p. 21 e i punti sulla retta in p. 22–p. 23.
 
-**Casi limite**: la slide li introduce in [[01-Introduzione.pdf#page=19]] (solo il titolo), mostra i punti casuali in [[01-Introduzione.pdf#page=20]]–[[01-Introduzione.pdf#page=21]] e i punti sulla retta in [[01-Introduzione.pdf#page=22]]–[[01-Introduzione.pdf#page=23]].
-
-**Controesempio** ([[01-Introduzione.pdf#page=22]]–[[01-Introduzione.pdf#page=24]]): punti sulla retta con coordinate $-21, -5, -1, 0, 1, 3, 11$, partenza da $0$.
+**Controesempio**: punti sulla retta con coordinate $-21, -5, -1, 0, 1, 3, 11$, partenza da $0$.
 
 ![[01-introduzione-p24-nearest-neighbor-controesempio.png]]
-*Il giro di nearest-neighbor salta avanti e indietro lungo la retta. ([[01-Introduzione.pdf#page=24]])*
+*Il giro di nearest-neighbor salta avanti e indietro lungo la retta.*
 
 > 🧩 Derivazione mia (traccia del giro della figura; ogni riga = un'iterazione della riga 6):
 
 | Passo | Punto corrente | Candidati più vicini (distanza) | Scelto |
-|-------|----------------|-------------------------------|--------|
+|---|---|---|---|
 | 1 | 0 | 1 e −1 (1) | 1 |
 | 2 | 1 | −1 e 3 (2) | −1 |
 | 3 | −1 | 3 e −5 (4) | 3 |
@@ -84,7 +81,7 @@ $$
 **Sanity check:** verificato con [[controesempi_euristiche.py]] (NN = 84, ottimo esaustivo = 64).
 **Ipotesi:** a ogni passo ci sono **due** candidati equidistanti; la figura li sceglie nel modo peggiore (zig-zag). È il tip «go for a tie» di [[ricerca-di-controesempi]]. La struttura dell'istanza è quella del tip «seek extremes»: le distanze dal punto corrente raddoppiano a ogni passo (1, 2, 4, 8, 16, 32), alternativamente a destra e a sinistra, e l'algoritmo, che guarda solo al passo successivo, non può «pianificare» di esaurire prima un lato.
 
-**Commento della fonte:** «Semplice ed efficiente ma … **completamente sbagliata!**» ([[01-Introduzione.pdf#page=24]]).
+**Commento della fonte:** «Semplice ed efficiente ma … **completamente sbagliata!**».
 
 ## Correttezza
 
@@ -106,10 +103,9 @@ Ipotesi: calcolo della distanza in tempo costante ([[modello-ram]]), nessuna str
 - [[optimal-tsp]] — soluzione corretta ma esponenziale
 - [[metodi-euristici]], [[ricerca-di-controesempi]], [[controesempi-per-euristiche]]
 
-## Fonti
+## Fonti · [[01-Introduzione.pdf#page=16|p. 16]], [[01-Introduzione.pdf#page=24|p. 24]]
 
 - [[lezione-01-introduzione]]
-- [[01-Introduzione.pdf#page=16]]–[[01-Introduzione.pdf#page=24]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

@@ -9,38 +9,32 @@ fonti_pdf: ["08-Grafi e alberi.pdf#page=3", "08-Grafi e alberi.pdf#page=4", "08-
 
 Le sezioni seguono le slide: definizione ed esempi (pp. 2–7), poi la terminologia introdotta con il grafo delle amicizie (pp. 17–24). I tipi di grafo (pp. 8–16) sono in [[tipi-di-grafo]].
 
-## Definizione
-
-> 📄 Fonte: [[08-Grafi e alberi.pdf#page=3]]
+## Definizione · [[08-Grafi e alberi.pdf#page=3|p. 3]], [[08-Grafi e alberi.pdf#page=26|p. 26]]
 
 I grafi sono uno dei temi unificanti dell'informatica. Un **grafo** $G = (V, E)$ è definito da un insieme di **vertici** $V$ e da un insieme di **archi** $E$, formato da coppie **ordinate** o **non ordinate** di vertici di $V$.
 
 Annotazione a mano sulla slide: il grafo è uno «strumento per formalizzare problemi, mantenere informazioni».
 
-Simboli usati nelle slide successive ([[08-Grafi e alberi.pdf#page=26]]): $n = |V|$ numero di vertici, $m = |E|$ numero di archi.
+Simboli usati nelle slide successive: $n = |V|$ numero di vertici, $m = |E|$ numero di archi.
 
-## Esempi di modellazione
-
-> 📄 Fonte: [[08-Grafi e alberi.pdf#page=4]]–[[08-Grafi e alberi.pdf#page=6]]
+## Esempi di modellazione · [[08-Grafi e alberi.pdf#page=4|p. 4]]–[[08-Grafi e alberi.pdf#page=6|6]]
 
 - **Reti stradali** (p. 4): i vertici rappresentano città o incroci, alcune coppie dei quali sono collegate da strade (gli archi). La figura mostra 8 località di Long Island: Stony Brook, Greenport, Orient Point, Riverhead, Shelter Island, Islip, Sag Harbor, Montauk.
-- **Circuiti elettronici** ([[08-Grafi e alberi.pdf#page=5|p. 5]]): le giunzioni sono i vertici, i componenti sono gli archi.
+- **Circuiti elettronici**: le giunzioni sono i vertici, i componenti sono gli archi.
 - **Altri grafi e reti** (p. 6): reti sociali, il World Wide Web, il flusso di controllo di un programma, le similarità a coppie tra oggetti.
 
 ![[08-grafi-e-alberi-p4-rete-stradale.png]]
 ![[08-grafi-e-alberi-p5-circuito.png]]
 
-## Terminologia: il grafo delle amicizie
-
-> 📄 Fonte: [[08-Grafi e alberi.pdf#page=18]]
+## Terminologia: il grafo delle amicizie · [[08-Grafi e alberi.pdf#page=18|p. 18]]
 
 Si considera il grafo in cui i vertici sono persone e c'è un arco tra due persone **se e solo se** sono amiche. È ben definito su qualunque insieme di persone (Stony Brook, New York, il mondo). Che domande ci si può porre su questo grafo? Ognuna introduce un concetto.
 
 ![[08-grafi-e-alberi-p18-grafo-amicizie.png]]
-*Hermione Granger, Ron Weasley, Harry Potter e Dobby sono collegati; Voldemort è un vertice isolato, senza archi. ([[08-Grafi e alberi.pdf#page=18]])*
+*Hermione Granger, Ron Weasley, Harry Potter e Dobby sono collegati; Voldemort è un vertice isolato, senza archi.*
 
 | Domanda (slide) | Concetto | Definizione |
-|-----------------|----------|-------------|
+|---|---|---|
 | «Se io sono tuo amico, tu sei mio amico?» ([[08-Grafi e alberi.pdf#page=19\|p. 19]]) | grafo **non orientato** / **orientato** | non orientato se $(x, y) \in E$ implica $(y, x) \in E$; altrimenti orientato |
 | «Sono collegato a una celebrità da una catena di amici?» ([[08-Grafi e alberi.pdf#page=20\|p. 20]]) | **cammino** | sequenza di archi che collega due vertici |
 | «C'è un cammino di amici tra due persone qualsiasi?» ([[08-Grafi e alberi.pdf#page=21\|p. 21]]) | grafo **connesso** / **fortemente connesso** | connesso se c'è un cammino tra due vertici qualsiasi; un grafo orientato è fortemente connesso se c'è un cammino orientato tra due vertici qualsiasi |
@@ -55,11 +49,11 @@ Dettagli delle slide:
 
 ![[08-grafi-e-alberi-p20-cammino.png]]
 
-## Formule
+## Formule · [[08-Grafi e alberi.pdf#page=28|p. 28]]
 
 > 🧩 Derivazione mia (relazione tra gradi e archi, usata nelle [[liste-di-adiacenza]]): in un grafo non orientato ogni arco $(x, y)$ conta 1 nel grado di $x$ e 1 nel grado di $y$, quindi
 $$ \sum_{v \in V} \text{grado}(v) = 2m $$
-Verifica sul grafo di [[08-Grafi e alberi.pdf#page=28]] ($n = 5$, $m = 7$): gradi 2, 4, 2, 3, 3, somma 14 $= 2 \cdot 7$ ([[grafi_e_alberi.py]]).
+Verifica sul grafo di p. 28 ($n = 5$, $m = 7$): gradi 2, 4, 2, 3, 3, somma 14 $= 2 \cdot 7$ ([[grafi_e_alberi.py]]).
 
 ## Perché importa
 
@@ -74,10 +68,9 @@ I grafi sono la struttura con cui si formalizzano molti problemi: il [[robot-tou
 - [[albero]] — il grafo non orientato, connesso e aciclico
 - [[robot-tour-optimization]] — il TSP è un problema su un grafo pesato
 
-## Fonti
+## Fonti · [[08-Grafi e alberi.pdf#page=2|p. 2]], [[08-Grafi e alberi.pdf#page=7|p. 7]], [[08-Grafi e alberi.pdf#page=17|p. 17]], [[08-Grafi e alberi.pdf#page=24|p. 24]]
 
 - [[lezione-08-grafi-e-alberi]]
-- [[08-Grafi e alberi.pdf#page=2]]–[[08-Grafi e alberi.pdf#page=7]], [[08-Grafi e alberi.pdf#page=17]]–[[08-Grafi e alberi.pdf#page=24]]
 
 _Aggiornato: 2026-10-28 — ingest 08-Grafi e alberi.pdf_
 

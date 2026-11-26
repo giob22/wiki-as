@@ -99,15 +99,15 @@
 - [[coda-di-priorita]] — Insert, Find-Min/Max, Delete-Min/Max
 - [[albero-binario-di-ricerca]] — proprietà del BST, operazioni $O(h)$
 
-## Fonti
+## Fonti · [[06-Merge Sort.pdf|Merge Sort (vecchia)]] · [[07-Quicksort.pdf|Quicksort (vecchia)]]
 - [[presentazione-del-corso]] — 00-Presentazione.pdf, pp. 1–8
 - [[lezione-01-introduzione]] — 01-Introduzione.pdf, pp. 1–60
 - [[lezione-02-notazione-asintotica]] — 02-Notazione asintotica.pdf, pp. 1–38
 - [[lezione-03-analisi-di-algoritmi]] — 03-Analisi di algoritmi.pdf, pp. 1–34
 - [[lezione-04-strutture-dati-elementari]] — 04-Strutture dati elementari.pdf, pp. 1–30
 - [[lezione-05-insertion-sort]] — 05-Insertion sort.pdf, pp. 1–33
-- [[lezione-06-merge-sort]] — 06-Merge Sort (1).pdf, pp. 1–48 (versione aggiornata; la precedente [[06-Merge Sort.pdf]] di 30 pagine è sostituita)
-- [[lezione-07-quicksort]] — 07-Quicksort 1.pdf, pp. 1–25 (versione aggiornata; la precedente [[07-Quicksort.pdf]] è sostituita)
+- [[lezione-06-merge-sort]] — 06-Merge Sort (1).pdf, pp. 1–48 (versione aggiornata; la precedente di 30 pagine è sostituita)
+- [[lezione-07-quicksort]] — 07-Quicksort 1.pdf, pp. 1–25 (versione aggiornata; la precedente è sostituita)
 - [[lezione-08-grafi-e-alberi]] — 08-Grafi e alberi.pdf, pp. 1–44
 - [[lezione-09-alberi-binari-di-ricerca]] — 09-Alberi binari ricerca.pdf, pp. 1–21
 - [[convenzioni-per-lo-pseudocodice]] — a1-indicazioni_psuedocodice.pdf, pp. 1–4

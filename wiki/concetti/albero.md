@@ -7,9 +7,7 @@ fonti_pdf: ["08-Grafi e alberi.pdf#page=37", "08-Grafi e alberi.pdf#page=38", "0
 
 # Albero
 
-## Definizione
-
-> 📄 Fonte: [[08-Grafi e alberi.pdf#page=37]], [[08-Grafi e alberi.pdf#page=38]]
+## Definizione · [[08-Grafi e alberi.pdf#page=37|p. 37]], [[08-Grafi e alberi.pdf#page=38|38]]
 
 Riprendendo tre caratteristiche dei [[tipi-di-grafo]]:
 - **non orientato**: gli archi non hanno un verso;
@@ -23,9 +21,7 @@ La slide di p. 38 chiede quale di tre grafi sia un albero: il grafo 1 no (c'è u
 ![[08-grafi-e-alberi-p37-albero-definizione.png]]
 ![[08-grafi-e-alberi-p38-quale-e-albero.png]]
 
-## Tre conseguenze della definizione
-
-> 📄 Fonte: [[08-Grafi e alberi.pdf#page=39]]
+## Tre conseguenze della definizione · [[08-Grafi e alberi.pdf#page=39|p. 39]]
 
 1. **Cammino unico:** tra due nodi esiste un solo cammino semplice (in figura il percorso arancione collega E e G).
 2. **Archi essenziali:** se si rimuove un arco, il grafo si disconnette.
@@ -35,8 +31,7 @@ Annotazione a mano sotto la slide: «la complessità spaziale dipende dalla stru
 
 ![[08-grafi-e-alberi-p39-conseguenze-definizione.png]]
 
-### Derivazione — perché valgono le tre conseguenze
-**Fonte:** [[08-Grafi e alberi.pdf#page=39]] (enunciate senza dimostrazione)
+### Derivazione — perché valgono le tre conseguenze · [[08-Grafi e alberi.pdf#page=39|p. 39]]
 
 > 🧩 Derivazione mia:
 > 1. **Cammino unico.** Un cammino esiste perché l'albero è connesso. Se ce ne fossero due diversi tra $u$ e $v$, partendo da $u$ si potrebbe seguire il primo fino a dove i due si separano e tornare indietro lungo il secondo fino a dove si ricongiungono: si otterrebbe un **ciclo**, contro l'aciclicità.
@@ -47,9 +42,7 @@ Annotazione a mano sotto la slide: «la complessità spaziale dipende dalla stru
 >
 > **Sanity check:** figura di p. 39, 7 nodi e 6 archi ([[grafi_e_alberi.py]]).
 
-## Radice, profondità, altezza
-
-> 📄 Fonte: [[08-Grafi e alberi.pdf#page=40]], [[08-Grafi e alberi.pdf#page=41]]
+## Radice, profondità, altezza · [[08-Grafi e alberi.pdf#page=40|p. 40]], [[08-Grafi e alberi.pdf#page=41|41]]
 
 **La radice è una scelta (quasi) arbitraria** (p. 40): con una radice si può leggere lo stesso grafo come una **gerarchia**. Nell'esempio, scegliendo A come radice: B, C, D sono i **figli** di A; C, E, F, G sono le **foglie**.
 
@@ -63,9 +56,7 @@ Nell'esempio di p. 41 (A radice; B, C a profondità 1; D, E, F, G a profondità 
 ![[08-grafi-e-alberi-p40-radice.png]]
 ![[08-grafi-e-alberi-p41-profondita-altezza.png]]
 
-## Bilanciamento
-
-> 📄 Fonte: [[08-Grafi e alberi.pdf#page=42]]
+## Bilanciamento · 08-Grafi e alberi.pdf [[08-Grafi e alberi.pdf#page=42|p. 42]] · 09-Alberi binari ricerca.pdf [[09-Alberi binari ricerca.pdf#page=6|p. 6]]
 
 Due alberi binari con 7 nodi, ma con altezze molto diverse:
 - **bilanciato**: 7 nodi, altezza 2, $h = \Theta(\log n)$;
@@ -75,11 +66,9 @@ Due alberi binari con 7 nodi, ma con altezze molto diverse:
 
 ![[08-grafi-e-alberi-p42-bilanciamento.png]]
 
-> 🧩 Derivazione mia: nel caso degenere ogni nodo ha un solo figlio, quindi i livelli sono $n$ e $h = n - 1$ (per 7 nodi, 6). Nel caso bilanciato il livello $i$ è pieno con $2^i$ nodi, quindi $n = 2^{h+1} - 1$ e $h = \lg(n + 1) - 1$ (per 7 nodi, 2). È la formula generale qui sotto con $k = 2$. Questa differenza è il motivo per cui le operazioni sugli [[albero-binario-di-ricerca|alberi binari di ricerca]] costano $O(h)$: da $\Theta(\lg n)$ a $\Theta(n)$ a seconda della forma ([[09-Alberi binari ricerca.pdf#page=6]]).
+> 🧩 Derivazione mia: nel caso degenere ogni nodo ha un solo figlio, quindi i livelli sono $n$ e $h = n - 1$ (per 7 nodi, 6). Nel caso bilanciato il livello $i$ è pieno con $2^i$ nodi, quindi $n = 2^{h+1} - 1$ e $h = \lg(n + 1) - 1$ (per 7 nodi, 2). È la formula generale qui sotto con $k = 2$. Questa differenza è il motivo per cui le operazioni sugli [[albero-binario-di-ricerca|alberi binari di ricerca]] costano $O(h)$: da $\Theta(\lg n)$ a $\Theta(n)$ a seconda della forma.
 
-## La base del logaritmo: perché $\log_k n$
-
-> 📄 Fonte: [[08-Grafi e alberi.pdf#page=43]]
+## La base del logaritmo: perché $\log_k n$ · [[08-Grafi e alberi.pdf#page=43|p. 43]]
 
 La base dipende dal **fattore di ramificazione** $k$ (figli per nodo), se l'albero è sufficientemente bilanciato:
 - binario (2 figli per nodo): $h = \Theta(\log_2 n)$;
@@ -108,9 +97,7 @@ $$
 >
 > **Sanity check** ([[grafi_e_alberi.py]]): $k = 2$, $h = 2$ dà $n = 7$ e la formula restituisce $h = 2$; $k = 3$, $h = 3$ dà $n = 40$ e la formula restituisce $h = 3$.
 
-## Dove ritroviamo gli alberi
-
-> 📄 Fonte: [[08-Grafi e alberi.pdf#page=44]]
+## Dove ritroviamo gli alberi · [[08-Grafi e alberi.pdf#page=44|p. 44]]
 
 - **Gerarchie di cartelle**: progetto → src, test → main.c, test.c.
 - **Alberi di espressione**: $(a + b) \times c$, con gli operatori nei nodi interni e gli operandi nelle foglie.
@@ -131,10 +118,9 @@ $$
 - [[metodo-albero-di-ricorrenza]] — gli alberi di ricorsione di p. 44
 - [[logaritmi-nell-analisi]] — la base del logaritmo cambia solo la costante
 
-## Fonti
+## Fonti · [[08-Grafi e alberi.pdf#page=37|p. 37]], [[08-Grafi e alberi.pdf#page=44|p. 44]]
 
 - [[lezione-08-grafi-e-alberi]]
-- [[08-Grafi e alberi.pdf#page=37]]–[[08-Grafi e alberi.pdf#page=44]]
 
 _Aggiornato: 2026-10-28 — ingest 08-Grafi e alberi.pdf_
 

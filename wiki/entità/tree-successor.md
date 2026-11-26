@@ -7,15 +7,11 @@ fonti_pdf: ["09-Alberi binari ricerca.pdf#page=13", "09-Alberi binari ricerca.pd
 
 # Tree-Successor (successore di un nodo)
 
-## Problema risolto
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=13]]
+## Problema risolto · [[09-Alberi binari ricerca.pdf#page=13|p. 13]]
 
 Dato un nodo, il suo **successore** è quello che lo segue nella visita in ordine dell'albero (→ [[inorder-tree-walk]]). Se il nodo ha la chiave massima, il successore è `NIL`.
 
-## Idea
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=13]]
+## Idea · [[09-Alberi binari ricerca.pdf#page=13|p. 13]]
 
 Due casi:
 1. **Se il nodo ha un figlio destro**, il successore è il **minimo del sottoalbero destro**. Esempio: il successore di 6 è 7.
@@ -25,9 +21,7 @@ Due casi:
 
 > 🧩 Spiegazione mia del caso 2: se $x$ non ha figlio destro, nella visita in ordine dopo $x$ non c'è più nulla del suo sottoalbero. Si risale finché si sale da **destra** (quei padri sono già stati stampati prima di $x$); il primo padre raggiunto salendo da **sinistra** è il prossimo nodo stampato. Albero di p. 13: da 13 si sale a 7 (13 è figlio destro), poi a 6 (7 è figlio destro), poi a 15 (6 è figlio sinistro): il successore è 15.
 
-## Pseudocodice
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=14]] (riportato fedelmente, numeri di riga miei)
+## Pseudocodice · [[09-Alberi binari ricerca.pdf#page=14|p. 14]]
 
 ```
 Tree-Successor (x)
@@ -44,19 +38,17 @@ Tree-Successor (x)
 
 ![[09-alberi-binari-ricerca-p14-tree-successor.png]]
 
-## Esempio di esecuzione
+## Esempio di esecuzione · [[09-Alberi binari ricerca.pdf#page=13|p. 13]], [[09-Alberi binari ricerca.pdf#page=15|p. 15]]
 
 ![[animazione-tree-successor.svg]]
-> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo sull'albero di [[09-Alberi binari ricerca.pdf#page=13]], per i due esempi della slide: il successore di 6 (caso 1, risultato 7) e di 13 (caso 2, risalita fino a 15). Il nodo dato è in rosa, $x$ in giallo, $y$ in azzurro, il successore in verde.
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=15]] (fotogramma iniziale di un'animazione della slide: «Due casi dello stesso algoritmo: se esiste un figlio destro, cerco il minimo; altrimenti risalgo»)
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo sull'albero di p. 13, per i due esempi della slide: il successore di 6 (caso 1, risultato 7) e di 13 (caso 2, risalita fino a 15). Il nodo dato è in rosa, $x$ in giallo, $y$ in azzurro, il successore in verde.
 
 ![[09-alberi-binari-ricerca-p15-successore-animazione.png]]
 
 > 🧩 Traccia del caso 2 per $x = 13$ (verificata con [[grafi_e_alberi.py]]):
 
 | Passo | $x$ | $y$ | $x = right[y]$? |
-|-------|-----|-----|-----------------|
+|---|---|---|---|
 | riga 3 | 13 | 7 | sì → si sale |
 | righe 5–6 | 7 | 6 | sì → si sale |
 | righe 5–6 | 6 | 15 | no: 6 è figlio sinistro di 15 |
@@ -68,9 +60,9 @@ Tree-Successor (x)
 > - **caso 1:** dopo aver stampato $x$, la visita entra nel sottoalbero destro e stampa per primo il suo nodo più a sinistra, cioè il minimo ([[tree-minimum-maximum]]);
 > - **caso 2:** senza sottoalbero destro, la visita di $x$ è finita e la ricorsione risale. Ogni antenato da cui si sale da destra ha già stampato la sua chiave prima di entrare nel sottoalbero di $x$. Il primo antenato da cui si sale da sinistra stava visitando il suo sottoalbero sinistro: la sua chiave è la prossima stampata. Se non esiste (si arriva a $y = $ `NIL`), $x$ era il massimo.
 
-## Complessità
+## Complessità · [[09-Alberi binari ricerca.pdf#page=14|p. 14]]
 
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=14]] — «Il tempo di esecuzione è $O(h)$»
+> 📄 Fonte: p. 14 — «Il tempo di esecuzione è $O(h)$»
 
 > 🧩 Derivazione mia:
 > - **caso 1:** Tree-Minimum scende lungo un ramo: $O(h)$;
@@ -84,10 +76,9 @@ Tree-Successor (x)
 - [[tree-minimum-maximum]] — usato nel caso 1
 - [[tree-delete]] — nel caso con due figli si taglia fuori il successore
 
-## Fonti
+## Fonti · [[09-Alberi binari ricerca.pdf#page=13|p. 13]], [[09-Alberi binari ricerca.pdf#page=15|p. 15]]
 
 - [[lezione-09-alberi-binari-di-ricerca]]
-- [[09-Alberi binari ricerca.pdf#page=13]]–[[09-Alberi binari ricerca.pdf#page=15]]
 
 _Aggiornato: 2026-10-28 — ingest 09-Alberi binari ricerca.pdf_
 

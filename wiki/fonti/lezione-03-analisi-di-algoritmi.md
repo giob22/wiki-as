@@ -14,9 +14,9 @@ argomenti: [paradigmi di progettazione, iterazione e ricorsione, correttezza, co
 
 La lezione ha quattro parti. **Classificazione dei problemi**: tre famiglie di approcci (divide et impera, ricerca combinatoria, metodi euristici) che bilanciano tempo, qualità e scalabilità. **Caratterizzazione degli algoritmi**: iterazione contro ricorsione, con l'esempio della somma dei primi $n$ numeri in entrambe le forme. **Correttezza**: controesempi e testing per dimostrare l'incorrettezza (con cinque suggerimenti pratici), invariante di ciclo per gli algoritmi iterativi, induzione per quelli ricorsivi, applicati alla somma. **Analisi di complessità**: il costo riga per riga della somma iterativa ($2n + 4 = O(n)$) e la ricorrenza $T(n) = T(n-1) + c$ della somma ricorsiva ($1 + cn = O(n)$), con la domanda aperta sulla complessità spaziale.
 
-## Percorso della lezione
+## Percorso della lezione · [[03-Analisi di algoritmi.pdf|03-Analisi di algoritmi.pdf]]
 
-**PDF:** [[03-Analisi di algoritmi.pdf]] (pp. 1–34)
+**PDF:** (pp. 1–35)
 
 Pagine del wiki nell'ordine di prima comparsa nelle slide (è l'ordine delle pagine di questa lezione nel libro, dopo questa):
 1. [[paradigmi-di-progettazione]] — pp. 2–3 · tre famiglie di approcci
@@ -29,13 +29,13 @@ Pagine del wiki nell'ordine di prima comparsa nelle slide (è l'ordine delle pag
 8. [[correttezza-per-induzione]] — pp. 18–19
 9. [[dimostrazioni-di-correttezza]] — esercizio su invariante e induzione
 10. [[analisi-del-costo-riga-per-riga]] — esercizio sulle pp. 23–29 (e su Base/Base2 della lezione 02)
-11. [[equazioni-di-ricorrenza]] — pp. 30–34
+11. [[equazioni-di-ricorrenza]] — pp. 30–35
 12. [[risoluzione-ricorrenze]] — esercizio sulle pp. 30–33
 
 Già lette: *ricerca-combinatoria* (p. 5), *metodi-euristici* (p. 6), *ricerca-di-controesempi* (pp. 12–15) nella lezione 01; *modello-ram* e *tempo-di-esecuzione* (pp. 20–22, identiche alle pp. 2–3 della lezione 02) nella lezione 02.
 
 **Ordine consigliato.**
-Qui le slide non sono lineari rispetto alle pagine: la somma $1..n$ compare a p. 11, ma la sua correttezza (pp. 17–19) e la sua complessità (pp. 23–34) arrivano molto dopo, e le pagine delle due somme contengono già tutto. Conviene prima la **teoria** e poi gli **esempi**:
+Qui le slide non sono lineari rispetto alle pagine: la somma $1..n$ compare a p. 11, ma la sua correttezza (pp. 17–19) e la sua complessità (pp. 23–35) arrivano molto dopo, e le pagine delle due somme contengono già tutto. Conviene prima la **teoria** e poi gli **esempi**:
 
 1. *paradigmi-di-progettazione* → *divide-et-impera* → *iterazione-e-ricorsione*
 2. *correttezza-parziale-e-totale* (il quadro) → *invariante-di-ciclo* → *correttezza-per-induzione* (gli strumenti)
@@ -43,26 +43,26 @@ Qui le slide non sono lineari rispetto alle pagine: la somma $1..n$ compare a p.
 4. *somma-iterativa* → *somma-ricorsiva* (gli esempi completi, come sintesi)
 5. esercizi: *dimostrazioni-di-correttezza* → *analisi-del-costo-riga-per-riga* → *risoluzione-ricorrenze*
 
-## Punti chiave
+## Punti chiave · [[03-Analisi di algoritmi.pdf#page=3|p. 3]], [[03-Analisi di algoritmi.pdf#page=6|p. 6]], [[03-Analisi di algoritmi.pdf#page=8|p. 8]]–[[03-Analisi di algoritmi.pdf#page=11|11]], [[03-Analisi di algoritmi.pdf#page=13|p. 13]], [[03-Analisi di algoritmi.pdf#page=15|p. 15]]–[[03-Analisi di algoritmi.pdf#page=19|19]], [[03-Analisi di algoritmi.pdf#page=21|p. 21]]–[[03-Analisi di algoritmi.pdf#page=23|23]], [[03-Analisi di algoritmi.pdf#page=29|p. 29]], [[03-Analisi di algoritmi.pdf#page=30|30]], [[03-Analisi di algoritmi.pdf#page=35|p. 35]]
 
-1. Tre famiglie di progettazione ([[03-Analisi di algoritmi.pdf#page=3]]–[[03-Analisi di algoritmi.pdf#page=6]]) → [[paradigmi-di-progettazione]], [[divide-et-impera]], [[ricerca-combinatoria]], [[metodi-euristici]].
-2. Iterazione contro ricorsione: stesso potere espressivo, costi e chiarezza diversi ([[03-Analisi di algoritmi.pdf#page=8]], [[03-Analisi di algoritmi.pdf#page=9]]) → [[iterazione-e-ricorsione]].
-3. Esempio: somma di $1..n$ iterativa e ricorsiva ([[03-Analisi di algoritmi.pdf#page=10]], [[03-Analisi di algoritmi.pdf#page=11]]) → [[somma-iterativa]], [[somma-ricorsiva]].
-4. Incorrettezza: controesempi, testing, tips (think small, think exhaustively, hunt for the weakness, go for a tie, seek extremes); nessun controesempio ≠ correttezza ([[03-Analisi di algoritmi.pdf#page=13]]–[[03-Analisi di algoritmi.pdf#page=15]]) → [[ricerca-di-controesempi]].
-5. Invariante di ciclo: inizializzazione, conservazione, conclusione + terminazione con funzione variante ([[03-Analisi di algoritmi.pdf#page=16]], [[03-Analisi di algoritmi.pdf#page=17]]) → [[invariante-di-ciclo]].
-6. Ricorsione: specifiche, misura ben fondata, casi base, passo induttivo, terminazione ([[03-Analisi di algoritmi.pdf#page=18]], [[03-Analisi di algoritmi.pdf#page=19]]) → [[correttezza-per-induzione]].
-7. Analisi: risorse, modello, dimensione dell'input, costo riga × esecuzioni ([[03-Analisi di algoritmi.pdf#page=21]], [[03-Analisi di algoritmi.pdf#page=22]]) → [[tempo-di-esecuzione]], [[modello-ram]].
-8. Somma iterativa: $1 + 1 + (n+1) + n + 1 = 2n + 4 = O(n)$ ([[03-Analisi di algoritmi.pdf#page=23]]–[[03-Analisi di algoritmi.pdf#page=29]]) → [[analisi-del-costo-riga-per-riga]].
-9. Somma ricorsiva: $T(0) = 1$, $T(i) = T(i-1) + c$, $T(n) = 1 + cn = O(n)$ ([[03-Analisi di algoritmi.pdf#page=30]]–[[03-Analisi di algoritmi.pdf#page=34]]) → [[equazioni-di-ricorrenza]], [[risoluzione-ricorrenze]].
+1. Tre famiglie di progettazione → [[paradigmi-di-progettazione]], [[divide-et-impera]], [[ricerca-combinatoria]], [[metodi-euristici]].
+2. Iterazione contro ricorsione: stesso potere espressivo, costi e chiarezza diversi → [[iterazione-e-ricorsione]].
+3. Esempio: somma di $1..n$ iterativa e ricorsiva → [[somma-iterativa]], [[somma-ricorsiva]].
+4. Incorrettezza: controesempi, testing, tips (think small, think exhaustively, hunt for the weakness, go for a tie, seek extremes); nessun controesempio ≠ correttezza → [[ricerca-di-controesempi]].
+5. Invariante di ciclo: inizializzazione, conservazione, conclusione + terminazione con funzione variante → [[invariante-di-ciclo]].
+6. Ricorsione: specifiche, misura ben fondata, casi base, passo induttivo, terminazione → [[correttezza-per-induzione]].
+7. Analisi: risorse, modello, dimensione dell'input, costo riga × esecuzioni → [[tempo-di-esecuzione]], [[modello-ram]].
+8. Somma iterativa: $1 + 1 + (n+1) + n + 1 = 2n + 4 = O(n)$ → [[analisi-del-costo-riga-per-riga]].
+9. Somma ricorsiva: $T(0) = 1$, $T(i) = T(i-1) + c$, $T(n) = 1 + cn = O(n)$ → [[equazioni-di-ricorrenza]], [[risoluzione-ricorrenze]].
 
-## Refusi e note
+## Refusi e note · [[03-Analisi di algoritmi.pdf#page=1|p. 1]], [[03-Analisi di algoritmi.pdf#page=2|2]], [[03-Analisi di algoritmi.pdf#page=7|p. 7]], [[03-Analisi di algoritmi.pdf#page=12|p. 12]], [[03-Analisi di algoritmi.pdf#page=20|p. 20]]
 
 - p. 5: il punto «Spesso efficienti se la partizione è bilanciata» nella ricerca combinatoria sembra copiato dalla slide su divide et impera (p. 4) e contrasta con «complessità tipicamente esponenziale».
 - p. 17: «Inizializzazione: $i = 0$» → dovrebbe essere $i = 1$ (il ciclo parte da 1).
 - pp. 29 e 34: «E la complessità spaziale?» senza risposta → nel wiki: $\Theta(1)$ iterativa, $\Theta(n)$ ricorsiva (🧩).
 - p. 28: il risultato è dato come $O(n)$; vale anche $\Theta(n)$.
 - Pseudocodice in italiano (`funzione`, `per … da … a`, `ritorna`), diverso dalle convenzioni di a1.
-- Pagina del titolo: [[03-Analisi di algoritmi.pdf#page=1|1]]; pagine di intestazione: [[03-Analisi di algoritmi.pdf#page=2|2]], [[03-Analisi di algoritmi.pdf#page=7|7]], [[03-Analisi di algoritmi.pdf#page=12|12]], [[03-Analisi di algoritmi.pdf#page=20|20]].
+- Pagina del titolo: p. 1; pagine di intestazione: p. 2, p. 7, p. 12, p. 20.
 
 ## Concetti introdotti
 

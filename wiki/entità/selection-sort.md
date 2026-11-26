@@ -2,7 +2,7 @@
 tipo: entità
 categoria: algoritmo
 paradigma: "incrementale (iterativo)"
-fonti_pdf: ["05-Insertion sort.pdf#page=24", "05-Insertion sort.pdf#page=25", "05-Insertion sort.pdf#page=28"]
+fonti_pdf: ["05-Insertion sort.pdf#page=26", "05-Insertion sort.pdf#page=28", "05-Insertion sort.pdf#page=33"]
 ---
 
 # Selection sort (Esercizio del libro di testo 2.2.2)
@@ -13,9 +13,9 @@ Le sezioni seguono l'ordine delle slide: traccia dell'esercizio (p. 24) → codi
 
 [[ordinamento]].
 
-## Traccia dell'esercizio e idea
+## Traccia dell'esercizio e idea · [[05-Insertion sort.pdf#page=31|p. 26]]
 
-> 📄 Fonte: [[05-Insertion sort.pdf#page=24]] — «Esercizio Libro di testo: 2.2.2» (Cormen, esercizio 2.2-2)
+> 📄 Fonte: p. 26 — «Esercizio Libro di testo: 2.2.2» (Cormen, esercizio 2.2-2)
 
 **Pseudo-code** (a parole):
 - trova l'elemento **più piccolo** e scambialo con il **primo** elemento;
@@ -26,9 +26,7 @@ Consegne: **Implementa**. **Analizza**: quale invariante di ciclo conserva? Perc
 
 ![[05-insertion-sort-p24-esercizio-selection-sort.png]]
 
-## Pseudocodice (implementazione)
-
-> 📄 Fonte: [[05-Insertion sort.pdf#page=25]] (codice C riportato fedelmente; righe numerate da me)
+## Pseudocodice (implementazione) · [[05-Insertion sort.pdf#page=33|p. 28]]
 
 ```c
 selection_sort(int s[], int n) {
@@ -61,22 +59,21 @@ SELECTION-SORT(A)
 ![[animazione-selection-sort.svg]]
 > 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, sull'array ⟨5, 2, 4, 6, 1, 3⟩: i puntatori `i`, `j`, `min`, ogni confronto `A[j] < A[min]`, lo scambio a fine iterazione, il prefisso già sistemato in verde e il contatore dei confronti che arriva a $n(n-1)/2 = 15$. Ogni fotogramma riporta in basso il numero del passo e cosa succede.
 
-
 > 🧩 Traccia mia sull'array della lezione, ⟨5, 2, 4, 6, 1, 3⟩ (indici da 1):
 
 | $i$ | minimo di $A[i..6]$ | scambio | $A$ dopo |
-|-----|---------------------|---------|----------|
+|---|---|---|---|
 | 1 | 1 (pos. 5) | $A[1] \leftrightarrow A[5]$ | ⟨**1**, 2, 4, 6, 5, 3⟩ |
 | 2 | 2 (pos. 2) | con sé stesso | ⟨1, **2**, 4, 6, 5, 3⟩ |
 | 3 | 3 (pos. 6) | $A[3] \leftrightarrow A[6]$ | ⟨1, 2, **3**, 6, 5, 4⟩ |
 | 4 | 4 (pos. 6) | $A[4] \leftrightarrow A[6]$ | ⟨1, 2, 3, **4**, 5, 6⟩ |
 | 5 | 5 (pos. 5) | con sé stesso | ⟨1, 2, 3, 4, **5**, 6⟩ |
 
-## Correttezza
+## Correttezza · [[05-Insertion sort.pdf#page=36|p. 31]]
 
-> 📄 Fonte: [[05-Insertion sort.pdf#page=26]] — «Dimostrarne la correttezza» (senza soluzione)
+> 📄 Fonte: p. 31 — «Dimostrarne la correttezza» (senza soluzione)
 
-> 🧩 Derivazione mia (risponde anche a «quale invariante di ciclo conserva?» di p. 24).
+> 🧩 Derivazione mia (risponde anche a «quale invariante di ciclo conserva?» di p. 26).
 >
 > **Invariante del ciclo esterno** (indici da 1): all'inizio dell'iterazione $i$, il sotto-array $A[1..i-1]$ contiene gli $i - 1$ elementi **più piccoli** dell'array, **ordinati**; di conseguenza ogni elemento di $A[i..n]$ è $\ge$ di ogni elemento di $A[1..i-1]$.
 > - **Inizializzazione:** $i = 1$, $A[1..0]$ è vuoto: vero.
@@ -84,13 +81,13 @@ SELECTION-SORT(A)
 > - **Conclusione:** il ciclo esce con $i = n$: $A[1..n-1]$ contiene gli $n - 1$ più piccoli ordinati, e $A[n]$, l'unico rimasto, è il più grande → $A[1..n]$ ordinato.
 > - **Terminazione:** entrambi i cicli sono `for` con estremi finiti.
 >
-> **Perché fino a $n - 1$ e non $n$** (domanda di p. 24): dopo $n - 1$ iterazioni l'ultimo elemento è per forza il massimo ed è già al suo posto; un'$n$-esima iterazione cercherebbe il minimo di $A[n..n]$ (0 confronti) e scambierebbe $A[n]$ con sé stesso. Il codice C di p. 25 (`i<n`) esegue proprio questa iterazione inutile: non è un errore ma è lavoro sprecato.
+> **Perché fino a $n - 1$ e non $n$** (domanda di p. 26): dopo $n - 1$ iterazioni l'ultimo elemento è per forza il massimo ed è già al suo posto; un'$n$-esima iterazione cercherebbe il minimo di $A[n..n]$ (0 confronti) e scambierebbe $A[n]$ con sé stesso. Il codice C di p. 28 (`i<n`) esegue proprio questa iterazione inutile: non è un errore ma è lavoro sprecato.
 >
 > Verificato con [[ordinamento.py]] (asserzione dell'invariante a ogni iterazione).
 
-## Complessità
+## Complessità · [[05-Insertion sort.pdf#page=37|p. 32]], [[05-Insertion sort.pdf#page=38|33]]
 
-> 📄 Fonte: [[05-Insertion sort.pdf#page=27]] — «Valutare l'efficienza asintotica»; [[05-Insertion sort.pdf#page=28]] — conteggio dei confronti:
+> 📄 Fonte: p. 32 — «Valutare l'efficienza asintotica»; p. 33 — conteggio dei confronti:
 
 $$ \sum_{i=0}^{n-2} (n - 1 - i) = (n-1) + (n-2) + \dots + 1 = \frac{n(n-1)}{2} $$
 
@@ -106,15 +103,15 @@ $$
 \end{aligned}
 $$
 >
-> **Caso migliore = caso peggiore = $\Theta(n^2)$** (terza domanda di p. 24): il numero di confronti **non dipende dall'input**, perché il ciclo interno scorre sempre tutto $A[i+1..n]$ per trovare il minimo; anche un array già ordinato paga $\frac{n(n-1)}{2}$ confronti. Cambia solo quante volte si esegue `min=j` (al più una volta per confronto), il che non sposta l'ordine di crescita. Gli scambi sono esattamente uno per iterazione esterna: $\Theta(n)$.
+> **Caso migliore = caso peggiore = $\Theta(n^2)$** (terza domanda di p. 26): il numero di confronti **non dipende dall'input**, perché il ciclo interno scorre sempre tutto $A[i+1..n]$ per trovare il minimo; anche un array già ordinato paga $\frac{n(n-1)}{2}$ confronti. Cambia solo quante volte si esegue `min=j` (al più una volta per confronto), il che non sposta l'ordine di crescita. Gli scambi sono esattamente uno per iterazione esterna: $\Theta(n)$.
 >
 > **Sanity check** ([[ordinamento.py]]): per $n = 100$, 4950 confronti su input ordinato, decrescente e casuale; $\frac{100\cdot 99}{2} = 4950$.
 
 > 💡 Connessione: confronto con [[insertion-sort]] — entrambi $\Theta(n^2)$ nel caso peggiore, ma insertion sort scende a $\Theta(n)$ sugli input già ordinati, selection sort no; in compenso selection sort fa solo $\Theta(n)$ scambi.
 
-## Memoria
+## Memoria · [[05-Insertion sort.pdf#page=34|p. 34]]
 
-> 📄 Fonte: [[05-Insertion sort.pdf#page=29]] — «E la memoria?» (senza soluzione)
+> 📄 Fonte: p. 34 — «E la memoria?» (senza soluzione)
 
 > 🧩 Derivazione mia: oltre all'array usa solo `i`, `j`, `min` e una variabile temporanea nello `swap`, in numero fisso qualunque sia $n$ → spazio aggiuntivo $\Theta(1)$: è un ordinamento **sul posto**, come insertion sort.
 
@@ -130,10 +127,9 @@ $$
 - [[invariante-di-ciclo]], [[dimostrazioni-di-correttezza]] — correttezza
 - [[analisi-del-costo-riga-per-riga]] — conteggio dei confronti
 
-## Fonti
+## Fonti · [[05-Insertion sort.pdf#page=31|p. 26]], [[05-Insertion sort.pdf#page=34|p. 34]]
 
 - [[lezione-05-insertion-sort]]
-- [[05-Insertion sort.pdf#page=24]]–[[05-Insertion sort.pdf#page=29]]
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

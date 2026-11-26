@@ -7,21 +7,17 @@ fonti_pdf: ["09-Alberi binari ricerca.pdf#page=10", "09-Alberi binari ricerca.pd
 
 # Tree-Search (ricerca in un BST)
 
-## Problema risolto
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=10]]
+## Problema risolto · [[09-Alberi binari ricerca.pdf#page=10|p. 10]]
 
 Dato il puntatore alla radice e una chiave, restituisce il puntatore all'elemento con la data chiave, se esiste, e `NIL` altrimenti.
 
-## Idea
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=10]]
+## Idea · [[09-Alberi binari ricerca.pdf#page=10|p. 10]]
 
 I nodi incontrati nella ricerca formano un **percorso verso il basso** dalla radice: a ogni nodo il confronto con $key[x]$ dice in quale dei due sottoalberi può trovarsi la chiave, e l'altro viene scartato.
 
-## Pseudocodice
+## Pseudocodice · [[09-Alberi binari ricerca.pdf#page=10|p. 10]], [[09-Alberi binari ricerca.pdf#page=11|11]]
 
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=10]] (versione ricorsiva) e [[09-Alberi binari ricerca.pdf#page=11]] (versione iterativa, «tipicamente più efficiente»); riportati fedelmente, numeri di riga miei
+> 📄 Fonte: p. 10 (versione ricorsiva) e p. 11 (versione iterativa, «tipicamente più efficiente»); riportati fedelmente, numeri di riga miei
 
 ```
 Tree-Search (x,k)
@@ -46,30 +42,30 @@ Iterative-Tree-Search (x,k)
 
 > 🧩 Il corto circuito di `or` e `and` (→ [[pseudocodice]]) è essenziale: con $x = $ `NIL` il confronto su $key[x]$ non viene valutato.
 
-## Esempio di esecuzione
+## Esempio di esecuzione · [[09-Alberi binari ricerca.pdf#page=13|p. 13]]
 
 ![[animazione-tree-search.svg]]
-> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero la versione ricorsiva sull'albero di [[09-Alberi binari ricerca.pdf#page=13]], prima con la chiave 13 (trovata) e poi con la chiave 11 (assente). Il nodo corrente è in giallo, quelli già attraversati in azzurro, il nodo trovato in verde.
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero la versione ricorsiva sull'albero di p. 13, prima con la chiave 13 (trovata) e poi con la chiave 11 (assente). Il nodo corrente è in giallo, quelli già attraversati in azzurro, il nodo trovato in verde.
 
 > 🧩 Traccia mia (verificata con [[grafi_e_alberi.py]]):
 
 | $k$ | Percorso | Risultato |
-|-----|----------|-----------|
+|---|---|---|
 | 13 | 15 → 6 (13 < 15) → 7 (13 > 6) → 13 (13 > 7) | nodo 13, dopo 4 nodi |
 | 11 | 15 → 6 → 7 → 13 → 9 (11 < 13) → `NIL` (11 > 9) | `NIL`, dopo 5 nodi |
 
-## Correttezza
+## Correttezza · [[09-Alberi binari ricerca.pdf#page=7|p. 7]]
 
 > 🧩 Derivazione mia, per induzione sull'altezza del sottoalbero di radice $x$:
 > - se $x = $ `NIL` la chiave non c'è; se $key[x] = k$ il nodo è quello cercato (righe 1–2);
-> - se $k < key[x]$, per la proprietà del BST ([[09-Alberi binari ricerca.pdf#page=7]]) tutte le chiavi del sottoalbero destro sono $\ge key[x] > k$: $k$ può stare solo a sinistra, e la riga 4 lo cerca lì. Il caso $k > key[x]$ è simmetrico (riga 5);
+> - se $k < key[x]$, per la proprietà del BST tutte le chiavi del sottoalbero destro sono $\ge key[x] > k$: $k$ può stare solo a sinistra, e la riga 4 lo cerca lì. Il caso $k > key[x]$ è simmetrico (riga 5);
 > - la chiamata ricorsiva lavora su un sottoalbero di altezza minore: per ipotesi induttiva restituisce il nodo giusto o `NIL`.
 >
 > La versione iterativa fa le stesse scelte; **invariante** del `while`: se la chiave è nell'albero, è nel sottoalbero di radice $x$.
 
-## Complessità
+## Complessità · [[09-Alberi binari ricerca.pdf#page=10|p. 10]]
 
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=10]] — «Il tempo di esecuzione è $O(h)$ dove $h$ è l'altezza dell'albero»
+> 📄 Fonte: p. 10 — «Il tempo di esecuzione è $O(h)$ dove $h$ è l'altezza dell'albero»
 
 ### Derivazione — $O(h)$
 > 🧩 Derivazione mia.
@@ -99,10 +95,9 @@ $$
 - [[iterazione-e-ricorsione]] — le due versioni dello stesso algoritmo
 - [[albero]] — $h$ da $\Theta(\lg n)$ a $\Theta(n)$
 
-## Fonti
+## Fonti · [[09-Alberi binari ricerca.pdf#page=10|p. 10]], [[09-Alberi binari ricerca.pdf#page=11|11]]
 
 - [[lezione-09-alberi-binari-di-ricerca]]
-- [[09-Alberi binari ricerca.pdf#page=10]], [[09-Alberi binari ricerca.pdf#page=11]]
 
 _Aggiornato: 2026-10-28 — ingest 09-Alberi binari ricerca.pdf_
 

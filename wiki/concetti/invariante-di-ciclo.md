@@ -7,9 +7,7 @@ fonti_pdf: ["03-Analisi di algoritmi.pdf#page=16", "03-Analisi di algoritmi.pdf#
 
 # Invariante di ciclo (correttezza degli algoritmi iterativi)
 
-## Definizione
-
-> 📄 Fonte: [[03-Analisi di algoritmi.pdf#page=16]]
+## Definizione · [[03-Analisi di algoritmi.pdf#page=16|p. 16]]
 
 Per gli algoritmi **iterativi** si usa l'approccio basato sull'**invariante di ciclo**: una proprietà delle variabili che vale a ogni iterazione. L'invariante dimostra la **correttezza parziale** in tre passi:
 
@@ -34,8 +32,7 @@ $$
 
 ## Derivazioni
 
-### Derivazione — correttezza di [[somma-iterativa]]
-**Fonte:** [[03-Analisi di algoritmi.pdf#page=17]]
+### Derivazione — correttezza di [[somma-iterativa]] · [[03-Analisi di algoritmi.pdf#page=17|p. 17]]
 
 ```
 funzione somma_iterativa(n)
@@ -72,22 +69,21 @@ L'invariante va scelto in modo che la **conclusione** dia esattamente la post-co
 
 > 🎯 Esame: scrivere invariante, inizializzazione, conservazione, conclusione **e** terminazione per un ciclo dato. Senza terminazione si ha solo correttezza parziale.
 
-## Connessioni
+## Connessioni · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=20|p. 18]], [[05-Insertion sort.pdf#page=36|p. 31]] · Merge Sort [[06-Merge Sort (1).pdf#page=21|p. 20]] · Quicksort [[07-Quicksort 1.pdf#page=13|p. 13]] · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=18|p. 18]]
 
 - [[correttezza-parziale-e-totale]] — l'invariante dà la correttezza **parziale**, la funzione variante la terminazione: insieme la **totale**
-- [[insertion-sort]] — l'invariante di [[05-Insertion sort.pdf#page=16]] («$A[1..j-1]$ contiene gli elementi originali di $A[1..j-1]$, ordinati») è l'esempio canonico del metodo
-- [[merge]] — invariante con due affermazioni: prefisso $A[p..k-1]$ ordinato e puntatori $i$, $j$ sui minimi rimasti ([[06-Merge Sort (1).pdf#page=19]])
-- [[partition]] — invariante con tre condizioni, una per area ([[07-Quicksort 1.pdf#page=13]])
-- [[selection-sort]] — invariante con due cicli annidati (esercizio 2.2.2, [[05-Insertion sort.pdf#page=26]])
+- [[insertion-sort]] — l'invariante di p. 16 («$A[1..j-1]$ contiene gli elementi originali di $A[1..j-1]$, ordinati») è l'esempio canonico del metodo
+- [[merge]] — invariante con due affermazioni: prefisso $A[p..k-1]$ ordinato e puntatori $i$, $j$ sui minimi rimasti
+- [[partition]] — invariante con tre condizioni, una per area
+- [[selection-sort]] — invariante con due cicli annidati (esercizio 2.2.2)
 
-- [[correttezza-per-induzione]] — l'analogo per la ricorsione, «simile nello spirito» ([[03-Analisi di algoritmi.pdf#page=18]])
+- [[correttezza-per-induzione]] — l'analogo per la ricorsione, «simile nello spirito»
 - [[algoritmo-e-problema]] — le due condizioni della definizione di correttezza (uscita corretta, terminazione) corrispondono a conclusione e variante
 - [[dimostrazioni-di-correttezza]] — esercizi
 
-## Fonti
+## Fonti · [[03-Analisi di algoritmi.pdf#page=16|p. 16]], [[03-Analisi di algoritmi.pdf#page=17|17]]
 
 - [[lezione-03-analisi-di-algoritmi]]
-- [[03-Analisi di algoritmi.pdf#page=16]], [[03-Analisi di algoritmi.pdf#page=17]]
 
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
 

@@ -11,13 +11,11 @@ fonti_pdf: ["01-Introduzione.pdf#page=26", "01-Introduzione.pdf#page=27", "01-In
 
 [[robot-tour-optimization]]. È un'euristica: **non** sempre trova il giro minimo.
 
-## Idea
+## Idea · [[01-Introduzione.pdf#page=26|p. 26]]
 
-Invece di costruire il giro da un punto, si costruiscono **catene di vertici**: all'inizio ogni punto è una catena da solo. A ogni passo si collegano con un arco i due **estremi più vicini** che appartengono a **catene distinte**; dopo $n-1$ passi resta una sola catena e si chiude il ciclo unendo i suoi due estremi ([[01-Introduzione.pdf#page=26]]). Unire solo estremi di catene distinte evita cicli prematuri e vertici di grado maggiore di 2.
+Invece di costruire il giro da un punto, si costruiscono **catene di vertici**: all'inizio ogni punto è una catena da solo. A ogni passo si collegano con un arco i due **estremi più vicini** che appartengono a **catene distinte**; dopo $n-1$ passi resta una sola catena e si chiude il ciclo unendo i suoi due estremi. Unire solo estremi di catene distinte evita cicli prematuri e vertici di grado maggiore di 2.
 
-## Pseudocodice
-
-> 📄 Fonte: [[01-Introduzione.pdf#page=26]] (riportato fedelmente)
+## Pseudocodice · [[01-Introduzione.pdf#page=26|p. 26]]
 
 ```
 ClosestPair(P)
@@ -30,23 +28,22 @@ ClosestPair(P)
 7  Connect the two endpoints by an edge
 ```
 
-## Esempio di esecuzione
+## Esempio di esecuzione · [[01-Introduzione.pdf#page=27|p. 27]], [[01-Introduzione.pdf#page=28|28]]
 
 ![[animazione-closest-pair.svg]]
 > 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, sui sei punti di p. 28 (coordinate lette dal grafico): gli archi vengono aggiunti tra le catene nell'ordine AD, BE, CF, AB, EF, poi la chiusura diagonale DC; nell'ultimo fotogramma il giro ottimo tratteggiato in verde (7.29 contro 6.24). Ogni fotogramma riporta in basso il numero del passo e cosa succede.
 
+Commento della fonte: «Più complessa, ma "sembra" risolvere il problema». Sui punti della retta di [[nearest-neighbor]] funziona: trova il giro di lunghezza 64, cioè l'ottimo (🧩 verificato con lo script [[controesempi_euristiche.py]]).
 
-Commento della fonte: «Più complessa, ma "sembra" risolvere il problema» ([[01-Introduzione.pdf#page=27]]). Sui punti della retta di [[nearest-neighbor]] funziona: trova il giro di lunghezza 64, cioè l'ottimo (🧩 verificato con lo script [[controesempi_euristiche.py]]).
-
-**Controesempio** ([[01-Introduzione.pdf#page=28]]): sei punti su due file, A, B, C in alto e D, E, F in basso.
+**Controesempio**: sei punti su due file, A, B, C in alto e D, E, F in basso.
 
 ![[01-introduzione-p28-closest-pair-controesempio.png]]
-*Due file di tre punti: la distanza verticale tra le file è minore della distanza orizzontale tra punti consecutivi. ([[01-Introduzione.pdf#page=28]])*
+*Due file di tre punti: la distanza verticale tra le file è minore della distanza orizzontale tra punti consecutivi.*
 
 > 🧩 Derivazione mia. Coordinate lette dal grafico (approssimate): $A=(0,\,0.88)$, $B=(1.12,\,0.88)$, $C=(2.24,\,0.88)$, $D=(0,0)$, $E=(1.12,0)$, $F=(2.24,0)$. Distanza verticale $v = 0.88$, orizzontale $h = 1.12$, quindi $v < h$.
 
 | Passo | Coppie di estremi candidate più vicine | Arco scelto | Catene dopo il passo |
-|-------|----------------------------------------|-------------|----------------------|
+|---|---|---|---|
 | 1 | AD, BE, CF ($v = 0.88$) | AD | {A–D}, {B}, {C}, {E}, {F} |
 | 2 | BE, CF (0.88) | BE | {A–D}, {B–E}, {C}, {F} |
 | 3 | CF (0.88) | CF | {A–D}, {B–E}, {C–F} |
@@ -66,9 +63,9 @@ $$
 **Sanity check:** verificato con [[controesempi_euristiche.py]] (7.287 contro 6.240); provando tutti i 720 ordini di input (quindi tutte le regole di scelta a parità) la lunghezza è sempre 7.287. Qualunque sia la scelta tra le coppie a parità, l'algoritmo prima unisce tutte le coppie verticali (le più corte) e alla fine è costretto a chiudere con una lunga diagonale, mentre il giro ottimo usa solo due archi verticali.
 **Ipotesi:** coordinate lette a occhio dalla figura; il risultato qualitativo vale per ogni istanza di questa forma con $v < h$ abbastanza vicini.
 
-## Correttezza
+## Correttezza · [[01-Introduzione.pdf#page=35|p. 35]]
 
-Non corretto (controesempio sopra). La lezione lo usa per la *Take-Home Lesson #1* ([[01-Introduzione.pdf#page=35]]) → [[metodi-euristici]].
+Non corretto (controesempio sopra). La lezione lo usa per la *Take-Home Lesson #1* → [[metodi-euristici]].
 
 ## Complessità
 
@@ -78,10 +75,9 @@ Non corretto (controesempio sopra). La lezione lo usa per la *Take-Home Lesson #
 
 - [[nearest-neighbor]], [[optimal-tsp]], [[controesempi-per-euristiche]]
 
-## Fonti
+## Fonti · [[01-Introduzione.pdf#page=25|p. 25]]–[[01-Introduzione.pdf#page=28|28]]
 
 - [[lezione-01-introduzione]]
-- [[01-Introduzione.pdf#page=25]] («Soluzione?»), [[01-Introduzione.pdf#page=26]], [[01-Introduzione.pdf#page=27]], [[01-Introduzione.pdf#page=28]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

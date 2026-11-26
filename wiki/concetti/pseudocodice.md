@@ -7,11 +7,9 @@ fonti_pdf: ["a1-indicazioni_psuedocodice.pdf#page=2", "a1-indicazioni_psuedocodi
 
 # Convenzioni per lo pseudocodice
 
-## Definizione
+## Definizione · [[a1-indicazioni_psuedocodice.pdf#page=2|p. 2]]–[[a1-indicazioni_psuedocodice.pdf#page=4|4]]
 
 Regole di scrittura dello pseudocodice fissate dal docente per le lezioni e **per gli esercizi d'esame** (sono le convenzioni del Cormen, libro di testo del corso).
-
-> 📄 Fonte: [[a1-indicazioni_psuedocodice.pdf#page=2]]
 
 - L'**indentazione** indica la struttura dei blocchi (niente parentesi).
 - I costrutti iterativi e di condizione hanno significato analogo ai linguaggi di alto livello. Costrutti di controllo disponibili: **while, for, if-else**.
@@ -19,8 +17,6 @@ Regole di scrittura dello pseudocodice fissate dal docente per le lezioni e **pe
 - L'operatore `[]` indica sia l'accesso ai singoli elementi di un array sia l'accesso ai campi di un oggetto (es. `length[A]`).
 - Si assume che gli **indici inizino da 1**.
 - Sono disponibili i **sotto-array** (*slices*) come in Fortran, Matlab, Python: $A[i..j]$ è la porzione di array che inizia dall'$i$-esimo elemento e termina al $j$-esimo.
-
-> 📄 Fonte: [[a1-indicazioni_psuedocodice.pdf#page=3]]
 
 - Sono presenti **aggregati eterogenei** (= strutture C):
   - l'accesso a un campo si fa sia con l'operatore `.` (`A.campo1`) sia con `[]` (`campo1[A]`);
@@ -30,15 +26,13 @@ Regole di scrittura dello pseudocodice fissate dal docente per le lezioni e **pe
 - I parametri **aggregati** (strutture) sono passati **per riferimento** (come in Java).
 - Tutte le variabili sono **locali** alla procedura descritta.
 
-> 📄 Fonte: [[a1-indicazioni_psuedocodice.pdf#page=4]]
-
 - Operatori di confronto: $<$, $\le$, $=$, $\ge$, $>$, $\ne$.
 - Gli operatori booleani **and** e **or** sono valutati con la tecnica del **corto circuito** (come nella maggior parte dei linguaggi).
 - **Commenti** mono-riga con $\triangleright$; i blocchi sono dati dall'indentazione.
 - Non è necessario esplicitare il **tipo** delle variabili: può essere inferito dall'uso.
 - **Funzioni di libreria:** sarà esplicitato nell'esercizio in quali casi è consentito usare «funzioni di libreria» assunte presenti (ad esempio «sort»).
 
-## Spiegazione
+## Spiegazione · 02-Notazione asintotica.pdf [[02-Notazione asintotica.pdf#page=7|p. 7]], [[02-Notazione asintotica.pdf#page=11|p. 11]] · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=11|p. 11]] · 04-Strutture dati elementari.pdf [[04-Strutture dati elementari.pdf#page=17|p. 17]] · Pseudocodice [[a1-indicazioni_psuedocodice.pdf#page=1|p. 1]]
 
 > 🧩 Esempio mio che usa tutte le regole principali:
 
@@ -55,9 +49,9 @@ Due trappole frequenti:
 1. **Aliasing:** dopo `y ← x` le due variabili puntano alla **stessa** struttura (è un puntatore, non una copia): modificare un campo tramite `x` si vede tramite `y`.
 2. **Corto circuito:** in `while x ≠ NIL and x.key ≠ k` il secondo test non viene valutato quando `x = NIL`, quindi non si accede a un campo di `NIL` (usato in [[lista-concatenata]]).
 
-> ⚠️ Contraddizione (lieve): le slide delle lezioni non sempre seguono queste convenzioni — la lezione 02 usa `ALGORITMO … SE … ALTRIMENTI … PER i = 0 .. n FAI` con commenti `//` ([[02-Notazione asintotica.pdf#page=7]], [[02-Notazione asintotica.pdf#page=11]]), la lezione 03 `funzione … per i da 1 a n … ritorna` ([[03-Analisi di algoritmi.pdf#page=11]]), la lezione 04 codice C ([[04-Strutture dati elementari.pdf#page=17]]). Nel wiki lo pseudocodice delle slide è riportato fedelmente; quando utile si aggiunge una traduzione 🧩 nelle convenzioni di questa pagina.
+> ⚠️ Contraddizione (lieve): le slide delle lezioni non sempre seguono queste convenzioni — la lezione 02 usa `ALGORITMO … SE … ALTRIMENTI … PER i = 0.. n FAI` con commenti `//`, la lezione 03 `funzione … per i da 1 a n … ritorna`, la lezione 04 codice C. Nel wiki lo pseudocodice delle slide è riportato fedelmente; quando utile si aggiunge una traduzione 🧩 nelle convenzioni di questa pagina.
 
-Nota: le slide delle convenzioni riportano «a.a. 25/26» ([[a1-indicazioni_psuedocodice.pdf#page=1]]).
+Nota: le slide delle convenzioni riportano «a.a. 25/26».
 
 ## Perché importa
 
@@ -69,10 +63,9 @@ Nota: le slide delle convenzioni riportano «a.a. 25/26» ([[a1-indicazioni_psue
 - [[tempo-di-esecuzione]] — la numerazione delle righe serve per la tabella dei costi
 - [[array]], [[lista-concatenata]] — indici da 1, puntatori e NIL
 
-## Fonti
+## Fonti · [[a1-indicazioni_psuedocodice.pdf#page=1|p. 1]], [[a1-indicazioni_psuedocodice.pdf#page=4|p. 4]]
 
 - [[convenzioni-per-lo-pseudocodice]]
-- [[a1-indicazioni_psuedocodice.pdf#page=1]]–[[a1-indicazioni_psuedocodice.pdf#page=4]]
 
 _Aggiornato: 2026-09-26 — ingest a1-indicazioni_psuedocodice.pdf_
 

@@ -7,9 +7,7 @@ fonti_pdf: ["03-Analisi di algoritmi.pdf#page=18", "03-Analisi di algoritmi.pdf#
 
 # Correttezza degli algoritmi ricorsivi (per induzione)
 
-## Definizione
-
-> 📄 Fonte: [[03-Analisi di algoritmi.pdf#page=18]]
+## Definizione · [[03-Analisi di algoritmi.pdf#page=18|p. 18]]
 
 Per la ricorsione la prova di correttezza è strettamente legata all'**induzione** (spesso induzione **forte** o **strutturale**). È «simile nello spirito» agli invarianti di ciclo, ma la forma tipica è:
 
@@ -21,8 +19,7 @@ Per la ricorsione la prova di correttezza è strettamente legata all'**induzione
 
 ## Derivazioni
 
-### Derivazione — correttezza di [[somma-ricorsiva]]
-**Fonte:** [[03-Analisi di algoritmi.pdf#page=19]]
+### Derivazione — correttezza di [[somma-ricorsiva]] · [[03-Analisi di algoritmi.pdf#page=19|p. 19]]
 
 ```
 funzione somma_ricorsiva(n)
@@ -69,10 +66,9 @@ Qui basta l'induzione **semplice** (si usa solo $S(n-1)$); l'induzione **forte**
 - [[metodo-di-sostituzione]] — la stessa induzione, usata per dimostrare un limite sul costo invece della correttezza
 - [[dimostrazioni-di-correttezza]] — esercizi
 
-## Fonti
+## Fonti · [[03-Analisi di algoritmi.pdf#page=18|p. 18]], [[03-Analisi di algoritmi.pdf#page=19|19]]
 
 - [[lezione-03-analisi-di-algoritmi]]
-- [[03-Analisi di algoritmi.pdf#page=18]], [[03-Analisi di algoritmi.pdf#page=19]]
 
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
 _Aggiornato: 2026-10-01 — collegamento a correttezza-parziale-e-totale_

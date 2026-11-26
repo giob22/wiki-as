@@ -11,9 +11,7 @@ fonti_pdf: ["01-Introduzione.pdf#page=47", "01-Introduzione.pdf#page=54", "01-In
 
 [[movie-scheduling]] — **non** correttamente.
 
-## Pseudocodice
-
-> 📄 Fonte: [[01-Introduzione.pdf#page=47]]
+## Pseudocodice · [[01-Introduzione.pdf#page=47|p. 47]]
 
 ```
 ShortestJobFirst(I)
@@ -22,16 +20,15 @@ ShortestJobFirst(I)
 3      Delete j, and any interval which intersects j from S.
 ```
 
-## Esempio di esecuzione
+## Esempio di esecuzione · [[01-Introduzione.pdf#page=37|p. 37]], [[01-Introduzione.pdf#page=48|p. 48]], [[01-Introduzione.pdf#page=54|p. 54]], [[01-Introduzione.pdf#page=55|55]]
 
 ![[animazione-shortest-job-first.svg]]
 > 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, sui 9 film di p. 37: a ogni passo il job più corto e gli intervalli eliminati perché lo intersecano, con lo stesso esito delle slide (pp. 48–54). Ogni fotogramma riporta in basso il numero del passo e cosa succede.
 
-
-Traccia sull'istanza di [[01-Introduzione.pdf#page=37]] ([[01-Introduzione.pdf#page=48]]–[[01-Introduzione.pdf#page=54]]):
+Traccia sull'istanza di p. 37:
 
 | Pagina | Evento |
-|--------|--------|
+|---|---|
 | [[01-Introduzione.pdf#page=48\|p. 48]] | ✔ Steiner's Tree (il più corto) |
 | [[01-Introduzione.pdf#page=49\|p. 49]] | ✘ Tarjan of the Jungle, ✘ The Four Volume Problem, ✘ Halting State |
 | [[01-Introduzione.pdf#page=50\|p. 50]] | ✔ "Discrete" Mathematics |
@@ -43,9 +40,9 @@ Traccia sull'istanza di [[01-Introduzione.pdf#page=37]] ([[01-Introduzione.pdf#p
 Risultato: **4** film. Su questa istanza entrambe le euristiche ([[earliest-job-first]] e questa) ne selezionano 4: il loro difetto emerge su istanze diverse.
 
 ![[01-introduzione-p54-shortest-job-first-esito.png]]
-*Esito finale di ShortestJobFirst. ([[01-Introduzione.pdf#page=54]])*
+*Esito finale di ShortestJobFirst.*
 
-Commento della fonte: «This idea makes sense at first. At least until we realize that accepting the shortest job might block us from taking two other jobs» ([[01-Introduzione.pdf#page=55]]).
+Commento della fonte: «This idea makes sense at first. At least until we realize that accepting the shortest job might block us from taking two other jobs».
 
 ## Correttezza
 
@@ -59,10 +56,9 @@ Commento della fonte: «This idea makes sense at first. At least until we realiz
 
 - [[earliest-job-first]], [[optimal-scheduling]], [[controesempi-per-euristiche]]
 
-## Fonti
+## Fonti · [[01-Introduzione.pdf#page=47|p. 47]], [[01-Introduzione.pdf#page=55|p. 55]]
 
 - [[lezione-01-introduzione]]
-- [[01-Introduzione.pdf#page=47]]–[[01-Introduzione.pdf#page=55]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

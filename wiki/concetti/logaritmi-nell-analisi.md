@@ -2,26 +2,26 @@
 tipo: concetto
 importanza_esame: alta
 prerequisiti: ["dominanza-asintotica"]
-fonti_pdf: ["05-Insertion sort.pdf#page=32", "05-Insertion sort.pdf#page=33"]
+fonti_pdf: ["05-Insertion sort.pdf#page=37", "05-Insertion sort.pdf#page=38"]
 ---
 
 # L'importanza dei logaritmi
 
-## Definizione
+## Definizione · [[05-Insertion sort.pdf#page=37|p. 37]]
 
-> 📄 Fonte: [[05-Insertion sort.pdf#page=32]] — «Crescita delle funzioni: l'importanza dei logaritmi»
+> 📄 Fonte: p. 37 — «Crescita delle funzioni: l'importanza dei logaritmi»
 
 *«Logarithms arise in any process where things are repeatedly halved.»* I logaritmi compaiono in ogni processo in cui qualcosa viene **ripetutamente dimezzato** (o diviso per una costante).
 
 > 🧩 Derivazione mia (perché): se a ogni passo la dimensione passa da $n$ a $n/2$, dopo $k$ passi è $n/2^k$. Il processo finisce quando $n/2^k \le 1$, cioè $k \ge \lg n$: il numero di passi è $\lceil \lg n \rceil$. Qui e nel resto del wiki $\lg = \log_2$.
 
-## Formule
+## Formule · [[05-Insertion sort.pdf#page=37|p. 37]]
 
-Esempi elencati nella slide ([[05-Insertion sort.pdf#page=32]]), con i passaggi che la slide lascia impliciti:
+Esempi elencati nella slide, con i passaggi che la slide lascia impliciti:
 
 | Esempio (slide) | Risultato | Derivazione (🧩 mia dove la slide non la dà) |
-|-----------------|-----------|--------------------------------------------|
-| **Binary Search** | $O(\lg n)$ confronti | ogni confronto dimezza l'intervallo di ricerca (vedi p. 33, sotto) |
+|---|---|---|
+| **Binary Search** | $O(\lg n)$ confronti | ogni confronto dimezza l'intervallo di ricerca (vedi p. 38, sotto) |
 | **Trees** — altezza $h$ di un albero con $d$ figli per nodo e $n$ foglie | $h = \log_d n$ | un albero completo di altezza $h$ ha $d^h$ foglie: $d^h = n \Rightarrow h = \log_d n$ |
 | **Bits** — quanti bit servono per rappresentare una qualunque tra $n$ possibilità? | $\lceil \lg n \rceil$ | con $b$ bit si distinguono $2^b$ valori: serve $2^b \ge n \Rightarrow b = \lceil \lg n \rceil$ |
 | **Multiplication** | $a^b = \exp(\ln(a^b)) = \exp(b \ln a)$ | proprietà $\ln(a^b) = b \ln a$: il logaritmo trasforma potenze in prodotti (e prodotti in somme) |
@@ -34,8 +34,7 @@ Esempi elencati nella slide ([[05-Insertion sort.pdf#page=32]]), con i passaggi 
 
 ## Derivazioni
 
-### Derivazione — $H(n) \sim \ln n$
-**Fonte:** [[05-Insertion sort.pdf#page=32]] (risultato dato senza passaggi)
+### Derivazione — $H(n) \sim \ln n$ · [[05-Insertion sort.pdf#page=37|p. 37]]
 **Si parte da:** confronto tra la somma e l'integrale di $1/x$, che è decrescente
 
 > 🧩 Derivazione mia:
@@ -50,8 +49,8 @@ H(n) &\ge \int_{1}^{n+1} \frac{dx}{x} = \ln(n+1) && \text{sommo per } i = 1..n \
 $$
 **Sanity check:** $H(10^6) = 14.3927$, $\ln 10^6 = 13.8155$: la differenza $0.577$ resta limitata (tende alla costante di Eulero–Mascheroni $\gamma \approx 0.5772$), come prevede $H(n) = \ln n + O(1)$.
 
-### Derivazione — l'importanza di uno split equilibrato
-**Fonte:** [[05-Insertion sort.pdf#page=33]] — *S&T: Importance of an Even Split*
+### Derivazione — l'importanza di uno split equilibrato · [[05-Insertion sort.pdf#page=38|p. 38]]
+**Fonte:** p. 38 — *S&T: Importance of an Even Split*
 
 > **Problem:** quante domande richiede la ricerca binaria sull'elenco telefonico di Manhattan da un milione di nomi, se ogni divisione fosse 1/3–2/3 invece di 1/2–1/2?
 
@@ -78,29 +77,28 @@ $$
 
 ![[05-insertion-sort-p33-split-ricerca-binaria.png]]
 
-## Spiegazione
+## Spiegazione · [[02-Notazione asintotica.pdf#page=31|p. 31]]
 
-Nella classifica di [[dominanza-asintotica]] $\log n$ sta appena sopra le costanti: «$O(\log n)$ never sweats» ([[02-Notazione asintotica.pdf#page=31]]). Questa lezione mostra *da dove* nascono i logaritmi: dal dimezzamento ripetuto (ricerca binaria, potenza veloce), dagli alberi e dalla rappresentazione binaria.
+Nella classifica di [[dominanza-asintotica]] $\log n$ sta appena sopra le costanti: «$O(\log n)$ never sweats». Questa lezione mostra *da dove* nascono i logaritmi: dal dimezzamento ripetuto (ricerca binaria, potenza veloce), dagli alberi e dalla rappresentazione binaria.
 
 ## Perché importa
 
 > 🎯 Esame: riconoscere il dimezzamento ripetuto come fonte di $\lg n$; spiegare perché la base del logaritmo non conta asintoticamente (take-home lesson di p. 33).
 
-## Connessioni
+## Connessioni · Quicksort [[07-Quicksort 1.pdf#page=17|p. 17]] · Merge Sort [[06-Merge Sort (1).pdf#page=50|p. 46]] · 08-Grafi e alberi.pdf [[08-Grafi e alberi.pdf#page=43|p. 43]]
 
 - [[potenza-veloce]] — esempio di algoritmo $O(\lg n)$
 - [[dominanza-asintotica]] — posizione di $\log n$ nella classifica
 - [[notazione-asintotica]] — il cambio di base è un fattore costante
 - [[metodo-albero-di-ricorrenza]] — il numero di livelli è $\log_b n + 1$ (dimezzando: $\lg n + 1$ livelli in [[merge-sort]])
-- [[quicksort]] — con split 9:1 la profondità è $\log_{10/9} n \approx 6.58\lg n$: ancora $\Theta(\lg n)$, come lo split sbilanciato di p. 33 ([[07-Quicksort 1.pdf#page=17]])
-- [[teorema-dell-esperto]] — esempio $T(2n/3) + 1 = \Theta(\lg n)$ ([[06-Merge Sort (1).pdf#page=42]])
-- [[albero]] — l'altezza di un albero $k$-ario bilanciato è $\Theta(\log_k n)$ ([[08-Grafi e alberi.pdf#page=43]])
+- [[quicksort]] — con split 9:1 la profondità è $\log_{10/9} n \approx 6.58\lg n$: ancora $\Theta(\lg n)$, come lo split sbilanciato di p. 33
+- [[teorema-dell-esperto]] — esempio $T(2n/3) + 1 = \Theta(\lg n)$
+- [[albero]] — l'altezza di un albero $k$-ario bilanciato è $\Theta(\log_k n)$
 
-## Fonti
+## Fonti · Merge Sort [[06-Merge Sort (1).pdf#page=51|p. 51]], [[06-Merge Sort (1).pdf#page=52|52]] · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=37|p. 37]], [[05-Insertion sort.pdf#page=38|38]]
 
 - [[lezione-05-insertion-sort]]
-- le stesse slide sono riprese nella versione aggiornata della lezione 06 ([[lezione-06-merge-sort]]): [[06-Merge Sort (1).pdf#page=47]], [[06-Merge Sort (1).pdf#page=48]]
-- [[05-Insertion sort.pdf#page=32]], [[05-Insertion sort.pdf#page=33]]
+- le stesse slide sono riprese nella versione aggiornata della lezione 06 ([[lezione-06-merge-sort]]): p. 47, p. 48
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
 _Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_

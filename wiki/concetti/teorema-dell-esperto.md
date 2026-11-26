@@ -2,14 +2,12 @@
 tipo: concetto
 importanza_esame: alta
 prerequisiti: ["equazioni-di-ricorrenza", "notazione-asintotica", "metodo-albero-di-ricorrenza"]
-fonti_pdf: ["06-Merge Sort (1).pdf#page=41", "06-Merge Sort (1).pdf#page=42", "06-Merge Sort (1).pdf#page=43", "07-Quicksort 1.pdf#page=15"]
+fonti_pdf: ["06-Merge Sort (1).pdf#page=44", "06-Merge Sort (1).pdf#page=46", "06-Merge Sort (1).pdf#page=47", "07-Quicksort 1.pdf#page=15"]
 ---
 
 # Teorema dell'esperto (metodo dell'esperto)
 
-## Definizione
-
-> 📄 Fonte: [[06-Merge Sort (1).pdf#page=41]]
+## Definizione · [[06-Merge Sort (1).pdf#page=48|p. 44]]
 
 Il **metodo dell'esperto** si basa sul **teorema dell'esperto** (*master theorem*).
 
@@ -28,11 +26,11 @@ dove $n/b$ può essere interpretato sia come $\lfloor n/b \rfloor$ che come $\lc
 
 ![[06-merge-sort-p41-teorema-esperto.png]]
 
-## Formule
+## Formule · [[06-Merge Sort (1).pdf#page=26|p. 24]]
 
 > 🧮 Formula chiave — il confronto da fare sempre:
 $$ f(n) \quad \text{contro} \quad n^{\log_b a} $$
-Simboli: $a$ = numero di sottoproblemi; $n/b$ = dimensione di ciascuno ($1/b$ = fattore di riduzione, come in [[06-Merge Sort (1).pdf#page=23]]); $f(n)$ = costo di divisione e ricombinazione, $D(n) + C(n)$ nella ricorrenza del [[divide-et-impera]]; $n^{\log_b a}$ = numero di foglie dell'albero di ricorrenza; $\epsilon$ = margine polinomiale; $c$ = costante della **condizione di regolarità** del caso 3.
+Simboli: $a$ = numero di sottoproblemi; $n/b$ = dimensione di ciascuno ($1/b$ = fattore di riduzione, come in p. 24); $f(n)$ = costo di divisione e ricombinazione, $D(n) + C(n)$ nella ricorrenza del [[divide-et-impera]]; $n^{\log_b a}$ = numero di foglie dell'albero di ricorrenza; $\epsilon$ = margine polinomiale; $c$ = costante della **condizione di regolarità** del caso 3.
 
 > 🧩 Spiegazione mia — da dove viene il confronto, con il [[metodo-albero-di-ricorrenza]]: la radice costa $f(n)$, le foglie sono $a^{\log_b n} = n^{\log_b a}$ e costano $\Theta(1)$ ciascuna.
 > - **Caso 1:** i livelli crescono geometricamente verso le foglie ⇒ dominano le foglie: $\Theta(n^{\log_b a})$.
@@ -41,8 +39,8 @@ Simboli: $a$ = numero di sottoproblemi; $n/b$ = dimensione di ciascuno ($1/b$ = 
 
 ## Derivazioni
 
-### Esempi della slide
-> 📄 Fonte: [[06-Merge Sort (1).pdf#page=42]] (enunciati e caso applicato); commenti 🧩 miei
+### Esempi della slide · Merge Sort [[06-Merge Sort (1).pdf#page=50|p. 46]] · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=38|p. 38]]
+> 📄 Fonte: p. 42 (enunciati e caso applicato); commenti 🧩 miei
 
 ![[06-merge-sort-p42-esempi-esperto.png]]
 
@@ -68,7 +66,7 @@ $$
 \end{aligned}
 $$
 
-> 🧩 Nota: $b = 3/2$ perché $2n/3 = n/(3/2)$. Srotolando, $T(n) = T(1) + \log_{3/2} n$, cioè $\approx 1.71 \lg n$. È la ricorrenza di una ricerca che scarta un terzo dei candidati a ogni passo (lo «split sbilanciato» di [[05-Insertion sort.pdf#page=33]], → [[logaritmi-nell-analisi]]). [[divide_et_impera.py]]: $T(n)/\lg n = 1.61,\ 1.66,\ 1.67$ per $n = 10^3, 10^6, 10^9$, verso $1/\lg(3/2) \approx 1.71$.
+> 🧩 Nota: $b = 3/2$ perché $2n/3 = n/(3/2)$. Srotolando, $T(n) = T(1) + \log_{3/2} n$, cioè $\approx 1.71 \lg n$. È la ricorrenza di una ricerca che scarta un terzo dei candidati a ogni passo (lo «split sbilanciato» di p. 33, → [[logaritmi-nell-analisi]]). [[divide_et_impera.py]]: $T(n)/\lg n = 1.61,\ 1.66,\ 1.67$ per $n = 10^3, 10^6, 10^9$, verso $1/\lg(3/2) \approx 1.71$.
 
 **Esempio 3 — $T(n) = 3T(n/4) + n\lg n$**
 
@@ -83,8 +81,7 @@ $$
 
 > **Sanity check** ([[divide_et_impera.py]]): $T(n)/(n\lg n) = 2.19,\ 2.66,\ 2.96$ per $n = 4^5, 4^8, 4^{11}$: cresce lentamente verso una costante. 🧩 Con l'albero si trova $T(n) \approx 4n\lg n - 24n$ (serie $\sum (3/4)^i = 4$ e $\sum i(3/4)^i = 12$), quindi il rapporto è $\approx 4 - 24/\lg n$; per $n = 4^{20}$ e $4^{40}$ il calcolo dà 3.40 e 3.70, come previsto.
 
-### Esempio fuori dal teorema: il gap tra i casi 2 e 3
-> 📄 Fonte: [[06-Merge Sort (1).pdf#page=43]]
+### Esempio fuori dal teorema: il gap tra i casi 2 e 3 · [[06-Merge Sort (1).pdf#page=51|p. 47]]
 
 $T(n) = 2T(n/2) + n\lg n$:
 - $a = 2$, $b = 2$, $f(n) = n\lg n$, $n^{\log_b a} = n^{\log_2 2} = n$;
@@ -106,15 +103,15 @@ T(n) &\approx \sum_{i=0}^{\lg n - 1} n(\lg n - i) = n\sum_{k=1}^{\lg n} k && k =
 $$
 > Verifica ([[divide_et_impera.py]]): $T(n)/(n\lg^2 n) = 0.560,\ 0.528,\ 0.513$ per $n = 2^{10}, 2^{20}, 2^{40}$, verso $\frac12$; $T(n)/(n\lg n)$ invece cresce senza limite (5.6, 10.6, 20.5).
 
-### Applicazioni nelle lezioni
+### Applicazioni nelle lezioni · Merge Sort [[06-Merge Sort (1).pdf#page=31|p. 29]], [[06-Merge Sort (1).pdf#page=47|p. 43]] · Quicksort [[07-Quicksort 1.pdf#page=14|p. 14]], [[07-Quicksort 1.pdf#page=15|15]]
 
 | Ricorrenza | $a$, $b$, $f(n)$ | $n^{\log_b a}$ | Caso | Soluzione | Fonte |
-|------------|------------------|----------------|------|-----------|-------|
-| [[merge-sort]]: $2T(n/2) + \Theta(n)$ | 2, 2, $\Theta(n)$ | $n$ | 2 | $\Theta(n\lg n)$ | 🧩 da [[06-Merge Sort (1).pdf#page=27]] |
-| [[quicksort]], caso migliore: $T(n) \le 2T(n/2) + \Theta(n)$ | 2, 2, $\Theta(n)$ | $n$ | 2 | $O(n\lg n)$ | [[07-Quicksort 1.pdf#page=15]] |
-| $3T(\lfloor n/4 \rfloor) + \Theta(n^2)$ | 3, 4, $\Theta(n^2)$ | $n^{0.79}$ | 3 (🧩, regolarità con $c = 3/16$) | $\Theta(n^2)$ | 🧩, confronta [[06-Merge Sort (1).pdf#page=40]] |
+|---|---|---|---|---|---|
+| [[merge-sort]]: $2T(n/2) + \Theta(n)$ | 2, 2, $\Theta(n)$ | $n$ | 2 | $\Theta(n\lg n)$ | 🧩 da p. 27 |
+| [[quicksort]], caso migliore: $T(n) \le 2T(n/2) + \Theta(n)$ | 2, 2, $\Theta(n)$ | $n$ | 2 | $O(n\lg n)$ | p. 15 |
+| $3T(\lfloor n/4 \rfloor) + \Theta(n^2)$ | 3, 4, $\Theta(n^2)$ | $n^{0.79}$ | 3 (🧩, regolarità con $c = 3/16$) | $\Theta(n^2)$ | 🧩, confronta p. 40 |
 
-> 🧩 Il teorema **non** si applica alle ricorrenze con sottoproblemi di dimensione $n - 1$ ($b$ non è una costante $> 1$): ad esempio il caso peggiore di quicksort, $T(n-1) + \Theta(n)$ ([[07-Quicksort 1.pdf#page=14]]), o la [[torre-di-hanoi]]. Per quelle si srotola la ricorrenza ([[equazioni-di-ricorrenza]]).
+> 🧩 Il teorema **non** si applica alle ricorrenze con sottoproblemi di dimensione $n - 1$ ($b$ non è una costante $> 1$): ad esempio il caso peggiore di quicksort, $T(n-1) + \Theta(n)$, o la [[torre-di-hanoi]]. Per quelle si srotola la ricorrenza ([[equazioni-di-ricorrenza]]).
 
 ## Spiegazione
 
@@ -137,10 +134,9 @@ Procedura d'uso (🧩):
 - [[logaritmi-nell-analisi]] — $n^{\log_b a}$ e il cambio di base
 - [[risoluzione-ricorrenze]] — esercizi
 
-## Fonti
+## Fonti · Merge Sort [[06-Merge Sort (1).pdf#page=48|p. 44]], [[06-Merge Sort (1).pdf#page=51|p. 47]] · Quicksort [[07-Quicksort 1.pdf#page=15|p. 15]]
 
 - [[lezione-06-merge-sort]], [[lezione-07-quicksort]]
-- [[06-Merge Sort (1).pdf#page=41]]–[[06-Merge Sort (1).pdf#page=43]], [[07-Quicksort 1.pdf#page=15]]
 
 _Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf e 07-Quicksort.pdf_
 _Aggiornato: 2026-10-10 — link ripuntati alla versione aggiornata delle slide 06-Merge Sort (1).pdf_

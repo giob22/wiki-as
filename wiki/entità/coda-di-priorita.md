@@ -6,9 +6,7 @@ fonti_pdf: ["09-Alberi binari ricerca.pdf#page=2", "09-Alberi binari ricerca.pdf
 
 # Coda di priorità
 
-## Cos'è
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=2]], [[09-Alberi binari ricerca.pdf#page=4]]
+## Cos'è · [[09-Alberi binari ricerca.pdf#page=2|p. 2]], [[09-Alberi binari ricerca.pdf#page=4|p. 4]]
 
 Le code di priorità sono strutture dati che offrono una **flessibilità in più rispetto all'ordinamento**. È importante perché i lavori (*job*) entrano spesso in un sistema a intervalli arbitrari: è più conveniente inserire un nuovo job in una coda di priorità che riordinare tutto a ogni nuovo arrivo (p. 2).
 
@@ -18,9 +16,7 @@ Nella teoria delle code, una coda di priorità è una **struttura dati astratta*
 
 ![[09-alberi-binari-ricerca-p2-code-priorita.png]]
 
-## Operazioni
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=3]]
+## Operazioni · [[09-Alberi binari ricerca.pdf#page=3|p. 3]]
 
 La coda di priorità di base supporta tre operazioni principali:
 - **Insert($Q$, $x$)**: dato un elemento $x$ con chiave $k$, lo inserisce nella coda di priorità $Q$;
@@ -29,14 +25,12 @@ La coda di priorità di base supporta tre operazioni principali:
 
 ![[09-alberi-binari-ricerca-p3-operazioni-coda-priorita.png]]
 
-## Esempio
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=5]] («Implementation of Priority Queue»)
+## Esempio · [[09-Alberi binari ricerca.pdf#page=5|p. 5]]
 
 Input 1, 5, 3, 2, 6, dove un numero più alto ha priorità più alta. La coda è tenuta come sequenza **ordinata per priorità decrescente**:
 
 | Operazione | Contenuto della coda (pq) |
-|------------|---------------------------|
+|---|---|
 | enqueue(1) | 1 |
 | enqueue(5) | 5, 1 |
 | enqueue(3) | 5, 3, 1 |
@@ -45,14 +39,29 @@ Input 1, 5, 3, 2, 6, dove un numero più alto ha priorità più alta. La coda è
 
 ![[09-alberi-binari-ricerca-p5-implementazione-coda-priorita.png]]
 
-## Costo delle operazioni
+## Costo delle operazioni · [[09-Alberi binari ricerca.pdf#page=6|p. 6]]
 
 > 🧩 Derivazione mia per l'implementazione dell'esempio, un [[array]] ordinato con $n$ elementi:
 > - **Insert:** bisogna trovare la posizione e spostare di un posto tutti gli elementi meno prioritari, come nel ciclo interno di [[insertion-sort]]: $O(n)$ nel caso peggiore;
 > - **Find-Maximum:** l'elemento più prioritario è in testa: $O(1)$;
 > - **Delete-Maximum:** $O(1)$ se l'array è tenuto in ordine crescente e si toglie l'ultimo elemento; con l'ordine decrescente della slide (massimo in posizione 1) bisognerebbe spostare tutti gli altri, $O(n)$.
 >
-> Gli [[albero-binario-di-ricerca|alberi binari di ricerca]] possono essere usati anche come coda di priorità ([[09-Alberi binari ricerca.pdf#page=6]]): Find-Minimum e Find-Maximum sono [[tree-minimum-maximum|Tree-Minimum e Tree-Maximum]], Insert è [[tree-insert|Tree-Insert]], Delete-Minimum è una ricerca del minimo seguita da [[tree-delete|Tree-Delete]], tutte in $O(h)$.
+> Gli [[albero-binario-di-ricerca|alberi binari di ricerca]] possono essere usati anche come coda di priorità: Find-Minimum e Find-Maximum sono [[tree-minimum-maximum|Tree-Minimum e Tree-Maximum]], Insert è [[tree-insert|Tree-Insert]], Delete-Minimum è una ricerca del minimo seguita da [[tree-delete|Tree-Delete]], tutte in $O(h)$.
+
+## Realizzazione con un heap · [[10 - Heap - Heapsort.pdf#page=42|p. 42]]
+
+La lezione 10 mostra la realizzazione efficiente: un **max-heap** (min-heap) può realizzare una coda a **massima (minima) priorità** (p. 42). Una coda a massima priorità è una struttura dati che mantiene un insieme $S$ di elementi e supporta:
+
+| Operazione | Significato | Su un max-heap | Costo |
+|---|---|---|---|
+| Insert$(S, x)$ | inserisce $x$ in $S$ | [[max-heap-insert]] | $O(\lg n)$ |
+| Maximum$(S)$ (Minimum) | restituisce l'elemento con la chiave più grande (piccola) | Heap-Maximum, in [[heap-extract-max]] | $\Theta(1)$ |
+| Extract-Max$(S)$ (Extract-Min) | rimuove e restituisce l'elemento con la chiave più grande (piccola) | Heap-Extract-Max, in [[heap-extract-max]] | $O(\lg n)$ |
+| Increase-Key$(S, x, k)$ (Decrease-Key) | incrementa (decrementa) la chiave di $x$ al valore $k$ | [[heap-increase-key]] | $O(\lg n)$ |
+
+![[10-heap-heapsort-p42-coda-priorita.png]]
+
+> 🧩 Confronto con le realizzazioni già viste: l'[[array]] ordinato dell'esempio di p. 5 della lezione 09 ha Insert $O(n)$; il [[albero-binario-di-ricerca|BST]] ha tutte le operazioni in $O(h)$, che può essere $n$; il [[heap]] garantisce $O(\lg n)$ per Insert, Extract-Max e Increase-Key perché la sua altezza è sempre $\lfloor \lg n floor$, e Maximum in $\Theta(1)$.
 
 ## Connessioni
 
@@ -60,13 +69,13 @@ Input 1, 5, 3, 2, 6, dove un numero più alto ha priorità più alta. La coda è
 - [[tipo-di-dato-astratto]] — le operazioni sono quelle del tipo astratto, l'implementazione può cambiare
 - [[albero-binario-di-ricerca]] — un'implementazione con operazioni $O(h)$
 - [[ordinamento]] — una coda di priorità evita di riordinare a ogni inserimento
+- [[heap]] — la realizzazione con tutte le operazioni in $O(\lg n)$ (lezione 10)
 
-## Fonti
+## Fonti · [[09-Alberi binari ricerca.pdf#page=2|p. 2]], [[09-Alberi binari ricerca.pdf#page=5|p. 5]], [[10 - Heap - Heapsort.pdf#page=42|p. 42]]
 
-- [[lezione-09-alberi-binari-di-ricerca]]
-- [[09-Alberi binari ricerca.pdf#page=2]]–[[09-Alberi binari ricerca.pdf#page=5]]
+- [[lezione-09-alberi-binari-di-ricerca]], [[lezione-10-heap-e-heapsort]]
 
-_Aggiornato: 2026-10-28 — ingest 09-Alberi binari ricerca.pdf_
+_Aggiornato: 2026-11-26 — realizzazione con un heap (ingest 10 - Heap - Heapsort.pdf); 2026-10-28 — ingest 09-Alberi binari ricerca.pdf_
 
 <!-- nav:inizio -->
 ---

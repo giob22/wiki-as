@@ -7,32 +7,30 @@ fonti_pdf: ["03-Analisi di algoritmi.pdf#page=8", "03-Analisi di algoritmi.pdf#p
 
 # Iterazione e ricorsione
 
-## Definizione
-
-> 📄 Fonte: [[03-Analisi di algoritmi.pdf#page=8]], [[03-Analisi di algoritmi.pdf#page=9]]
+## Definizione · [[03-Analisi di algoritmi.pdf#page=7|p. 7]]–[[03-Analisi di algoritmi.pdf#page=9|9]]
 
 Due stili con lo **stesso potere espressivo**: la scelta dipende da chiarezza, costi e vincoli.
 
-| | Approccio iterativo ([[03-Analisi di algoritmi.pdf#page=8]]) | Approccio ricorsivo ([[03-Analisi di algoritmi.pdf#page=9]]) |
-|--|--|--|
+|  | Approccio iterativo | Approccio ricorsivo |
+|---|---|---|
 | Meccanismo | usa cicli (`for`, `while`) e **stato esplicito** passo dopo passo | definisce il problema per **auto-somiglianza**: casi base + chiamate a sottoproblemi |
 | Costi | in genere più **prevedibile** su tempo e memoria; poco overhead | **overhead di chiamata** e rischio di **stack overflow** senza tail-call/limiti |
 | Quando | ottimo quando l'aggiornamento è lineare e la condizione di arresto è semplice | codice spesso più chiaro per **divide-et-impera** e **backtracking** |
 | Altro | facile da ottimizzare e testare; adatto ad ambienti con limiti di stack | elegante, ma va progettata la **combinazione dei risultati** |
 
-La sezione è introdotta dall'intestazione «Caratterizzazione degli algoritmi» ([[03-Analisi di algoritmi.pdf#page=7]]).
+La sezione è introdotta dall'intestazione «Caratterizzazione degli algoritmi».
 
-## Spiegazione
+## Spiegazione · [[03-Analisi di algoritmi.pdf#page=10|p. 10]], [[03-Analisi di algoritmi.pdf#page=11|11]], [[03-Analisi di algoritmi.pdf#page=28|p. 28]], [[03-Analisi di algoritmi.pdf#page=33|p. 33]]
 
-Esempio della fonte: somma dei primi $n$ numeri $1 + 2 + \dots + n$ ([[03-Analisi di algoritmi.pdf#page=10]], [[03-Analisi di algoritmi.pdf#page=11]]).
+Esempio della fonte: somma dei primi $n$ numeri $1 + 2 + \dots + n$.
 
 ![[03-analisi-algoritmi-p11-somma-iterativa-ricorsiva.png]]
-*Le due versioni affiancate. ([[03-Analisi di algoritmi.pdf#page=11]])*
+*Le due versioni affiancate.*
 
 | | [[somma-iterativa]] | [[somma-ricorsiva]] |
-|--|--|--|
+|---|---|---|
 | Correttezza si prova con | [[invariante-di-ciclo]] | [[correttezza-per-induzione]] |
-| Tempo | $2n + 4 = O(n)$ ([[03-Analisi di algoritmi.pdf#page=28]]) | $1 + cn = O(n)$ ([[03-Analisi di algoritmi.pdf#page=33]]) |
+| Tempo | $2n + 4 = O(n)$ | $1 + cn = O(n)$ |
 | Spazio (🧩 mio) | $\Theta(1)$ | $\Theta(n)$ — $n+1$ record di attivazione sulla pila |
 
 > 🧩 Derivazione mia: la colonna «spazio» spiega concretamente il «rischio di stack overflow»: per $n$ molto grande la versione ricorsiva esaurisce la pila di sistema, quella iterativa no (dettagli in [[tempo-di-esecuzione]] § complessità spaziale).
@@ -47,10 +45,9 @@ La forma dell'algoritmo determina **come** se ne dimostra la correttezza (invari
 - [[invariante-di-ciclo]], [[correttezza-per-induzione]] — le due tecniche di prova
 - [[tempo-di-esecuzione]], [[equazioni-di-ricorrenza]] — le due tecniche di analisi
 
-## Fonti
+## Fonti · [[03-Analisi di algoritmi.pdf#page=7|p. 7]], [[03-Analisi di algoritmi.pdf#page=11|p. 11]]
 
 - [[lezione-03-analisi-di-algoritmi]]
-- [[03-Analisi di algoritmi.pdf#page=7]]–[[03-Analisi di algoritmi.pdf#page=11]]
 
 _Aggiornato: 2026-09-26 — ingest 03-Analisi di algoritmi.pdf_
 

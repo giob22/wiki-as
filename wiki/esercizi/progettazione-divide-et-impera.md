@@ -6,9 +6,9 @@ difficoltà: media
 
 # Progettazione di algoritmi divide et impera
 
-## Metodo
+## Metodo · Merge Sort [[06-Merge Sort (1).pdf#page=26|p. 24]] · Quicksort [[07-Quicksort 1.pdf#page=3|p. 3]]
 
-> 🧩 Procedura mia, ricavata dallo schema delle lezioni 06–07 ([[06-Merge Sort (1).pdf#page=23]], [[07-Quicksort 1.pdf#page=3]]):
+> 🧩 Procedura mia, ricavata dallo schema delle lezioni 06–07:
 1. **Specifica:** input, output, operazioni ammesse (es. solo confronti dado–bullone).
 2. **Divide:** come si ottengono sottoproblemi **dello stesso tipo** e più piccoli; quanti ($a$) e di che dimensione ($n/b$, oppure $n - 1$).
 3. **Conquer:** chiamate ricorsive; **caso base** esplicito.
@@ -24,8 +24,8 @@ difficoltà: media
 
 ## Casi svolti
 
-### Caso 1 — Torre di Hanoi
-**Traccia:** [[06-Merge Sort (1).pdf#page=2]]–[[06-Merge Sort (1).pdf#page=5]] (S&T: problema e domanda a p. 3, approccio divide et impera a p. 4, sequenza delle mosse per tre dischi a p. 5).
+### Caso 1 — Torre di Hanoi · [[06-Merge Sort (1).pdf#page=2|p. 2]], [[06-Merge Sort (1).pdf#page=5|p. 5]]
+**Traccia:** p. 2–p. 5 (S&T: problema e domanda a p. 3, approccio divide et impera a p. 4, sequenza delle mosse per tre dischi a p. 5).
 
 > La slide di p. 4 indica la strada: spostare la sotto-torre dei dischi più piccoli su un lato, con caso base lo spostamento di un solo disco, e poi combinare le soluzioni. I passi sotto la rendono precisa.
 >
@@ -38,10 +38,10 @@ difficoltà: media
 > 6. **Correttezza:** induzione su $n$ ([[torre-di-hanoi]] § Correttezza).
 > 7. **Complessità:** $M(n) = 2M(n-1) + 1$, $M(0) = 0$ ⇒ $M(n) = 2^n - 1$ (srotolamento e serie geometrica, in [[torre-di-hanoi]] § Complessità). Il teorema dell'esperto **non** si applica: la dimensione cala di 1, non di un fattore $b$.
 
-**Risultato:** 7 mosse per 3 dischi, come nella figura di [[06-Merge Sort (1).pdf#page=5]]; $\Theta(2^n)$ in generale.
+**Risultato:** 7 mosse per 3 dischi, come nella figura di p. 5; $\Theta(2^n)$ in generale.
 
-### Caso 2 — Nuts and Bolts
-**Traccia:** [[07-Quicksort 1.pdf#page=25]] (algoritmo $O(n^2)$, poi randomizzato $O(n\log n)$ atteso).
+### Caso 2 — Nuts and Bolts · [[07-Quicksort 1.pdf#page=25|p. 25]]
+**Traccia:** p. 25 (algoritmo $O(n^2)$, poi randomizzato $O(n\log n)$ atteso).
 
 > 🧩 Svolgimento mio.
 > 1. **Specifica:** $n$ dadi e $n$ bulloni di larghezze diverse, a coppie corrispondenti; unico test ammesso dado contro bullone (più largo / più stretto / combacia).
@@ -56,8 +56,8 @@ Pseudocodice, animazioni e misure in [[nuts-and-bolts]].
 
 **Risultato:** $O(n^2)$ deterministico; $O(n\log n)$ atteso con il pivot casuale.
 
-### Caso 3 — Massimo sottoarray
-**Traccia:** [[06-Merge Sort (1).pdf#page=26]] (S&T, solo titolo e rimando al libro, cap. 4.1).
+### Caso 3 — Massimo sottoarray · [[06-Merge Sort (1).pdf#page=30|p. 28]]
+**Traccia:** p. 28 (S&T, solo titolo e rimando al libro, cap. 4.1).
 
 Non svolto: le slide non danno né il testo né la soluzione. Enunciato (📚 Cormen §4.1) in [[massimo-sottoarray]]. TODO: da espandere se una lezione presenterà la soluzione.
 
@@ -74,5 +74,5 @@ _Aggiornato: 2026-10-14 — link ripuntati alla versione aggiornata delle slide 
 
 <!-- nav:inizio -->
 ---
-**Lezione 07 · pagina 7 di 7** · ← [[nuts-and-bolts|Nuts and Bolts (dadi e bulloni)]] · [[lezioni|Indice]] · [[lezione-08-grafi-e-alberi|Lezione 08: introduzione e riepilogo]] →
+**Lezione 07 · pagina 7 di 7** · ← [[nuts-and-bolts|Nuts and Bolts (dadi e bulloni) · 07-Quicksort 1.pdf#page=24p. 24]] · [[lezioni|Indice]] · [[lezione-08-grafi-e-alberi|Lezione 08: introduzione e riepilogo]] →
 <!-- nav:fine -->

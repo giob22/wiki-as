@@ -7,24 +7,18 @@ fonti_pdf: ["09-Alberi binari ricerca.pdf#page=8", "09-Alberi binari ricerca.pdf
 
 # Inorder-Tree-Walk (visita in ordine)
 
-## Problema risolto
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=8]]
+## Problema risolto · [[09-Alberi binari ricerca.pdf#page=8|p. 8]]
 
 La proprietà di un [[albero-binario-di-ricerca]] consente di **stampare tutte le chiavi in ordine crescente** mediante una visita in ordine dell'albero.
 
 - **Input:** un nodo $x$ (per l'intero albero, la radice).
 - **Output:** le chiavi del sottoalbero di radice $x$, stampate in ordine non decrescente.
 
-## Idea
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=9]]
+## Idea · [[09-Alberi binari ricerca.pdf#page=9|p. 9]]
 
 Visita in ordine: **sinistra → nodo → destra**. Prima si visita tutto il sottoalbero sinistro, poi si stampa la chiave del nodo, poi si visita il sottoalbero destro.
 
-## Pseudocodice
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=8]] (riportato fedelmente, numeri di riga miei)
+## Pseudocodice · [[09-Alberi binari ricerca.pdf#page=8|p. 8]]
 
 ```
 Inorder-Tree-Walk (x)
@@ -38,19 +32,17 @@ Inorder-Tree-Walk (x)
 
 > ⚠️ Contraddizione (di notazione): `then` e l'assenza di blocchi espliciti sono nello stile della 2ª edizione del Cormen, non nelle [[pseudocodice|convenzioni del corso]]. Le righe 2–4 sono tutte il corpo dell'`if`.
 
-## Esempio di esecuzione
+## Esempio di esecuzione · [[09-Alberi binari ricerca.pdf#page=7|p. 7]], [[09-Alberi binari ricerca.pdf#page=9|p. 9]]
 
 ![[animazione-inorder-tree-walk.svg]]
-> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo sull'albero di [[09-Alberi binari ricerca.pdf#page=7]] (radice 5; 3 con figli 2 e 5; 7 con figlio destro 8). Si vedono la chiamata attiva ($x$), la pila delle chiamate, le chiavi già stampate (in verde) e il contatore delle chiamate, comprese quelle su `NIL`.
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=9]] (fotogramma iniziale di un'animazione della slide: «chiavi stampate:» ancora vuoto)
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo sull'albero di p. 7 (radice 5; 3 con figli 2 e 5; 7 con figlio destro 8). Si vedono la chiamata attiva ($x$), la pila delle chiamate, le chiavi già stampate (in verde) e il contatore delle chiamate, comprese quelle su `NIL`.
 
 ![[09-alberi-binari-ricerca-p9-visita-in-ordine.png]]
 
 > 🧩 Traccia mia (verificata con [[grafi_e_alberi.py]]):
 
 | Chiamata su | Cosa fa | Stampato finora |
-|-------------|---------|-----------------|
+|---|---|---|
 | 5 | scende a sinistra | — |
 | 3 | scende a sinistra | — |
 | 2 | sinistra NIL, stampa 2, destra NIL | 2 |
@@ -62,16 +54,16 @@ Inorder-Tree-Walk (x)
 
 Chiamate totali: 13, di cui 6 su nodi e 7 su `NIL`.
 
-## Correttezza
+## Correttezza · [[09-Alberi binari ricerca.pdf#page=7|p. 7]]
 
 > 🧩 Derivazione mia — [[correttezza-per-induzione]] sul numero di nodi $n$ del sottoalbero di radice $x$. Post-condizione: le chiavi del sottoalbero sono stampate in ordine non decrescente.
 > - **Base** ($n = 0$, $x = $ `NIL`): non si stampa nulla, corretto.
-> - **Passo:** i sottoalberi sinistro e destro hanno meno di $n$ nodi, quindi per ipotesi induttiva la riga 2 stampa in ordine le chiavi di sinistra e la riga 4 quelle di destra. Per la proprietà del BST ([[09-Alberi binari ricerca.pdf#page=7]]) ogni chiave di sinistra è $\le key[x]$ e ogni chiave di destra è $\ge key[x]$. Stampare sinistra, poi $key[x]$, poi destra dà quindi una sequenza ordinata.
+> - **Passo:** i sottoalberi sinistro e destro hanno meno di $n$ nodi, quindi per ipotesi induttiva la riga 2 stampa in ordine le chiavi di sinistra e la riga 4 quelle di destra. Per la proprietà del BST ogni chiave di sinistra è $\le key[x]$ e ogni chiave di destra è $\ge key[x]$. Stampare sinistra, poi $key[x]$, poi destra dà quindi una sequenza ordinata.
 > - **Terminazione:** ogni chiamata ricorsiva lavora su un sottoalbero strettamente più piccolo.
 
-## Complessità
+## Complessità · [[09-Alberi binari ricerca.pdf#page=9|p. 9]]
 
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=9]] — «Dimostriamo che impiega un tempo $\Theta(n)$» (senza svolgimento)
+> 📄 Fonte: p. 9 — «Dimostriamo che impiega un tempo $\Theta(n)$» (senza svolgimento)
 
 ### Derivazione — Inorder-Tree-Walk è $\Theta(n)$
 
@@ -118,10 +110,9 @@ $$
 - [[metodo-di-sostituzione]] — il metodo usato per il $\Theta(n)$
 - [[correttezza-per-induzione]] — la correttezza per induzione sulla dimensione del sottoalbero
 
-## Fonti
+## Fonti · [[09-Alberi binari ricerca.pdf#page=8|p. 8]], [[09-Alberi binari ricerca.pdf#page=9|9]]
 
 - [[lezione-09-alberi-binari-di-ricerca]]
-- [[09-Alberi binari ricerca.pdf#page=8]], [[09-Alberi binari ricerca.pdf#page=9]]
 
 _Aggiornato: 2026-10-28 — ingest 09-Alberi binari ricerca.pdf_
 

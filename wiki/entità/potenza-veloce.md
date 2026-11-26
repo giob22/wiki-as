@@ -2,7 +2,7 @@
 tipo: entità
 categoria: algoritmo
 paradigma: "ricorsivo (dimezzamento)"
-fonti_pdf: ["05-Insertion sort.pdf#page=32"]
+fonti_pdf: ["05-Insertion sort.pdf#page=37"]
 ---
 
 # power(a, n) — potenza veloce (fast exponentiation)
@@ -11,17 +11,13 @@ fonti_pdf: ["05-Insertion sort.pdf#page=32"]
 
 Calcolare $a^n$ con $n$ intero $\ge 0$ usando poche moltiplicazioni.
 
-## Idea
-
-> 📄 Fonte: [[05-Insertion sort.pdf#page=32]]
+## Idea · [[05-Insertion sort.pdf#page=37|p. 37]]
 
 $$ a^n = \left(a^{n/2}\right)^2 \ \text{se } n \text{ è pari}, \qquad a^n = a\left(a^{\lfloor n/2 \rfloor}\right)^2 \ \text{se } n \text{ è dispari} $$
 
 «This requires $O(\lg n)$ mult.»
 
-## Pseudocodice
-
-> 📄 Fonte: [[05-Insertion sort.pdf#page=32]] (righe numerate da me)
+## Pseudocodice · [[05-Insertion sort.pdf#page=37|p. 37]]
 
 ```
 function power(a,n)
@@ -36,11 +32,10 @@ function power(a,n)
 ![[animazione-potenza-veloce.svg]]
 > 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, il calcolo di $2^{13}$: le chiamate scendono sulla pila dimezzando $n$ (13 → 6 → 3 → 1 → 0), poi risalgono con i valori e il contatore delle moltiplicazioni (7 in tutto, invece delle 12 del metodo ingenuo). Ogni fotogramma riporta in basso il numero del passo e cosa succede.
 
-
 > 🧩 Traccia mia, $a^{13}$ ($13 = 1101_2$):
 
 | chiamata | $\lfloor n/2 \rfloor$ | $x$ | $n$ pari? | risultato |
-|----------|----------------------|-----|-----------|-----------|
+|---|---|---|---|---|
 | power(a, 0) | — | — | — | $1$ |
 | power(a, 1) | 0 | $1$ | no | $a \cdot 1^2 = a$ |
 | power(a, 3) | 1 | $a$ | no | $a \cdot a^2 = a^3$ |
@@ -75,11 +70,10 @@ $$
 - [[equazioni-di-ricorrenza]] — ricorrenza con $\lfloor n/2 \rfloor$ invece di $n - 1$
 - [[somma-ricorsiva]] — confronto: lì la misura cala di 1 ($\Theta(n)$ chiamate), qui si dimezza ($\Theta(\lg n)$)
 
-## Fonti
+## Fonti · Merge Sort [[06-Merge Sort (1).pdf#page=51|p. 51]] · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=37|p. 37]]
 
 - [[lezione-05-insertion-sort]]
-- le stesse slide sono riprese nella versione aggiornata della lezione 06 ([[lezione-06-merge-sort]]): [[06-Merge Sort (1).pdf#page=47]]
-- [[05-Insertion sort.pdf#page=32]]
+- le stesse slide sono riprese nella versione aggiornata della lezione 06 ([[lezione-06-merge-sort]]): p. 47
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

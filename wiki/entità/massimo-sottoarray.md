@@ -1,14 +1,12 @@
 ---
 tipo: entità
 categoria: problema
-fonti_pdf: ["06-Merge Sort (1).pdf#page=26"]
+fonti_pdf: ["06-Merge Sort (1).pdf#page=28"]
 ---
 
 # Problema del massimo sottoarray
 
-## Definizione formale
-
-> 📄 Fonte: [[06-Merge Sort (1).pdf#page=26]]
+## Definizione formale · [[06-Merge Sort (1).pdf#page=30|p. 28]]
 
 La slide è un «Stop & Think» che contiene solo il titolo, «Problema del massimo sottoarray», e il rimando al **Capitolo 4.1 del libro di testo**. Non ci sono testo del problema, algoritmo o analisi.
 
@@ -27,10 +25,9 @@ TODO: da espandere se una lezione presenterà la soluzione. Le slide non la dann
 - [[divide-et-impera]] — il problema è posto nella lezione sul paradigma, tra merge sort e le ricorrenze
 - [[progettazione-divide-et-impera]] — esercizi di progettazione della stessa lezione
 
-## Fonti
+## Fonti · [[06-Merge Sort (1).pdf#page=30|p. 28]]
 
 - [[lezione-06-merge-sort]]
-- [[06-Merge Sort (1).pdf#page=26]]
 
 _Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf_
 _Aggiornato: 2026-10-10 — link ripuntati alla versione aggiornata delle slide 06-Merge Sort (1).pdf_

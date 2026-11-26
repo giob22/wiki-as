@@ -2,7 +2,7 @@
 tipo: entità
 categoria: algoritmo
 paradigma: "forza bruta"
-fonti_pdf: ["05-Insertion sort.pdf#page=31"]
+fonti_pdf: ["05-Insertion sort.pdf#page=36"]
 ---
 
 # findmatch — pattern matching a forza bruta
@@ -15,9 +15,7 @@ fonti_pdf: ["05-Insertion sort.pdf#page=31"]
 
 Provare **ogni posizione di partenza** $i$ del testo e confrontare carattere per carattere $t[i..i+m-1]$ con $p$, fermandosi al primo carattere diverso.
 
-## Pseudocodice
-
-> 📄 Fonte: [[05-Insertion sort.pdf#page=31]] (codice C riportato fedelmente; righe numerate da me)
+## Pseudocodice · [[05-Insertion sort.pdf#page=36|p. 36]]
 
 ```c
 int findmatch(char *p, char *t) {
@@ -71,13 +69,12 @@ Differenze rispetto alla versione del PDF:
 
 > 🧩 Le due versioni sono **equivalenti**: eseguono la stessa sequenza di confronti tra caratteri e restituiscono lo stesso valore (verificato su 2005 coppie $p$, $t$ con [[stringhe_e_logaritmi.py]]). Cambia solo come si scrive l'analisi: vedi «Complessità della versione con `while`» sotto. L'animazione qui sotto vale per entrambe.
 
-## Esempio di esecuzione
+## Esempio di esecuzione · [[05-Insertion sort.pdf#page=35|p. 35]]
 
 ![[animazione-findmatch.svg]]
-> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, sull'esempio di p. 30 ($p$ = abba, $t$ = aababba): il pattern scorre sotto il testo, ogni confronto di caratteri è verde se uguale e rosso se diverso, fino all'occorrenza in posizione 3 dopo 10 confronti. Ogni fotogramma riporta in basso il numero del passo e cosa succede.
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, sull'esempio di p. 35 ($p$ = abba, $t$ = aababba): il pattern scorre sotto il testo, ogni confronto di caratteri è verde se uguale e rosso se diverso, fino all'occorrenza in posizione 3 dopo 10 confronti. Ogni fotogramma riporta in basso il numero del passo e cosa succede.
 
-
-Sull'esempio di [[05-Insertion sort.pdf#page=30]] ($p = abba$, $t = aababba$, $n = 7$, $m = 4$): la riga 5 prova $i = 0, 1, 2, 3$ (fino a $n - m = 3$); il `while` confronta 2, 3, 1 e 4 caratteri; a $i = 3$ si ha $j = m$ e la funzione restituisce 3. Tabella dei tentativi in [[substring-pattern-matching]].
+Sull'esempio di p. 35 ($p = abba$, $t = aababba$, $n = 7$, $m = 4$): la riga 5 prova $i = 0, 1, 2, 3$ (fino a $n - m = 3$); il `while` confronta 2, 3, 1 e 4 caratteri; a $i = 3$ si ha $j = m$ e la funzione restituisce 3. Tabella dei tentativi in [[substring-pattern-matching]].
 
 ## Correttezza
 
@@ -89,9 +86,9 @@ Sull'esempio di [[05-Insertion sort.pdf#page=30]] ($p = abba$, $t = aababba$, $n
 > - **Conclusione:** si esce perché `trovato` $= 1$ (allora $i$ è la **prima** occorrenza, per l'invariante) oppure perché $i > n - m$ (allora $p$ non compare in nessuna posizione ammissibile e si restituisce $-1$).
 > - **Terminazione:** la funzione variante $v = (n - m + 1 - i) + (1 - \texttt{trovato})$ è $\ge 0$ e cala di 1 a ogni iterazione (o cresce $i$, o `trovato` passa da 0 a 1).
 
-## Complessità
+## Complessità · [[05-Insertion sort.pdf#page=36|p. 36]]
 
-> 📄 Fonte: [[05-Insertion sort.pdf#page=31]] — consegna «Valutare l'efficienza asintotica» (senza soluzione)
+> 📄 Consegna «Valutare l'efficienza asintotica» (senza soluzione)
 
 > 🧩 Derivazione mia:
 $$
@@ -111,9 +108,9 @@ $$
 >
 > **Ipotesi:** [[modello-ram]], confronto di due caratteri in tempo costante.
 
-### Complessità della versione con `while`
+### Complessità della versione con `while` · [[05-Insertion sort.pdf#page=21|p. 19]]
 
-> 🧩 Derivazione mia — perché il `while` rende l'analisi più pulita. Nelle tabelle costo × numero di esecuzioni ([[analisi-del-costo-riga-per-riga]], [[05-Insertion sort.pdf#page=17]]) si usa la regola «**la guardia di un ciclo viene valutata una volta in più delle iterazioni**». Nella versione con `for` la regola vale solo se $p$ **non** compare: se compare in posizione $q$, il `return` della riga 9 esce dal ciclo senza un ultimo test, e la guardia della riga 5 è valutata $q + 1$ volte, non $q + 2$; inoltre la riga 11 viene eseguita o no a seconda dell'esito. Con il `while` la regola vale **sempre**, perché l'unica uscita è la guardia.
+> 🧩 Derivazione mia — perché il `while` rende l'analisi più pulita. Nelle tabelle costo × numero di esecuzioni ([[analisi-del-costo-riga-per-riga]]) si usa la regola «**la guardia di un ciclo viene valutata una volta in più delle iterazioni**». Nella versione con `for` la regola vale solo se $p$ **non** compare: se compare in posizione $q$, il `return` della riga 9 esce dal ciclo senza un ultimo test, e la guardia della riga 5 è valutata $q + 1$ volte, non $q + 2$; inoltre la riga 11 viene eseguita o no a seconda dell'esito. Con il `while` la regola vale **sempre**, perché l'unica uscita è la guardia.
 
 Simboli: $k$ = numero di iterazioni del `while` esterno; $t_i$ = numero di test del `while` interno (riga 9) nell'iterazione con indice $i$ (stesso ruolo di $t_j$ in [[insertion-sort]]).
 
@@ -125,7 +122,7 @@ $$
 ($t_i = m + 1$ solo quando $p$ compare in $i$: $m$ test veri e quello con $j = m$; se c'è un carattere diverso, $t_i$ = caratteri uguali + 1.)
 
 | Riga | Costo | Esecuzioni |
-|------|-------|------------|
+|---|---|---|
 | 3–6 | $c_3, \dots, c_6$ | 1 (più il costo di `strlen`, righe 4–5) |
 | 7 | $c_7$ | $k + 1$ |
 | 8 | $c_8$ | $k$ |
@@ -147,7 +144,7 @@ $$
 
 Sull'istanza peggiore della sezione precedente ($t = a^n$, $p = a^{m-1}b$): $k = n - m + 1$ e $t_i = m$ per ogni $i$, quindi $\sum_i t_i = (n - m + 1)\,m$ e il limite è raggiunto: $\Theta((n - m + 1)\,m)$, cioè $\Theta(n^2)$ per $m \approx n/2$. Stesso risultato della versione con `for`.
 
-**Sanity check** ([[stringhe_e_logaritmi.py]]): istanza peggiore con $n = 1000$, $m = 500$: $k = 501$, test del `while` interno $= 250\,500 = (n - m + 1)\,m$; $p$ in posizione 0: $k = 1$, test $= m + 1$; esempio di p. 30: $k = 4$, 11 test (i 10 confronti di caratteri più il test finale con $j = m$).
+**Sanity check** ([[stringhe_e_logaritmi.py]]): istanza peggiore con $n = 1000$, $m = 500$: $k = 501$, test del `while` interno $= 250\,500 = (n - m + 1)\,m$; $p$ in posizione 0: $k = 1$, test $= m + 1$; esempio di p. 35: $k = 4$, 11 test (i 10 confronti di caratteri più il test finale con $j = m$).
 **Ipotesi:** [[modello-ram]], confronto di caratteri in tempo costante; il costo di `strlen` (lineare in $n + m$) è a parte, come nella versione con `for`.
 
 ## Connessioni
@@ -155,11 +152,10 @@ Sull'istanza peggiore della sezione precedente ($t = a^n$, $p = a^{m-1}b$): $k =
 - [[substring-pattern-matching]] — il problema
 - [[tempo-di-esecuzione]], [[casi-di-complessita]] — il costo dipende sia da $n$ sia da $m$ e dall'istanza
 
-## Fonti
+## Fonti · Merge Sort [[06-Merge Sort (1).pdf#page=49|p. 49]], [[06-Merge Sort (1).pdf#page=50|50]] · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=35|p. 35]], [[05-Insertion sort.pdf#page=36|36]]
 
 - [[lezione-05-insertion-sort]]
-- le stesse slide sono riprese nella versione aggiornata della lezione 06 ([[lezione-06-merge-sort]]): [[06-Merge Sort (1).pdf#page=45]], [[06-Merge Sort (1).pdf#page=46]]
-- [[05-Insertion sort.pdf#page=30]], [[05-Insertion sort.pdf#page=31]]
+- le stesse slide sono riprese nella versione aggiornata della lezione 06 ([[lezione-06-merge-sort]]): p. 45, p. 46
 
 _Aggiornato: 2026-09-30 — ingest 05-Insertion sort.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

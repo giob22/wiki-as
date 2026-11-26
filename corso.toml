@@ -1,0 +1,29 @@
+# corso.toml — dati del corso e configurazione del sito di studio.
+#
+# Lo leggono gli script in output/ (crea_sito.py, crea_pdf.py, riferimenti_nei_titoli.py).
+# Le lezioni del sito si ricavano da sole da wiki/corso-completo.md (ogni "## Lezione N — titolo");
+# qui sotto si aggiungono solo i dati in più (descrizione breve, approfondimenti, esclusioni).
+
+[corso]
+nome = "Algoritmi e Strutture Dati"
+sigla = "as"
+descrizione = "LM Ingegneria Informatica, UNINA, a.a. 2026/27, Prof. Stefano Marrone (parte ASD del corso integrato ASD + ML); esame: unica seduta dopo ML (opzione A) oppure ASD a fine modulo (opzione B), voto 50 % ASD e 50 % ML"
+
+[sito]
+# Testo introduttivo dell'indice (Markdown, formule ammesse).
+intro = "Appunti del corso, lezione per lezione. Ogni pagina riporta ciò che c'è nei PDF delle lezioni, nell'ordine delle slide, con in fondo le spiegazioni e le dimostrazioni passo-passo e le domande da esame."
+# Etichetta del primo elemento delle «briciole» (es. "Intercorso", "Esame", "Corso").
+briciola = "Corso"
+# Lezioni da pubblicare: "tutte", oppure un elenco di numeri (es. [3, 4, 5, 7] per un sito d'intercorso).
+lezioni = "tutte"
+# Righe in più nella legenda «Come si legge» dell'indice (Markdown), es. lezioni escluse e perché.
+note = []
+
+# Nome corto di ogni PDF, usato nei titoli quando una sezione cita più file (riferimenti_nei_titoli.py).
+# Le lezioni 06 e 07 hanno una versione aggiornata (la vecchia resta in raw/ come «versione precedente»).
+[pdf_corti]
+"06-Merge Sort (1).pdf" = "Merge Sort"
+"06-Merge Sort.pdf" = "Merge Sort (vecchia)"
+"07-Quicksort 1.pdf" = "Quicksort"
+"07-Quicksort.pdf" = "Quicksort (vecchia)"
+"a1-indicazioni_psuedocodice.pdf" = "Pseudocodice"

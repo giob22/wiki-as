@@ -7,29 +7,29 @@ fonti_pdf: ["02-Notazione asintotica.pdf#page=30", "02-Notazione asintotica.pdf#
 
 # Dominanza asintotica, little-o e crescita delle funzioni
 
-## Definizione
+## Definizione · [[02-Notazione asintotica.pdf#page=34|p. 34]], [[02-Notazione asintotica.pdf#page=36|p. 36]], [[02-Notazione asintotica.pdf#page=37|37]]
 
-> 📄 Fonte: [[02-Notazione asintotica.pdf#page=34]] — *Testing Dominance*
+> 📄 Fonte: p. 34 — *Testing Dominance*
 
 $f(n)$ **domina** $g(n)$ se
 $$ \lim_{n\to\infty} \frac{g(n)}{f(n)} = 0 $$
 il che equivale a dire $g(n) = o(f(n))$. Il **little-oh** significa «cresce **strettamente** più lentamente di».
 
-Notazione: $f \gg g$ indica che $f$ domina $g$ ([[02-Notazione asintotica.pdf#page=36]], [[02-Notazione asintotica.pdf#page=37]]).
+Notazione: $f \gg g$ indica che $f$ domina $g$.
 
-## Formule
+## Formule · [[02-Notazione asintotica.pdf#page=35|p. 35]]–[[02-Notazione asintotica.pdf#page=37|37]]
 
-> 📄 Fonte: [[02-Notazione asintotica.pdf#page=35]] — *Properties of Dominance*
+> 📄 Fonte: p. 35 — *Properties of Dominance*
 
 - $n^a$ domina $n^b$ se $a > b$, poiché $\displaystyle\lim_{n\to\infty} n^b / n^a = n^{b-a} \to 0$.
 - $n^a + o(n^a)$ **non** domina $n^a$, poiché $\displaystyle\lim_{n\to\infty} n^a / (n^a + o(n^a)) \to 1$.
 
-> 📄 Fonte: [[02-Notazione asintotica.pdf#page=36]] — classifica di base
+> 📄 Classifica di base
 
 > 🧮 Formula chiave:
 $$ n! \gg 2^n \gg n^3 \gg n^2 \gg n \log n \gg n \gg \log n \gg 1 $$
 
-> 📄 Fonte: [[02-Notazione asintotica.pdf#page=37]] — *Advanced Dominance Rankings* (funzioni che compaiono in analisi più sofisticate di quelle del corso)
+> 📄 Fonte: p. 37 — *Advanced Dominance Rankings* (funzioni che compaiono in analisi più sofisticate di quelle del corso)
 $$
 n! \gg c^n \gg n^3 \gg n^2 \gg n^{1+\epsilon} \gg n\log n \gg n \gg \sqrt n \gg \log^2 n \gg \log n \gg \frac{\log n}{\log\log n} \gg \log\log n \gg \alpha(n) \gg 1
 $$
@@ -37,8 +37,7 @@ $$
 
 ## Derivazioni
 
-### Derivazione — le due proprietà di p. 35
-**Fonte:** [[02-Notazione asintotica.pdf#page=35]]
+### Derivazione — le due proprietà di p. 35 · [[02-Notazione asintotica.pdf#page=35|p. 35]]
 
 $$
 \begin{aligned}
@@ -53,20 +52,20 @@ Un limite pari a 1 (diverso da 0) significa che le due funzioni crescono allo st
 
 > 🧩 Derivazione mia (collegamento con $\Theta$): se $\lim g/f = L$ con $0 < L < \infty$, allora per $n$ grande $\frac{L}{2} f \le g \le 2L f$, cioè $g = \Theta(f)$. Se $L = 0$, $g = o(f)$ e quindi $g = O(f)$ ma $g \ne \Omega(f)$.
 
-### Derivazione — razzo contro vela solare
-**Fonte:** [[02-Notazione asintotica.pdf#page=30]]: il razzo raggiunge un'alta velocità prima di finire il carburante, poi prosegue a velocità costante $v_r$; la vela solare accelera lentamente per la radiazione/vento solare, ma la sua velocità $v_s = a\,t$ deve prima o poi superare quella del razzo. «This is asymptotic dominance in action.»
+### Derivazione — razzo contro vela solare · [[02-Notazione asintotica.pdf#page=30|p. 30]]
+**Fonte:** il razzo raggiunge un'alta velocità prima di finire il carburante, poi prosegue a velocità costante $v_r$; la vela solare accelera lentamente per la radiazione/vento solare, ma la sua velocità $v_s = a\,t$ deve prima o poi superare quella del razzo. «This is asymptotic dominance in action.»
 
 > 🧩 Derivazione mia: $v_s(t) > v_r \iff a\,t > v_r \iff t > v_r / a$. Per quanto grande sia $v_r$ (la «costante» del razzo), esiste sempre un istante oltre il quale vince la vela: una funzione che cresce ($a\,t$) domina una costante.
 
 ![[grafico-razzo-vela-solare.svg]]
 > 🧩 Grafico generato da me con valori illustrativi ($v_r = 10$, $a = 0.5$): il sorpasso avviene a $t = v_r/a = 20$.
 
-## Spiegazione
+## Spiegazione · [[02-Notazione asintotica.pdf#page=31|p. 31]], [[02-Notazione asintotica.pdf#page=36|p. 36]]
 
-> 📄 Fonte: [[02-Notazione asintotica.pdf#page=36]] — *Crescita delle funzioni* (tempo di esecuzione se ogni operazione costa 1 ns)
+> 📄 Fonte: p. 36 — *Crescita delle funzioni* (tempo di esecuzione se ogni operazione costa 1 ns)
 
 | $n$ | $\lg n$ | $n$ | $n \lg n$ | $n^2$ | $2^n$ | $n!$ |
-|-----|---------|-----|-----------|-------|-------|------|
+|---|---|---|---|---|---|---|
 | 10 | 0.003 µs | 0.01 µs | 0.033 µs | 0.1 µs | 1 µs | 3.63 ms |
 | 20 | 0.004 µs | 0.02 µs | 0.086 µs | 0.4 µs | 1 ms | 77.1 years |
 | 30 | 0.005 µs | 0.03 µs | 0.147 µs | 0.9 µs | 1 sec | 8.4 × 10¹⁵ yrs |
@@ -85,9 +84,9 @@ Un limite pari a 1 (diverso da 0) significa che le due funzioni crescono allo st
 
 > 🧩 Verifica mia: ricalcolata con [[tempi_crescita.py]] (1 ns per operazione, anno di 365 giorni); tutte le celle coincidono a meno di arrotondamenti ($n \lg n$ con $n = 10^4$: 132.9 µs, la slide scrive 130; con $n = 10^5$: 1.66 ms contro 1.67). Esempio di calcolo: $2^{40}$ ns $= 1.0995\cdot10^{12}$ ns $= 1099.5$ s $= 18.3$ min.
 
-**Take-Home Lesson** ([[02-Notazione asintotica.pdf#page=36]]): «Although esoteric functions arise in advanced algorithm analysis, a small variety of time complexities suffice and account for most algorithms that are widely used in practice.»
+**Take-Home Lesson**: «Although esoteric functions arise in advanced algorithm analysis, a small variety of time complexities suffice and account for most algorithms that are widely used in practice.»
 
-> 📄 Fonte: [[02-Notazione asintotica.pdf#page=31]] — *Implications of Dominance*
+> 📄 Fonte: p. 31 — *Implications of Dominance*
 - Gli algoritmi **esponenziali** diventano senza speranza molto in fretta.
 - Gli algoritmi **quadratici** diventano senza speranza a (o prima di) $1\,000\,000$.
 - $O(n\log n)$ è praticabile fino a circa **un miliardo**.
@@ -104,19 +103,18 @@ Il test del limite è il modo più rapido per confrontare due funzioni di costo;
 
 > 🎯 Esame: ordinare un elenco di funzioni per crescita; usare il limite del rapporto per decidere $o$, $\Theta$ o dominanza.
 
-## Connessioni
+## Connessioni · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=37|p. 37]], [[05-Insertion sort.pdf#page=38|38]] · 01-Introduzione.pdf [[01-Introduzione.pdf#page=12|p. 12]]
 
-- [[logaritmi-nell-analisi]] — da dove nascono i $\log n$ e perché la base non conta ([[05-Insertion sort.pdf#page=32]], [[05-Insertion sort.pdf#page=33]])
+- [[logaritmi-nell-analisi]] — da dove nascono i $\log n$ e perché la base non conta
 
 - [[notazione-asintotica]] — $o$ è la versione stretta di $O$
-- [[efficienza-degli-algoritmi]] — la tabella di [[01-Introduzione.pdf#page=12]] è il problema inverso (dato il tempo, trovare $n$)
+- [[efficienza-degli-algoritmi]] — la tabella di p. 12 è il problema inverso (dato il tempo, trovare $n$)
 - [[stima-dei-tempi-di-esecuzione]] — esercizi numerici
 - [[ricerca-combinatoria]] — $n! \gg 2^n$
 
-## Fonti
+## Fonti · [[02-Notazione asintotica.pdf#page=29|p. 29]]–[[02-Notazione asintotica.pdf#page=31|31]], [[02-Notazione asintotica.pdf#page=33|p. 33]], [[02-Notazione asintotica.pdf#page=34|34]], [[02-Notazione asintotica.pdf#page=37|p. 37]]
 
 - [[lezione-02-notazione-asintotica]]
-- [[02-Notazione asintotica.pdf#page=29]] (intestazione «Asymptotic Dominance»), [[02-Notazione asintotica.pdf#page=30]], [[02-Notazione asintotica.pdf#page=31]], [[02-Notazione asintotica.pdf#page=33]] (intestazione «Determining Asymptotic Dominance»), [[02-Notazione asintotica.pdf#page=34]]–[[02-Notazione asintotica.pdf#page=37]]
 
 _Aggiornato: 2026-09-26 — ingest 02-Notazione asintotica.pdf_
 

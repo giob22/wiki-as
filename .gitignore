@@ -5,3 +5,8 @@
 __pycache__/
 *.pyc
 .obsidian/workspace-*.json
+
+# Sito generato in locale (su GitHub lo costruisce il workflow)
+_site/
+.venv/
+venv/

@@ -23,7 +23,7 @@ difficoltà: bassa
 Pila $S[1..7]$, inizialmente ⟨15, 6, 2, 9⟩, $S.top = 4$.
 
 | Operazione | $S.top$ | Contenuto logico | Restituisce |
-|-----------|---------|------------------|-------------|
+|---|---|---|---|
 | — | 4 | 15 6 2 9 | |
 | PUSH(S, 17) | 5 | 15 6 2 9 17 | |
 | PUSH(S, 3) | 6 | 15 6 2 9 17 3 | |
@@ -33,7 +33,7 @@ Pila $S[1..7]$, inizialmente ⟨15, 6, 2, 9⟩, $S.top = 4$.
 Coda $Q[1..12]$, inizialmente ⟨15, 6, 9, 8, 4⟩ in $Q[7..11]$, $head = 7$, $tail = 12$.
 
 | Operazione | Scrive/legge | $head$ | $tail$ | Contenuto logico |
-|-----------|--------------|--------|--------|------------------|
+|---|---|---|---|---|
 | — | | 7 | 12 | 15 6 9 8 4 |
 | ENQUEUE(Q, 17) | $Q[12] = 17$ | 7 | 1 (giro) | 15 6 9 8 4 17 |
 | ENQUEUE(Q, 3) | $Q[1] = 3$ | 7 | 2 | … 17 3 |

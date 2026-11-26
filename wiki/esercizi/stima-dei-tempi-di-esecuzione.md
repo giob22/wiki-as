@@ -19,8 +19,8 @@ difficoltà: bassa
 
 ## Casi svolti
 
-### Caso 1 — insertion sort vs merge sort ([[01-Introduzione.pdf#page=11]])
-$n = 10^6$, $10^9$ op/s: $t_{IS} = 10^{12}/10^9 = 1000$ s $\approx 16.7$ min; $t_{MS} = 10^6 \cdot 19.93 / 10^9 \approx 0.02$ s. Passaggi in [[efficienza-degli-algoritmi]]; il costo $n\lg n$ di merge sort è dimostrato in [[merge-sort]] ([[06-Merge Sort (1).pdf#page=25]]).
+### Caso 1 — insertion sort vs merge sort ([[01-Introduzione.pdf#page=11]]) · [[06-Merge Sort (1).pdf#page=29|p. 27]]
+$n = 10^6$, $10^9$ op/s: $t_{IS} = 10^{12}/10^9 = 1000$ s $\approx 16.7$ min; $t_{MS} = 10^6 \cdot 19.93 / 10^9 \approx 0.02$ s. Passaggi in [[efficienza-degli-algoritmi]]; il costo $n\lg n$ di merge sort è dimostrato in [[merge-sort]].
 
 ### Caso 2 — tabella dell'$n$ massimo ([[01-Introduzione.pdf#page=12]])
 **Traccia:** «For each function $f(n)$ and time $t$ in the following table, determine the largest size $n$ of a problem that can be solved in time $t$, assuming that the algorithm to solve the problem takes $f(n)$ microseconds.» La tabella nella slide è **vuota**.
@@ -30,7 +30,7 @@ $n = 10^6$, $10^9$ op/s: $t_{IS} = 10^{12}/10^9 = 1000$ s $\approx 16.7$ min; $t
 > 🧩 Svolgimento mio (verificato con [[tempi_crescita.py]]). Tempo disponibile in µs: $T = t \cdot 10^6$.
 
 | $f(n)$ | 1 secondo | 1 minuto | 1 ora | 1 giorno | 1 mese | 1 anno | 1 secolo |
-|--------|-----------|----------|-------|----------|--------|--------|----------|
+|---|---|---|---|---|---|---|---|
 | $\lg n$ | $2^{10^6}$ | $2^{6\cdot10^7}$ | $2^{3.6\cdot10^9}$ | $2^{8.64\cdot10^{10}}$ | $2^{2.59\cdot10^{12}}$ | $2^{3.15\cdot10^{13}}$ | $2^{3.15\cdot10^{15}}$ |
 | $\sqrt n$ | $10^{12}$ | $3.6\cdot10^{15}$ | $1.30\cdot10^{19}$ | $7.46\cdot10^{21}$ | $6.72\cdot10^{24}$ | $9.95\cdot10^{26}$ | $9.95\cdot10^{30}$ |
 | $n$ | $10^6$ | $6\cdot10^7$ | $3.6\cdot10^9$ | $8.64\cdot10^{10}$ | $2.59\cdot10^{12}$ | $3.15\cdot10^{13}$ | $3.15\cdot10^{15}$ |
@@ -52,15 +52,15 @@ $$
 
 **Lettura:** passando da 1 secondo a 1 secolo (fattore $\approx 3\cdot10^9$) un algoritmo lineare guadagna lo stesso fattore, uno quadratico solo $\sqrt{3\cdot10^9} \approx 5.6\cdot10^4$, uno esponenziale appena $+32$ ($\lg(3\cdot10^9) \approx 31.6$), uno fattoriale $+8$.
 
-### Caso 3 — $20!$, $1000!$, $2^{20}$, $2^{100}$ ([[01-Introduzione.pdf#page=33]], [[01-Introduzione.pdf#page=59]])
-- $20! = 2\,432\,902\,008\,176\,640\,000$ ✓ (slide); a 1 ns per permutazione: $2.43\cdot10^9$ s $= 77.1$ anni ✓ (tabella di [[02-Notazione asintotica.pdf#page=36]]).
+### Caso 3 — $20!$, $1000!$, $2^{20}$, $2^{100}$ ([[01-Introduzione.pdf#page=33]], [[01-Introduzione.pdf#page=59]]) · [[02-Notazione asintotica.pdf#page=36|p. 36]]
+- $20! = 2\,432\,902\,008\,176\,640\,000$ ✓ (slide); a 1 ns per permutazione: $2.43\cdot10^9$ s $= 77.1$ anni ✓ (tabella di p. 36).
 - $1000! \approx 10^{2567.6}$, 2568 cifre (il «1000 = …» della slide).
 - $2^{20} = 1\,048\,576 \approx 1$M ✓; $2^{100} = 1.2677\cdot10^{30}$ (slide: $1.26\cdot10^{30}$, troncato).
 
 ### Caso 4 — ricalcolo della tabella di crescita ([[02-Notazione asintotica.pdf#page=36]])
 Con 1 ns per operazione. Esempi: $n\lg n$, $n = 10^6$: $10^6 \cdot 19.93$ ns $= 19.93$ ms ✓; $n^2$, $n = 10^9$: $10^{18}$ ns $= 10^9$ s $= 10^9 / (3.1536\cdot10^7) = 31.7$ anni ✓; $2^n$, $n = 50$: $1.126\cdot10^{15}$ ns $= 1.126\cdot10^6$ s $= 13.0$ giorni ✓. Tabella completa e verifiche in [[dominanza-asintotica]].
 
-### Caso 5 — ricerca binaria con split sbilanciato ([[05-Insertion sort.pdf#page=33]])
+### Caso 5 — ricerca binaria con split sbilanciato ([[05-Insertion sort.pdf#page=38]])
 **Traccia:** quante domande servono per cercare in un elenco di un milione di nomi se ogni divisione è 1/3–2/3 invece di 1/2–1/2?
 $$ \log_{3/2} 10^6 = \frac{\ln 10^6}{\ln 1.5} = \frac{13.8155}{0.4055} = 34.07 \approx 35, \qquad \lg 10^6 = 19.93 \approx 20 $$
 **Risultato:** circa 35 contro 20 domande nel caso peggiore: il rapporto è la costante $1/\lg(3/2) = 1.71$. La complessità resta logaritmica: la base non conta → [[logaritmi-nell-analisi]].

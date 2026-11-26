@@ -10,9 +10,9 @@ argomenti: [grafi, tipi di grafo, cammino, connessione, grado, cricca, matrice d
 
 # Lezione 08 — Grafi e alberi (08-Grafi e alberi.pdf)
 
-## Sommario
+## Sommario · [[08-Grafi e alberi.pdf#page=1|p. 1]]
 
-Le pagine 1–36 sono le slide di S. Skiena, *Lecture 10: Graph Data Structures* ([[08-Grafi e alberi.pdf#page=1]]); le pagine 37–44 sono slide in italiano sugli alberi. La lezione definisce il **grafo** $G = (V, E)$ e mostra come modella reti stradali, circuiti, reti sociali e il web. Passa poi in rassegna i **tipi di grafo**: orientato o no, pesato o no, semplice o no, sparso o denso, ciclico o aciclico, immerso o topologico. Con il grafo delle amicizie introduce cammino e cammino minimo, connessione, grado, cricca. Presenta le due rappresentazioni, **matrice di adiacenza** e **liste di adiacenza**, le confronta e mostra l'implementazione in C delle liste (strutture, inizializzazione, lettura, inserimento di un arco). Chiude con gli **alberi**: definizione come grafo non orientato, connesso e aciclico, conseguenze ($n - 1$ archi), radice, profondità, altezza, bilanciamento ($\Theta(\log n)$ contro $\Theta(n)$) e la base del logaritmo per alberi $k$-ari.
+Le pagine 1–36 sono le slide di S. Skiena, *Lecture 10: Graph Data Structures*; le pagine 37–44 sono slide in italiano sugli alberi. La lezione definisce il **grafo** $G = (V, E)$ e mostra come modella reti stradali, circuiti, reti sociali e il web. Passa poi in rassegna i **tipi di grafo**: orientato o no, pesato o no, semplice o no, sparso o denso, ciclico o aciclico, immerso o topologico. Con il grafo delle amicizie introduce cammino e cammino minimo, connessione, grado, cricca. Presenta le due rappresentazioni, **matrice di adiacenza** e **liste di adiacenza**, le confronta e mostra l'implementazione in C delle liste (strutture, inizializzazione, lettura, inserimento di un arco). Chiude con gli **alberi**: definizione come grafo non orientato, connesso e aciclico, conseguenze ($n - 1$ archi), radice, profondità, altezza, bilanciamento ($\Theta(\log n)$ contro $\Theta(n)$) e la base del logaritmo per alberi $k$-ari.
 
 ## Percorso della lezione
 
@@ -27,21 +27,21 @@ Già lette, riprese in questa lezione: *lista-concatenata* (ogni lista di adiace
 
 **Ordine di lettura:** le slide sono lineari, basta seguire le pagine. La terminologia del grafo delle amicizie (pp. 17–24) arriva dopo i tipi di grafo, ma sta nella pagina *grafo*, che si legge per prima: le due cose sono indipendenti.
 
-## Punti chiave
+## Punti chiave · [[08-Grafi e alberi.pdf#page=3|p. 3]], [[08-Grafi e alberi.pdf#page=4|4]], [[08-Grafi e alberi.pdf#page=6|p. 6]], [[08-Grafi e alberi.pdf#page=9|p. 9]], [[08-Grafi e alberi.pdf#page=10|10]], [[08-Grafi e alberi.pdf#page=15|p. 15]], [[08-Grafi e alberi.pdf#page=18|p. 18]], [[08-Grafi e alberi.pdf#page=23|p. 23]], [[08-Grafi e alberi.pdf#page=26|p. 26]], [[08-Grafi e alberi.pdf#page=28|p. 28]], [[08-Grafi e alberi.pdf#page=30|p. 30]], [[08-Grafi e alberi.pdf#page=31|31]], [[08-Grafi e alberi.pdf#page=35|p. 35]], [[08-Grafi e alberi.pdf#page=37|p. 37]], [[08-Grafi e alberi.pdf#page=39|p. 39]]–[[08-Grafi e alberi.pdf#page=44|44]]
 
-1. Un grafo $G = (V, E)$ è un insieme di vertici e un insieme di archi, coppie ordinate o non ordinate di vertici ([[08-Grafi e alberi.pdf#page=3]]) → [[grafo]].
-2. Reti stradali, circuiti, reti sociali, web, flusso di controllo, similarità sono grafi ([[08-Grafi e alberi.pdf#page=4]]–[[08-Grafi e alberi.pdf#page=6]]).
-3. Il tipo di grafo decide gli algoritmi appropriati ([[08-Grafi e alberi.pdf#page=9]]); orientato, pesato, semplice, sparso, aciclico (alberi e DAG), immerso ([[08-Grafi e alberi.pdf#page=10]]–[[08-Grafi e alberi.pdf#page=15]]) → [[tipi-di-grafo]].
-4. Grafo delle amicizie: orientato o no, cammino e cammino minimo, connesso e fortemente connesso, grado, cricca ([[08-Grafi e alberi.pdf#page=18]]–[[08-Grafi e alberi.pdf#page=23]]).
-5. Matrice di adiacenza $n \times n$ con $M[i, j] = 1$ se $(i, j) \in E$; spreca spazio sui grafi sparsi ([[08-Grafi e alberi.pdf#page=26]]) → [[matrice-di-adiacenza]].
-6. Liste di adiacenza: array di puntatori a liste concatenate; test di un arco in $O(d_i)$ ([[08-Grafi e alberi.pdf#page=28]]) → [[liste-di-adiacenza]].
-7. Confronto: matrici più veloci nel test di un arco e nell'inserimento/cancellazione, liste migliori per grado, memoria sui grafi piccoli, attraversamento e per la maggior parte dei problemi ([[08-Grafi e alberi.pdf#page=30]]).
-8. Codice C: `edgenode`, `graph`, `initialize_graph`, `read_graph`, `insert_edge` con inserimento in testa e doppia copia degli archi non orientati ([[08-Grafi e alberi.pdf#page=31]]–[[08-Grafi e alberi.pdf#page=35]]).
-9. Albero = grafo non orientato, connesso, aciclico; cammino unico, archi essenziali, $n - 1$ archi ([[08-Grafi e alberi.pdf#page=37]]–[[08-Grafi e alberi.pdf#page=39]]) → [[albero]].
-10. Radice, figli, foglie; profondità, altezza, livelli ([[08-Grafi e alberi.pdf#page=40]], [[08-Grafi e alberi.pdf#page=41]]).
-11. Bilanciato $h = \Theta(\log n)$, degenere $h = \Theta(n)$; percorrere un ramo costa $O(h)$ ([[08-Grafi e alberi.pdf#page=42]]).
-12. Albero $k$-ario perfetto: $n = \frac{k^{h+1} - 1}{k - 1}$, $h = \log_k(n(k-1) + 1) - 1 = \Theta(\log_k n)$ ([[08-Grafi e alberi.pdf#page=43]]).
-13. Alberi di cartelle, di espressione, di ricorsione: stessa struttura, interpretazioni diverse ([[08-Grafi e alberi.pdf#page=44]]).
+1. Un grafo $G = (V, E)$ è un insieme di vertici e un insieme di archi, coppie ordinate o non ordinate di vertici → [[grafo]].
+2. Reti stradali, circuiti, reti sociali, web, flusso di controllo, similarità sono grafi.
+3. Il tipo di grafo decide gli algoritmi appropriati; orientato, pesato, semplice, sparso, aciclico (alberi e DAG), immerso → [[tipi-di-grafo]].
+4. Grafo delle amicizie: orientato o no, cammino e cammino minimo, connesso e fortemente connesso, grado, cricca.
+5. Matrice di adiacenza $n \times n$ con $M[i, j] = 1$ se $(i, j) \in E$; spreca spazio sui grafi sparsi → [[matrice-di-adiacenza]].
+6. Liste di adiacenza: array di puntatori a liste concatenate; test di un arco in $O(d_i)$ → [[liste-di-adiacenza]].
+7. Confronto: matrici più veloci nel test di un arco e nell'inserimento/cancellazione, liste migliori per grado, memoria sui grafi piccoli, attraversamento e per la maggior parte dei problemi.
+8. Codice C: `edgenode`, `graph`, `initialize_graph`, `read_graph`, `insert_edge` con inserimento in testa e doppia copia degli archi non orientati.
+9. Albero = grafo non orientato, connesso, aciclico; cammino unico, archi essenziali, $n - 1$ archi → [[albero]].
+10. Radice, figli, foglie; profondità, altezza, livelli.
+11. Bilanciato $h = \Theta(\log n)$, degenere $h = \Theta(n)$; percorrere un ramo costa $O(h)$.
+12. Albero $k$-ario perfetto: $n = \frac{k^{h+1} - 1}{k - 1}$, $h = \log_k(n(k-1) + 1) - 1 = \Theta(\log_k n)$.
+13. Alberi di cartelle, di espressione, di ricorsione: stessa struttura, interpretazioni diverse.
 
 ## Annotazioni a mano
 
@@ -52,9 +52,9 @@ Già lette, riprese in questa lezione: *lista-concatenata* (ogni lista di adiace
 - p. 29 (pagina di soli appunti): «modalità di navigazione → come scorro il grafo partendo da un nodo» → [[liste-di-adiacenza]];
 - p. 39: «la complessità spaziale dipende dalla struttura fisica → struttura dati utilizzata» → [[albero]].
 
-## Refusi e note
+## Refusi e note · [[08-Grafi e alberi.pdf#page=2|p. 2]], [[08-Grafi e alberi.pdf#page=7|p. 7]], [[08-Grafi e alberi.pdf#page=8|8]], [[08-Grafi e alberi.pdf#page=16|p. 16]], [[08-Grafi e alberi.pdf#page=17|17]], [[08-Grafi e alberi.pdf#page=24|p. 24]], [[08-Grafi e alberi.pdf#page=25|25]], [[08-Grafi e alberi.pdf#page=36|p. 36]]
 
-- Le pagine [[08-Grafi e alberi.pdf#page=2|2]], [[08-Grafi e alberi.pdf#page=8|8]], [[08-Grafi e alberi.pdf#page=17|17]], [[08-Grafi e alberi.pdf#page=25|25]] sono titoli di sezione; [[08-Grafi e alberi.pdf#page=7|7]], [[08-Grafi e alberi.pdf#page=16|16]], [[08-Grafi e alberi.pdf#page=24|24]], [[08-Grafi e alberi.pdf#page=36|36]] contengono solo «Questions?».
+- Le pagine p. 2, p. 8, p. 17, p. 25 sono titoli di sezione; p. 7, p. 16, p. 24, p. 36 contengono solo «Questions?».
 - p. 1: il file si chiama «Grafi e alberi» ma le slide 1–36 sono la «Lecture 10» di Skiena; le pp. 37–44 sono aggiunte in italiano.
 - p. 5: «with junctions as vertices as components as edges» (manca «and»).
 - p. 28: «$N \times 1$ array of pointers» con $N$ maiuscolo, mentre il resto usa $n$ per il numero di vertici.

@@ -6,25 +6,25 @@ difficoltà: media
 
 # Dimostrare (o confutare) $f = O/\Omega/\Theta(g)$
 
-## Metodo
+## Metodo · [[02-Notazione asintotica.pdf#page=34|p. 34]]
 
 - **Per dimostrare $f = O(g)$:** trovare $c > 0$ e $n_0$ con $f(n) \le c\,g(n)$ per ogni $n \ge n_0$. Tecnica: maggiorare i termini negativi con 0 e i termini positivi di ordine inferiore con multipli di $g$.
 - **Per dimostrare $f = \Omega(g)$:** trovare $c > 0$ e $n_0$ con $f(n) \ge c\,g(n)$; scegliere $c$ un po' più piccolo del coefficiente dominante e risolvere la disequazione per trovare $n_0$.
 - **Per $\Theta$:** entrambe (con le stesse $n_0$, prendendo il massimo).
 - **Per confutare $f = O(g)$:** per assurdo, supporre $f \le c\,g$ da $n_0$ in poi e mostrare che per $n$ abbastanza grande (dipendente da $c$) la disuguaglianza fallisce.
-- **Scorciatoia col limite** ([[02-Notazione asintotica.pdf#page=34]]): $\lim g/f = 0 \Rightarrow g = o(f)$ (quindi $g = O(f)$, $g \ne \Omega(f)$); limite finito positivo $\Rightarrow \Theta$.
+- **Scorciatoia col limite**: $\lim g/f = 0 \Rightarrow g = o(f)$ (quindi $g = O(f)$, $g \ne \Omega(f)$); limite finito positivo $\Rightarrow \Theta$.
 
-## Strumenti usati
+## Strumenti usati · [[02-Notazione asintotica.pdf#page=18|p. 18]]
 
-- [[notazione-asintotica]] — definizioni formali ([[02-Notazione asintotica.pdf#page=18]])
+- [[notazione-asintotica]] — definizioni formali
 - [[regole-di-calcolo-asintotico]], [[dominanza-asintotica]]
 
-## Casi svolti
+## Casi svolti · [[02-Notazione asintotica.pdf#page=21|p. 21]], [[02-Notazione asintotica.pdf#page=23|p. 23]]
 
-**Traccia comune:** $f(n) = 3n^2 - 100n + 6$ ([[02-Notazione asintotica.pdf#page=21]]–[[02-Notazione asintotica.pdf#page=23]]).
+**Traccia comune:** $f(n) = 3n^2 - 100n + 6$.
 
 | Affermazione | Giustificazione della slide | Costanti (🧩 mie) |
-|--------------|-----------------------------|-------------------|
+|---|---|---|
 | $f = O(n^2)$ | $3n^2 > f(n)$ | $c = 3$, $n_0 = 1$ |
 | $f = O(n^3)$ | $0.01n^3 > f(n)$ | $c = 0.01$, $n_0 = 300$ |
 | $f \ne O(n)$ | $c\,n < 3n^2$ quando $n > c$ | assurdo per $n > (100 + c)/3$ |

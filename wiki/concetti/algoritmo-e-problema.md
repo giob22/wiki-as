@@ -7,15 +7,11 @@ fonti_pdf: ["01-Introduzione.pdf#page=7", "01-Introduzione.pdf#page=9", "01-Intr
 
 # Algoritmo, problema computazionale, istanza, correttezza, struttura dati
 
-## Definizione
-
-> 📄 Fonte: [[01-Introduzione.pdf#page=7]]
+## Definizione · [[01-Introduzione.pdf#page=7|p. 7]], [[01-Introduzione.pdf#page=9|p. 9]], [[01-Introduzione.pdf#page=10|10]]
 
 - Un **algoritmo** è una sequenza di passi computazionali che prende in *ingresso* un dato insieme di valori e produce un insieme di valori in *uscita*.
 - Un algoritmo è uno strumento per risolvere un **problema computazionale** ben definito, cioè una relazione specificata tra ingresso e uscita.
 - Un dato insieme di valori in ingresso costituisce un'**istanza** del problema.
-
-> 📄 Fonte: [[01-Introduzione.pdf#page=9]], [[01-Introduzione.pdf#page=10]]
 
 - Un algoritmo è **corretto** se, **per ogni istanza** del problema, **termina** fornendo l'insieme corretto di valori in uscita.
 - Un algoritmo **incorretto** potrebbe, in corrispondenza di *alcune* istanze, non terminare oppure terminare con un'uscita non corretta.
@@ -23,16 +19,16 @@ fonti_pdf: ["01-Introduzione.pdf#page=7", "01-Introduzione.pdf#page=9", "01-Intr
 
 La slide p. 8 introduce la definizione di correttezza lasciandola in sospeso («Un algoritmo è corretto se, …..»): è la versione "a comparsa" della p. 9.
 
-## Formule
+## Formule · [[01-Introduzione.pdf#page=7|p. 7]]
 
-Il problema di esempio della fonte è l'[[ordinamento]] ([[01-Introduzione.pdf#page=7]]):
+Il problema di esempio della fonte è l'[[ordinamento]]:
 
 - **Input:** una sequenza di $n$ chiavi $\langle a_1, \dots, a_n \rangle$
 - **Output:** la permutazione (riordinamento) $\langle a'_1, \dots, a'_n \rangle$ della sequenza d'ingresso tale che $a'_1 \le a'_2 \le \dots \le a'_n$
 
 Simboli: $n$ = numero di chiavi (dimensione dell'istanza), $a_i$ = $i$-esima chiave in ingresso, $a'_i$ = $i$-esima chiave in uscita.
 
-## Spiegazione
+## Spiegazione · [[01-Introduzione.pdf#page=24|p. 24]]
 
 La definizione di correttezza ha **due** requisiti, entrambi quantificati su **tutte** le istanze:
 1. **terminazione** — l'algoritmo si ferma;
@@ -40,26 +36,25 @@ La definizione di correttezza ha **due** requisiti, entrambi quantificati su **t
 
 > 🧩 Derivazione mia: la negazione logica di «per ogni istanza termina con l'uscita corretta» è «**esiste** un'istanza su cui non termina **o** restituisce un'uscita sbagliata». Per questo basta **un solo controesempio** per dimostrare che un algoritmo è incorretto, mentre per dimostrarne la correttezza serve un argomento che copra tutte le istanze (→ [[ricerca-di-controesempi]], [[invariante-di-ciclo]], [[correttezza-per-induzione]]).
 
-Esempio concreto dal corso: [[nearest-neighbor]] per il [[robot-tour-optimization]] termina sempre, ma su alcune istanze (punti sulla retta di [[01-Introduzione.pdf#page=24]]) restituisce un giro non minimo → è **incorretto** per quel problema ([[01-Introduzione.pdf#page=24]]).
+Esempio concreto dal corso: [[nearest-neighbor]] per il [[robot-tour-optimization]] termina sempre, ma su alcune istanze (punti sulla retta di p. 24) restituisce un giro non minimo → è **incorretto** per quel problema.
 
-## Perché importa
+## Perché importa · [[00-Presentazione.pdf#page=6|p. 6]]
 
-Tutto il corso ruota intorno ad **analisi** (correttezza, complessità) e **progettazione** di algoritmi ([[00-Presentazione.pdf#page=6]]): queste definizioni fissano cosa va dimostrato quando si dice che un algoritmo «funziona».
+Tutto il corso ruota intorno ad **analisi** (correttezza, complessità) e **progettazione** di algoritmi: queste definizioni fissano cosa va dimostrato quando si dice che un algoritmo «funziona».
 
 > 🎯 Esame: saper enunciare con precisione «algoritmo corretto» (per **ogni** istanza, **termina**, uscita **corretta**) e la definizione di struttura dati.
 
-## Connessioni
+## Connessioni · [[01-Introduzione.pdf#page=11|p. 11]]
 
 - [[correttezza-parziale-e-totale]] — la definizione di algoritmo corretto di p. 9 è la correttezza **totale**: uscita giusta **e** terminazione
-- [[efficienza-degli-algoritmi]] — dopo la correttezza, la seconda proprietà richiesta ([[01-Introduzione.pdf#page=11]])
+- [[efficienza-degli-algoritmi]] — dopo la correttezza, la seconda proprietà richiesta
 - [[metodi-euristici]] — procedure che non garantiscono l'uscita corretta su ogni istanza: per definizione non sono algoritmi corretti per il problema
 - [[ricerca-di-controesempi]] — come si dimostra l'incorrettezza
 - [[tipo-di-dato-astratto]] — la struttura dati vista attraverso le operazioni che supporta
 
-## Fonti
+## Fonti · [[01-Introduzione.pdf#page=7|p. 7]]–[[01-Introduzione.pdf#page=10|10]]
 
 - [[lezione-01-introduzione]]
-- [[01-Introduzione.pdf#page=7]], [[01-Introduzione.pdf#page=8]], [[01-Introduzione.pdf#page=9]], [[01-Introduzione.pdf#page=10]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
 _Aggiornato: 2026-10-01 — collegamento a correttezza-parziale-e-totale_

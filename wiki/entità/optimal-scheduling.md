@@ -7,13 +7,11 @@ fonti_pdf: ["01-Introduzione.pdf#page=60"]
 
 # OptimalScheduling (Soluzione 4 del Movie Scheduling)
 
-## Problema risolto
+## Problema risolto · [[01-Introduzione.pdf#page=60|p. 60]]
 
-[[movie-scheduling]] — in modo **corretto ed efficiente** ([[01-Introduzione.pdf#page=60]]).
+[[movie-scheduling]] — in modo **corretto ed efficiente**.
 
-## Pseudocodice
-
-> 📄 Fonte: [[01-Introduzione.pdf#page=60]]
+## Pseudocodice · [[01-Introduzione.pdf#page=60|p. 60]]
 
 ```
 OptimalScheduling(I)
@@ -23,13 +21,13 @@ OptimalScheduling(I)
 ```
 
 ![[01-introduzione-p60-optimal-scheduling.png]]
-*Soluzione 4 e Take-Home Lesson #2. ([[01-Introduzione.pdf#page=60]])*
+*Soluzione 4 e Take-Home Lesson #2.*
 
 ## Idea
 
 È la stessa struttura di [[shortest-job-first]], ma il criterio è la **data di fine** più vicina, non la durata né l'inizio.
 
-## Correttezza
+## Correttezza · [[03-Analisi di algoritmi.pdf#page=14|p. 14]]
 
 La slide afferma che la soluzione è corretta ed efficiente ma **non** riporta la dimostrazione; subito dopo ricorda che «algorithm correctness is a property that must be carefully demonstrated».
 
@@ -39,13 +37,12 @@ La slide afferma che la soluzione è corretta ed efficiente ma **non** riporta l
 > 3. Tolti $j_1$ e gli intervalli che lo intersecano, il problema residuo ha la stessa forma: per induzione sul numero di intervalli, le scelte successive sono ancora estendibili a un ottimo.
 > 4. Termina perché a ogni iterazione $S$ perde almeno $j$.
 >
-> Controllo empirico: [[controesempi_euristiche.py]] confronta OptimalScheduling con la ricerca esaustiva su tutte le istanze fino a 4 intervalli a estremi interi in $[0,5]$: **nessun** fallimento (think exhaustively, [[03-Analisi di algoritmi.pdf#page=14]]).
+> Controllo empirico: [[controesempi_euristiche.py]] confronta OptimalScheduling con la ricerca esaustiva su tutte le istanze fino a 4 intervalli a estremi interi in $[0,5]$: **nessun** fallimento (think exhaustively).
 
 ## Esempio di esecuzione
 
 ![[animazione-optimal-scheduling.svg]]
 > 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, la regola di p. 60 applicata ai 9 film di p. 37 (le slide non mostrano questa esecuzione): a ogni passo il job che finisce prima; il risultato, 4 film, coincide con l'ottimo trovato per ricerca esaustiva in [[controesempi_euristiche.py]]. Ogni fotogramma riporta in basso il numero del passo e cosa succede.
-
 
 > 🧩 Sui controesempi delle euristiche: $\{[0,10), [1,2), [3,4), [5,6)\}$ → sceglie $[1,2), [3,4), [5,6)$ (3, ottimo); $\{[0,5), [4,7), [6,11)\}$ → sceglie $[0,5), [6,11)$ (2, ottimo). Vedi [[controesempi-per-euristiche]].
 
@@ -59,10 +56,9 @@ La slide afferma che la soluzione è corretta ed efficiente ma **non** riporta l
 - [[correttezza-per-induzione]] — la dimostrazione è un'induzione sul numero di intervalli
 - [[ricerca-di-controesempi]] — Take-Home Lesson #2
 
-## Fonti
+## Fonti · [[01-Introduzione.pdf#page=60|p. 60]]
 
 - [[lezione-01-introduzione]]
-- [[01-Introduzione.pdf#page=60]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

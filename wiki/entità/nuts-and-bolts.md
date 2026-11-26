@@ -5,13 +5,11 @@ paradigma: "[[divide-et-impera]] + [[randomizzazione]]"
 fonti_pdf: ["07-Quicksort 1.pdf#page=24", "07-Quicksort 1.pdf#page=25"]
 ---
 
-# Nuts and Bolts (dadi e bulloni)
+# Nuts and Bolts (dadi e bulloni) · [[07-Quicksort 1.pdf#page=24|p. 24]]
 
-Problema «Stop and Think» che chiude la lezione su quicksort ([[07-Quicksort 1.pdf#page=24]]). La slide dà solo il testo e chiede due algoritmi; le soluzioni, le analisi e le animazioni sono mie (🧩).
+Problema «Stop and Think» che chiude la lezione su quicksort. La slide dà solo il testo e chiede due algoritmi; le soluzioni, le analisi e le animazioni sono mie (🧩).
 
-## Definizione formale
-
-> 📄 Fonte: [[07-Quicksort 1.pdf#page=25]] (testo in inglese nella slide; qui riassunto in italiano)
+## Definizione formale · [[07-Quicksort 1.pdf#page=25|p. 25]]
 
 - Sono dati $n$ **bulloni** di larghezze diverse e gli $n$ **dadi** corrispondenti.
 - L'unica operazione ammessa è **provare un dado su un bullone**: si scopre se il dado è troppo largo, troppo stretto o se combacia esattamente.
@@ -93,13 +91,13 @@ Significato delle righe:
 
 > 🧩 [[correttezza-per-induzione]] su $n = |D| = |B|$. Base $n = 0$: nulla da accoppiare. Passo: $d$ e $b$ combaciano per costruzione; per l'osservazione sulle righe 6–7, $(D_<, B_<)$ e $(D_>, B_>)$ sono istanze valide con meno di $n$ coppie, e per ipotesi induttiva vengono accoppiate. Terminazione: $|D_<|, |D_>| \le n - 1$.
 
-### Complessità
+### Complessità · [[07-Quicksort 1.pdf#page=14|p. 14]], [[07-Quicksort 1.pdf#page=21|p. 21]], [[07-Quicksort 1.pdf#page=23|p. 23]]
 
 > 🧩 Derivazione mia. Con $n$ coppie, una chiamata fa $n + (n-1) = 2n - 1$ test (righe 3–4). Se $d$ è il $(k+1)$-esimo dado per larghezza:
 $$ T(n) = T(k) + T(n - k - 1) + (2n - 1), \qquad k \in \{0, \dots, n-1\} $$
-> È la ricorrenza di [[quicksort]] ([[07-Quicksort 1.pdf#page=21]]) con costo locale $2n - 1$ invece di $\Theta(n)$:
-> - caso peggiore (dado scelto sempre il più stretto o il più largo): $\Theta(n^2)$, come la serie aritmetica di [[07-Quicksort 1.pdf#page=14]];
-> - scelta casuale: $k$ è uniforme come per [[quicksort-randomizzato]], quindi il tempo atteso è $O(n \log n)$ per lo stesso argomento ([[07-Quicksort 1.pdf#page=23]]; 📚 Cormen, 3ª ed., §7.4.2).
+> È la ricorrenza di [[quicksort]] con costo locale $2n - 1$ invece di $\Theta(n)$:
+> - caso peggiore (dado scelto sempre il più stretto o il più largo): $\Theta(n^2)$, come la serie aritmetica di p. 14;
+> - scelta casuale: $k$ è uniforme come per [[quicksort-randomizzato]], quindi il tempo atteso è $O(n \log n)$ per lo stesso argomento (📚 Cormen, 3ª ed., §7.4.2).
 >
 > **Sanity check** ([[divide_et_impera.py]], media su 20 esecuzioni): 57, 1 365, 22 730 test per $n = 10, 100, 1000$, contro 23, 2 678, 253 746 del metodo quadratico. Il randomizzato vince da $n = 100$ in su.
 
@@ -112,10 +110,9 @@ $$ T(n) = T(k) + T(n - k - 1) + (2n - 1), \qquad k \in \{0, \dots, n-1\} $$
 - [[ordinamento]] — accoppiare dadi e bulloni equivale a ordinarli entrambi
 - [[progettazione-divide-et-impera]] — il problema come esercizio di progettazione
 
-## Fonti
+## Fonti · [[07-Quicksort 1.pdf#page=24|p. 24]], [[07-Quicksort 1.pdf#page=25|25]]
 
 - [[lezione-07-quicksort]]
-- [[07-Quicksort 1.pdf#page=24]], [[07-Quicksort 1.pdf#page=25]]
 
 _Aggiornato: 2026-10-01 — ingest 07-Quicksort.pdf_
 _Aggiornato: 2026-10-14 — link ripuntati alla versione aggiornata delle slide 07-Quicksort 1.pdf_

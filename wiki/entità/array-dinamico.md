@@ -6,25 +6,22 @@ fonti_pdf: ["04-Strutture dati elementari.pdf#page=10", "04-Strutture dati eleme
 
 # Array dinamico (raddoppio della capacità)
 
-## Cos'è
-
-> 📄 Fonte: [[04-Strutture dati elementari.pdf#page=10]]
+## Cos'è · [[04-Strutture dati elementari.pdf#page=10|p. 10]]
 
 Un array semplice non può cambiare dimensione durante l'esecuzione e allocarne uno enorme spreca spazio. Con gli **array dinamici** si parte da un array di **dimensione 1** e se ne **raddoppia** la dimensione da $m$ a $2m$ ogni volta che lo spazio finisce (allocando il nuovo array e ricopiando i vecchi elementi).
 
-## Formule
+## Formule · [[04-Strutture dati elementari.pdf#page=10|p. 10]], [[04-Strutture dati elementari.pdf#page=11|11]]
 
-> 🧮 Formula chiave: numero di raddoppi per $n$ elementi $= \lceil \log_2 n \rceil$ ([[04-Strutture dati elementari.pdf#page=10]]); spostamenti totali
+> 🧮 Formula chiave: numero di raddoppi per $n$ elementi $= \lceil \log_2 n \rceil$; spostamenti totali
 $$ M = \sum_{i=1}^{\lg n} i \cdot \frac{n}{2^i} = n \sum_{i=1}^{\lg n} \frac{i}{2^i} \le n \sum_{i=1}^{\infty} \frac{i}{2^i} = 2n $$
 
-(formula di [[04-Strutture dati elementari.pdf#page=11]])
+(formula di p. 11)
 
 Simboli: $n$ = elementi inseriti; $m$ = capacità corrente; $M$ = numero totale di spostamenti (copie) di elementi.
 
 ## Derivazioni
 
-### Derivazione — numero di raddoppi $\lceil \lg n \rceil$
-**Fonte:** [[04-Strutture dati elementari.pdf#page=10]] («Only $\lceil \log_2 n \rceil$»)
+### Derivazione — numero di raddoppi $\lceil \lg n \rceil$ · [[04-Strutture dati elementari.pdf#page=10|p. 10]]
 
 $$
 \begin{aligned}
@@ -34,8 +31,8 @@ $$
 \end{aligned}
 $$
 
-### Derivazione — lavoro totale $M \le 2n$
-**Fonte:** [[04-Strutture dati elementari.pdf#page=11]] — «If half the elements move once, a quarter of the elements twice, and so on»
+### Derivazione — lavoro totale $M \le 2n$ · [[04-Strutture dati elementari.pdf#page=11|p. 11]]
+**Fonte:** p. 11 — «If half the elements move once, a quarter of the elements twice, and so on»
 
 $$
 \begin{aligned}
@@ -54,14 +51,12 @@ $$
 
 ![[04-strutture-dati-p11-array-dinamico-lavoro-totale.png]]
 
-**Conclusione della fonte:** ognuno degli $n$ elementi si sposta **in media solo due volte**, e il lavoro totale di gestione dell'array dinamico è lo stesso $O(n)$ di un array semplice. «Geometric series convergence is the free lunch of algorithm analysis.» ([[04-Strutture dati elementari.pdf#page=11]])
+**Conclusione della fonte:** ognuno degli $n$ elementi si sposta **in media solo due volte**, e il lavoro totale di gestione dell'array dinamico è lo stesso $O(n)$ di un array semplice. «Geometric series convergence is the free lunch of algorithm analysis.»
 
 ![[grafico-array-dinamico.svg]]
 > 🧩 Grafico generato da me: le copie totali (a gradini, un salto a ogni raddoppio in $n = 2^k + 1$) restano sempre sotto la retta $2n$ di p. 11.
 
-## Nota: «free lunch» e teorema *no free lunch*
-
-> 📄 Fonte: [[04-Strutture dati elementari.pdf#page=12]]
+## Nota: «free lunch» e teorema *no free lunch* · [[04-Strutture dati elementari.pdf#page=12|p. 12]]
 
 Nel contesto della complessità computazionale e dell'ottimizzazione, il teorema **«no free lunch» (NFL)** afferma che, per certi tipi di problemi matematici, il costo computazionale per trovare una soluzione, **mediato su tutti i problemi della classe**, è lo stesso per qualsiasi metodo di soluzione. Il nome allude al detto «no such thing as a free lunch»: nessun metodo offre una «scorciatoia». La slide lo accosta per contrasto al «free lunch» della serie geometrica.
 
@@ -71,10 +66,9 @@ Nel contesto della complessità computazionale e dell'ottimizzazione, il teorema
 - [[notazione-asintotica]] — $M = O(n)$
 - [[strutture-contigue-e-collegate]] — alternativa alla lista quando serve crescere
 
-## Fonti
+## Fonti · [[04-Strutture dati elementari.pdf#page=10|p. 10]]–[[04-Strutture dati elementari.pdf#page=12|12]]
 
 - [[lezione-04-strutture-dati-elementari]]
-- [[04-Strutture dati elementari.pdf#page=10]], [[04-Strutture dati elementari.pdf#page=11]], [[04-Strutture dati elementari.pdf#page=12]]
 
 _Aggiornato: 2026-09-26 — ingest 04-Strutture dati elementari.pdf_
 

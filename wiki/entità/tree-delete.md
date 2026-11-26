@@ -11,9 +11,7 @@ fonti_pdf: ["09-Alberi binari ricerca.pdf#page=19", "09-Alberi binari ricerca.pd
 
 Togliere il nodo $z$ dall'[[albero-binario-di-ricerca]] $T$, mantenendo la proprietà del BST.
 
-## Idea
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=19]]
+## Idea · [[09-Alberi binari ricerca.pdf#page=19|p. 19]]
 
 Si considerano 3 diversi casi:
 - il nodo **non ha figli** ($z'$);
@@ -31,9 +29,7 @@ Nell'albero della slide (radice 15; 6 con figli 3 e 10; 3 con figlio 2; 10 con f
 
 > 🧩 Perché il successore di un nodo con due figli non ha figlio sinistro: è il **minimo del sottoalbero destro** ([[tree-successor]], caso 1), e il minimo si trova scendendo a sinistra finché il figlio sinistro è `NIL` ([[tree-minimum-maximum]]).
 
-## Pseudocodice
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=20]] (riportato fedelmente, numeri di riga miei)
+## Pseudocodice · [[09-Alberi binari ricerca.pdf#page=20|p. 20]]
 
 ```
 Tree-Delete (T,z)
@@ -59,23 +55,21 @@ Tree-Delete (T,z)
 Simboli: $z$ = nodo da eliminare; $y$ = nodo effettivamente tagliato fuori ($z$ stesso o il suo successore); $x$ = l'unico figlio di $y$, oppure `NIL`.
 
 ![[09-alberi-binari-ricerca-p20-tree-delete.png]]
-*Nella figura le etichette $y'$, $y''$, $y'''$ e $x''$, $x'''$ indicano $y$ e $x$ nei tre casi: per $z'' = 3$, $y'' = 3$ e $x'' = 2$; per $z''' = 6$, $y''' = 8$ e $x''' = 9$. ([[09-Alberi binari ricerca.pdf#page=20]])*
+*Nella figura le etichette $y'$, $y''$, $y'''$ e $x''$, $x'''$ indicano $y$ e $x$ nei tre casi: per $z'' = 3$, $y'' = 3$ e $x'' = 2$; per $z''' = 6$, $y''' = 8$ e $x''' = 9$.*
 
 > ⚠️ Contraddizione (di notazione): la slide mescola italiano e inglese («Copy y's satellite data into z») e usa lo stile della 2ª edizione del Cormen (`then`, `//`), non le [[pseudocodice|convenzioni del corso]].
 
-## Esempio di esecuzione
+## Esempio di esecuzione · [[09-Alberi binari ricerca.pdf#page=19|p. 19]], [[09-Alberi binari ricerca.pdf#page=21|p. 21]]
 
 ![[animazione-tree-delete.svg]]
-> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo sull'albero di [[09-Alberi binari ricerca.pdf#page=19]], nei tre casi uno dopo l'altro: Delete(20), poi Delete(3), poi Delete(6). $z$ è in rosa, $y$ in azzurro, $x$ in giallo.
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=21]] (fotogramma iniziale di un'animazione della slide: «caso 3, nodo con due figli: vogliamo eliminare $z = 6$ dall'albero originale»)
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo sull'albero di p. 19, nei tre casi uno dopo l'altro: Delete(20), poi Delete(3), poi Delete(6). $z$ è in rosa, $y$ in azzurro, $x$ in giallo.
 
 ![[09-alberi-binari-ricerca-p21-eliminazione-6.png]]
 
 > 🧩 Tracce mie, ciascuna sull'albero originale (verificate con [[grafi_e_alberi.py]]):
 
 | Caso | $z$ | $y$ (righe 1–3) | $x$ (righe 4–6) | Collegamento (righe 7–13) | Righe 14–16 | Albero risultante |
-|------|-----|-----------------|-----------------|---------------------------|-------------|-------------------|
+|---|---|---|---|---|---|---|
 | nessun figlio | 20 | 20 | `NIL` | `right[18] ← NIL` | — | 18 resta con il solo figlio 17 |
 | un figlio | 3 | 3 | 2 | `p[2] ← 6`, `left[6] ← 2` | — | 2 prende il posto di 3 |
 | due figli | 6 | 8 (successore) | 9 | `p[9] ← 10`, `left[10] ← 9` | `key[6] ← 8` | il nodo che conteneva 6 ora contiene 8; 9 diventa figlio sinistro di 10 |
@@ -88,9 +82,9 @@ Simboli: $z$ = nodo da eliminare; $y$ = nodo effettivamente tagliato fuori ($z$ 
 > - **Terzo caso** (righe 14–16): $key[y]$ è il successore di $key[z]$, cioè la più piccola chiave del sottoalbero destro di $z$. Messa in $z$, è $\ge$ di tutte le chiavi del sottoalbero sinistro (che erano $\le key[z] \le key[y]$) e $\le$ di tutte quelle rimaste nel sottoalbero destro. La proprietà del BST vale anche in $z$.
 > - **Radice:** se $y$ era la radice ($p[y] = $ `NIL`), la nuova radice è $x$ (riga 10).
 
-## Complessità
+## Complessità · [[09-Alberi binari ricerca.pdf#page=20|p. 20]]
 
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=20]] — «Il tempo di esecuzione è $O(h)$»
+> 📄 Fonte: p. 20 — «Il tempo di esecuzione è $O(h)$»
 
 > 🧩 Derivazione mia: l'unica parte non costante è la chiamata a [[tree-successor]] della riga 3, che costa $O(h)$. Tutte le altre righe sono assegnamenti e confronti a costo costante. Totale $O(h) + O(1) = O(h)$.
 
@@ -101,14 +95,13 @@ Simboli: $z$ = nodo da eliminare; $y$ = nodo effettivamente tagliato fuori ($z$ 
 - [[tree-insert]] — l'operazione inversa
 - [[lista-concatenata]] — tagliare fuori un nodo con un solo figlio è come togliere un elemento da una lista: si ricollega il predecessore al successivo
 
-## Fonti
+## Fonti · [[09-Alberi binari ricerca.pdf#page=19|p. 19]], [[09-Alberi binari ricerca.pdf#page=21|p. 21]]
 
 - [[lezione-09-alberi-binari-di-ricerca]]
-- [[09-Alberi binari ricerca.pdf#page=19]]–[[09-Alberi binari ricerca.pdf#page=21]]
 
 _Aggiornato: 2026-10-28 — ingest 09-Alberi binari ricerca.pdf_
 
 <!-- nav:inizio -->
 ---
-**Lezione 09 · pagina 9 di 9** · ← [[tree-insert|Tree-Insert (inserimento in un BST)]] · [[lezioni|Indice]] · fine del libro →
+**Lezione 09 · pagina 9 di 9** · ← [[tree-insert|Tree-Insert (inserimento in un BST)]] · [[lezioni|Indice]] · [[lezione-10-heap-e-heapsort|Lezione 10: introduzione e riepilogo]] →
 <!-- nav:fine -->

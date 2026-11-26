@@ -6,10 +6,10 @@ difficoltà: media
 
 # Scrivere e risolvere equazioni di ricorrenza
 
-## Metodo
+## Metodo · [[06-Merge Sort (1).pdf#page=26|p. 24]]
 
 1. Dallo pseudocodice ricorsivo: **caso base** → valore di $T$ sul caso base (costo costante).
-2. **Caso ricorsivo**: $T(n) =$ (somma dei $T$ delle chiamate ricorsive, con i loro argomenti) $+$ (costo del lavoro locale: confronti, somme, return). Per un algoritmo divide et impera: $T(n) = aT(n/b) + D(n) + C(n)$ ([[06-Merge Sort (1).pdf#page=23]]).
+2. **Caso ricorsivo**: $T(n) =$ (somma dei $T$ delle chiamate ricorsive, con i loro argomenti) $+$ (costo del lavoro locale: confronti, somme, return). Per un algoritmo divide et impera: $T(n) = aT(n/b) + D(n) + C(n)$.
 3. Scegliere il metodo di soluzione (🧩 criterio mio, dagli esempi delle lezioni 03, 06, 07):
    - sottoproblemi di dimensione $n - 1$ (o $n - k$): **srotolare** (sostituzione iterata), individuare la forma generale dopo $k$ passi, **verificarla per induzione**, scegliere $k$ per arrivare al caso base;
    - forma $aT(n/b) + f(n)$ con $a \ge 1$, $b > 1$: provare il [[teorema-dell-esperto]] (calcolare $n^{\log_b a}$ e confrontarlo con $f(n)$);
@@ -25,8 +25,8 @@ difficoltà: media
 
 ## Casi svolti
 
-### Caso 1 — somma ricorsiva
-**Traccia:** [[03-Analisi di algoritmi.pdf#page=30]]–[[03-Analisi di algoritmi.pdf#page=33]]: costo di `somma_ricorsiva(n)`.
+### Caso 1 — somma ricorsiva · [[03-Analisi di algoritmi.pdf#page=30|p. 30]]–[[03-Analisi di algoritmi.pdf#page=33|33]]
+**Traccia:** p. 30–p. 33: costo di `somma_ricorsiva(n)`.
 
 ```
 funzione somma_ricorsiva(n)
@@ -36,7 +36,7 @@ funzione somma_ricorsiva(n)
 4      ritorna n + somma_ricorsiva(n − 1)
 ```
 
-**Ricorrenza** ([[03-Analisi di algoritmi.pdf#page=31]], [[03-Analisi di algoritmi.pdf#page=32]]): $T(0) = 1$ (un confronto e un return), $T(i) = T(i-1) + c$ per $0 < i \le n$ (una chiamata, una somma, un return).
+**Ricorrenza**: $T(0) = 1$ (un confronto e un return), $T(i) = T(i-1) + c$ per $0 < i \le n$ (una chiamata, una somma, un return).
 
 $$
 \begin{aligned}
@@ -49,21 +49,21 @@ $$
 
 Verifica della forma generale per induzione su $k$: in [[equazioni-di-ricorrenza]].
 
-**Risultato:** $T(n) = 1 + cn = O(n)$ ([[03-Analisi di algoritmi.pdf#page=33]]). **Spazio** (🧩): $\Theta(n)$, profondità della ricorsione $n + 1$.
+**Risultato:** $T(n) = 1 + cn = O(n)$. **Spazio** (🧩): $\Theta(n)$, profondità della ricorsione $n + 1$.
 
 **Sanity check:** $T(1) = 1 + c$; con $c = 1$ lo script [[somma_primi_n.py]] misura $T(n) = n + 1$.
 
-### Caso 2 — merge sort: scrivere la ricorrenza e risolverla con l'albero
-**Traccia:** [[06-Merge Sort (1).pdf#page=22]]–[[06-Merge Sort (1).pdf#page=25]].
+### Caso 2 — merge sort: scrivere la ricorrenza e risolverla con l'albero · [[06-Merge Sort (1).pdf#page=24|p. 23]], [[06-Merge Sort (1).pdf#page=26|24]], [[06-Merge Sort (1).pdf#page=29|p. 27]]
+**Traccia:** p. 23–p. 27.
 
-- Dallo pseudocodice: $D(n) = \Theta(1)$ (calcolo di $q$), $a = b = 2$ (due chiamate su metà), $C(n) = \Theta(n)$ ([[merge]]) ⇒ $T(n) = 2T(n/2) + \Theta(n)$ ([[06-Merge Sort (1).pdf#page=23]]).
-- Con $n$ potenza di 2 e $T(1) = c$: livello $i$ = $2^i$ nodi da $cn/2^i$ = $cn$; livelli $\lg n + 1$; totale $cn(\lg n + 1) = \Theta(n\lg n)$ ([[06-Merge Sort (1).pdf#page=25]]).
+- Dallo pseudocodice: $D(n) = \Theta(1)$ (calcolo di $q$), $a = b = 2$ (due chiamate su metà), $C(n) = \Theta(n)$ ([[merge]]) ⇒ $T(n) = 2T(n/2) + \Theta(n)$.
+- Con $n$ potenza di 2 e $T(1) = c$: livello $i$ = $2^i$ nodi da $cn/2^i$ = $cn$; livelli $\lg n + 1$; totale $cn(\lg n + 1) = \Theta(n\lg n)$.
 - Passaggi completi e verifica per induzione in [[merge-sort]] § Complessità.
 
 **Risultato:** $\Theta(n\lg n)$. Controllo con il teorema dell'esperto: caso 2.
 
-### Caso 3 — sostituzione: $T(n) = 2T(\lfloor n/2 \rfloor) + n$, $T(1) = 1$
-**Traccia:** [[06-Merge Sort (1).pdf#page=28]]–[[06-Merge Sort (1).pdf#page=30]]: dimostrare $T(n) = O(n\lg n)$.
+### Caso 3 — sostituzione: $T(n) = 2T(\lfloor n/2 \rfloor) + n$, $T(1) = 1$ · [[06-Merge Sort (1).pdf#page=32|p. 30]], [[06-Merge Sort (1).pdf#page=34|p. 32]]
+**Traccia:** p. 30–p. 32: dimostrare $T(n) = O(n\lg n)$.
 
 $$
 \begin{aligned}
@@ -73,13 +73,13 @@ T(n) &\le 2c\lfloor n/2 \rfloor\lg\lfloor n/2 \rfloor + n \le cn\lg(n/2) + n && 
 $$
 
 - Casi base: $n = 1$ non va ($c\lg 1 = 0 < 1$); si usano $T(2) = 4 \le 2c$ e $T(3) = 5 \le 3c\lg 3$, quindi $c \ge 2$, $n_0 = 2$.
-- Due casi base perché dimezzando da $n \ge 4$ si arriva a 2 o a 3, mai a 1 ([[06-Merge Sort (1).pdf#page=30]]).
+- Due casi base perché dimezzando da $n \ge 4$ si arriva a 2 o a 3, mai a 1.
 - Passaggi commentati in [[metodo-di-sostituzione]].
 
 **Risultato:** $T(n) \le 2n\lg n$ per $n \ge 2$; [[divide_et_impera.py]] conferma $\max T(n)/(n\lg n) = 2$.
 
-### Caso 4 — albero + sostituzione: $T(n) = 3T(\lfloor n/4 \rfloor) + \Theta(n^2)$
-**Traccia:** [[06-Merge Sort (1).pdf#page=32]]–[[06-Merge Sort (1).pdf#page=40]].
+### Caso 4 — albero + sostituzione: $T(n) = 3T(\lfloor n/4 \rfloor) + \Theta(n^2)$ · [[06-Merge Sort (1).pdf#page=36|p. 34]], [[06-Merge Sort (1).pdf#page=47|p. 43]]
+**Traccia:** p. 34–p. 43.
 
 1. Albero di $3T(n/4) + cn^2$: livello $i$ con $3^i$ nodi da $c(n/4^i)^2$, cioè $(3/16)^i cn^2$; $\log_4 n$ livelli interni; $n^{\log_4 3}$ foglie.
 2. Somma: $T(n) < \sum_{i \ge 0}(3/16)^i cn^2 + \Theta(n^{\log_4 3}) = \frac{16}{13}cn^2 + \Theta(n^{\log_4 3}) = O(n^2)$.
@@ -90,11 +90,11 @@ Passaggi riga per riga in [[metodo-albero-di-ricorrenza]].
 
 **Risultato:** $T(n) = \Theta(n^2)$; [[divide_et_impera.py]] trova $\max T(n)/n^2 = 1.2308 \approx \frac{16}{13}$ con $c = 1$.
 
-### Caso 5 — teorema dell'esperto: quattro ricorrenze
-**Traccia:** [[06-Merge Sort (1).pdf#page=42]], [[06-Merge Sort (1).pdf#page=43]].
+### Caso 5 — teorema dell'esperto: quattro ricorrenze · [[06-Merge Sort (1).pdf#page=50|p. 46]], [[06-Merge Sort (1).pdf#page=51|47]]
+**Traccia:** p. 46, p. 47.
 
 | Ricorrenza | $a$ | $b$ | $f(n)$ | $n^{\log_b a}$ | Confronto | Caso | $T(n)$ |
-|------------|-----|-----|--------|----------------|-----------|------|--------|
+|---|---|---|---|---|---|---|---|
 | $9T(n/3) + n$ | 9 | 3 | $n$ | $n^2$ | $f = O(n^{2-1})$, $\epsilon = 1$ | 1 | $\Theta(n^2)$ |
 | $T(2n/3) + 1$ | 1 | 3/2 | 1 | $n^0 = 1$ | $f = \Theta(1)$ | 2 | $\Theta(\lg n)$ |
 | $3T(n/4) + n\lg n$ | 3 | 4 | $n\lg n$ | $n^{0.793}$ | $f = \Omega(n^{0.793+0.2})$; $3\frac{n}{4}\lg\frac{n}{4} \le \frac34 n\lg n$ | 3 | $\Theta(n\lg n)$ |
@@ -102,8 +102,8 @@ Passaggi riga per riga in [[metodo-albero-di-ricorrenza]].
 
 Spiegazioni, verifiche numeriche e soluzione $\Theta(n\lg^2 n)$ dell'ultima con l'albero (🧩) in [[teorema-dell-esperto]].
 
-### Caso 6 — quicksort: caso peggiore, migliore, 9:1
-**Traccia:** [[07-Quicksort 1.pdf#page=14]]–[[07-Quicksort 1.pdf#page=17]], [[07-Quicksort 1.pdf#page=21]], [[07-Quicksort 1.pdf#page=22]].
+### Caso 6 — quicksort: caso peggiore, migliore, 9:1 · [[07-Quicksort 1.pdf#page=14|p. 14]], [[07-Quicksort 1.pdf#page=17|p. 17]], [[07-Quicksort 1.pdf#page=21|p. 21]], [[07-Quicksort 1.pdf#page=22|22]]
+**Traccia:** p. 14–p. 17, p. 21, p. 22.
 
 - **Sbilanciato:** $T(n) = T(n-1) + \Theta(n)$: srotolando, $T(0) + c\sum_{m=1}^{n} m = c_0 + c\frac{n(n+1)}{2} = \Theta(n^2)$ (serie aritmetica).
 - **Bilanciato:** $T(n) \le 2T(n/2) + \Theta(n)$: esperto, caso 2, $O(n\lg n)$.
@@ -112,13 +112,13 @@ Spiegazioni, verifiche numeriche e soluzione $\Theta(n\lg^2 n)$ dell'ultima con 
 
 Passaggi completi in [[quicksort]] § Complessità.
 
-### Caso 7 — Torre di Hanoi (ricorrenza con $n - 1$)
-**Traccia:** [[06-Merge Sort (1).pdf#page=5]] (7 mosse per 3 dischi; ricorrenza mia, 🧩).
+### Caso 7 — Torre di Hanoi (ricorrenza con $n - 1$) · [[06-Merge Sort (1).pdf#page=5|p. 5]]
+**Traccia:** p. 5 (7 mosse per 3 dischi; ricorrenza mia, 🧩).
 
 $M(n) = 2M(n-1) + 1$, $M(0) = 0$ ⇒ srotolando $M(n) = 2^k M(n-k) + \sum_{m=0}^{k-1} 2^m$ ⇒ con $k = n$, $M(n) = 2^n - 1$. Passaggi in [[torre-di-hanoi]].
 
-### Caso 8 — visita in ordine di un BST: sostituzione con un parametro libero
-**Traccia:** [[09-Alberi binari ricerca.pdf#page=9]] («Dimostriamo che impiega un tempo $\Theta(n)$»).
+### Caso 8 — visita in ordine di un BST: sostituzione con un parametro libero · [[09-Alberi binari ricerca.pdf#page=9|p. 9]]
+**Traccia:** p. 9 («Dimostriamo che impiega un tempo $\Theta(n)$»).
 
 - Ricorrenza: $T(0) = c$, $T(n) = T(k) + T(n-k-1) + d$, con $k$ = nodi del sottoalbero sinistro, **qualsiasi**.
 - Metodo: né esperto (nessun $b$ fisso) né srotolamento (due chiamate di dimensione arbitraria) ⇒ **sostituzione**, con l'ipotesi $T(n) = (c+d)n + c$ suggerita dal conteggio delle chiamate ($2n + 1$).
@@ -128,8 +128,8 @@ Passaggi in [[inorder-tree-walk]] § Complessità.
 
 **Risultato:** $\Theta(n)$; [[grafi_e_alberi.py]] conta 13 chiamate per $n = 6$.
 
-### Caso 9 — ricerca in un BST: srotolamento sull'altezza
-**Traccia:** [[09-Alberi binari ricerca.pdf#page=10]] («Il tempo di esecuzione è $O(h)$»).
+### Caso 9 — ricerca in un BST: srotolamento sull'altezza · [[09-Alberi binari ricerca.pdf#page=10|p. 10]]
+**Traccia:** p. 10 («Il tempo di esecuzione è $O(h)$»).
 
 $T(h) \le T(h-1) + c$, $T(-1) = c$ ⇒ srotolando $T(h) \le (h+2)c = O(h)$. La misura che cala è l'**altezza** del sottoalbero, non il numero di nodi. Passaggi in [[tree-search]] § Complessità.
 

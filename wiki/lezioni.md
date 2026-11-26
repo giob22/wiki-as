@@ -76,7 +76,7 @@ Il wiki si legge come un libro: ogni lezione si apre con la sua pagina di introd
 
 ## Lezione 06 — Divide et impera: Merge Sort
 1. [[lezione-06-merge-sort|Introduzione e riepilogo]]
-2. [[torre-di-hanoi|Torre di Hanoi]]
+2. [[torre-di-hanoi|Torre di Hanoi · 06-Merge Sort (1).pdf#page=2p. 2]]
 3. [[merge-sort|Merge sort]]
 4. [[merge|Merge (fusione di sequenze ordinate)]]
 5. [[massimo-sottoarray|Problema del massimo sottoarray]]
@@ -90,7 +90,7 @@ Il wiki si legge come un libro: ogni lezione si apre con la sua pagina di introd
 3. [[partition|Partition]]
 4. [[randomizzazione|Randomizzazione]]
 5. [[quicksort-randomizzato|Quicksort randomizzato]]
-6. [[nuts-and-bolts|Nuts and Bolts (dadi e bulloni)]]
+6. [[nuts-and-bolts|Nuts and Bolts (dadi e bulloni) · 07-Quicksort 1.pdf#page=24p. 24]]
 7. [[progettazione-divide-et-impera|Progettazione di algoritmi divide et impera]]
 
 ## Lezione 08 — Grafi e alberi
@@ -111,3 +111,46 @@ Il wiki si legge come un libro: ogni lezione si apre con la sua pagina di introd
 7. [[tree-successor|Tree-Successor (successore di un nodo)]]
 8. [[tree-insert|Tree-Insert (inserimento in un BST)]]
 9. [[tree-delete|Tree-Delete (eliminazione da un BST)]]
+
+## Lezione 10 — Heapsort
+1. [[lezione-10-heap-e-heapsort|Introduzione e riepilogo]]
+2. [[heap|Heap (binary heap)]]
+3. [[max-heapify|Max-Heapify]]
+4. [[build-max-heap|Build-Max-Heap]]
+5. [[heapsort|Heap-Sort]]
+6. [[heap-extract-max|Heap-Maximum e Heap-Extract-Max]]
+7. [[heap-increase-key|Heap-Increase-Key]]
+8. [[max-heap-insert|Max-Heap-Insert]]
+9. [[tracce-su-heap|Tracce su heap]]
+
+## Lezione 11 — Alberi rosso-neri
+1. [[lezione-11-alberi-rosso-neri|Introduzione e riepilogo]]
+2. [[albero-rosso-nero|Albero rosso-nero]]
+3. [[left-rotate|Rotazioni (Left-Rotate e Right-Rotate)]]
+4. [[rb-insert|RB-Insert e RB-Insert-Fixup]]
+5. [[rb-delete|RB-Delete e RB-Delete-Fixup]]
+
+## Lezione 12 — Alberi auto-aggiustanti
+1. [[lezione-12-alberi-auto-aggiustanti|Introduzione e riepilogo]]
+2. [[splay-tree|Splay tree (albero auto-aggiustante)]]
+3. [[splay|Splay]]
+4. [[splay-tree-operazioni|Splay-Tree-Search, Splay-Tree-Insert e Splay-Tree-Delete]]
+
+## Lezione 13 — Algoritmi di visita di un grafo
+1. [[lezione-13-algoritmi-di-visita-di-un-grafo|Introduzione e riepilogo]]
+2. [[visita-di-un-grafo|Visita di un grafo]]
+3. [[visita-in-ampiezza|Visita in ampiezza (BFS)]]
+4. [[print-path|Print-Path]]
+5. [[visita-in-profondita|Visita in profondità (DFS)]]
+6. [[ordinamento-topologico|Ordinamento topologico (Topological-Sort)]]
+7. [[dijkstra|Algoritmo di Dijkstra (percorsi minimi)]]
+
+## Lezione 14 — Backpropagation
+1. [[lezione-14-backpropagation|Introduzione e riepilogo]]
+2. [[grafo-computazionale|Grafo computazionale]]
+3. [[backpropagation|Backpropagation]]
+
+## Lezione 15 — Backtracking
+1. [[lezione-15-backtracking|Introduzione e riepilogo]]
+2. [[backtracking|Backtracking]]
+3. [[generazione-di-permutazioni|Generazione di tutte le permutazioni]]

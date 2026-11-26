@@ -6,15 +6,15 @@ difficoltà: media
 
 # Dimostrazioni di correttezza (invariante e induzione)
 
-## Metodo
+## Metodo · [[03-Analisi di algoritmi.pdf#page=16|p. 16]], [[03-Analisi di algoritmi.pdf#page=18|p. 18]]
 
-**Algoritmo iterativo** ([[03-Analisi di algoritmi.pdf#page=16]]):
+**Algoritmo iterativo**:
 1. Scrivere pre- e post-condizione.
 2. Proporre un invariante che, unito alla condizione d'uscita, implichi la post-condizione.
 3. Dimostrare **inizializzazione**, **conservazione**, **conclusione**.
 4. Dimostrare la **terminazione** con una funzione variante intera $\ge 0$ strettamente decrescente.
 
-**Algoritmo ricorsivo** ([[03-Analisi di algoritmi.pdf#page=18]]):
+**Algoritmo ricorsivo**:
 1. Specifiche (pre/post).
 2. Misura ben fondata che decresce a ogni chiamata.
 3. Casi base corretti.
@@ -44,22 +44,24 @@ difficoltà: media
 ### Caso 4 — OptimalScheduling
 > 🧩 Mio. Induzione sul numero di intervalli con argomento di scambio: esiste sempre una soluzione ottima che contiene il job che finisce per primo. → [[optimal-scheduling]]
 
-### Caso 5 — insertion sort ([[05-Insertion sort.pdf#page=16]])
+### Caso 5 — insertion sort ([[05-Insertion sort.pdf#page=20]])
 - Invariante (dalla slide): all'inizio di ogni iterazione del `for`, $A[1..j-1]$ contiene gli elementi originali di $A[1..j-1]$, ordinati.
 - Inizializzazione: $j = 2$, $A[1..1]$ ha un solo elemento ✓. Conservazione: $A[j]$ è inserito mantenendo ordinato $A[1..j]$ ✓. Conclusione: all'uscita $j = n + 1$, $A[1..n]$ è ordinato ✓.
 - Passaggi della conservazione e terminazione del `while` → [[insertion-sort]] § Correttezza.
 
-### Caso 6 — selection sort (esercizio 2.2.2, [[05-Insertion sort.pdf#page=26]])
+### Caso 6 — selection sort (esercizio 2.2.2, [[05-Insertion sort.pdf#page=36]])
 > 🧩 Mio (la slide chiede «Dimostrarne la correttezza» senza soluzione). Invariante esterno: $A[1..i-1]$ contiene gli $i - 1$ elementi più piccoli, ordinati; invariante interno: $A[min]$ è il minimo di $A[i..j-1]$. Dimostrazione completa, e perché basta arrivare a $n - 1$ → [[selection-sort]] § Correttezza.
 
-### Caso 7 — Merge ([[06-Merge Sort (1).pdf#page=19]], [[06-Merge Sort (1).pdf#page=20]])
+### Caso 7 — Merge ([[06-Merge Sort (1).pdf#page=21]], [[06-Merge Sort (1).pdf#page=22]])
 - Pre: $A[p..q]$ e $A[q+1..r]$ ordinati. Post: $A[p..r]$ ordinato con gli stessi elementi.
 - Invariante (dalla slide): all'inizio di ogni iterazione del `for` finale, $A[p..k-1]$ contiene i $k - p$ elementi più piccoli di $L$ ed $R$, ordinati; $L[i]$ e $R[j]$ sono i più piccoli non ancora ricopiati.
 - Inizializzazione: $k = p$, sottosequenza vuota; $L[1]$, $R[1]$ minimi ✓. Conservazione: si copia $\min(L[i], R[j])$, che è il minimo dei rimasti ✓. Conclusione: $k = r + 1$, $A[p..r]$ contiene tutti gli $r - p + 1$ elementi ordinati; in $L$ e $R$ restano le sentinelle ✓.
 - Perché il minimo dei rimasti è $\min(L[i], R[j])$ e perché le sentinelle non vengono copiate (🧩) → [[merge]] § Correttezza.
 
 ### Caso 8 — Merge-Sort (🧩, la slide non lo dimostra)
-- Induzione forte su $n = r - p + 1$: base $n \le 1$ (già ordinato); passo: le metà hanno $\lceil n/2 ceil$ e $\lfloor n/2 floor$ elementi, meno di $n$, quindi sono ordinate per ipotesi induttiva e Merge le fonde. → [[merge-sort]] § Correttezza.
+- Induzione forte su $n = r - p + 1$: base $n \le 1$ (già ordinato); passo: le metà hanno $\lceil n/2 
+ceil$ e $\lfloor n/2 
+floor$ elementi, meno di $n$, quindi sono ordinate per ipotesi induttiva e Merge le fonde. → [[merge-sort]] § Correttezza.
 
 ### Caso 9 — Partition ([[07-Quicksort 1.pdf#page=13]])
 - Invariante (dalla slide): $A[k] \le x$ per $p \le k \le i$; $A[k] > x$ per $i+1 \le k \le j-1$; $A[k] = x$ per $k = r$.
@@ -72,19 +74,19 @@ difficoltà: media
 - Torre di Hanoi: induzione su $n$; la mossa del disco $n$ è lecita perché gli altri sono tutti su `via` → [[torre-di-hanoi]] § Correttezza.
 - Nuts and Bolts: invariante del metodo quadratico; induzione per il randomizzato, con $|D_<| = |B_<|$ → [[nuts-and-bolts]].
 
-### Caso 11 — alberi e BST (lezioni 08–09)
+### Caso 11 — alberi e BST (lezioni 08–09) · [[09-Alberi binari ricerca.pdf#page=7|p. 7]]
 - **Albero con $n$ nodi ha $n - 1$ archi:** induzione su $n$, togliendo una foglia (🧩) → [[albero]] § Derivazione.
-- **Visita in ordine ordinata:** induzione sul numero di nodi, con la proprietà del BST ([[09-Alberi binari ricerca.pdf#page=7]]) → [[inorder-tree-walk]] § Correttezza.
+- **Visita in ordine ordinata:** induzione sul numero di nodi, con la proprietà del BST → [[inorder-tree-walk]] § Correttezza.
 - **Tree-Search:** induzione sull'altezza; invariante della versione iterativa «se la chiave c'è, è nel sottoalbero di $x$» → [[tree-search]] § Correttezza.
 - **Tree-Minimum:** invariante «il minimo è nel sottoalbero di $x$» → [[tree-minimum-maximum]] § Correttezza.
 - **Tree-Insert e Tree-Delete:** la proprietà del BST resta vera; nel terzo caso di Delete la chiave del successore è $\ge$ del sottoalbero sinistro e $\le$ del destro → [[tree-insert]], [[tree-delete]] § Correttezza.
 
-## Trappole
+## Trappole · [[03-Analisi di algoritmi.pdf#page=15|p. 15]]
 
 - Dimenticare la terminazione (si ottiene solo la correttezza parziale).
 - Invariante troppo debole: la conclusione non dà la post-condizione.
 - Valori iniziali sbagliati dell'indice (vedi il refuso «$i = 0$»).
-- Usare esempi o test come se fossero una dimostrazione ([[03-Analisi di algoritmi.pdf#page=15]]).
+- Usare esempi o test come se fossero una dimostrazione.
 - Invariante con più affermazioni (Merge, Partition): la conservazione va dimostrata per **ciascuna**, in **ciascun** ramo dell'`if`.
 - Dimenticare il passo dopo il ciclo (lo scambio finale di Partition) nella conclusione.
 

@@ -5,17 +5,15 @@ paradigma: "[[divide-et-impera]] (soluzione ricorsiva)"
 fonti_pdf: ["06-Merge Sort (1).pdf#page=2", "06-Merge Sort (1).pdf#page=3", "06-Merge Sort (1).pdf#page=4", "06-Merge Sort (1).pdf#page=5"]
 ---
 
-# Torre di Hanoi
+# Torre di Hanoi · [[06-Merge Sort (1).pdf#page=2|p. 2]]
 
-Problema «Stop & Think» che apre la lezione sul divide et impera ([[06-Merge Sort (1).pdf#page=2]]). Le slide danno il problema (p. 3), l'approccio divide et impera (p. 4) e la sequenza di mosse per tre dischi (p. 5). Lo pseudocodice, la correttezza e il conteggio delle mosse sono miei (🧩).
+Problema «Stop & Think» che apre la lezione sul divide et impera. Le slide danno il problema (p. 3), l'approccio divide et impera (p. 4) e la sequenza di mosse per tre dischi (p. 5). Lo pseudocodice, la correttezza e il conteggio delle mosse sono miei (🧩).
 
-## Definizione formale
+## Definizione formale · [[06-Merge Sort (1).pdf#page=2|p. 2]], [[06-Merge Sort (1).pdf#page=3|3]]
 
-> 📄 Fonte: [[06-Merge Sort (1).pdf#page=2]], [[06-Merge Sort (1).pdf#page=3]]
+La slide di apertura rimanda all'esercizio interattivo di Khan Academy «move three disks in Towers of Hanoi» (link in p. 2).
 
-La slide di apertura rimanda all'esercizio interattivo di Khan Academy «move three disks in Towers of Hanoi» (link in [[06-Merge Sort (1).pdf#page=2]]).
-
-**Problema** ([[06-Merge Sort (1).pdf#page=3]]):
+**Problema**:
 - spostare tutti i dischi dalla torre **sorgente** alla torre **destinazione** (ad esempio dal centro a sinistra);
 - si può muovere **un solo disco alla volta**;
 - non si può mai appoggiare un disco **più grande** sopra uno **più piccolo**.
@@ -28,9 +26,7 @@ La figura mostra tre pioli (*Tower*) e una pila di dischi (*Disks*) di dimension
 
 > 🧩 Formalizzazione mia: **input** $n$ dischi sulla torre sorgente, ordinati dal più grande (in basso) al più piccolo; **output** la sequenza di mosse che li porta tutti sulla torre destinazione rispettando i due vincoli.
 
-## Approccio divide et impera
-
-> 📄 Fonte: [[06-Merge Sort (1).pdf#page=4]]
+## Approccio divide et impera · [[06-Merge Sort (1).pdf#page=4|p. 4]], [[06-Merge Sort (1).pdf#page=11|p. 10]]
 
 - **Dividere** il problema iniziale in uno o più sottoproblemi fino ad arrivare al caso base. Ad esempio: sposto solo la **sotto-torre** fatta dai dischi verde e arancione dal centro ad uno dei lati.
 - Il problema più «piccolo» è lo spostamento di un **solo disco generico** da una torre di partenza ad una di destinazione: è il **caso base**.
@@ -38,13 +34,11 @@ La figura mostra tre pioli (*Tower*) e una pila di dischi (*Disks*) di dimension
 
 ![[06-merge-sort-p4-hanoi-divide-et-impera.png]]
 
-Annotazione a mano sulla slide: «Mi serve un algoritmo che gestisce la **fase decrescente**» (freccia verso il basso) e «**fase ascendente** → si combinano le soluzioni trovate» (freccia verso l'alto; l'ultima parola è di lettura incerta). È la distinzione tra la discesa delle chiamate ricorsive e la loro risalita, ripresa per merge sort in [[06-Merge Sort (1).pdf#page=9]] (→ [[merge-sort]]).
+Annotazione a mano sulla slide: «Mi serve un algoritmo che gestisce la **fase decrescente**» (freccia verso il basso) e «**fase ascendente** → si combinano le soluzioni trovate» (freccia verso l'alto; l'ultima parola è di lettura incerta). È la distinzione tra la discesa delle chiamate ricorsive e la loro risalita, ripresa per merge sort in p. 10 (→ [[merge-sort]]).
 
 > 🧩 Lettura mia dell'esempio della slide: la sotto-torre «verde e arancione» sono i due dischi più piccoli, cioè gli $n - 1$ dischi sopra il più grande (qui $n = 3$). Spostarli su un lato libera il disco più grande, che può andare sulla destinazione con una sola mossa (il caso base); poi la sotto-torre va rimessa sopra di lui. Sono i tre passi dell'algoritmo qui sotto.
 
-## Sequenza delle mosse per tre dischi
-
-> 📄 Fonte: [[06-Merge Sort (1).pdf#page=5]]
+## Sequenza delle mosse per tre dischi · [[06-Merge Sort (1).pdf#page=5|p. 5]]
 
 La slide mostra otto configurazioni numerate da 1 a 8: lo stato iniziale e i sette stati dopo ogni mossa.
 
@@ -53,7 +47,7 @@ La slide mostra otto configurazioni numerate da 1 a 8: lo stato iniziale e i set
 > 🧩 Lettura mia della figura (dischi 1 = piccolo/arancio, 2 = medio/bianco, 3 = grande/verde):
 
 | Stato | Mossa che lo produce | A | B | C |
-|-------|----------------------|---|---|---|
+|---|---|---|---|---|
 | 1 | — | 3, 2, 1 | — | — |
 | 2 | disco 1: A → C | 3, 2 | — | 1 |
 | 3 | disco 2: A → B | 3 | 2 | 1 |
@@ -84,10 +78,10 @@ Simboli: $n$ = numero di dischi da spostare (i più piccoli, numerati $1..n$); `
 
 > 🧩 Caso base: la slide di p. 4 lo pone a **un disco** (una mossa); lo pseudocodice si ferma a $n = 0$ (nessuna mossa). È lo stesso algoritmo: con $n = 1$ le righe 2 e 4 chiamano `HANOI(0, …)`, che non fa nulla, e resta la sola mossa della riga 3.
 
-## Esempio di esecuzione
+## Esempio di esecuzione · [[06-Merge Sort (1).pdf#page=5|p. 5]]
 
 ![[animazione-torre-di-hanoi.svg]]
-> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero `HANOI(3, A, C, B)`: un fotogramma per mossa, con il contatore delle mosse, la chiamata ricorsiva che la esegue e la riga 3 evidenziata. Le sette mosse coincidono con la sequenza di [[06-Merge Sort (1).pdf#page=5]] (verificato anche in [[divide_et_impera.py]]).
+> 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero `HANOI(3, A, C, B)`: un fotogramma per mossa, con il contatore delle mosse, la chiamata ricorsiva che la esegue e la riga 3 evidenziata. Le sette mosse coincidono con la sequenza di p. 5 (verificato anche in [[divide_et_impera.py]]).
 
 ## Correttezza
 
@@ -98,7 +92,7 @@ Simboli: $n$ = numero di dischi da spostare (i più piccoli, numerati $1..n$); `
 
 ## Complessità
 
-### Derivazione — numero di mosse $M(n) = 2^n - 1$
+### Derivazione — numero di mosse $M(n) = 2^n - 1$ · [[06-Merge Sort (1).pdf#page=5|p. 5]]
 **Si parte da:** lo pseudocodice: due chiamate su $n - 1$ dischi più una mossa → [[equazioni-di-ricorrenza]]
 
 > 🧩 Derivazione mia:
@@ -113,7 +107,7 @@ M(n) &= 2\big(2M(n-2) + 1\big) + 1 = 4M(n-2) + 2 + 1 && \text{ricorrenza su } n-
 \end{aligned}
 $$
 
-**Sanity check:** $M(3) = 7$, come le sette mosse di [[06-Merge Sort (1).pdf#page=5]]; [[divide_et_impera.py]] conta 1, 3, 7, 15, 1023 mosse per $n = 1, 2, 3, 4, 10$.
+**Sanity check:** $M(3) = 7$, come le sette mosse di p. 5; [[divide_et_impera.py]] conta 1, 3, 7, 15, 1023 mosse per $n = 1, 2, 3, 4, 10$.
 
 > 🧩 Questo algoritmo è **esponenziale** pur essendo divide et impera: i due sottoproblemi hanno dimensione $n - 1$, non $n/2$. Ridurre la dimensione di una costante anziché di un fattore porta a $2^n$. È lo stesso contrasto tra ricorsione «$n - 1$» e «$n/2$» delle [[equazioni-di-ricorrenza]].
 
@@ -126,10 +120,9 @@ $$
 - [[merge-sort]] — divide et impera con sottoproblemi dimezzati: $\Theta(n\lg n)$ invece di esponenziale
 - [[progettazione-divide-et-impera]] — il problema come esercizio di progettazione
 
-## Fonti
+## Fonti · [[06-Merge Sort (1).pdf#page=2|p. 2]], [[06-Merge Sort (1).pdf#page=5|p. 5]]
 
 - [[lezione-06-merge-sort]]
-- [[06-Merge Sort (1).pdf#page=2]]–[[06-Merge Sort (1).pdf#page=5]]
 
 _Aggiornato: 2026-10-01 — ingest 06-Merge Sort.pdf_
 _Aggiornato: 2026-10-10 — link ripuntati alla versione aggiornata delle slide 06-Merge Sort (1).pdf_

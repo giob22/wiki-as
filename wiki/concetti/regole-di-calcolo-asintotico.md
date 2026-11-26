@@ -11,9 +11,9 @@ fonti_pdf: ["02-Notazione asintotica.pdf#page=24", "02-Notazione asintotica.pdf#
 
 Regole per combinare stime asintotiche senza ripartire ogni volta dalle definizioni di [[notazione-asintotica]].
 
-## Formule
+## Formule · [[02-Notazione asintotica.pdf#page=24|p. 24]]–[[02-Notazione asintotica.pdf#page=26|26]]
 
-> 📄 Fonte: [[02-Notazione asintotica.pdf#page=24]] — *Big Oh Addition/Subtraction*
+> 📄 Fonte: p. 24 — *Big Oh Addition/Subtraction*
 
 Supponiamo $f(n) = O(n^2)$ e $g(n) = O(n^2)$.
 - **Somma:** $g'(n) = f(n) + g(n)$. Sommando le costanti dei limiti si ottiene $g'(n) = O(n^2)$.
@@ -22,7 +22,7 @@ Supponiamo $f(n) = O(n^2)$ e $g(n) = O(n^2)$.
 
 Esempio della slide: $f(n) = 5n^2$ e $g(n) = 150n^2$ **contro** $f(n) = 500n^2$ e $g(n) = 150n^2$.
 
-> 📄 Fonte: [[02-Notazione asintotica.pdf#page=25]] — *Multiplication by Constant*
+> 📄 Fonte: p. 25 — *Multiplication by Constant*
 
 La moltiplicazione per una costante non cambia l'andamento asintotico:
 $$
@@ -30,7 +30,7 @@ O(c \cdot f(n)) \to O(f(n)), \qquad \Omega(c \cdot f(n)) \to \Omega(f(n)), \qqua
 $$
 La «vecchia costante» $C$ del Big Oh diventa $c \cdot C$.
 
-> 📄 Fonte: [[02-Notazione asintotica.pdf#page=26]] — *Multiplication by Function*
+> 📄 Fonte: p. 26 — *Multiplication by Function*
 
 Quando entrambe le funzioni di un prodotto sono crescenti, **contano entrambe**:
 $$
@@ -39,8 +39,7 @@ $$
 
 ## Derivazioni
 
-### Derivazione — somma e differenza
-**Fonte:** [[02-Notazione asintotica.pdf#page=24]]
+### Derivazione — somma e differenza · [[02-Notazione asintotica.pdf#page=24|p. 24]]
 **Si parte da:** $f(n) \le c_f\, n^2$ per $n \ge n_f$ e $g(n) \le c_g\, n^2$ per $n \ge n_g$ ([[notazione-asintotica]], p. 18)
 
 $$
@@ -79,10 +78,9 @@ Permette di analizzare algoritmi componendo i costi dei pezzi.
 - [[dominanza-asintotica]] — nella somma sopravvive il termine dominante
 - [[dimostrazioni-notazione-asintotica]] — esercizi
 
-## Fonti
+## Fonti · [[02-Notazione asintotica.pdf#page=24|p. 24]]–[[02-Notazione asintotica.pdf#page=26|26]]
 
 - [[lezione-02-notazione-asintotica]]
-- [[02-Notazione asintotica.pdf#page=24]], [[02-Notazione asintotica.pdf#page=25]], [[02-Notazione asintotica.pdf#page=26]]
 
 _Aggiornato: 2026-09-26 — ingest 02-Notazione asintotica.pdf_
 

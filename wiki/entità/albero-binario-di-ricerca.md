@@ -6,9 +6,7 @@ fonti_pdf: ["09-Alberi binari ricerca.pdf#page=6", "09-Alberi binari ricerca.pdf
 
 # Albero binario di ricerca (BST)
 
-## Cos'è
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=6]]
+## Cos'è · [[09-Alberi binari ricerca.pdf#page=6|p. 6]]
 
 - Gli alberi di ricerca sono strutture dati che supportano molte delle operazioni definite su **insiemi dinamici**: *Search, Minimum, Maximum, Predecessor, Successor, Insert, Delete*.
 - Possono essere usati sia come **dizionario** sia come **coda a priorità** (→ [[coda-di-priorita]]).
@@ -19,9 +17,7 @@ fonti_pdf: ["09-Alberi binari ricerca.pdf#page=6", "09-Alberi binari ricerca.pdf
 - ...ma non sempre è possibile costruire l'albero in questa maniera.
 - Alcuni tipi particolari di alberi di ricerca presentano nel caso peggiore un tempo di esecuzione «buono».
 
-## Proprietà (invariante della struttura)
-
-> 📄 Fonte: [[09-Alberi binari ricerca.pdf#page=7]]
+## Proprietà (invariante della struttura) · [[09-Alberi binari ricerca.pdf#page=7|p. 7]]
 
 Un albero binario di ricerca soddisfa la seguente proprietà. Sia $x$ un nodo dell'albero:
 - se $y$ è nel **sottoalbero sinistro** di $x$, allora $key[y] \le key[x]$;
@@ -35,19 +31,19 @@ Esempio della slide: radice 5; figlio sinistro 3, con figli 2 e 5; figlio destro
 > - la proprietà riguarda **tutto** il sottoalbero, non solo i figli: nell'esempio il 5 in basso a sinistra è nel sottoalbero sinistro della radice 5, e infatti $5 \le 5$;
 > - con le disuguaglianze non strette sono ammesse chiavi ripetute. [[tree-insert|Tree-Insert]] manda una chiave uguale a destra (`if key[z] < key[x] then … else x ← right[x]`).
 
-## Rappresentazione in memoria
+## Rappresentazione in memoria · [[09-Alberi binari ricerca.pdf#page=16|p. 16]], [[09-Alberi binari ricerca.pdf#page=20|p. 20]]
 
 > 🧩 Dai campi usati nello pseudocodice delle slide (pp. 8–20): ogni nodo $x$ ha
-> - $key[x]$, la chiave, più eventuali **dati satellite** ([[09-Alberi binari ricerca.pdf#page=20]]);
+> - $key[x]$, la chiave, più eventuali **dati satellite**;
 > - $left[x]$, $right[x]$, puntatori al figlio sinistro e destro;
 > - $p[x]$, puntatore al padre.
 >
-> I puntatori mancanti valgono `NIL`; l'albero $T$ ha il campo $root[T]$ ([[09-Alberi binari ricerca.pdf#page=16]]). È una struttura **collegata**, come la [[lista-concatenata]] (→ [[strutture-contigue-e-collegate]]).
+> I puntatori mancanti valgono `NIL`; l'albero $T$ ha il campo $root[T]$. È una struttura **collegata**, come la [[lista-concatenata]] (→ [[strutture-contigue-e-collegate]]).
 
-## Operazioni
+## Operazioni · [[08-Grafi e alberi.pdf#page=42|p. 42]]
 
 | Operazione | Pagina wiki | Costo | Slide |
-|------------|-------------|-------|-------|
+|---|---|---|---|
 | visita in ordine (stampa ordinata) | [[inorder-tree-walk]] | $\Theta(n)$ | pp. 8–9 |
 | ricerca (ricorsiva e iterativa) | [[tree-search]] | $O(h)$ | pp. 10–11 |
 | minimo e massimo | [[tree-minimum-maximum]] | $O(h)$ | p. 12 |
@@ -55,10 +51,9 @@ Esempio della slide: radice 5; figlio sinistro 3, con figli 2 e 5; figlio destro
 | inserimento | [[tree-insert]] | $O(h)$ | pp. 16–18 |
 | eliminazione | [[tree-delete]] | $O(h)$ | pp. 19–21 |
 
-> 🧩 Perché quasi tutte costano $O(h)$: scendono (o salgono) lungo **un solo ramo**, un livello per passo, con lavoro costante a ogni livello. Un ramo ha al più $h + 1$ nodi ([[08-Grafi e alberi.pdf#page=42]]: «un algoritmo che percorre un solo ramo impiega $O(h)$ passi»). Fa eccezione la visita in ordine, che tocca tutti i nodi.
+> 🧩 Perché quasi tutte costano $O(h)$: scendono (o salgono) lungo **un solo ramo**, un livello per passo, con lavoro costante a ogni livello. Un ramo ha al più $h + 1$ nodi (p. 42: «un algoritmo che percorre un solo ramo impiega $O(h)$ passi»). Fa eccezione la visita in ordine, che tocca tutti i nodi.
 
-### Derivazione — $h$ nel caso completo e nel caso degenere
-**Fonte:** [[09-Alberi binari ricerca.pdf#page=6]] («$\lg n$ se completo, $n$ se degenere»)
+### Derivazione — $h$ nel caso completo e nel caso degenere · [[09-Alberi binari ricerca.pdf#page=6|p. 6]]
 
 > 🧩 Derivazione mia (→ [[albero]] § Bilanciamento):
 > - **completo:** i livelli $0, \dots, h - 1$ sono pieni, quindi $n \ge 1 + 2 + \dots + 2^{h-1} + 1 = 2^h$, da cui $h \le \lg n$, cioè $h = \lfloor \lg n \rfloor = \Theta(\lg n)$;
@@ -75,10 +70,9 @@ L'affermazione sull'altezza attesa di un albero costruito in modo aleatorio è e
 - [[lista-concatenata]] — il caso degenere
 - [[quicksort]] — 🧩 come per quicksort, l'input ordinato è il caso peggiore: produce l'albero degenere
 
-## Fonti
+## Fonti · [[09-Alberi binari ricerca.pdf#page=6|p. 6]], [[09-Alberi binari ricerca.pdf#page=7|7]]
 
 - [[lezione-09-alberi-binari-di-ricerca]]
-- [[09-Alberi binari ricerca.pdf#page=6]], [[09-Alberi binari ricerca.pdf#page=7]]
 
 _Aggiornato: 2026-10-28 — ingest 09-Alberi binari ricerca.pdf_
 

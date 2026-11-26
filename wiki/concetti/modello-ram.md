@@ -7,9 +7,7 @@ fonti_pdf: ["02-Notazione asintotica.pdf#page=5", "02-Notazione asintotica.pdf#p
 
 # Modello di calcolo RAM
 
-## Definizione
-
-> 📄 Fonte: [[02-Notazione asintotica.pdf#page=5]], [[02-Notazione asintotica.pdf#page=6]]
+## Definizione · 02-Notazione asintotica.pdf [[02-Notazione asintotica.pdf#page=2|p. 2]], [[02-Notazione asintotica.pdf#page=5|p. 5]], [[02-Notazione asintotica.pdf#page=6|6]] · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=21|p. 21]]
 
 Gli algoritmi si possono studiare in modo **indipendente dalla macchina e dal linguaggio** perché tutte le analisi usano il **modello di calcolo RAM** (*Random Access Machine*):
 
@@ -19,23 +17,23 @@ Gli algoritmi si possono studiare in modo **indipendente dalla macchina e dal li
 
 Il tempo di esecuzione di un algoritmo si misura **contando il numero di passi**.
 
-> «This model is useful and accurate in the same sense as the flat-earth model (which *is* useful)!» ([[02-Notazione asintotica.pdf#page=6]])
+> «This model is useful and accurate in the same sense as the flat-earth model (which *is* useful)!»
 
-> 📄 Fonte: [[02-Notazione asintotica.pdf#page=2]] = [[03-Analisi di algoritmi.pdf#page=21]] (slide identiche)
+> 📄 Fonte: p. 2 = p. 21 (slide identiche)
 
 Per analizzare un algoritmo occorre definire il **modello del calcolatore**: **singolo processore**, **memoria ad accesso casuale**, **assenza di gerarchie di memoria**. Assunzione: le istruzioni **aritmetiche**, di **accesso alla memoria** e di **controllo** richiedono un **tempo costante**.
 
-## Spiegazione
+## Spiegazione · [[04-Strutture dati elementari.pdf#page=8|p. 8]]
 
 Il paragone con la «terra piatta» dice due cose: il modello è **falso** in senso stretto (una moltiplicazione costa più di un'addizione, un accesso in cache costa molto meno di uno in RAM, esistono più core) ma è **utile** perché, sulle scale che interessano, gli errori che introduce sono **costanti moltiplicative**, che la [[notazione-asintotica]] ignora comunque.
 
 > 🧩 Derivazione mia: se ogni operazione reale costa tra $a$ e $b$ unità di tempo ($0 < a \le b$ costanti), e il modello conta $f(n)$ passi, il tempo reale $t(n)$ soddisfa $a\,f(n) \le t(n) \le b\,f(n)$, cioè $t(n) = \Theta(f(n))$: l'ordine di crescita calcolato nel modello RAM è quello vero.
 
-> 💡 Connessione: «assenza di gerarchie di memoria» è proprio l'ipotesi che le strutture dati contigue violano a loro vantaggio: la località degli [[array]] sfrutta la cache ([[04-Strutture dati elementari.pdf#page=8]]), effetto invisibile nel modello RAM.
+> 💡 Connessione: «assenza di gerarchie di memoria» è proprio l'ipotesi che le strutture dati contigue violano a loro vantaggio: la località degli [[array]] sfrutta la cache, effetto invisibile nel modello RAM.
 
-## Perché importa
+## Perché importa · 02-Notazione asintotica.pdf [[02-Notazione asintotica.pdf#page=5|p. 5]] · Pseudocodice [[a1-indicazioni_psuedocodice.pdf#page=4|p. 4]]
 
-È l'ipotesi su cui poggiano **tutte** le analisi del corso ([[tempo-di-esecuzione]], [[casi-di-complessita]]). Nello pseudocodice, una chiamata come `sort` non costa 1 ([[02-Notazione asintotica.pdf#page=5]]) — da ricordare quando si usano funzioni di libreria ([[a1-indicazioni_psuedocodice.pdf#page=4]]).
+È l'ipotesi su cui poggiano **tutte** le analisi del corso ([[tempo-di-esecuzione]], [[casi-di-complessita]]). Nello pseudocodice, una chiamata come `sort` non costa 1 — da ricordare quando si usano funzioni di libreria.
 
 > 🎯 Esame: elencare le ipotesi del modello (costo unitario delle operazioni semplici e degli accessi, cicli/chiamate non elementari, singolo processore, niente gerarchie di memoria).
 
@@ -44,10 +42,9 @@ Il paragone con la «terra piatta» dice due cose: il modello è **falso** in se
 - [[tempo-di-esecuzione]] — il conteggio dei passi riga per riga
 - [[notazione-asintotica]] — rende irrilevanti le costanti che il modello approssima
 
-## Fonti
+## Fonti · 02-Notazione asintotica.pdf [[02-Notazione asintotica.pdf#page=2|p. 2]], [[02-Notazione asintotica.pdf#page=5|p. 5]], [[02-Notazione asintotica.pdf#page=6|6]] · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=21|p. 21]]
 
 - [[lezione-02-notazione-asintotica]], [[lezione-03-analisi-di-algoritmi]]
-- [[02-Notazione asintotica.pdf#page=2]], [[02-Notazione asintotica.pdf#page=5]], [[02-Notazione asintotica.pdf#page=6]], [[03-Analisi di algoritmi.pdf#page=21]]
 
 _Aggiornato: 2026-09-26 — ingest 02-Notazione asintotica.pdf e 03-Analisi di algoritmi.pdf_
 

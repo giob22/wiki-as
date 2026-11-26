@@ -11,9 +11,7 @@ fonti_pdf: ["01-Introduzione.pdf#page=38", "01-Introduzione.pdf#page=45", "01-In
 
 [[movie-scheduling]] — **non** correttamente.
 
-## Idea e pseudocodice
-
-> 📄 Fonte: [[01-Introduzione.pdf#page=38]]
+## Idea e pseudocodice · [[01-Introduzione.pdf#page=38|p. 38]]
 
 ```
 EarliestJobFirst(I)
@@ -23,16 +21,15 @@ EarliestJobFirst(I)
 
 (la slide scrive «earlest», refuso per *earliest*)
 
-## Esempio di esecuzione
+## Esempio di esecuzione · [[01-Introduzione.pdf#page=37|p. 37]], [[01-Introduzione.pdf#page=39|p. 39]], [[01-Introduzione.pdf#page=45|p. 45]], [[01-Introduzione.pdf#page=46|46]]
 
 ![[animazione-earliest-job-first.svg]]
 > 🧩 Animazione generata da me ([[genera_animazioni.py]]) eseguendo davvero l'algoritmo, sui 9 film di p. 37 (intervalli misurati sulla figura della slide): a ogni passo il job che inizia prima, i job esclusi perché si sovrappongono (✘) e gli accettati (cerchio blu), con lo stesso esito delle slide (pp. 39–45). Ogni fotogramma riporta in basso il numero del passo e cosa succede.
 
-
-Traccia sull'istanza di [[01-Introduzione.pdf#page=37]], una slide per passo ([[01-Introduzione.pdf#page=39]]–[[01-Introduzione.pdf#page=45]]); ✔ = accettato, ✘ = escluso perché si sovrappone a un accettato:
+Traccia sull'istanza di p. 37, una slide per passo; ✔ = accettato, ✘ = escluso perché si sovrappone a un accettato:
 
 | Pagina | Evento |
-|--------|--------|
+|---|---|
 | [[01-Introduzione.pdf#page=39\|p. 39]] | ✔ The President's Algorist (inizia per primo) |
 | [[01-Introduzione.pdf#page=40\|p. 40]] | ✘ Tarjan of the Jungle, ✘ Halting State, ✘ "Discrete" Mathematics |
 | [[01-Introduzione.pdf#page=41\|p. 41]] | ✔ Steiner's Tree |
@@ -44,9 +41,9 @@ Traccia sull'istanza di [[01-Introduzione.pdf#page=37]], una slide per passo ([[
 Risultato: **4** film.
 
 ![[01-introduzione-p45-earliest-job-first-esito.png]]
-*Esito finale di EarliestJobFirst: cerchi blu = accettati, divieti rossi = esclusi. ([[01-Introduzione.pdf#page=45]])*
+*Esito finale di EarliestJobFirst: cerchi blu = accettati, divieti rossi = esclusi.*
 
-Commento della fonte: «This idea makes sense, at least until we realize that accepting the earliest job might block us from taking many other jobs if that first job is long» ([[01-Introduzione.pdf#page=46]]).
+Commento della fonte: «This idea makes sense, at least until we realize that accepting the earliest job might block us from taking many other jobs if that first job is long».
 
 ## Correttezza
 
@@ -61,10 +58,9 @@ Commento della fonte: «This idea makes sense, at least until we realize that ac
 - [[shortest-job-first]], [[optimal-scheduling]], [[controesempi-per-euristiche]]
 - [[ricerca-di-controesempi]] — «hunt for the weakness»: il job lungo iniziale
 
-## Fonti
+## Fonti · [[01-Introduzione.pdf#page=38|p. 38]], [[01-Introduzione.pdf#page=46|p. 46]]
 
 - [[lezione-01-introduzione]]
-- [[01-Introduzione.pdf#page=38]]–[[01-Introduzione.pdf#page=46]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
 _Aggiornato: 2026-10-01 — aggiunta l'animazione dell'algoritmo_

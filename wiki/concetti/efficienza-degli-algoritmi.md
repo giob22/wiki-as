@@ -7,15 +7,13 @@ fonti_pdf: ["01-Introduzione.pdf#page=11", "01-Introduzione.pdf#page=12"]
 
 # Efficienza degli algoritmi («Algorithms as a technology»)
 
-## Definizione
-
-> 📄 Fonte: [[01-Introduzione.pdf#page=11]]
+## Definizione · [[01-Introduzione.pdf#page=11|p. 11]]
 
 L'**efficienza** di un algoritmo è solitamente misurata in termini di **numero di operazioni**, espresso in funzione della **dimensione dei dati in ingresso**, richieste per produrre i dati in uscita.
 
-Oltre a **correttezza** ed **efficienza**, una terza proprietà, non meno importante, è la **facilità di implementazione** ([[01-Introduzione.pdf#page=11]]).
+Oltre a **correttezza** ed **efficienza**, una terza proprietà, non meno importante, è la **facilità di implementazione**.
 
-## Formule
+## Formule · 01-Introduzione.pdf [[01-Introduzione.pdf#page=11|p. 11]] · Merge Sort [[06-Merge Sort (1).pdf#page=29|p. 27]]
 
 Se un algoritmo esegue $f(n)$ operazioni su un'istanza di dimensione $n$ e il calcolatore esegue $v$ operazioni al secondo, il tempo è
 
@@ -26,12 +24,11 @@ $$ t = \frac{f(n)}{v} $$
 - $v$ = operazioni al secondo (nella slide $v = 10^9$ op/s)
 - $t$ = tempo in secondi
 
-Esempi della fonte: [[insertion-sort]] ha costo proporzionale a $n^2$, [[merge-sort]] a $n\log n$ ([[01-Introduzione.pdf#page=11]]; dimostrato nella lezione 06, [[06-Merge Sort (1).pdf#page=25]]).
+Esempi della fonte: [[insertion-sort]] ha costo proporzionale a $n^2$, [[merge-sort]] a $n\log n$ (dimostrato nella lezione 06).
 
 ## Derivazioni
 
-### Derivazione — insertion sort vs merge sort su un milione di elementi
-**Fonte:** [[01-Introduzione.pdf#page=11]] (risultati «1000 secondi ~= 16 minuti» e «0,02 secondi»)
+### Derivazione — insertion sort vs merge sort su un milione di elementi · [[01-Introduzione.pdf#page=11|p. 11]]
 **Si parte da:** $t = f(n)/v$ con $n = 10^6$, $v = 10^9$ op/s, costanti moltiplicative ignorate (come fa la slide)
 
 $$
@@ -50,9 +47,9 @@ $$
 
 > 💡 Connessione: il messaggio della slide («per insiemi di valori in ingresso di dimensioni notevoli, la differenza in termini di efficienza è marcata») è l'idea della [[dominanza-asintotica]]: conta l'**ordine di crescita**, non la velocità della macchina.
 
-## Spiegazione
+## Spiegazione · [[01-Introduzione.pdf#page=12|p. 12]]
 
-L'esercizio di [[01-Introduzione.pdf#page=12]] chiede, per ogni funzione $f(n) \in \{\lg n, \sqrt n, n, n\lg n, n^2, n^3, 2^n, n!\}$ e per ogni tempo $t \in$ {1 secondo, minuto, ora, giorno, mese, anno, secolo}, la **massima dimensione $n$** risolvibile in tempo $t$ se l'algoritmo impiega $f(n)$ microsecondi. La tabella è vuota nella slide: è svolta in [[stima-dei-tempi-di-esecuzione]].
+L'esercizio di p. 12 chiede, per ogni funzione $f(n) \in \{\lg n, \sqrt n, n, n\lg n, n^2, n^3, 2^n, n!\}$ e per ogni tempo $t \in$ {1 secondo, minuto, ora, giorno, mese, anno, secolo}, la **massima dimensione $n$** risolvibile in tempo $t$ se l'algoritmo impiega $f(n)$ microsecondi. La tabella è vuota nella slide: è svolta in [[stima-dei-tempi-di-esecuzione]].
 
 Il risultato chiave dello svolgimento: in un secolo un algoritmo $2^n$ risolve solo $n \approx 51$ e un algoritmo $n!$ solo $n \approx 17$; un algoritmo lineare arriva a $\sim 3 \cdot 10^{15}$. Aumentare il tempo disponibile di un fattore enorme sposta di pochissimo $n$ per le funzioni esponenziali.
 
@@ -60,18 +57,17 @@ Il risultato chiave dello svolgimento: in un secolo un algoritmo $2^n$ risolve s
 
 Motiva lo studio dell'analisi asintotica ([[notazione-asintotica]], [[tempo-di-esecuzione]]): scegliere l'algoritmo giusto conta più che comprare un calcolatore più veloce.
 
-## Connessioni
+## Connessioni · 02-Notazione asintotica.pdf [[02-Notazione asintotica.pdf#page=36|p. 36]] · Quicksort [[07-Quicksort 1.pdf#page=2|p. 2]]
 
 - [[algoritmo-e-problema]] — correttezza, la prima proprietà
 - [[tempo-di-esecuzione]] — come si conta formalmente il numero di operazioni
-- [[dominanza-asintotica]] — tabella dei tempi di [[02-Notazione asintotica.pdf#page=36]], stessa idea con 1 ns per operazione
+- [[dominanza-asintotica]] — tabella dei tempi di p. 36, stessa idea con 1 ns per operazione
 - [[stima-dei-tempi-di-esecuzione]] — esercizi numerici
-- [[quicksort]] — «tra i più efficienti» nella pratica perché i fattori nascosti in $\Theta(n\lg n)$ sono piccoli ([[07-Quicksort 1.pdf#page=2]]): a parità di ordine di crescita contano le costanti
+- [[quicksort]] — «tra i più efficienti» nella pratica perché i fattori nascosti in $\Theta(n\lg n)$ sono piccoli: a parità di ordine di crescita contano le costanti
 
-## Fonti
+## Fonti · [[01-Introduzione.pdf#page=11|p. 11]], [[01-Introduzione.pdf#page=12|12]]
 
 - [[lezione-01-introduzione]]
-- [[01-Introduzione.pdf#page=11]], [[01-Introduzione.pdf#page=12]]
 
 _Aggiornato: 2026-09-26 — ingest 01-Introduzione.pdf_
 
