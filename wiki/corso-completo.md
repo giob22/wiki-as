@@ -29,7 +29,7 @@ Testo unico di studio del corso (LM Ingegneria Informatica, UNINA, Prof. Stefano
 
 *Fonte: 00-Presentazione.pdf (8 pagine di slide) e a1-indicazioni_psuedocodice.pdf (4 pagine, materiale di supporto).*
 
-### Il corso integrato ASD + ML · [[00-Presentazione.pdf#page=2|p. 2]]
+### Il corso integrato ASD + ML · [[00-Presentazione.pdf#page=2|p. 2]], [[00-Presentazione.pdf#page=1|p. 1]], [[a1-indicazioni_psuedocodice.pdf#page=1|p. 1]]
 
 Corso integrato **Algorithms, Data Structures and Machine Learning**.
 - **ASD:** correctness, time/space complexity, data structures, sorting, graphs, indexing.
@@ -94,7 +94,22 @@ Regole di scrittura dello pseudocodice fissate dal docente per le lezioni e per 
 
 *Fonte: 01-Introduzione.pdf.*
 
-### Definizione · [[01-Introduzione.pdf#page=7|p. 7]], [[01-Introduzione.pdf#page=9|p. 9]], [[01-Introduzione.pdf#page=10|10]]
+
+### Motivazione: gli algoritmi nella vita quotidiana · [[01-Introduzione.pdf#page=4|p. 4]], [[01-Introduzione.pdf#page=5|5]], [[01-Introduzione.pdf#page=6|6]], [[01-Introduzione.pdf#page=1|p. 1]], [[01-Introduzione.pdf#page=2|p. 2]], [[01-Introduzione.pdf#page=3|p. 3]], [[01-Introduzione.pdf#page=4|p. 4]], [[01-Introduzione.pdf#page=5|p. 5]]
+
+Domande della slide: *«What is an algorithm?»* (con un video collegato), *«What algorithms do you use in everyday life? What algorithms do you think are used by your favorite games and apps? Have you ever made an algorithm for a program? What did it do? Was it correct and efficient?»*
+
+Alcuni esempi di campi di applicazione:
+1. industria e commercio: pianificazione (*scheduling*), ottimizzazione, allocazione, logistica;
+2. Internet: instradamento (*routing*), ricerca, sicurezza e crittografia;
+3. ingegneria dei sistemi e del software: sistemi operativi, compilatori, applicazioni;
+4. biologia;
+5. genomica;
+6. videogiochi;
+7. intelligenza artificiale;
+8. … (la slide lascia l'elenco da completare: «Tell by yourself»).
+
+### Definizione · [[01-Introduzione.pdf#page=7|p. 7]], [[01-Introduzione.pdf#page=9|p. 9]], [[01-Introduzione.pdf#page=10|10]], [[01-Introduzione.pdf#page=6|p. 6]], [[01-Introduzione.pdf#page=8|p. 8]]
 
 - Un **algoritmo** è una sequenza di passi computazionali che prende in *ingresso* un dato insieme di valori e produce un insieme di valori in *uscita*.
 - Un algoritmo è uno strumento per risolvere un **problema computazionale** ben definito, cioè una relazione specificata tra ingresso e uscita.
@@ -122,8 +137,6 @@ Simboli: $n$ = numero di chiavi (dimensione dell'istanza), $a_i$ = $i$-esima chi
 - **Output:** la permutazione (riordinamento) della sequenza d'ingresso $a'_1, \dots, a'_n$ tale che $a'_1 \le a'_2 \le \dots \le a'_n$
 
 È l'esempio con cui la lezione 01 introduce le nozioni di problema computazionale e di [[algoritmo-e-problema|istanza]].
-
-> 📄 La lezione 05 riprende la stessa definizione in italiano
 
 **Problema:** data una sequenza di $n$ valori di ingresso $(a_1, a_2, \dots, a_n)$, determinare una permutazione $(a'_1, a'_2, \dots, a'_n)$ della sequenza di ingresso tale che $a'_1 \le a'_2 \le \dots \le a'_n$.
 
@@ -160,7 +173,7 @@ Il risultato chiave dello svolgimento: in un secolo un algoritmo $2^n$ risolve s
 
 Il problema è introdotto come «S&T» (*Stop & Think*): Problema 1. Le figure delle pp. 14–15 mostrano un robot (un aspirapolvere) che deve muoversi tra le stanze di una pianta: l'obiettivo è il giro più breve. È il famoso **problema del commesso viaggiatore** (*Traveling Salesman Problem*).
 
-### Algoritmi che lo risolvono (lezione 01) · [[01-Introduzione.pdf#page=17|p. 17]], [[01-Introduzione.pdf#page=18|18]], [[01-Introduzione.pdf#page=21|p. 21]], [[01-Introduzione.pdf#page=24|p. 24]], [[01-Introduzione.pdf#page=26|p. 26]], [[01-Introduzione.pdf#page=28|p. 28]], [[01-Introduzione.pdf#page=29|29]], [[01-Introduzione.pdf#page=33|p. 33]]–[[01-Introduzione.pdf#page=35|35]]
+### Algoritmi che lo risolvono (lezione 01) · [[01-Introduzione.pdf#page=17|p. 17]], [[01-Introduzione.pdf#page=18|18]], [[01-Introduzione.pdf#page=21|p. 21]], [[01-Introduzione.pdf#page=24|p. 24]], [[01-Introduzione.pdf#page=26|p. 26]], [[01-Introduzione.pdf#page=28|p. 28]], [[01-Introduzione.pdf#page=29|29]], [[01-Introduzione.pdf#page=33|p. 33]]–[[01-Introduzione.pdf#page=35|35]], [[01-Introduzione.pdf#page=25|p. 25]]
 
 | Soluzione | Algoritmo | Corretto? | Efficiente? |
 |---|---|---|---|
@@ -322,8 +335,6 @@ Esempi classici: **commesso viaggiatore**, **zaino**, «…». Caratteristiche d
 - **nessuna garanzia** di ottimalità o completezza;
 - **valutazione empirica**.
 
-> 📄 Fonte: p. 35 — *Take-Home Lesson #1*
-
 > There is a fundamental difference between **algorithms**, which always produce a correct result, and **heuristics**, which may usually do a good job but without providing any guarantee.
 
 ### Spiegazione · 01-Introduzione.pdf [[01-Introduzione.pdf#page=24|p. 24]], [[01-Introduzione.pdf#page=27|p. 27]], [[01-Introduzione.pdf#page=28|28]], [[01-Introduzione.pdf#page=35|p. 35]], [[01-Introduzione.pdf#page=46|p. 46]], [[01-Introduzione.pdf#page=55|p. 55]], [[01-Introduzione.pdf#page=60|p. 60]] · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=14|p. 14]]
@@ -457,8 +468,6 @@ Per mostrare l'**incorrettezza** di un algoritmo: «Searching for **counterexamp
 
 Ma **fallire** nella ricerca di un controesempio **non è garanzia** di correttezza dell'algoritmo.
 
-> 📄 Fonte: p. 60 — *Take-Home Lesson #2*
-
 > Reasonable-looking algorithms can easily be incorrect. Algorithm correctness is a property that must be carefully demonstrated.
 
 *Approfondimenti nel wiki: [[lezione-01-introduzione]], [[algoritmo-e-problema]], [[ordinamento]], [[efficienza-degli-algoritmi]], [[stima-dei-tempi-di-esecuzione]], [[robot-tour-optimization]], [[nearest-neighbor]], [[closest-pair]], [[optimal-tsp]], [[ricerca-combinatoria]], [[metodi-euristici]], [[movie-scheduling]], [[earliest-job-first]], [[shortest-job-first]], [[exhaustive-scheduling]], [[optimal-scheduling]], [[ricerca-di-controesempi]], [[controesempi-per-euristiche]]*
@@ -467,7 +476,7 @@ Ma **fallire** nella ricerca di un controesempio **non è garanzia** di corrette
 
 *Fonte: 02-Notazione asintotica.pdf.*
 
-### Definizione · 02-Notazione asintotica.pdf [[02-Notazione asintotica.pdf#page=2|p. 2]], [[02-Notazione asintotica.pdf#page=5|p. 5]], [[02-Notazione asintotica.pdf#page=6|6]] · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=21|p. 21]]
+### Definizione · 02-Notazione asintotica.pdf [[02-Notazione asintotica.pdf#page=2|p. 2]], [[02-Notazione asintotica.pdf#page=5|p. 5]], [[02-Notazione asintotica.pdf#page=6|6]] · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=21|p. 21]], [[02-Notazione asintotica.pdf#page=1|p. 1]], [[02-Notazione asintotica.pdf#page=4|p. 4]]
 
 Gli algoritmi si possono studiare in modo **indipendente dalla macchina e dal linguaggio** perché tutte le analisi usano il **modello di calcolo RAM** (*Random Access Machine*):
 
@@ -478,8 +487,6 @@ Gli algoritmi si possono studiare in modo **indipendente dalla macchina e dal li
 Il tempo di esecuzione di un algoritmo si misura **contando il numero di passi**.
 
 > «This model is useful and accurate in the same sense as the flat-earth model (which *is* useful)!»
-
-> 📄 Fonte: p. 2 = p. 21 (slide identiche)
 
 Per analizzare un algoritmo occorre definire il **modello del calcolatore**: **singolo processore**, **memoria ad accesso casuale**, **assenza di gerarchie di memoria**. Assunzione: le istruzioni **aritmetiche**, di **accesso alla memoria** e di **controllo** richiedono un **tempo costante**.
 
@@ -495,8 +502,6 @@ Per analizzare un algoritmo occorre definire il **modello del calcolatore**: **s
   - per algoritmi su **grafi**: numero di vertici e numero di archi.
 - Il tempo di esecuzione è dato dalla **somma dei tempi di esecuzione di ciascuna linea** dello pseudocodice (assunti **costanti**), ciascuno **moltiplicato per il numero di volte** che la linea viene eseguita.
 - Ogni operazione di base (assegnamento, confronto, somma, incremento, chiamata/return) costa una costante.
-
-> 📄 Fonte: p. 8 — *Tempo di esecuzione asintotico*
 
 Caratterizziamo l'efficienza di un algoritmo mediante il suo tempo di esecuzione. Quando la dimensione dei dati in ingresso è tale da rendere rilevante solo l'**ordine di crescita** del tempo di esecuzione, stiamo studiando l'efficienza **asintotica** di un algoritmo.
 
@@ -552,7 +557,7 @@ Il caso medio richiede quindi un'**ipotesi sulla distribuzione** $\Pr[x]$ delle 
 ![[02-notazione-asintotica-p9-casi-peggiore-medio-migliore.png]]
 *Per ogni dimensione $n$ i punti in verticale sono le istanze; la curva alta (worst) ne unisce i massimi, la bassa (best) i minimi, quella intermedia (average) le medie.*
 
-### La posizione del corso · [[02-Notazione asintotica.pdf#page=12|p. 12]]
+### La posizione del corso · [[02-Notazione asintotica.pdf#page=12|p. 12]], [[02-Notazione asintotica.pdf#page=13|p. 13]]
 
 - Domanda: quale sarebbe il ragionamento sull'acquisto di un **biglietto della lotteria** in base ai casi migliore, peggiore e medio?
 - In generale si userà la **complessità nel caso peggiore** come misura preferita dell'efficienza.
@@ -560,16 +565,12 @@ Il caso medio richiede quindi un'**ipotesi sulla distribuzione** $\Pr[x]$ delle 
 - **«Assume I am asking for worst-case analysis unless otherwise specified!»**
 - Gli **algoritmi randomizzati** sono di importanza crescente e richiedono un'analisi di tipo caso medio per mostrare i loro meriti.
 
-### Definizione · [[02-Notazione asintotica.pdf#page=15|p. 15]]–[[02-Notazione asintotica.pdf#page=17|17]]
-
-> 📄 Fonte: p. 15 — *Exact Analysis is Hard!*
+### Definizione · [[02-Notazione asintotica.pdf#page=15|p. 15]]–[[02-Notazione asintotica.pdf#page=17|17]], [[02-Notazione asintotica.pdf#page=14|p. 14]]
 
 I casi migliore, peggiore e medio sono difficili da trattare perché i dettagli **precisi** delle funzioni sono molto complicati. È più facile parlare di **limiti superiori e inferiori** della funzione. Le notazioni asintotiche ($O$, $\Theta$, $\Omega$) sono il meglio che si possa praticamente fare con le funzioni di complessità.
 
 ![[02-notazione-asintotica-p15-upper-lower-bound.png]]
 *Una $f(n)$ irregolare, stretta da oltre $n_0$ tra un limite superiore (blu) e uno inferiore (rosso).*
-
-> 📄 Fonte: p. 16 — *Names of Bounding Functions*
 
 - $f(n) = O(g(n))$ significa che $C \times g(n)$ è un **limite superiore** (*upper bound*) di $f(n)$.
 - $f(n) = \Omega(g(n))$ significa che $C \times g(n)$ è un **limite inferiore** (*lower bound*) di $f(n)$.
@@ -582,9 +583,21 @@ Le definizioni implicano una costante $n_0$ **oltre la quale** sono soddisfatte:
 ![[02-notazione-asintotica-p17-o-omega-theta-grafici.png]]
 *(a) $f(n) = O(g(n))$: da $n_0$ in poi $f$ sta sotto $c\,g$; (b) $f(n) = \Omega(g(n))$: da $n_0$ in poi sta sopra; (c) $f(n) = \Theta(g(n))$: tra $c_2\,g$ e $c_1\,g$.*
 
-### Formule · [[02-Notazione asintotica.pdf#page=18|p. 18]], [[02-Notazione asintotica.pdf#page=21|p. 21]], [[02-Notazione asintotica.pdf#page=27|p. 27]]
 
-> 📄 Fonte: p. 18 — *Formal Definitions*
+### Esempi per $\Omega$ e $\Theta$ · [[02-Notazione asintotica.pdf#page=22|p. 22]], [[02-Notazione asintotica.pdf#page=23|23]], [[02-Notazione asintotica.pdf#page=22|p. 22]]
+
+Per $f(n) = 3n^2 - 100n + 6$:
+
+| Affermazione | Motivo |
+|---|---|
+| $f(n) = \Omega(n^2)$ | $2.99\,n^2 < 3n^2 - 100n + 6$ (per $n$ abbastanza grande) |
+| $f(n) \neq \Omega(n^3)$ | $3n^2 - 100n + 6 < n^3$ (per $n$ abbastanza grande) |
+| $f(n) = \Omega(n)$ | $10^{10^{10}}\, n < 3n^2 - 100n + 6$ (per $n$ abbastanza grande) |
+| $f(n) = \Theta(n^2)$ | vale sia $O(n^2)$ sia $\Omega(n^2)$ |
+| $f(n) \neq \Theta(n^3)$ | vale solo $O(n^3)$ |
+| $f(n) \neq \Theta(n)$ | vale solo $\Omega(n)$ |
+
+### Formule · [[02-Notazione asintotica.pdf#page=18|p. 18]], [[02-Notazione asintotica.pdf#page=21|p. 21]], [[02-Notazione asintotica.pdf#page=27|p. 27]], [[02-Notazione asintotica.pdf#page=19|p. 19]], [[02-Notazione asintotica.pdf#page=20|p. 20]], [[02-Notazione asintotica.pdf#page=28|p. 28]]
 
 > 🧮 Formula chiave:
 - $f(n) = O(g(n))$ se esistono costanti positive $n_0$ e $c$ tali che, a destra di $n_0$, il valore di $f(n)$ sta sempre **su o sotto** $c \cdot g(n)$:
@@ -600,8 +613,6 @@ Simboli: $f, g$ = funzioni da interi positivi a reali (qui: numeri di passi); $n
 
 **NOTA**: l'uguaglianza va pensata come **appartenenza a un insieme di funzioni**: $f(n) = O(g(n))$ significa $f(n) \in O(g(n))$, dove $O(g(n))$ è l'insieme di tutte le funzioni limitate superiormente da un multiplo di $g$.
 
-> 📄 Fonte: p. 27 — *Notazioni asintotiche*
-
 Quando una notazione asintotica compare in un'**equazione**, va interpretata come una **funzione ignota che non ci interessa specificare**. Esempio: $2n^2 + 3n + 1 = 2n^2 + \Theta(n)$ equivale a $2n^2 + 3n + 1 = 2n^2 + f(n)$, dove $f(n)$ è una qualunque funzione nell'insieme $\Theta(n)$ (qui $f(n) = 3n + 1$).
 
 **Proprietà**:
@@ -615,9 +626,12 @@ Quando una notazione asintotica compare in un'**equazione**, va interpretata com
 
 ![[02-notazione-asintotica-p27-proprieta-notazioni.png]]
 
-### Formule · [[02-Notazione asintotica.pdf#page=24|p. 24]]–[[02-Notazione asintotica.pdf#page=26|26]]
 
-> 📄 Fonte: p. 24 — *Big Oh Addition/Subtraction*
+### Solar Sails vs. Rockets · [[02-Notazione asintotica.pdf#page=30|p. 30]], [[02-Notazione asintotica.pdf#page=29|p. 29]]
+
+Il razzo raggiunge una velocità alta prima di esaurire il carburante e poi prosegue a velocità costante $v_r$. La vela solare accelera lentamente per la spinta della radiazione (vento solare), ma la sua velocità $v_s = at$ deve prima o poi superare quella del razzo. È la **dominanza asintotica** in azione.
+
+### Formule · [[02-Notazione asintotica.pdf#page=24|p. 24]]–[[02-Notazione asintotica.pdf#page=26|26]], [[02-Notazione asintotica.pdf#page=23|p. 23]]
 
 Supponiamo $f(n) = O(n^2)$ e $g(n) = O(n^2)$.
 - **Somma:** $g'(n) = f(n) + g(n)$. Sommando le costanti dei limiti si ottiene $g'(n) = O(n^2)$.
@@ -626,24 +640,18 @@ Supponiamo $f(n) = O(n^2)$ e $g(n) = O(n^2)$.
 
 Esempio della slide: $f(n) = 5n^2$ e $g(n) = 150n^2$ **contro** $f(n) = 500n^2$ e $g(n) = 150n^2$.
 
-> 📄 Fonte: p. 25 — *Multiplication by Constant*
-
 La moltiplicazione per una costante non cambia l'andamento asintotico:
 $$
 O(c \cdot f(n)) \to O(f(n)), \qquad \Omega(c \cdot f(n)) \to \Omega(f(n)), \qquad \Theta(c \cdot f(n)) \to \Theta(f(n))
 $$
 La «vecchia costante» $C$ del Big Oh diventa $c \cdot C$.
 
-> 📄 Fonte: p. 26 — *Multiplication by Function*
-
 Quando entrambe le funzioni di un prodotto sono crescenti, **contano entrambe**:
 $$
 O(f(n)) \cdot O(g(n)) \to O(f(n) \cdot g(n)), \quad \Omega(f(n)) \cdot \Omega(g(n)) \to \Omega(f(n) \cdot g(n)), \quad \Theta(f(n)) \cdot \Theta(g(n)) \to \Theta(f(n) \cdot g(n))
 $$
 
-### Spiegazione · [[02-Notazione asintotica.pdf#page=31|p. 31]], [[02-Notazione asintotica.pdf#page=36|p. 36]]
-
-> 📄 Fonte: p. 36 — *Crescita delle funzioni* (tempo di esecuzione se ogni operazione costa 1 ns)
+### Spiegazione · [[02-Notazione asintotica.pdf#page=31|p. 31]], [[02-Notazione asintotica.pdf#page=36|p. 36]], [[02-Notazione asintotica.pdf#page=30|p. 30]], [[02-Notazione asintotica.pdf#page=32|p. 32]]
 
 | $n$ | $\lg n$ | $n$ | $n \lg n$ | $n^2$ | $2^n$ | $n!$ |
 |---|---|---|---|---|---|---|
@@ -665,7 +673,6 @@ $$
 
 **Take-Home Lesson**: «Although esoteric functions arise in advanced algorithm analysis, a small variety of time complexities suffice and account for most algorithms that are widely used in practice.»
 
-> 📄 Fonte: p. 31 — *Implications of Dominance*
 - Gli algoritmi **esponenziali** diventano senza speranza molto in fretta.
 - Gli algoritmi **quadratici** diventano senza speranza a (o prima di) $1\,000\,000$.
 - $O(n\log n)$ è praticabile fino a circa **un miliardo**.
@@ -673,9 +680,7 @@ $$
 
 ![[grafico-crescita-funzioni.svg]]
 
-### Definizione · [[02-Notazione asintotica.pdf#page=34|p. 34]], [[02-Notazione asintotica.pdf#page=36|p. 36]], [[02-Notazione asintotica.pdf#page=37|37]]
-
-> 📄 Fonte: p. 34 — *Testing Dominance*
+### Definizione · [[02-Notazione asintotica.pdf#page=34|p. 34]], [[02-Notazione asintotica.pdf#page=36|p. 36]], [[02-Notazione asintotica.pdf#page=37|37]], [[02-Notazione asintotica.pdf#page=33|p. 33]]
 
 $f(n)$ **domina** $g(n)$ se
 $$ \lim_{n\to\infty} \frac{g(n)}{f(n)} = 0 $$
@@ -683,19 +688,14 @@ il che equivale a dire $g(n) = o(f(n))$. Il **little-oh** significa «cresce **s
 
 Notazione: $f \gg g$ indica che $f$ domina $g$.
 
-### Formule · [[02-Notazione asintotica.pdf#page=35|p. 35]]–[[02-Notazione asintotica.pdf#page=37|37]]
-
-> 📄 Fonte: p. 35 — *Properties of Dominance*
+### Formule · [[02-Notazione asintotica.pdf#page=35|p. 35]]–[[02-Notazione asintotica.pdf#page=37|37]], [[02-Notazione asintotica.pdf#page=38|p. 38]]
 
 - $n^a$ domina $n^b$ se $a > b$, poiché $\displaystyle\lim_{n\to\infty} n^b / n^a = n^{b-a} \to 0$.
 - $n^a + o(n^a)$ **non** domina $n^a$, poiché $\displaystyle\lim_{n\to\infty} n^a / (n^a + o(n^a)) \to 1$.
 
-> 📄 Classifica di base
-
 > 🧮 Formula chiave:
 $$ n! \gg 2^n \gg n^3 \gg n^2 \gg n \log n \gg n \gg \log n \gg 1 $$
 
-> 📄 Fonte: p. 37 — *Advanced Dominance Rankings* (funzioni che compaiono in analisi più sofisticate di quelle del corso)
 $$
 n! \gg c^n \gg n^3 \gg n^2 \gg n^{1+\epsilon} \gg n\log n \gg n \gg \sqrt n \gg \log^2 n \gg \log n \gg \frac{\log n}{\log\log n} \gg \log\log n \gg \alpha(n) \gg 1
 $$
@@ -706,7 +706,7 @@ $$
 
 *Fonte: 03-Analisi di algoritmi.pdf.*
 
-### Definizione · [[03-Analisi di algoritmi.pdf#page=2|p. 2]]–[[03-Analisi di algoritmi.pdf#page=6|6]], [[03-Analisi di algoritmi.pdf#page=4|p. 4]], [[03-Analisi di algoritmi.pdf#page=5|p. 5]]
+### Definizione · [[03-Analisi di algoritmi.pdf#page=2|p. 2]]–[[03-Analisi di algoritmi.pdf#page=6|6]], [[03-Analisi di algoritmi.pdf#page=4|p. 4]], [[03-Analisi di algoritmi.pdf#page=5|p. 5]], [[03-Analisi di algoritmi.pdf#page=1|p. 1]]
 
 I problemi possono essere affrontati in molti modi; qui si guarda **agli approcci**, non alle strutture dati. Ogni approccio bilancia tre grandezze: **tempo di calcolo**, **qualità della soluzione** e **scalabilità**. Le tre famiglie principali sono:
 
@@ -792,6 +792,11 @@ funzione somma_ricorsiva(n)
 4      ritorna n + somma_ricorsiva(n − 1)
 ```
 
+
+### Correttezza (verifica) · [[03-Analisi di algoritmi.pdf#page=12|p. 12]]
+
+Verificare che l'algoritmo restituisce la soluzione **per ogni istanza possibile** del problema. Per provare che è **incorretto** basta **un'istanza**: un controesempio o un'eccezione.
+
 ### Definizione · 01-Introduzione.pdf [[01-Introduzione.pdf#page=9|p. 9]] · 03-Analisi di algoritmi.pdf [[03-Analisi di algoritmi.pdf#page=16|p. 16]]
 
 Un algoritmo è **corretto** se, **per ogni istanza** del problema, **termina** fornendo l'insieme corretto di valori in uscita. Un algoritmo incorretto, su alcune istanze, può **non terminare** oppure terminare con un'**uscita sbagliata**.
@@ -818,7 +823,7 @@ $$ \text{correttezza totale} = \text{correttezza parziale} + \text{terminazione}
 
 Un algoritmo che va in **ciclo infinito** su un'istanza non restituisce mai un'uscita, quindi non ne restituisce mai una sbagliata: rispetto a quell'istanza è parzialmente corretto «a costo zero». La correttezza parziale da sola non basta; per questo la slide chiede esplicitamente anche la terminazione.
 
-### Come si valuta la correttezza · [[03-Analisi di algoritmi.pdf#page=13|p. 13]], [[03-Analisi di algoritmi.pdf#page=15|p. 15]], [[03-Analisi di algoritmi.pdf#page=16|16]], [[03-Analisi di algoritmi.pdf#page=18|p. 18]]
+### Come si valuta la correttezza · [[03-Analisi di algoritmi.pdf#page=13|p. 13]], [[03-Analisi di algoritmi.pdf#page=15|p. 15]], [[03-Analisi di algoritmi.pdf#page=16|16]], [[03-Analisi di algoritmi.pdf#page=18|p. 18]], [[03-Analisi di algoritmi.pdf#page=12|p. 12]]
 
 | Obiettivo | Strumento | Cosa dimostra | Slide |
 |---|---|---|---|
@@ -858,7 +863,7 @@ Per la ricorsione la prova di correttezza è strettamente legata all'**induzione
 
 Per induzione su $n$: misura $n$; base $S(0) = 0$; se $S(n-1)$ è corretto, $S(n) = n + S(n-1)$ è corretto; ogni chiamata usa $n - 1 < n$ → termina. Passaggi espliciti → [[correttezza-per-induzione]].
 
-### Complessità · [[03-Analisi di algoritmi.pdf#page=23|p. 23]]–[[03-Analisi di algoritmi.pdf#page=29|29]], [[03-Analisi di algoritmi.pdf#page=24|p. 24]], [[03-Analisi di algoritmi.pdf#page=25|p. 25]], [[03-Analisi di algoritmi.pdf#page=26|p. 26]], [[03-Analisi di algoritmi.pdf#page=27|p. 27]]
+### Complessità · [[03-Analisi di algoritmi.pdf#page=23|p. 23]]–[[03-Analisi di algoritmi.pdf#page=29|29]], [[03-Analisi di algoritmi.pdf#page=24|p. 24]], [[03-Analisi di algoritmi.pdf#page=25|p. 25]], [[03-Analisi di algoritmi.pdf#page=26|p. 26]], [[03-Analisi di algoritmi.pdf#page=27|p. 27]], [[03-Analisi di algoritmi.pdf#page=20|p. 20]]
 
 | Riga | Operazione | Costo × esecuzioni |
 |---|---|---|
@@ -940,7 +945,7 @@ La domanda «E la complessità spaziale?» ha risposta $\Theta(n)$ (🧩, profon
 
 *Fonte: 04-Strutture dati elementari.pdf.*
 
-### Definizione · [[04-Strutture dati elementari.pdf#page=3|p. 3]], [[04-Strutture dati elementari.pdf#page=4|4]]
+### Definizione · [[04-Strutture dati elementari.pdf#page=3|p. 3]], [[04-Strutture dati elementari.pdf#page=4|4]], [[04-Strutture dati elementari.pdf#page=1|p. 1]], [[04-Strutture dati elementari.pdf#page=2|p. 2]]
 
 «Mankind's progress is measured by the number of things we can do without thinking.» Le **strutture dati elementari** — pile, code, liste, heap — sono i componenti «pronti all'uso» (*off-the-shelf*) con cui si costruiscono gli algoritmi.
 
@@ -948,23 +953,17 @@ Ogni struttura dati ha **due aspetti**:
 1. le **operazioni astratte** che supporta;
 2. l'**implementazione** di queste operazioni.
 
-> 📄 Fonte: p. 4 — *Data Abstraction*
-
 Poter descrivere il comportamento delle strutture dati in termini di operazioni astratte è il motivo per cui possiamo usarle «senza pensare». Esempio (pila):
 - $Push(x, s)$ — inserisce l'elemento $x$ in cima alla pila $s$;
 - $Pop(s)$ — restituisce (e rimuove) l'elemento in cima alla pila $s$.
 
 Il fatto che esistano **implementazioni diverse** delle stesse operazioni astratte permette di **ottimizzare le prestazioni** in circostanze diverse.
 
-### Definizione · 04-Strutture dati elementari.pdf [[04-Strutture dati elementari.pdf#page=5|p. 5]], [[04-Strutture dati elementari.pdf#page=15|p. 15]] · Pseudocodice [[a1-indicazioni_psuedocodice.pdf#page=3|p. 3]]
-
-> 📄 Fonte: p. 5 — *Contiguous vs. Linked Data Structures*
+### Definizione · 04-Strutture dati elementari.pdf [[04-Strutture dati elementari.pdf#page=5|p. 5]], [[04-Strutture dati elementari.pdf#page=15|p. 15]] · Pseudocodice [[a1-indicazioni_psuedocodice.pdf#page=3|p. 3]], [[04-Strutture dati elementari.pdf#page=6|p. 6]], [[04-Strutture dati elementari.pdf#page=14|p. 14]]
 
 Le strutture dati si classificano nettamente come **contigue** o **collegate**, a seconda che siano basate su **array** o su **puntatori**:
 - le strutture **allocate in modo contiguo** sono composte da **singoli blocchi di memoria** e comprendono array, matrici, heap e tabelle hash;
 - le strutture **collegate** sono composte da **più blocchi distinti** di memoria legati tra loro da **puntatori**, e comprendono liste, alberi e liste di adiacenza dei grafi.
-
-> 📄 Fonte: p. 15 — *Pointers and Linked Structures*
 
 - I **puntatori** rappresentano l'**indirizzo** di una locazione di memoria.
 - Un numero di cellulare può essere visto come un puntatore al suo proprietario mentre si sposta per il pianeta.
@@ -973,7 +972,7 @@ Le strutture dati si classificano nettamente come **contigue** o **collegate**, 
 
 Nello [[pseudocodice]] del corso il puntatore nullo si chiama `NIL` e ogni variabile di tipo aggregato è un puntatore alla struttura.
 
-### Cos'è · [[04-Strutture dati elementari.pdf#page=8|p. 8]]
+### Cos'è · [[04-Strutture dati elementari.pdf#page=8|p. 8]], [[04-Strutture dati elementari.pdf#page=7|p. 7]]
 
 Un **array** è una struttura di record di dati di **dimensione fissa** tali che ogni elemento può essere localizzato efficientemente tramite il suo **indice** o, equivalentemente, il suo **indirizzo**. È la struttura contigua per eccellenza ([[strutture-contigue-e-collegate]]).
 
@@ -1008,7 +1007,7 @@ $$ M = \sum_{i=1}^{\lg n} i \cdot \frac{n}{2^i} = n \sum_{i=1}^{\lg n} \frac{i}{
 
 Simboli: $n$ = elementi inseriti; $m$ = capacità corrente; $M$ = numero totale di spostamenti (copie) di elementi.
 
-### Nota: «free lunch» e teorema *no free lunch* · [[04-Strutture dati elementari.pdf#page=12|p. 12]]
+### Nota: «free lunch» e teorema *no free lunch* · [[04-Strutture dati elementari.pdf#page=12|p. 12]], [[04-Strutture dati elementari.pdf#page=13|p. 13]]
 
 Nel contesto della complessità computazionale e dell'ottimizzazione, il teorema **«no free lunch» (NFL)** afferma che, per certi tipi di problemi matematici, il costo computazionale per trovare una soluzione, **mediato su tutti i problemi della classe**, è lo stesso per qualsiasi metodo di soluzione. Il nome allude al detto «no such thing as a free lunch»: nessun metodo offre una «scorciatoia». La slide lo accosta per contrasto al «free lunch» della serie geometrica.
 
@@ -1145,21 +1144,20 @@ Confronto tra le due famiglie, ricavato dalle slide:
 | Inserimenti/cancellazioni | bisogna spostare gli elementi successivi | più semplici: si ricollegano solo i puntatori (ma dipende dall'operazione, vedi sotto) |
 | Record grandi | si spostano i dati | spostare puntatori è più facile e veloce |
 
-> 📄 Fonte: p. 21 — *Advantages of Linked Lists* (rispetto agli array statici)
 1. L'overflow sulle strutture collegate non può mai avvenire a meno che la memoria sia effettivamente piena.
 2. Nelle liste collegate inserimenti e cancellazioni sono **più semplici** che nelle liste contigue (array). La slide dice «Insertions and deletions are *simpler* than for contiguous (array) lists»: il soggetto sono le liste collegate, quindi il vantaggio è della lista, non dell'array.
 3. Con record grandi, spostare puntatori è più facile e veloce che spostare gli elementi stessi.
 
 «Dynamic memory allocation provides us with flexibility on how and where we use our limited storage resources.»
 
-### Liste semplici e doppie · [[04-Strutture dati elementari.pdf#page=22|p. 22]]
+### Liste semplici e doppie · [[04-Strutture dati elementari.pdf#page=22|p. 22]], [[04-Strutture dati elementari.pdf#page=23|p. 23]]
 
 Con le **liste doppiamente concatenate** (ogni nodo punta anche al predecessore) si guadagna flessibilità nelle interrogazioni sul predecessore, al costo di **raddoppiare il numero di puntatori**. Poiché il costo extra in big-Oh è **zero**, di solito si assume che le liste siano mantenute doppie, anche se non sempre è necessario. «Singly linked to doubly-linked list is as a conga line is to a can-can line.»
 
 ![[04-strutture-dati-p22-lista-semplice-doppia.png]]
 *Sopra: lista semplice A→…→F; sotto: lista doppia con puntatori in entrambi i versi.*
 
-### Cos'è · [[04-Strutture dati elementari.pdf#page=25|p. 25]]
+### Cos'è · [[04-Strutture dati elementari.pdf#page=25|p. 25]], [[04-Strutture dati elementari.pdf#page=24|p. 24]]
 
 A volte l'ordine con cui si recuperano i dati è **indipendente dal loro contenuto** e dipende solo da **quando sono arrivati**. Una **pila** supporta operazioni **last-in, first-out** (LIFO):
 - $Push(x, s)$ — inserisce l'elemento $x$ **in cima** alla pila $s$;
@@ -1236,7 +1234,7 @@ Numero costante di righe → $O(1)$.
 
 Entrambe sono adatte a un contenitore in cui l'ordine non conta, ma a volte conta. Le file in banca sono code, mentre «food in my refrigerator is treated as a stack». **L'intera differenza tra visita in profondità (DFS) e in ampiezza (BFS)** sta nel fatto che i vertici da elaborare siano tenuti in una **pila** o in una **coda**.
 
-### Perché pile e code · [[04-Strutture dati elementari.pdf#page=29|p. 29]]
+### Perché pile e code · [[04-Strutture dati elementari.pdf#page=29|p. 29]], [[04-Strutture dati elementari.pdf#page=30|p. 30]]
 
 Le file in banca sono code; la differenza tra BFS e DFS è solo se i vertici da elaborare stanno in una coda o in una pila → [[pila]].
 
@@ -1246,7 +1244,13 @@ Le file in banca sono code; la differenza tra BFS e DFS è solo se i vertici da 
 
 *Fonte: 05-Insertion sort.pdf.*
 
-### Idea · [[05-Insertion sort.pdf#page=4|p. 4]]
+### Ordinamento: applicazioni · [[05-Insertion sort.pdf#page=3|p. 3]]
+
+Applicazioni dell'ordinamento: *searching*, coppia più vicina (*closest pair*), unicità degli elementi (*element uniqueness*), distribuzione di frequenza (*frequency distribution*), selezione in un array, inviluppo convesso (*convex hulls*), …
+
+L'ordinamento sta al cuore di molti algoritmi: ordinare i dati è una delle prime cose che un progettista di algoritmi dovrebbe provare nella ricerca dell'efficienza.
+
+### Idea · [[05-Insertion sort.pdf#page=4|p. 4]], [[05-Insertion sort.pdf#page=1|p. 1]]
 
 - Insertion sort è un algoritmo che **considera un valore alla volta** e lo **inserisce nella corretta posizione tra i valori che lo precedono**.
 - È un algoritmo che ordina i valori **sul posto** (*in place*): i valori sono riordinati all'interno dell'array stesso, con **al più un numero costante** di essi memorizzati al di fuori dell'array in ogni momento.
@@ -1416,8 +1420,6 @@ void InsertionSort (vector<T> A)
 
 ### Traccia dell'esercizio e idea · [[05-Insertion sort.pdf#page=26|p. 26]]
 
-> 📄 Fonte: p. 26 — «Esercizio Libro di testo: 2.2.2» (Cormen, esercizio 2.2-2)
-
 **Pseudo-code** (a parole):
 - trova l'elemento **più piccolo** e scambialo con il **primo** elemento;
 - trova il **secondo più piccolo** e scambialo con il **secondo** elemento;
@@ -1470,11 +1472,7 @@ SELECTION-SORT(A)
 
 ### Correttezza · [[05-Insertion sort.pdf#page=31|p. 31]]
 
-> 📄 Fonte: p. 31 — «Dimostrarne la correttezza» (senza soluzione)
-
 ### Complessità · [[05-Insertion sort.pdf#page=32|p. 32]], [[05-Insertion sort.pdf#page=33|33]]
-
-> 📄 Fonte: p. 32 — «Valutare l'efficienza asintotica»; p. 33 — conteggio dei confronti:
 
 $$ \sum_{i=0}^{n-2} (n - 1 - i) = (n-1) + (n-2) + \dots + 1 = \frac{n(n-1)}{2} $$
 
@@ -1495,11 +1493,7 @@ $$
 
 ### Memoria · [[05-Insertion sort.pdf#page=34|p. 34]]
 
-> 📄 Fonte: p. 34 — «E la memoria?» (senza soluzione)
-
 ### Definizione formale · [[05-Insertion sort.pdf#page=35|p. 35]]
-
-> 📄 Fonte: p. 35 — «Crescita delle funzioni: ragionare sull'efficienza», *S&T: String Pattern Matching*
 
 - **Problem:** Substring Pattern Matching
 - **Input:** una stringa di testo $t$ e una stringa pattern $p$.
@@ -1553,8 +1547,6 @@ Restituisce la prima posizione (da 0) in cui compare $p$, oppure $-1$.
 
 ### Complessità · [[05-Insertion sort.pdf#page=36|p. 36]]
 
-> 📄 Consegna «Valutare l'efficienza asintotica» (senza soluzione)
-
 $$
 \begin{aligned}
 \text{iterazioni del for} &\le n - m + 1 && i = 0, \dots, n - m \\
@@ -1573,8 +1565,6 @@ $$
 > **Ipotesi:** [[modello-ram]], confronto di due caratteri in tempo costante.
 
 ### Definizione · [[05-Insertion sort.pdf#page=37|p. 37]]
-
-> 📄 Fonte: p. 37 — «Crescita delle funzioni: l'importanza dei logaritmi»
 
 *«Logarithms arise in any process where things are repeatedly halved.»* I logaritmi compaiono in ogni processo in cui qualcosa viene **ripetutamente dimezzato** (o diviso per una costante).
 
@@ -1617,7 +1607,7 @@ function power(a,n)
 
 *Fonte: 06-Merge Sort (1).pdf.*
 
-### Definizione formale · [[06-Merge Sort (1).pdf#page=2|p. 2]], [[06-Merge Sort (1).pdf#page=3|3]]
+### Definizione formale · [[06-Merge Sort (1).pdf#page=2|p. 2]], [[06-Merge Sort (1).pdf#page=3|3]], [[06-Merge Sort (1).pdf#page=1|p. 1]]
 
 La slide di apertura rimanda all'esercizio interattivo di Khan Academy «move three disks in Towers of Hanoi» (link in p. 2).
 
@@ -1659,7 +1649,7 @@ La slide mostra otto configurazioni numerate da 1 a 8: lo stato iniziale e i set
 | 7 | disco 2: B → C | 1 | — | 3, 2 |
 | 8 | disco 1: A → C | — | — | 3, 2, 1 |
 
-### Idea · [[06-Merge Sort (1).pdf#page=7|p. 7]], [[06-Merge Sort (1).pdf#page=17|p. 17]]
+### Idea · [[06-Merge Sort (1).pdf#page=7|p. 7]], [[06-Merge Sort (1).pdf#page=17|p. 17]], [[06-Merge Sort (1).pdf#page=6|p. 6]]
 
 - Approccio **[[divide-et-impera]]**:
   - **suddivide** una sequenza di $n$ elementi in due sottosequenze di $n/2$ elementi;
@@ -1800,8 +1790,6 @@ Annotazioni a mano: accanto alle righe 1–2 «faceva parte della fase discenden
 - **Output:** $A[p..r]$ contiene gli stessi elementi, **ordinati**.
 
 ### Pseudocodice (codice completo) · [[06-Merge Sort (1).pdf#page=17|p. 17]], [[06-Merge Sort (1).pdf#page=18|18]], [[06-Merge Sort (1).pdf#page=22|p. 22]]
-
-> 📄 Fonte: p. 17 (titolo «Merge: codice completo»; ripetuto in p. 18 e p. 22); riportato fedelmente, numeri di riga miei
 
 ```
 Merge (A,p,q,r)
@@ -1951,7 +1939,26 @@ Può essere usato per derivare sia **limiti superiori** che **limiti inferiori**
 
 È il primo dei tre metodi della lezione 06, insieme al [[metodo-albero-di-ricorrenza]] e al [[teorema-dell-esperto]].
 
-### Perché due casi base · [[06-Merge Sort (1).pdf#page=32|p. 32]]
+
+### Metodo di sostituzione: passo induttivo e caso base · [[06-Merge Sort (1).pdf#page=31|p. 31]]
+
+Passo induttivo (si assume vero per $\lfloor n/2 \rfloor$, si dimostra per $n$):
+
+$$
+\begin{aligned}
+T(n) &= 2T(\lfloor n/2 \rfloor) + n \\
+&\le 2\,(c\lfloor n/2 \rfloor \lg \lfloor n/2 \rfloor) + n \\
+&\le cn \lg(n/2) + n \\
+&= cn \lg n - cn \lg 2 + n \\
+&= cn \lg n - cn + n \\
+&= cn \lg n - (c-1)n \\
+&\le cn \lg n \qquad \text{se } c \ge 1
+\end{aligned}
+$$
+
+Caso base: per $n = 1$ si avrebbe $T(1) \le c \lg 1 = 0$, ma il tempo di esecuzione non può essere $\le 0$. Si usano allora $T(2)$ e $T(3)$ (la disuguaglianza $T(n) \le cn \lg n$ deve valere per $n \ge n_0$): occorre mostrare che $T(2) = 4 \le c\cdot 2 \lg 2$ e $T(3) = 5 \le c \cdot 3 \lg 3$. È sufficiente $c \ge 2$ per verificare i casi base.
+
+### Perché due casi base · [[06-Merge Sort (1).pdf#page=32|p. 32]], [[06-Merge Sort (1).pdf#page=31|p. 31]]
 
 ![[06-merge-sort-p30-due-casi-base.png]]
 *Due alberi: da 2 discendono 4, 5, poi 8–11, poi 16–23; da 3 discendono 6, 7, poi 12–15, poi 24–31. Ogni freccia va da $\lfloor n/2 \rfloor$ a $n$.*
@@ -1962,8 +1969,6 @@ Può essere usato per derivare sia **limiti superiori** che **limiti inferiori**
 - I **nodi** dell'albero di ricorrenza riportano il **costo per risolvere un dato (sotto)problema**.
 
 ### Esempio 2 — $T(n) = 3T(\lfloor n/4 \rfloor) + \Theta(n^2)$ · [[06-Merge Sort (1).pdf#page=34|p. 34]]–[[06-Merge Sort (1).pdf#page=40|40]]
-
-> 📄 Fonte: p. 34–p. 37 (l'albero è costruito un passo per slide: a p. 34 c'è solo $T(n)$, a p. 35 e p. 36 si espandono i livelli, a p. 37 l'albero è completo)
 
 Consideriamo $T(n) = 3T(\lfloor n/4 \rfloor) + \Theta(n^2)$. Costruiamo l'albero di ricorrenza per $T(n) = 3T(n/4) + cn^2$:
 - ignoriamo l'arrotondamento per difetto (approssimazione);
@@ -2062,8 +2067,6 @@ dove $n/b$ può essere interpretato sia come $\lfloor n/b \rfloor$ che come $\lc
 
 ### Esempi della slide · Merge Sort [[06-Merge Sort (1).pdf#page=46|p. 46]] · 05-Insertion sort.pdf [[05-Insertion sort.pdf#page=38|p. 38]]
 
-> 📄 Fonte: p. 42 (enunciati e caso applicato); commenti 🧩 miei
-
 ![[06-merge-sort-p42-esempi-esperto.png]]
 
 **Esempio 1 — $T(n) = 9T(n/3) + n$**
@@ -2122,13 +2125,46 @@ $$
 
 Dopo il teorema dell'esperto la lezione chiude la parte sulle ricorrenze con uno «Stop & Think» che contiene solo la domanda **«Albero di ricorsione?»**, senza altro testo.
 
+
+### Crescita delle funzioni: ragionare sull'efficienza e l'importanza dei logaritmi · [[06-Merge Sort (1).pdf#page=49|p. 49]], [[06-Merge Sort (1).pdf#page=50|50]], [[06-Merge Sort (1).pdf#page=51|51]], [[06-Merge Sort (1).pdf#page=52|52]], [[06-Merge Sort (1).pdf#page=49|p. 49]], [[06-Merge Sort (1).pdf#page=50|p. 50]], [[06-Merge Sort (1).pdf#page=51|p. 51]], [[06-Merge Sort (1).pdf#page=52|p. 52]]
+
+**Valutare l'efficienza asintotica — S&T: String Pattern Matching.** *Substring Pattern Matching*: dati un testo $t$ e un pattern $p$, $t$ contiene $p$ come sottostringa e, in tal caso, dove? La soluzione della slide è `findmatch` (forza bruta):
+
+```
+int findmatch(char *p, char *t) {
+    int i,j;                      /* counters */
+    int m, n;                     /* string lengths */
+    m = strlen(p);
+    n = strlen(t);
+    for (i=0; i<=(n-m); i=i+1) {
+        j=0;
+        while ((j<m) && (t[i+j]==p[j]))
+            j = j+1;
+        if (j == m) return(i);
+    }
+    return(-1);
+}
+```
+
+**L'importanza dei logaritmi.** I logaritmi compaiono in ogni processo in cui qualcosa viene ripetutamente **dimezzato**. Esempi:
+- ricerca binaria;
+- alberi: qual è l'altezza $h$ di un albero con $d$ figli a ogni livello e $n$ foglie?
+- bit: quanti bit servono per rappresentare una tra $n$ possibilità?
+- moltiplicazione: $ab = \exp(\ln(ab)) = \exp(b \ln a)$;
+- elevamento a potenza veloce: $a^n = (a^{n/2})^2$ se $n$ è pari, $a^n = a\,(a^{\lfloor n/2 \rfloor})^2$ se $n$ è dispari; richiede $O(\lg n)$ moltiplicazioni;
+- sommatorie: i numeri armonici $H_n = \sum_{i=1}^{n} \frac{1}{i} \sim \ln n$.
+
+**S&T: l'importanza di una divisione equa.** Quante interrogazioni richiede la ricerca binaria sull'elenco telefonico di Manhattan (un milione di nomi) se ogni divisione fosse $1/3$–$2/3$ invece di $1/2$–$1/2$? $\log_{3/2}(1\,000\,000) \approx 35$ chiamate nel caso peggiore, contro $\log_2(1\,000\,000) \approx 20$.
+
+*Take-home lesson:* la potenza della ricerca binaria deriva dalla sua complessità **logaritmica**, non dalla base del logaritmo.
+
 *Approfondimenti nel wiki: [[lezione-06-merge-sort]], [[torre-di-hanoi]], [[merge-sort]], [[merge]], [[massimo-sottoarray]], [[metodo-di-sostituzione]], [[metodo-albero-di-ricorrenza]], [[teorema-dell-esperto]]*
 
 ## Lezione 7 — Quicksort
 
 *Fonte: 07-Quicksort 1.pdf.*
 
-### Idea · [[07-Quicksort 1.pdf#page=2|p. 2]], [[07-Quicksort 1.pdf#page=3|3]]
+### Idea · [[07-Quicksort 1.pdf#page=2|p. 2]], [[07-Quicksort 1.pdf#page=3|3]], [[07-Quicksort 1.pdf#page=1|p. 1]]
 
 Quick Sort ha un tempo di esecuzione:
 - $\Theta(n^2)$ nel caso peggiore;
@@ -2482,7 +2518,7 @@ $$ \max_{|I| = n} \mathbb{E}[T(I)] = O(n \log n) $$
 
 **Spazio:** come [[quicksort]], sul posto; pila delle chiamate $\Theta(\lg n)$ attesa e $\Theta(n)$ nel caso peggiore (🧩).
 
-### Definizione formale · [[07-Quicksort 1.pdf#page=25|p. 25]]
+### Definizione formale · [[07-Quicksort 1.pdf#page=25|p. 25]], [[07-Quicksort 1.pdf#page=24|p. 24]]
 
 - Sono dati $n$ **bulloni** di larghezze diverse e gli $n$ **dadi** corrispondenti.
 - L'unica operazione ammessa è **provare un dado su un bullone**: si scopre se il dado è troppo largo, troppo stretto o se combacia esattamente.
@@ -2499,7 +2535,7 @@ $$ \max_{|I| = n} \mathbb{E}[T(I)] = O(n \log n) $$
 
 *Fonte: 08-Grafi e alberi.pdf.*
 
-### Definizione · [[08-Grafi e alberi.pdf#page=3|p. 3]], [[08-Grafi e alberi.pdf#page=26|p. 26]]
+### Definizione · [[08-Grafi e alberi.pdf#page=3|p. 3]], [[08-Grafi e alberi.pdf#page=26|p. 26]], [[08-Grafi e alberi.pdf#page=1|p. 1]], [[08-Grafi e alberi.pdf#page=2|p. 2]], [[08-Grafi e alberi.pdf#page=25|p. 25]]
 
 I grafi sono uno dei temi unificanti dell'informatica. Un **grafo** $G = (V, E)$ è definito da un insieme di **vertici** $V$ e da un insieme di **archi** $E$, formato da coppie **ordinate** o **non ordinate** di vertici di $V$.
 
@@ -2507,7 +2543,7 @@ Annotazione a mano sulla slide: il grafo è uno «strumento per formalizzare pro
 
 Simboli usati nelle slide successive: $n = |V|$ numero di vertici, $m = |E|$ numero di archi.
 
-### Esempi di modellazione · [[08-Grafi e alberi.pdf#page=4|p. 4]]–[[08-Grafi e alberi.pdf#page=6|6]]
+### Esempi di modellazione · [[08-Grafi e alberi.pdf#page=4|p. 4]]–[[08-Grafi e alberi.pdf#page=6|6]], [[08-Grafi e alberi.pdf#page=7|p. 7]]
 
 - **Reti stradali** (p. 4): i vertici rappresentano città o incroci, alcune coppie dei quali sono collegate da strade (gli archi). La figura mostra 8 località di Long Island: Stony Brook, Greenport, Orient Point, Riverhead, Shelter Island, Islip, Sag Harbor, Montauk.
 - **Circuiti elettronici**: le giunzioni sono i vertici, i componenti sono gli archi.
@@ -2516,7 +2552,7 @@ Simboli usati nelle slide successive: $n = |V|$ numero di vertici, $m = |E|$ num
 ![[08-grafi-e-alberi-p4-rete-stradale.png]]
 ![[08-grafi-e-alberi-p5-circuito.png]]
 
-### Definizione · [[08-Grafi e alberi.pdf#page=8|p. 8]], [[08-Grafi e alberi.pdf#page=9|9]], [[08-Grafi e alberi.pdf#page=10|p. 10]], [[08-Grafi e alberi.pdf#page=11|p. 11]], [[08-Grafi e alberi.pdf#page=12|p. 12]], [[08-Grafi e alberi.pdf#page=13|p. 13]], [[08-Grafi e alberi.pdf#page=14|p. 14]], [[08-Grafi e alberi.pdf#page=15|p. 15]]
+### Definizione · [[08-Grafi e alberi.pdf#page=8|p. 8]], [[08-Grafi e alberi.pdf#page=9|9]], [[08-Grafi e alberi.pdf#page=10|p. 10]], [[08-Grafi e alberi.pdf#page=11|p. 11]], [[08-Grafi e alberi.pdf#page=12|p. 12]], [[08-Grafi e alberi.pdf#page=13|p. 13]], [[08-Grafi e alberi.pdf#page=14|p. 14]], [[08-Grafi e alberi.pdf#page=15|p. 15]], [[08-Grafi e alberi.pdf#page=16|p. 16]]
 
 Il primo passo in ogni problema su grafi è capire **con che tipo di grafo** si ha a che fare: il tipo di grafo ha un grande impatto su quali algoritmi sono appropriati ed efficienti. Imparare il vocabolario («talk the talk») è parte importante del saperli usare («walk the walk»).
 
@@ -2540,7 +2576,7 @@ Annotazione a mano su p. 12: un grafo è «complesso» (cioè non semplice) se d
 ![[08-grafi-e-alberi-p14-aciclico.png]]
 ![[08-grafi-e-alberi-p15-topologico.png]]
 
-### Terminologia: il grafo delle amicizie · [[08-Grafi e alberi.pdf#page=18|p. 18]], [[08-Grafi e alberi.pdf#page=19|p. 19]], [[08-Grafi e alberi.pdf#page=20|p. 20]], [[08-Grafi e alberi.pdf#page=21|p. 21]], [[08-Grafi e alberi.pdf#page=22|p. 22]]
+### Terminologia: il grafo delle amicizie · [[08-Grafi e alberi.pdf#page=18|p. 18]], [[08-Grafi e alberi.pdf#page=19|p. 19]], [[08-Grafi e alberi.pdf#page=20|p. 20]], [[08-Grafi e alberi.pdf#page=21|p. 21]], [[08-Grafi e alberi.pdf#page=22|p. 22]], [[08-Grafi e alberi.pdf#page=17|p. 17]], [[08-Grafi e alberi.pdf#page=23|p. 23]], [[08-Grafi e alberi.pdf#page=24|p. 24]]
 
 Si considera il grafo in cui i vertici sono persone e c'è un arco tra due persone **se e solo se** sono amiche. È ben definito su qualunque insieme di persone (Stony Brook, New York, il mondo). Che domande ci si può porre su questo grafo? Ognuna introduce un concetto.
 
@@ -2613,7 +2649,7 @@ Entrambe le rappresentazioni sono molto utili e hanno proprietà diverse, anche 
 
 ![[08-grafi-e-alberi-p30-confronto-rappresentazioni.png]]
 
-### Implementazione in C · [[08-Grafi e alberi.pdf#page=31|p. 31]]–[[08-Grafi e alberi.pdf#page=35|35]]
+### Implementazione in C · [[08-Grafi e alberi.pdf#page=31|p. 31]]–[[08-Grafi e alberi.pdf#page=35|35]], [[08-Grafi e alberi.pdf#page=36|p. 36]]
 
 **Archi** (p. 31):
 ```c
@@ -2765,7 +2801,7 @@ Con $k$ costante: $h = \Theta(\log_k n)$. La stessa crescita vale per alberi $k$
 
 *Fonte: 09-Alberi binari ricerca.pdf.*
 
-### Cos'è · [[09-Alberi binari ricerca.pdf#page=2|p. 2]], [[09-Alberi binari ricerca.pdf#page=4|p. 4]]
+### Cos'è · [[09-Alberi binari ricerca.pdf#page=2|p. 2]], [[09-Alberi binari ricerca.pdf#page=4|p. 4]], [[09-Alberi binari ricerca.pdf#page=1|p. 1]]
 
 Le code di priorità sono strutture dati che offrono una **flessibilità in più rispetto all'ordinamento**. È importante perché i lavori (*job*) entrano spesso in un sistema a intervalli arbitrari: è più conveniente inserire un nuovo job in una coda di priorità che riordinare tutto a ogni nuovo arrivo (p. 2).
 
@@ -2852,8 +2888,6 @@ Chiamate totali: 13, di cui 6 su nodi e 7 su `NIL`.
 
 ### Complessità · [[09-Alberi binari ricerca.pdf#page=9|p. 9]]
 
-> 📄 Fonte: p. 9 — «Dimostriamo che impiega un tempo $\Theta(n)$» (senza svolgimento)
-
 ### Problema risolto · [[09-Alberi binari ricerca.pdf#page=10|p. 10]]
 
 Dato il puntatore alla radice e una chiave, restituisce il puntatore all'elemento con la data chiave, se esiste, e `NIL` altrimenti.
@@ -2863,8 +2897,6 @@ Dato il puntatore alla radice e una chiave, restituisce il puntatore all'element
 I nodi incontrati nella ricerca formano un **percorso verso il basso** dalla radice: a ogni nodo il confronto con $key[x]$ dice in quale dei due sottoalberi può trovarsi la chiave, e l'altro viene scartato.
 
 ### Pseudocodice · [[09-Alberi binari ricerca.pdf#page=10|p. 10]], [[09-Alberi binari ricerca.pdf#page=11|11]]
-
-> 📄 Fonte: p. 10 (versione ricorsiva) e p. 11 (versione iterativa, «tipicamente più efficiente»); riportati fedelmente, numeri di riga miei
 
 ```
 Tree-Search (x,k)
@@ -2888,8 +2920,6 @@ Iterative-Tree-Search (x,k)
 ![[09-alberi-binari-ricerca-p11-iterative-tree-search.png]]
 
 ### Complessità · [[09-Alberi binari ricerca.pdf#page=10|p. 10]]
-
-> 📄 Fonte: p. 10 — «Il tempo di esecuzione è $O(h)$ dove $h$ è l'altezza dell'albero»
 
 ### Problema risolto · [[09-Alberi binari ricerca.pdf#page=12|p. 12]]
 
@@ -2917,8 +2947,6 @@ Tree-Maximum (x)
 ![[09-alberi-binari-ricerca-p12-minimo-massimo.png]]
 
 ### Complessità · [[09-Alberi binari ricerca.pdf#page=12|p. 12]]
-
-> 📄 Fonte: p. 12 — «Il tempo di esecuzione è $O(h)$»
 
 ### Problema risolto · [[09-Alberi binari ricerca.pdf#page=13|p. 13]]
 
@@ -2954,8 +2982,6 @@ Tree-Successor (x)
 ![[09-alberi-binari-ricerca-p14-tree-successor.png]]
 
 ### Complessità · [[09-Alberi binari ricerca.pdf#page=14|p. 14]]
-
-> 📄 Fonte: p. 14 — «Il tempo di esecuzione è $O(h)$»
 
 ### Problema risolto · [[09-Alberi binari ricerca.pdf#page=16|p. 16]]
 
@@ -2996,8 +3022,6 @@ Simboli: $z$ = nodo da inserire; $x$ = nodo corrente della discesa; $y$ = padre 
 > ⚠️ Contraddizione (🧩): la figura di p. 18 disegna 19 come figlio destro di 18 e 20 come figlio destro di 19. È un BST valido, ma non è l'albero che si ottiene inserendo 19 con Tree-Insert nell'albero di p. 17: lì 19 diventa figlio sinistro di 20 (prima riga della tabella). L'inserimento di 10 dà lo stesso risultato nei due alberi, perché 10 scende nel sottoalbero sinistro della radice.
 
 ### Complessità · [[09-Alberi binari ricerca.pdf#page=16|p. 16]]
-
-> 📄 Fonte: p. 16 — «Il tempo di esecuzione è $O(h)$»
 
 ### Idea · [[09-Alberi binari ricerca.pdf#page=19|p. 19]]
 
@@ -3051,15 +3075,13 @@ Simboli: $z$ = nodo da eliminare; $y$ = nodo effettivamente tagliato fuori ($z$ 
 
 ### Complessità · [[09-Alberi binari ricerca.pdf#page=20|p. 20]]
 
-> 📄 Fonte: p. 20 — «Il tempo di esecuzione è $O(h)$»
-
 *Approfondimenti nel wiki: [[lezione-09-alberi-binari-di-ricerca]], [[coda-di-priorita]], [[albero-binario-di-ricerca]], [[inorder-tree-walk]], [[tree-search]], [[tree-minimum-maximum]], [[tree-successor]], [[tree-insert]], [[tree-delete]]*
 
 ## Lezione 10 — Heapsort
 
 *Fonte: 10 - Heap - Heapsort.pdf (50 pagine: slide, con appunti a mano alle p. 2, 3, 5, 7, 14).*
 
-### Heapsort: dove siamo · [[10 - Heap - Heapsort.pdf#page=2|p. 2]]
+### Heapsort: dove siamo · [[10 - Heap - Heapsort.pdf#page=2|p. 2]], [[10 - Heap - Heapsort.pdf#page=1|p. 1]]
 
 - **Insertion Sort**: $\Theta(n^2)$ nel caso peggiore, $\Theta(n)$ nel migliore; ordina sul posto.
 - **Merge Sort**: $\Theta(n \lg n)$; non ordina sul posto (nota a mano: l'uso di memoria cresce troppo velocemente al crescere di $n$).
@@ -3264,7 +3286,7 @@ Esercizio: ordinare con Heap-Sort, partendo da zero, l'array $\langle 6, 5, 3, 1
 
 *Fonte: 11 . Alberi rosso-neri.pdf (48 pagine di slide).*
 
-### Perché un heap non basta · [[11 . Alberi rosso-neri.pdf#page=2|p. 2]]–[[11 . Alberi rosso-neri.pdf#page=7|7]]
+### Perché un heap non basta · [[11 . Alberi rosso-neri.pdf#page=2|p. 2]]–[[11 . Alberi rosso-neri.pdf#page=7|7]], [[11 . Alberi rosso-neri.pdf#page=1|p. 1]]
 
 - Un max-heap garantisce altezza logaritmica $h = \Theta(\log n)$ e permette di accedere al massimo, nella radice, in $O(1)$.
 - Non mantiene però l'ordinamento delle chiavi tipico di un BST: non vale la proprietà «sinistra < nodo < destra». Per cercare una chiave arbitraria bisogna, nel caso peggiore, esaminare tutti i nodi: $O(n)$.
@@ -3529,7 +3551,7 @@ RB-Delete-Fixup è diverso da RB-Insert-Fixup: RB-Insert-Fixup corregge principa
 
 *Fonte: 12 - Alberi auto-aggiustanti.pdf (16 pagine di slide).*
 
-### Alberi auto-aggiustanti (splay trees) · [[12 - Alberi auto-aggiustanti.pdf#page=2|p. 2]]
+### Alberi auto-aggiustanti (splay trees) · [[12 - Alberi auto-aggiustanti.pdf#page=2|p. 2]], [[12 - Alberi auto-aggiustanti.pdf#page=1|p. 1]]
 
 - Gli **alberi auto-aggiustanti** (splay trees) sono alberi binari di ricerca che non impongono ulteriori vincoli sulla disposizione degli elementi.
 - L'idea è che ogni volta che si accede a un elemento dell'albero, l'albero viene riaggiustato in modo che tale elemento venga posto nella radice.
@@ -3641,7 +3663,7 @@ Non esiste un vincitore assoluto: dipende dalle richieste dell'applicazione.
 
 *Fonte: 13 - Algoritmi di visita di un grafo.pdf (53 pagine: slide, con note a mano alle p. 38 e 40; le pp. 44–53 sono slide in inglese di S. Skiena).*
 
-### Grafi e rappresentazioni · [[13 - Algoritmi di visita di un grafo.pdf#page=2|p. 2]]–[[13 - Algoritmi di visita di un grafo.pdf#page=6|6]]
+### Grafi e rappresentazioni · [[13 - Algoritmi di visita di un grafo.pdf#page=2|p. 2]]–[[13 - Algoritmi di visita di un grafo.pdf#page=6|6]], [[13 - Algoritmi di visita di un grafo.pdf#page=1|p. 1]]
 
 Un grafo consiste di un insieme di nodi $V$ connessi mediante un insieme di archi $E$, direzionali e non direzionali. Due rappresentazioni:
 - **liste di adiacenza**, tipicamente preferite per grafi sparsi ($\lvert E \rvert \ll \lvert V \rvert^2$);
@@ -3674,7 +3696,7 @@ Una volta rappresentato un grafo, vogliamo esplorarne sistematicamente i vertici
 
 Le visite permettono anche di risolvere problemi più complessi, come l'**ordinamento topologico**, che dispone i vertici di un grafo orientato aciclico (DAG) rispettando le dipendenze tra essi.
 
-### Visita in ampiezza · [[13 - Algoritmi di visita di un grafo.pdf#page=9|p. 9]]–[[13 - Algoritmi di visita di un grafo.pdf#page=12|12]]
+### Visita in ampiezza · [[13 - Algoritmi di visita di un grafo.pdf#page=9|p. 9]]–[[13 - Algoritmi di visita di un grafo.pdf#page=12|12]], [[13 - Algoritmi di visita di un grafo.pdf#page=8|p. 8]]
 
 La visita in ampiezza (BFS, *Breadth First Search*) è un semplice algoritmo per «visitare» i nodi di un grafo. Importanti algoritmi si basano su questo approccio: l'algoritmo di Dijkstra per lo shortest path e l'algoritmo di Prim per il minimum spanning tree.
 - A partire da un nodo sorgente $s$, BFS visita tutti i nodi adiacenti di un nodo e poi procede a visitare allo stesso modo gli adiacenti.
@@ -3767,7 +3789,7 @@ if v = s
              print v
 ```
 
-### Visita in profondità · [[13 - Algoritmi di visita di un grafo.pdf#page=25|p. 25]]–[[13 - Algoritmi di visita di un grafo.pdf#page=28|28]]
+### Visita in profondità · [[13 - Algoritmi di visita di un grafo.pdf#page=25|p. 25]]–[[13 - Algoritmi di visita di un grafo.pdf#page=28|28]], [[13 - Algoritmi di visita di un grafo.pdf#page=24|p. 24]]
 
 La **depth-first search** (DFS) esplora i vicini del nodo scoperto più di recente che ha ancora vicini non esplorati: la visita procede «in profondità». Se ci sono nodi non esplorati, la ricerca riparte da uno di essi; tutti i vertici sono esplorati. DFS tiene traccia dei predecessori di un nodo (come BFS). Il predecessor subgraph può essere composto da più alberi, per questo è definito in maniera leggermente diversa: $G_\pi = (V, E_\pi)$ con $E_\pi = \{(\pi[v], v) : v \in V \text{ e } \pi[v] \ne \text{NIL}\}$ (tree edges). Il predecessor subgraph forma una **depth-first forest** composta di diversi **depth-first tree**.
 
@@ -3924,7 +3946,7 @@ Possiamo fare di meglio? Possiamo sfruttare la «località temporale» dei nodi 
 
 *Fonte: 14 - Backpropagation.pdf (30 pagine: slide, con note a mano alle p. 2, 5, 26, 28, 29).*
 
-### Motivazione · [[14 - Backpropagation.pdf#page=2|p. 2]]
+### Motivazione · [[14 - Backpropagation.pdf#page=2|p. 2]], [[14 - Backpropagation.pdf#page=1|p. 1]]
 
 - Calcolo di derivate in funzioni composte (nota a mano: da dove nasce → regola della catena).
 - Si considera una funzione scalare $C: \mathbb{R}^n \to \mathbb{R}$ ottenuta come composizione di molte operazioni elementari. Esempio: $C(x) = \tfrac{1}{2}\bigl(f(g(h(x)))\bigr)^2$.
@@ -4094,7 +4116,7 @@ L'ultima slide (p. 30) mostra il primo fotogramma di un'animazione, «1. Forward
 
 *Fonte: 15 - Backtracking.pdf (24 pagine di slide in inglese di S. Skiena, con note a mano alle p. 2, 15, 21).*
 
-### Sudoku · [[15 - Backtracking.pdf#page=2|p. 2]], [[15 - Backtracking.pdf#page=3|3]]
+### Sudoku · [[15 - Backtracking.pdf#page=2|p. 2]], [[15 - Backtracking.pdf#page=3|3]], [[15 - Backtracking.pdf#page=1|p. 1]]
 
 ![[15-backtracking-p2-sudoku.png]]
 *Un Sudoku e la sua soluzione. Nota a mano (lettura incerta): posso creare un grafo dello spazio delle soluzioni, e una soluzione è un nodo di questo grafo ⇒ posso sapere se un nodo è soluzione o meno ma lo devo visitare ⇒ devo guardare tutto il grafo (potenzialmente).*
